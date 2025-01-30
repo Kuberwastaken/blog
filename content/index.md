@@ -1,6 +1,6 @@
 ---
-title: Hello World
+title: Welcome to Quartz
 ---
 
-This is my very first blog :)
-Hope this project lasts :kekw:
+This is a blank Quartz installation.
+See the [documentation](https://quartz.jzhao.xyz) for how to get started.
