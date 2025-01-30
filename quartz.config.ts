@@ -1,11 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
-/**
- * Quartz 4.0 Configuration
- *
- * See https://quartz.jzhao.xyz/configuration for more information.
- */
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "KWT Blogs",
@@ -37,7 +32,7 @@ const config: QuartzConfig = {
           dark: "#2b2b2b",
           secondary: "#284b63",
           tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          highlight: "rgba(38, 143, 109, 0.15)",
           textHighlight: "#fff23688",
         },
         darkMode: {
@@ -48,7 +43,7 @@ const config: QuartzConfig = {
           dark: "#ffffff",
           secondary: "#7b97aa",
           tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          highlight: "rgba(38, 143, 109, 0.15)",
           textHighlight: "#b3aa0288",
         },
       },
