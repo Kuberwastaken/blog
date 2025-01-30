@@ -18,5 +18,6 @@ This blog covers a wide range of topics, including:
 - Thanks to the wondrous contributors at Quartz to make the basis of the website
 - You can refer to the code of the website to see how it works here:
 🌐 https://github.com/Kuberwastaken/blog
+
 ## 🔍 Browse My Posts  
 Dive into some articles :P

@@ -6,23 +6,53 @@
       <description>Last 10 notes on KWT Blogs</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Hello World</title>
+    <link>https://kuberwastaken.github.io/blog/HelloWorld</link>
+    <guid>https://kuberwastaken.github.io/blog/HelloWorld</guid>
+    <description>This is my very first blog :).</description>
+    <pubDate>Thu, 30 Jan 2025 13:50:27 GMT</pubDate>
+  </item><item>
+    <title>kuber-mehta/blog</title>
+    <link>https://kuberwastaken.github.io/blog/</link>
+    <guid>https://kuberwastaken.github.io/blog/</guid>
+    <description>Welcome to my Mind Dump—a space where I share thoughts, ideas, and deep dives into various topics. I’m Kuber Mehta, founder of TREAT AI and an AI &amp; tech enthusiast.</description>
+    <pubDate>Thu, 30 Jan 2025 13:50:27 GMT</pubDate>
+  </item><item>
+    <title>Sustainability as a Business Model: A Competitive Edge, Not Just an Ethical Choice</title>
+    <link>https://kuberwastaken.github.io/blog/Business/Sustainability-as-a-Business-Model</link>
+    <guid>https://kuberwastaken.github.io/blog/Business/Sustainability-as-a-Business-Model</guid>
+    <description>Sustainability is no longer just a buzzword—it’s a business imperative. Companies that embed sustainability into their core operations are not only addressing global environmental concerns but also gaining a competitive advantage.</description>
+    <pubDate>Thu, 30 Jan 2025 13:50:27 GMT</pubDate>
+  </item><item>
+    <title>The No-Code Revolution: Empowering Entrepreneurs Without Coding Skills</title>
+    <link>https://kuberwastaken.github.io/blog/Business/The-No-Code-Revolution</link>
+    <guid>https://kuberwastaken.github.io/blog/Business/The-No-Code-Revolution</guid>
+    <description>No-code platforms like Bubble, Webflow, and Adalo are turning “non-technical” into a misnomer. These tools let founders build apps, automate workflows, and launch MVPs without writing a single line of code—but they’re not a silver bullet.</description>
+    <pubDate>Thu, 30 Jan 2025 13:50:27 GMT</pubDate>
+  </item><item>
+    <title>Why Most AI Startups Fail: Lessons from the Trenches</title>
+    <link>https://kuberwastaken.github.io/blog/Business/Why-Most-AI-Startups-Fail</link>
+    <guid>https://kuberwastaken.github.io/blog/Business/Why-Most-AI-Startups-Fail</guid>
+    <description>The AI startup boom has produced flashy demos and bold promises—but few sustainable businesses. While 80% of enterprises adopt AI, 90% of AI startups fail to scale beyond proof of concept.</description>
+    <pubDate>Thu, 30 Jan 2025 13:50:27 GMT</pubDate>
+  </item><item>
+    <title>Beyond Traditional Dashboards: The Future of Data Visualization</title>
+    <link>https://kuberwastaken.github.io/blog/Data-Science/Beyond-Traditional-Dashboards---The-Future-of-Data-Visualization</link>
+    <guid>https://kuberwastaken.github.io/blog/Data-Science/Beyond-Traditional-Dashboards---The-Future-of-Data-Visualization</guid>
+    <description>Static dashboards are becoming relics of the past. As organizations drown in data but thirst for insights, the future of data visualization lies in AI-driven interactivity, real-time storytelling, and immersive experiences.</description>
+    <pubDate>Thu, 30 Jan 2025 13:50:27 GMT</pubDate>
+  </item><item>
+    <title>Can AI Understand Emotions? The Limits of Sentiment Analysis</title>
+    <link>https://kuberwastaken.github.io/blog/AI/Can-AI-Understand-Emotions-The-Limits-of-Sentiment-Analysis</link>
+    <guid>https://kuberwastaken.github.io/blog/AI/Can-AI-Understand-Emotions-The-Limits-of-Sentiment-Analysis</guid>
+    <description>Artificial Intelligence (AI) has made staggering advancements in recent years, from diagnosing diseases to composing music. Yet, one question continues to elude even the most sophisticated systems: Can AI truly understand human emotions? While sentiment analysis tools claim to decode feelings from text, speech, or facial expressions, their ability to grasp the nuance of human emotion remains limited.</description>
+    <pubDate>Thu, 30 Jan 2025 13:50:27 GMT</pubDate>
+  </item><item>
     <title>DeepSeek R1 vs ChatGPT: Why This Isn&#039;t a Zero-Sum Game</title>
     <link>https://kuberwastaken.github.io/blog/AI/DeepSeek-R1-vs-ChatGPT-Why-This-Isn't-a-Zero-Sum-Game</link>
     <guid>https://kuberwastaken.github.io/blog/AI/DeepSeek-R1-vs-ChatGPT-Why-This-Isn't-a-Zero-Sum-Game</guid>
     <description>The recent discussions around DeepSeek R1 and its supposed impact on OpenAI, NVIDIA, or Meta have sparked intense debates in the AI community. Some have gone as far as to claim that DeepSeek R1 could shake the foundations of these giants, while others have dismissed it as an underwhelming competitor.</description>
-    <pubDate>Thu, 30 Jan 2025 09:09:05 GMT</pubDate>
-  </item><item>
-    <title>Hello World</title>
-    <link>https://kuberwastaken.github.io/blog/HelloWorld</link>
-    <guid>https://kuberwastaken.github.io/blog/HelloWorld</guid>
-    <description>This is my very first blog :) Hope this project lasts :kekw:.</description>
-    <pubDate>Thu, 30 Jan 2025 08:57:26 GMT</pubDate>
-  </item><item>
-    <title>KuberWasTaken Blogs</title>
-    <link>https://kuberwastaken.github.io/blog/</link>
-    <guid>https://kuberwastaken.github.io/blog/</guid>
-    <description>Welcome to my Mind Dump or Blogs! You will find all sorts of topics here.</description>
-    <pubDate>Thu, 30 Jan 2025 08:57:26 GMT</pubDate>
+    <pubDate>Thu, 30 Jan 2025 13:50:27 GMT</pubDate>
   </item>
     </channel>
   </rss>
