@@ -1,8 +1,6 @@
 ---
 title: KuberWasTaken Blogs
 ---
-# KuberWasTaken Blogs
-
 Welcome to my **Mind Dump**—a space where I share thoughts, ideas, and deep dives into various topics.  
 
 I'm **Kuber Mehta**, founder of **TREAT AI** and an AI & tech enthusiast. You can explore my portfolio here:  
