@@ -8,7 +8,7 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-       provider: 'google', tagId: 'G-5C2HC21CS5' 
+       provider: 'google', tagId: "G-5C2HC21CS5" 
     },
     locale: "en-US",
     baseUrl: "kuberwastaken.github.io/blog",
