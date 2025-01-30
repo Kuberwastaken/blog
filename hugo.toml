@@ -1,0 +1,10 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "ananke"
+buildDrafts = false
+
+[module]
+  [[module.mounts]]
+    source = "C:\\Users\\yokub\\Documents\\Obsidian Vault\\blog"
+    target = "content"
