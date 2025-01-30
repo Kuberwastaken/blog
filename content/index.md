@@ -13,6 +13,10 @@ This blog covers a wide range of topics, including:
 - 💡 **Tech & Software Engineering** - My thoughts on coding, frameworks, and innovations.  
 - 💼 **Entrepreneurship & Business** - My views and observations about business, marketing and other domains.
 - 🌎 **Personal & Industry Reflections** - Observations, experiences, and discussions.  
+## Credits and Attributions 
 
+- Thanks to the wondrous contributors at Quartz to make the basis of the website
+- You can refer to the code of the website to see how it works here:
+🌐 https://github.com/Kuberwastaken/blog
 ## 🔍 Browse My Posts  
-👇 Dive into my latest blog entries below!  
+Dive into some articles :P
