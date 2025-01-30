@@ -3,7 +3,7 @@ title: kuber-mehta/blog
 ---
 Welcome to my **Mind Dump**—a space where I share thoughts, ideas, and deep dives into various topics.  
 
-I'm **Kuber Mehta**, founder of **TREAT AI** and an AI & tech enthusiast. You can explore my portfolio here:  
+I'm **Kuber Mehta**, founder of [**TREAT AI**](https://www.trytreat.tech/) and an AI & tech enthusiast. You can explore my portfolio here:  
 [🌐 kuberwastaken.github.io](https://kuberwastaken.github.io/)  
 
 ## 📖 What You'll Find Here  
