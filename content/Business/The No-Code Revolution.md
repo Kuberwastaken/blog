@@ -1,7 +1,10 @@
 ---
 title: "The No-Code Revolution: Empowering Entrepreneurs Without Coding Skills"
 draft: false
-tags: [No-Code, Entrepreneurship, Business]
+tags:
+  - No-Code
+  - Entrepreneurship
+  - Business
 ---
 
 No-code platforms like Bubble, Webflow, and Adalo are turning “non-technical” into a misnomer. These tools let founders build apps, automate workflows, and launch MVPs without writing a single line of code—but they’re not a silver bullet.

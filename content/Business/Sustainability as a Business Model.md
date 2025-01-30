@@ -2,6 +2,9 @@
 title: "Sustainability as a Business Model: A Competitive Edge, Not Just an Ethical Choice"
 draft: false
 tags:
+  - Business
+  - Sustainability
+  - Entrepreneurship
 ---
 Sustainability is no longer just a buzzword—it’s a business imperative. Companies that embed sustainability into their core operations are not only addressing global environmental concerns but also gaining a competitive advantage. As consumers demand eco-friendly products, businesses that prioritize sustainability are reshaping their strategies to align with this growing market shift.
 
