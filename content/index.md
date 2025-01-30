@@ -1,6 +1,6 @@
 ---
-title: Welcome to Quartz
+title: KuberWasTaken Blogs
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+Welcome to my Mind Dump or Blogs!
+You will find all sorts of topics here
