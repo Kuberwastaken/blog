@@ -11,7 +11,7 @@ DeepSeek R1 is neither a threat that will bankrupt major AI companies nor a mode
 
 This is something we, in India, call the **Jugaad mentality**—a clever, resourceful approach to solving problems with efficiency. The ingenuity behind DeepSeek R1 is precisely what makes it exciting. It may not outperform the most cutting-edge proprietary models today, but its efficiency-first approach could inspire improvements in AI training methodologies across the board.
 
-[[deepseek-login.png]]
+![[quartz/static/images/deepseek-login.png]]
 ### Innovation Through Constraints
 
 One of the most impressive aspects of DeepSeek R1 is its ability to deliver strong performance despite the limitations in resources. AI development has largely been dominated by entities with access to massive compute power, expensive hardware, and extensive data pipelines. Yet, DeepSeek R1 demonstrates that with smart optimizations and well-thought-out architecture, substantial progress can still be made without relying on brute-force scaling.
