@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>My New Hugo Site</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on My New Hugo Site</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>🪴 Quartz 4.0</title>
+      <link>https://quartz.jzhao.xyz</link>
+      <description>Last 10 notes on 🪴 Quartz 4.0</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Welcome to Quartz</title>
+    <link>https://quartz.jzhao.xyz/</link>
+    <guid>https://quartz.jzhao.xyz/</guid>
+    <description>This is a blank Quartz installation. See the documentation for how to get started.</description>
+    <pubDate>Thu, 30 Jan 2025 07:33:12 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
