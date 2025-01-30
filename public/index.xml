@@ -6,35 +6,11 @@
       <description>Last 10 notes on KWT Blogs</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Untitled</title>
-    <link>https://kuberwastaken.github.io/blog/Untitled</link>
-    <guid>https://kuberwastaken.github.io/blog/Untitled</guid>
-    <description></description>
-    <pubDate>Thu, 30 Jan 2025 07:54:22 GMT</pubDate>
-  </item><item>
-    <title>Template</title>
-    <link>https://kuberwastaken.github.io/blog/Template</link>
-    <guid>https://kuberwastaken.github.io/blog/Template</guid>
-    <description></description>
-    <pubDate>Thu, 30 Jan 2025 07:54:22 GMT</pubDate>
-  </item><item>
-    <title>Example Title</title>
-    <link>https://kuberwastaken.github.io/blog/Templates/Template</link>
-    <guid>https://kuberwastaken.github.io/blog/Templates/Template</guid>
-    <description>The rest of your content lives here. You can use Markdown here :).</description>
-    <pubDate>Thu, 30 Jan 2025 07:54:22 GMT</pubDate>
-  </item><item>
-    <title>Welcome to Quartz</title>
+    <title>Hello World</title>
     <link>https://kuberwastaken.github.io/blog/</link>
     <guid>https://kuberwastaken.github.io/blog/</guid>
-    <description>This is a blank Quartz installation. See the documentation for how to get started.</description>
-    <pubDate>Thu, 30 Jan 2025 07:33:12 GMT</pubDate>
-  </item><item>
-    <title>Hello World</title>
-    <link>https://kuberwastaken.github.io/blog/Hello-World</link>
-    <guid>https://kuberwastaken.github.io/blog/Hello-World</guid>
     <description>This is my very first blog :) Hope this project lasts :kekw:.</description>
-    <pubDate>Thu, 30 Jan 2025 07:33:12 GMT</pubDate>
+    <pubDate>Thu, 30 Jan 2025 08:35:17 GMT</pubDate>
   </item>
     </channel>
   </rss>
