@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
     <channel>
-      <title>KWT Blogs</title>
+      <title>Kuber's Blogs</title>
       <link>https://kuberwastaken.github.io/blog</link>
-      <description>Last 10 notes on KWT Blogs</description>
+      <description>Last 10 notes on Kuber's Blogs</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
     <title>Hello World</title>
