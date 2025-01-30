@@ -1,3 +1,26 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+/* quartz/styles/custom.scss */
+
+body {
+    /* Custom scrollbar styles */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #5abb9a #f0f0f0; /* For Firefox */
+  }
+  
+  /* For WebKit browsers (Chrome, Safari) */
+  body::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #f0f0f0;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #5abb9a;
+    border-radius: 10px;
+    border: 3px solid #f0f0f0;
+  }
