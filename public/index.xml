@@ -6,17 +6,17 @@
       <description>Last 10 notes on KWT Blogs</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Welcome to Quartz</title>
-    <link>https://kuberwastaken.github.io/blog/</link>
-    <guid>https://kuberwastaken.github.io/blog/</guid>
-    <description>This is a blank Quartz installation. See the documentation for how to get started.</description>
-    <pubDate>Thu, 30 Jan 2025 08:46:45 GMT</pubDate>
-  </item><item>
     <title>Hello World</title>
     <link>https://kuberwastaken.github.io/blog/HelloWorld</link>
     <guid>https://kuberwastaken.github.io/blog/HelloWorld</guid>
     <description>This is my very first blog :) Hope this project lasts :kekw:.</description>
-    <pubDate>Thu, 30 Jan 2025 08:35:17 GMT</pubDate>
+    <pubDate>Thu, 30 Jan 2025 08:57:26 GMT</pubDate>
+  </item><item>
+    <title>KuberWasTaken Blogs</title>
+    <link>https://kuberwastaken.github.io/blog/</link>
+    <guid>https://kuberwastaken.github.io/blog/</guid>
+    <description>Welcome to my Mind Dump or Blogs! You will find all sorts of topics here.</description>
+    <pubDate>Thu, 30 Jan 2025 08:57:26 GMT</pubDate>
   </item>
     </channel>
   </rss>
