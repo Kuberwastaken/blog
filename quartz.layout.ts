@@ -2,16 +2,6 @@ import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { QuartzPluginData } from "./quartz/plugins/vfile"
 
-// Helper function to check if a file is in the BITS folder or its subfolders
-interface FileWithPath {
-  path: string;
-}
-
-const isNotInBITS = (file: QuartzPluginData) => {
-  const path = (file.file as FileWithPath)?.path || ''
-  return !path.toLowerCase().includes('bits/')
-}
-
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -40,9 +30,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Darkmode(),
     Component.DesktopOnly(Component.Explorer({
       filterFn: (node) => {
-        // Safely check if the node contains BITS
-        const nodeName = node.name?.toLowerCase() || ''
-        return !nodeName.includes('bits')
+        return node.name !== "BITS" && node.name !== "index"
       },
     })),
   ],
@@ -52,17 +40,20 @@ export const defaultContentPageLayout: PageLayout = {
       title: "Recent Posts", 
       limit: 3,
       showTags: false,
-      filter: isNotInBITS,
+      filter: (file) => !file.slug?.startsWith("BITS/") && file.slug !== "index",
       sort: (f1: QuartzPluginData, f2: QuartzPluginData) => {
-        const date1Created = f1.dates?.created ? new Date(f1.dates.created).getTime() : 0
-        const date1Modified = f1.dates?.modified ? new Date(f1.dates.modified).getTime() : 0
-        const date2Created = f2.dates?.created ? new Date(f2.dates.created).getTime() : 0
-        const date2Modified = f2.dates?.modified ? new Date(f2.dates.modified).getTime() : 0
+        const date1Created = f1.dates?.created ? new Date(f1.dates.created) : new Date(0)
+        const date1Modified = f1.dates?.modified ? new Date(f1.dates.modified) : new Date(0)
+        const date2Created = f2.dates?.created ? new Date(f2.dates.created) : new Date(0)
+        const date2Modified = f2.dates?.modified ? new Date(f2.dates.modified) : new Date(0)
         
-        const date1 = Math.max(date1Created, date1Modified)
-        const date2 = Math.max(date2Created, date2Modified)
+        const date1 = date1Modified > date1Created ? date1Modified : date1Created
+        const date2 = date2Modified > date2Created ? date2Modified : date2Created
         
-        return date2 - date1
+        if (date2.getTime() === date1.getTime()) {
+          return f2.slug?.localeCompare(f1.slug ?? "") ?? 0
+        }
+        return date2.getTime() - date1.getTime()
       }
     }),
     Component.Backlinks(),
@@ -79,9 +70,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.Darkmode(),
     Component.DesktopOnly(Component.Explorer({
       filterFn: (node) => {
-        // Safely check if the node contains BITS
-        const nodeName = node.name?.toLowerCase() || ''
-        return !nodeName.includes('bits')
+        return node.name !== "BITS"
       },
     })),
   ],
