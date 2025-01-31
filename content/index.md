@@ -1,5 +1,5 @@
 ---
-title: kuber-mehta/blog
+title: MindDump
 ---
 Welcome to my **Mind Dump**—a space where I share thoughts, ideas, and deep dives into various topics.  
 
