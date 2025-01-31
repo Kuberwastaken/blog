@@ -1,13 +1,34 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
     <loc>https://kuberwastaken.github.io/blog/AI/Can-AI-Understand-Emotions-The-Limits-of-Sentiment-Analysis</loc>
     <lastmod>2025-01-30T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://kuberwastaken.github.io/blog/BITS/Exam-Materials/</loc>
+  </url>
+  <url>
+    <loc>https://kuberwastaken.github.io/blog/AI/DeepSeek-R1-vs-ChatGPT-Why-This-Isn't-a-Zero-Sum-Game</loc>
+    <lastmod>2025-01-29T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kuberwastaken.github.io/blog/Business/Sustainability-as-a-Business-Model</loc>
+    <lastmod>2025-01-30T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kuberwastaken.github.io/blog/Business/The-No-Code-Revolution</loc>
+    <lastmod>2025-01-29T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kuberwastaken.github.io/blog/Business/Why-Most-AI-Startups-Fail</loc>
     <lastmod>2025-01-31T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://kuberwastaken.github.io/blog/BITS/Exam-Materials/Sem-0.5/</loc>
+  </url>
+  <url>
+    <loc>https://kuberwastaken.github.io/blog/Gaming/The-Nostalgia-Factor-in-Gaming-Why-Classic-Titles-Still-Matter</loc>
     <lastmod>2025-01-31T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://kuberwastaken.github.io/blog/BITS/Exam-Materials/Sem-1/</loc>
+  </url>
+  <url>
+    <loc>https://kuberwastaken.github.io/blog/Social-Media/How-the-Internet-Shapes-Modern-Opinions</loc>
     <lastmod>2025-01-31T00:00:00.000Z</lastmod>
-  </url></urlset>
+  </url>
+  <url>
+    <loc>https://kuberwastaken.github.io/blog/Data-Science/Beyond-Traditional-Dashboards---The-Future-of-Data-Visualization</loc>
+    <lastmod>2025-01-31T00:00:00.000Z</lastmod>
+  </url>
+</urlset>
