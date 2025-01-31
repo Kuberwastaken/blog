@@ -34,3 +34,8 @@ This blog is built using modern web technologies and tools:
 
 ## Contact
 Feel free to reach out to me via [LinkedIn](https://www.linkedin.com/in/kubermehta/) for any inquiries or collaborations.
+
+## License 
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License](https://github.com/Kuberwastaken/blog/blob/v4/LICENSE)
+
