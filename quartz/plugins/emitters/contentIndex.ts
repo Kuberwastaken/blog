@@ -39,12 +39,21 @@ const defaultOptions: Options = {
 function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
   const base = cfg.baseUrl ?? ""
   
-  // XML Declaration
   const xmlDeclaration = '<?xml version="1.0" encoding="UTF-8"?>';
   
   const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => {
-    // Properly encode the URL, handling special characters and spaces
-    const encodedSlug = encodeURIComponent(slug).replace(/%2F/g, '/');
+    // Enhanced URL encoding
+    const encodedSlug = slug
+      .split('/')
+      .map(segment => 
+        segment
+          .replace(/['^]/, (c) => encodeURIComponent(c))
+          .replace(/\s+/g, '%20')
+          .replace(/[—–]/g, encodeURIComponent('—'))
+          .replace(/[']/g, '%27')
+      )
+      .join('/');
+      
     const fullUrl = `https://${joinSegments(base, encodedSlug)}`;
     
     return `<url>
