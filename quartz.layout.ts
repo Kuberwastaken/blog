@@ -29,7 +29,13 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      filterFn: (node) => {
+        // set containing names of everything you want to filter out
+        const omit = new Set(["BITS"])
+        return !omit.has(node.name.toLowerCase())
+      },
+    })),
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
@@ -63,7 +69,12 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      filterFn: (node) => {
+        const omit = new Set(["BITS"])
+        return !omit.has(node.name.toLowerCase())
+      },
+    })),
   ],
   right: [],
 }

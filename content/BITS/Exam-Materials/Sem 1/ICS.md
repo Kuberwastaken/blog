@@ -2,7 +2,6 @@
 title: ICS
 draft: false
 tags:
-  - Introduction-To-Computing-Systems
 date: 2025-01-31
 lastmod:
 ---

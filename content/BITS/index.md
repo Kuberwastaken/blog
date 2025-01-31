@@ -2,9 +2,6 @@
 title: index
 draft: false
 tags:
-  - BITS
-  - BITS-ONLINE
-  - College
 date: 2025-01-31
 lastmod:
 ---

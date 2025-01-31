@@ -2,7 +2,6 @@
 title: BE
 draft: false
 tags:
-  - Basic-Electronics
 date: 2025-01-31
 lastmod:
 ---

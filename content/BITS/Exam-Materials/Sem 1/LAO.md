@@ -2,7 +2,6 @@
 title: LAO
 draft: false
 tags:
-  - Linear-Algebra-And-Optimizations
 date: 2025-01-31
 lastmod:
 ---

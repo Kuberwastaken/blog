@@ -2,8 +2,6 @@
 title: index
 draft: false
 tags:
-  - Exams
-  - Study-Material
 date: 2025-01-31
 lastmod:
 ---
