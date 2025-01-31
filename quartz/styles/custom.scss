@@ -4,23 +4,66 @@
 
 /* quartz/styles/custom.scss */
 
-body {
-    /* Custom scrollbar styles */
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: #5abb9a #f0f0f0; /* For Firefox */
+* {
+  // For Firefox
+  scrollbar-width: thin;
+  scrollbar-color: #5abb9a rgba(0, 0, 0, 0.2);
+
+  // For Webkit browsers (Chrome, Safari, etc.)
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
   }
-  
-  /* For WebKit browsers (Chrome, Safari) */
-  body::-webkit-scrollbar {
-    width: 12px;
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: #f0f0f0;
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: #5abb9a;
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    border: 3px solid #f0f0f0;
   }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #5abb9a, lighten(#5abb9a, 10%));
+    border-radius: 10px;
+    min-height: 40px; // Makes the thumb shorter
+    
+    &:hover {
+      background: linear-gradient(45deg, darken(#5abb9a, 5%), #5abb9a);
+    }
+  }
+
+  // Hide the arrows
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
+// Add spacing between entries in folder groups
+.overflow {
+  li {
+    margin-bottom: 0.5rem; // Adds space between each entry
+    
+    // Remove margin from nested items to maintain hierarchy visual
+    li {
+      margin-bottom: 0.2rem; // Smaller spacing for nested items
+    }
+    
+    // Remove margin from the last item in each group
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Specific adjustment for folder content
+.folder-container {
+  .folder-content {
+    li {
+      margin-bottom: 0.5rem;
+      
+      // Adjust nested items
+      li {
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+}
+
