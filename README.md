@@ -1,8 +1,8 @@
-# KuberWasTaken Blog
+# ᨒ MindDump
 
 > “The Best Blog Website on The Internet”
 
-Welcome to **KuberWasTaken Blog**, a space where I, **Kuber Mehta**, share my thoughts, ideas, and deep dives into various topics.
+Welcome to **MindDump**, a space where I, **Kuber Mehta**, share my thoughts, ideas, and deep dives into various topics.
 
 ## About Me
 I'm the founder of **TREAT AI** and an AI & tech enthusiast. You can explore my portfolio here:  
@@ -20,9 +20,7 @@ This blog covers a wide range of topics, including:
 This blog is designed with a beautiful and responsive theme that ensures a great reading experience on any device. The theme supports both light and dark modes, which can be toggled based on your preference. The color scheme and typography are carefully chosen to provide a pleasant and distraction-free reading experience.
 
 ## 🔍 Browse My Posts
-Dive into some articles and explore the content:
-- [Hello World](https://kuberwastaken.github.io/blog/HelloWorld)
-- [DeepSeek R1 vs ChatGPT: Why This Isn't a Zero-Sum Game](https://kuberwastaken.github.io/blog/AI/DeepSeek-R1-vs-ChatGPT-Why-This-Isn't-a-Zero-Sum-Game)
+[Dive into some articles and explore the content](https://kuberwastaken.github.io/blog/)
 
 ## 🛠️ Technologies Used
 This blog is built using modern web technologies and tools:
@@ -33,8 +31,6 @@ This blog is built using modern web technologies and tools:
 
 ## Credits and Attributions
 - Thanks to the wondrous contributors at Quartz for making the basis of this website.
-- You can refer to the code of the website to see how it works here:  
-  [🌐 GitHub Repository](https://github.com/Kuberwastaken/blog)
 
 ## Contact
 Feel free to reach out to me via [LinkedIn](https://www.linkedin.com/in/kubermehta/) for any inquiries or collaborations.
