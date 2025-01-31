@@ -41,6 +41,7 @@ export const defaultContentPageLayout: PageLayout = {
       title: "Recent Posts", 
       limit: 3,
       showTags: false,
+      filter: (f) => !f.file?.path?.startsWith("BITS/"),
       sort: (f1: QuartzPluginData, f2: QuartzPluginData) => {
         const date1Created = f1.dates?.created ? new Date(f1.dates.created).getTime() : 0
         const date1Modified = f1.dates?.modified ? new Date(f1.dates.modified).getTime() : 0
