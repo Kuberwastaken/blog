@@ -19,7 +19,7 @@ I wouldn't put things for the batches above me at the moment for obvious reasons
 
 Some topics you might find to your interest:
 
-- [Exam Materials](/content/BITS/Exam-Materials/index) - The stuff I used to study for BITS exams (and refer during the test)
+- [Exam Materials](https://kuberwastaken.github.io/blog/BITS/Exam-Materials/index) - The stuff I used to study for BITS exams (and refer during the test)
 - More soon? Probably? (get in touch if you have ideas)
 
 Get in touch with me:
