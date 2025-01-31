@@ -5,6 +5,7 @@ tags:
   - Internet
   - Social-Media
   - TikTok
+date: 2025-01-31
 ---
 The internet has revolutionized the way we form opinions, consume information, and engage in discussions. No longer are we limited to traditional media outlets with gatekeepers dictating the flow of information - today, anyone with an internet connection can share, challenge, or reinforce ideas, influencing everything from personal beliefs to global movements.
 

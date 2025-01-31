@@ -6,6 +6,7 @@ tags:
   - ChatGPT
   - AI
   - GenerativeAI
+date: 2025-01-30
 ---
 The recent discussions around DeepSeek R1 and its supposed impact on OpenAI, NVIDIA, or Meta have sparked intense debates in the AI community. Some have gone as far as to claim that DeepSeek R1 could shake the foundations of these giants, while others have dismissed it as an underwhelming competitor. The reality, as always, is more nuanced.
 

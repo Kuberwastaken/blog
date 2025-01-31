@@ -5,6 +5,7 @@ tags:
   - No-Code
   - Entrepreneurship
   - Business
+date: 2025-01-29
 ---
 No-code platforms like Bubble, Webflow, and Adalo are turning “non-technical” into a misnomer. These tools let founders build apps, automate workflows, and launch MVPs without writing a single line of code—but they’re not a silver bullet.
 
