@@ -18,5 +18,6 @@ all the links are hosted in MEGA (at least currently) for simplicity, feel free 
 
 **🧭Navigation guide:**
 
-- I'm too lazy to make index pages for each part so please refer to the file system on the left directly if you're on PC and turn your phone horizontal to see it if you're on mobile 🥰
+- [Sem 0.5](https://kuberwastaken.github.io/blog/BITS/Exam-Materials/Sem-0.5/index)
+- [Sem 1](https://kuberwastaken.github.io/blog/BITS/Exam-Materials/Sem-1/index)
 
