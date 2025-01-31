@@ -2,7 +2,6 @@
 title: ITP
 draft: false
 tags:
-  - Introduction-To-Programming
 date: 2025-01-31
 lastmod:
 ---

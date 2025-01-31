@@ -2,7 +2,6 @@
 title: WP
 draft: false
 tags:
-  - Writing-Practice
 date: 2025-01-31
 lastmod:
 ---

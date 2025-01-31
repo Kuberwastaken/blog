@@ -2,7 +2,6 @@
 title: DM
 draft: false
 tags:
-  - Discrete-Mathematics
 date: 2025-01-31
 lastmod:
 ---
