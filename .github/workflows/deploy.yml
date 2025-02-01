@@ -32,6 +32,8 @@ jobs:
         run: chmod +x ./quartz/bootstrap-cli.mjs
       - name: Build Quartz
         run: npx quartz build
+      - name: Verify sitemap
+        run: cat public/sitemap.xml
       - name: Verify build output
         run: ls -la public
       - name: Upload artifact
