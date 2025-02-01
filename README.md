@@ -2,8 +2,15 @@
 
 > “The Best Terminal-Inspired Blog Website on The Internet”
 
+[![Website Screenshot](https://v1.screenshot.rocks/images?url=https://kuberwastaken.github.io/blog/)](https://kuberwastaken.github.io/blog/)
+
 Welcome to **MindDump**, a space where I, **Kuber Mehta**, share my thoughts, ideas, and deep dives into various topics.
 
+<p align="center">
+<img src="https://img.shields.io/static/v1?label=Kuberwastaken&message=MindDump&color=5abb9a&logo=github" alt="Kuberwastaken - MindDump">
+<img src="https://img.shields.io/badge/version-4.0-5abb9a" alt="Version 4.0">
+<img src="https://img.shields.io/badge/License-CC--BY--SA--4.0-5abb9a" alt="CC-BY-SA-4.0">
+</p>
 ## About Me
 I'm a student, the founder of **TREAT AI** and an AI & tech enthusiast. You can explore my portfolio here:  
 [🌐 kuberwastaken.github.io](https://kuberwastaken.github.io/)

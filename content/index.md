@@ -8,11 +8,11 @@ I'm **Kuber Mehta**, founder of [**TREAT AI**](https://www.trytreat.tech/) and a
 
 ## 📖 What You'll Find Here  
 This blog covers a wide range of topics, including:  
-- 🚀 **Artificial Intelligence & Machine Learning** - Experiments, projects, and other insights.  
-- 📊 **Data Science & Analytics** - Explorations in data-driven decision-making.  
-- 💡 **Tech & Software Engineering** - My thoughts on coding, frameworks, and innovations.  
-- 💼 **Entrepreneurship & Business** - My views and observations about business, marketing and other domains.
-- 🌎 **Personal & Industry Reflections** - Observations, experiences, and discussions.  
+- 🚀 **Artificial Intelligence** - Insights and explorations in AI technologies.
+- 📊 **Business** - Discussions on business strategies, models, and market trends.
+- 🎮 **Gaming** - Reviews, news, and thoughts on the gaming industry.
+- 🌐 **Social Media** - Analysis and commentary on social media trends and impacts.
+- 📈 **Data Science** - Deep dives into data analysis, visualization, and applications. 
 ## Credits and Attributions 
 
 - Thanks to the wondrous contributors at Quartz to make the basis of the website
