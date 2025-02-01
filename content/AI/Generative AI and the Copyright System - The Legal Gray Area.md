@@ -1,5 +1,5 @@
 ---
-title: Generative AI and the Copyright System — The Legal Gray Area
+title: Generative AI and the Copyright System - The Legal Gray Area
 draft: false
 tags:
   - AI
