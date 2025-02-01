@@ -42,23 +42,21 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
   const xmlDeclaration = '<?xml version="1.0" encoding="UTF-8"?>';
   
   const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => {
-    // Enhanced URL encoding
-    const encodedSlug = slug
+    const cleanSlug = slug
       .split('/')
       .map(segment => 
         segment
-          .replace(/['^]/, (c) => encodeURIComponent(c))
-          .replace(/\s+/g, '%20')
-          .replace(/[—–]/g, encodeURIComponent('—'))
-          .replace(/[']/g, '%27')
+          .replace(/[\s\\'"\^\[\]{}()*+?.,~!@#$%^&*=]/g, '-')
+          .replace(/-+/g, '-')
+          .replace(/^-|-$/g, '')
       )
       .join('/');
       
-    const fullUrl = `https://${joinSegments(base, encodedSlug)}`;
+    const fullUrl = `https://${joinSegments(base, cleanSlug)}`;
     
-    return `<url>
-    <loc>${fullUrl}</loc>
-    ${content.date ? `<lastmod>${content.date.toISOString()}</lastmod>` : ''}
+    return `  <url>
+    <loc>${escapeHTML(fullUrl)}</loc>${content.date ? `
+    <lastmod>${content.date.toISOString()}</lastmod>` : ''}
   </url>`
   }
 
