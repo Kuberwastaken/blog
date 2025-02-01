@@ -20,7 +20,7 @@ Some topics you might find to your interest:
 
 - [Exam Materials](https://kuberwastaken.github.io/blog/BITS/Exam-Materials/index) - The stuff I used to study for BITS exams (and refer during the test)
 - [Marks Calculators](https://kuberwastaken.github.io/blog/BITS/Marks-Calculators/index) - Simple Excel Sheets with Formulas to calculate GPAs
-- More soon? Probably? (get in touch if you have ideas)
+- More soon? Probably? (get in touch if you have ideas :) )
 
 Get in touch with me:
 
