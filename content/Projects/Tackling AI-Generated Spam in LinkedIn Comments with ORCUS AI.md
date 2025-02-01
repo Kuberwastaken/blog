@@ -11,7 +11,8 @@ lastmod:
 ---
 ### Introduction: The Growing Problem of AI-Generated Spam on LinkedIn
 
-![orcus-image.png](https://i.postimg.cc/T3C6Cn3K/orcus-image.png)](https://postimg.cc/682gQ2RK)
+![orcus-image.png](https://i.postimg.cc/T3C6Cn3K/orcus-image.png)
+
 LinkedIn today has evolved into what is one of the biggest networking platforms in the world. Fostering thoughtful conversations and meaningful connections is one of the most central features of LinkedIn as a platform. However, this all changed since the introduction of ChatGPT and other GenerativeAI tools
 
 It is a known fact that your profile's reach increases the more comments you do on the platform. Since with generative AI, making a comment was as easy as pasting in the post (a massive security risk on it's own, might I add) and then just asking for the AI to comment on it.
