@@ -1,9 +1,9 @@
 <h1 align="center">ᨒ MindDump</h1>
 
-> “The Best Terminal-Inspired Blog Website on The Internet”
+<p align="center"> “The Best Terminal-Inspired Blog Website on The Internet” </p>
 
 <p align="center">
-  <img src="https://i.postimg.cc/KvK62CfD/screenshot-rocks.png" alt="website-image">
+  <img src="https://i.postimg.cc/KvK62CfD/screenshot-rocks.png" alt="website-image"> 
 </p>
 
 <p align="center">
@@ -35,13 +35,18 @@ This blog is designed with a beautiful and responsive theme that ensures a great
 ## 🛠️ Technologies Used
 This blog is built using modern web technologies and tools:
 - **Quartz** - A powerful static site generator.
+
 - **TypeScript** - For type-safe JavaScript development.
+
 - **SCSS** - For writing maintainable and scalable CSS.
+
 - **Markdown** - For easy content creation and formatting.
 
 ## Core Features
 - **Customizable Theme** - Toggle between light and dark modes for a pleasant reading experience.
+
 - **Extensible** - Easily integrate new pages and custom layouts.
+
 - **Performance** - Fast load times, thanks to static site benefits and code optimizations.
 
 ## Credits and Attributions
