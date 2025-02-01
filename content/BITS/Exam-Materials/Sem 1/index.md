@@ -1,7 +1,7 @@
 ---
-title: index
+title: Semester 1 Material
 draft: false
-tags:
+tags: 
 date: 2025-01-31
 lastmod:
 ---

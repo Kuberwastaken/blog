@@ -1,11 +1,10 @@
 ---
 title: index
 draft: false
-tags:
+tags: 
 date: 2025-01-31
 lastmod:
 ---
- 
 Hi! If you are here, you're probably a BITS Online student 
 or you just like to find easter eggs in websites :P
 
@@ -20,11 +19,10 @@ I wouldn't put things for the batches above me at the moment for obvious reasons
 Some topics you might find to your interest:
 
 - [Exam Materials](https://kuberwastaken.github.io/blog/BITS/Exam-Materials/index) - The stuff I used to study for BITS exams (and refer during the test)
+- [Marks Calculators](https://kuberwastaken.github.io/blog/BITS/Marks-Calculators/index) - Simple Excel Sheets with Formulas to calculate GPAs
 - More soon? Probably? (get in touch if you have ideas)
 
 Get in touch with me:
 
-[BITS Mail](Mail:2024eb01487@online.bits-pilani.ac.in)
-[LinkedIn](https://www.linkedin.com/in/kubermehta/)
-[BITSAA Profile](https://www.bitsaa.org/profile/view/kuber-mehta-1)
-[Discord](https://discord.com/users/1296085958374068316)
+[BITS Mail](Mail:2024eb01487@online.bits-pilani.ac.in) [LinkedIn](https://www.linkedin.com/in/kubermehta/)
+[BITSAA Profile](https://www.bitsaa.org/profile/view/kuber-mehta-1) [Discord](https://discord.com/users/1296085958374068316)
