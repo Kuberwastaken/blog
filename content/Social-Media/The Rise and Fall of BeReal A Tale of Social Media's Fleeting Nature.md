@@ -1,11 +1,15 @@
 ---
 title: "The Rise and Fall of BeReal: A Tale of Social Media's Fleeting Nature"
 draft: false
-tags: 
+tags:
+  - BeReal
+  - Social-Media
+  - Tech-Fails
+  - Technology
 date: 01-02-2025
 lastmod:
 ---
-BeReal, the social media app that encouraged users to share unfiltered, dual-image posts of themselves, experienced a rapid rise in popularity in 2022. Its unique value proposition of promoting authenticity and realness amidst a sea of curated social media profiles garnered significant attention. However, within a year, the platform's growth stalled, and its user base began to decline.
+BeReal, the social media app that encouraged users to share unfiltered, dual-image posts of themselves, experienced a rapid rise in popularity in 2022. I personally used it and it instantly became one of my favorite social media apps due to it's unique value proposition of promoting authenticity and realness amidst a sea of curated social media profiles garnered significant attention. However, within a year, the platform's growth stalled, and its user base began to decline.
 
 ![Harry styles taking a BeReal would never not be funny](https://pbs.twimg.com/media/FcwaauaX0AAVj_g?format=jpg&name=medium)
 ## The Rise of BeReal
