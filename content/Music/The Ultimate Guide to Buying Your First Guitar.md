@@ -10,6 +10,8 @@ lastmod:
 ---
 Are you about to buy your first guitar? Before making a decision, it’s important to understand what to look for. I've personally made the mistake of buying a bad first guitar and ended up not playing for about 7 years (really, I thought I was the problem.) Whether you’re a complete beginner or an intermediate player, this guide will help you make an informed choice.
 
+![The Goat Tim Henson Playing his TOD10N](https://i.ytimg.com/vi/DSBBEDAGOTc/maxresdefault.jpg)
+
 ## **Where Should You Buy Your Guitar? Online vs. Offline**
 
 ### **Buying Online: Pros and Cons**
