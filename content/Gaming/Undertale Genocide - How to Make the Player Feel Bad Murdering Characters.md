@@ -20,7 +20,7 @@ While all three routes offer something unique, it was the **Genocide** route tha
 
 Imagine a book titled "What Not to Put in Your Video Game." Now, picture the creator of the game, **Toby Fox**, deliberately adding every single gameplay mechanic listed in that book. Yet, despite this, the result is a masterpiece. That's the best way I can describe the **Genocide** route.
 
-![Ppayrus "attacking" the player](https://static.wikia.nocookie.net/undertale/images/7/7c/Gauntlet_of_Deadly_Terror_screenshot.gif/revision/latest?cb=20151231084431)
+![Ppayrus "attacking" the player](https://i0.wp.com/www.the-pixels.com/wp-content/uploads/2016/07/undertale-bridge.gif?resize=632%2C473&ssl=1)
 
 The core gameplay mechanics are bizarre and unorthodox, but the overall experience is unforgettable. It’s one of the weirdest video game experiences I’ve ever had. **Genocide** is full of questionable design choices, but in the best possible way. I’ll get into why that is in this article.
 
@@ -64,7 +64,7 @@ These two bosses are the only real challenge, and they make the route entertaini
 
 Undertale’s soundtrack is iconic, with great music across all paths. Half of YouTube uses the music in the videos. But for me, the **Genocide** route stands out as having the most unique and powerful music in the game. Many of the tracks are disturbing, which only adds to the atmosphere of the route.
 
-![Listening to music with Napstablook](https://static.wikia.nocookie.net/undertale/images/3/3d/Chill_soundtrack.png/revision/latest?cb=20151104183823)
+![Listening to music with Napstablook](https://valscrafts.wordpress.com/wp-content/uploads/2016/03/tumblr_nvcigotvie1rz7xugo1_540.gif?w=560)
 
 The overworld music gets remixed in **Genocide**, slowing down and becoming eerie, creating a creepy and unsettling vibe that makes the experience so immersive. Without this shift in music, **Genocide** wouldn’t have been nearly as impactful.
 
