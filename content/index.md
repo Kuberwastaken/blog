@@ -1,5 +1,5 @@
 ---
-title: 
+title: MindDump
 draft: false
 tags: 
 date: 
