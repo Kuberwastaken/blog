@@ -1,5 +1,5 @@
 ---
-title: Undertale Genocide - How to Make the Player Feel Bad Murdering Characters
+title: Undertale Genocide - How to Make the Player Feel Bad For Their Choices
 draft: false
 tags:
   - Undertale
