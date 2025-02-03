@@ -5,6 +5,7 @@ tags:
   - Music
   - Guitar
   - Beginner
+  - "#Instruments"
 date: 02-02-2025
 lastmod:
 ---
