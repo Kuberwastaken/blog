@@ -1,15 +1,15 @@
 {
-  "name": "@jackyzha0/quartz",
-  "description": "🌱 publish your digital garden and notes as a website",
+  "name": "MindDump",
+  "description": "The Best Terminal-Inspired Blog Website on The Internet™",
   "private": true,
   "version": "4.4.0",
   "type": "module",
-  "author": "jackyzha0 <j.zhao2k19@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://quartz.jzhao.xyz",
+  "author": "Kuber Mehta <kuberhob@gmail.com>",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://kuberwastaken.github.io/blog/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jackyzha0/quartz.git"
+    "url": "https://github.com/Kuberwastaken/blog/"
   },
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
