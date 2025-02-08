@@ -7,7 +7,6 @@ tags:
   - Copyright
   - Law
 date: 2024-12-20
-lastmod: 01-02-2025
 ---
 
 ![](https://miro.medium.com/v2/resize:fit:875/0*ta9thFooxCF88yJg.jpg)

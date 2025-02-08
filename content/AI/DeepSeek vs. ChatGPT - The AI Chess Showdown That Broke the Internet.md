@@ -8,8 +8,7 @@ tags:
   - Chess
   - Machine-Learning
   - YouTube
-date: 05-02-2025
-lastmod: 05-02-2025
+date: 2025-02-05
 ---
 **Ladies and gentlemen**, fasten your seatbelts. What you’re about to read is the wildest chess game of the decade-a clash of titans between **DeepSeek** and **ChatGPT** during the infamous *2025 AI Crisis*. Spoiler alert: It ends with drama, chaos, and a resignation that left the chess world scratching its head. Let’s dive in! (all credits go to GothamChess on YouTube)
 

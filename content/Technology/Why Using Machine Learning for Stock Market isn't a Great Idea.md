@@ -6,7 +6,7 @@ tags:
   - Finance
   - Machine-Learning
   - AI
-date: 06-02-2025
+date: 2025-02-06
 lastmod:
 ---
 So, you want to use **machine learning (ML)** to predict stock prices and build an AI Warren Buffett?

@@ -8,7 +8,7 @@ tags:
   - Pop
   - Album-Review
 date: 2025-02-04
-lastmod: 05-02-2025
+lastmod: 2025-02-05
 ---
 If you know me, you *know* **The Weeknd** is my absolute favorite artist. My friends, family, and even my imaginary girlfriend are sick of hearing about it. But after listening to his final album, ***Hurry Up Tomorrow***, I’m gonna say it again: **Abel Tesfaye is a generational talent**, and this album is the cinematic, soul-shaking farewell that we deserve, and trust me, I don't say this a lot.
 

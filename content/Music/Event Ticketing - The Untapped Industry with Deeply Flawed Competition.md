@@ -8,7 +8,7 @@ tags:
   - Events
   - Ticketmaster
   - Taylor-Swfit
-date: 02-02-2025
+date: 2025-02-06
 lastmod:
 ---
 The event ticketing industry stands at a very interesting state, with a pressing need for innovation amidst a landscape dominated by longstanding players like Ticketmaster. The current system has come under intense scrutiny from all corners - fans, artists, venues - pointing to a substantial opportunity for disruption. This article aims to delve deeper into the existing issues and envision a ticketing revolution that places the user experience at its core.
