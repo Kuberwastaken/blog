@@ -1,9 +1,7 @@
 ---
-title: Example Title
+title: MindDump
 draft: false
 tags: 
-date: 2025-02-08
-lastmod:
 ---
  
 Welcome to my **Mind Dump**—a space where I share thoughts, ideas, and deep dives into various topics.  
