@@ -11,7 +11,7 @@ lastmod:
 ---
 Remember when searching the web meant sifting through 10 pages of results? Google changed that forever. Now, they're doing it again with **artificial intelligence** – although slowly (and definitely because of #DeepSeek ) and this time, it’s not just about search. Let’s break down why Google Gemini 2.0 is making waves and what it means for the future of technology.
 
-![Prices for Popular AI Models](https://postimg.cc/rK3cmVJR)
+![Price vs Performance of AI tools](https://files.catbox.moe/axkmtq.png)
 
 ## Why Gemini 2.0 Is a Big Deal (Even If You’re Not a Tech Expert)
 
@@ -117,19 +117,6 @@ _Average setup time: 2.1 hours vs OpenAI's 9 minutes (2024 AI Dev Survey)_
 - **Tool Calling**: Limited to 3 parallel Google Search queries
 
 ## The New AI Stack: How to Actually Use Gemini
-
-### Optimal Integration Architecture
-
-```mermaid
-graph TD
-    A[User Input] --> B{Token Count}
-    B -->|>1M tokens| C[Recursive Summarization]
-    B -->|<1M tokens| D[Gemini 2.0 Processing]
-    D --> E[Google Search Enrichment]
-    E --> F[Response Generation]
-    F --> G[Cost Monitoring]
-    G --> H[Alert if >$0.10/day]
-```
 
 ### Example Python SDK Snippet (With Cost Tracking)
 
