@@ -7,7 +7,7 @@ tags:
   - "#The-Weeknd"
   - "#The-Idol"
   - "#HBO"
-date: 05-02-2025
+date: 2025-02-20
 lastmod:
 ---
 HBO’s *The Idol* promised a gritty, unflinching look at the music industry’s underbelly-think *Euphoria* meets *Behind the Music*. Instead, it stumbled into a confusing mix of shock value, half-baked ideas, and missed opportunities. Let’s unpack why this show fizzled when it should have sizzled.  

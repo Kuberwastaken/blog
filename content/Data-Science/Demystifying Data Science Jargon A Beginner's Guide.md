@@ -8,7 +8,7 @@ tags:
   - Deep-Learning
   - Artificial-Intelligence
   - AI
-date: 01-02-2025
+date: 2025-02-01
 lastmod:
 ---
 Data Science is a fascinating realm, but it often comes with an intimidating vocabulary that can leave newcomers feeling lost. Fear not! This guide is your friendly companion to some of the most common (and confusing) terms in the Data Science lexicon.

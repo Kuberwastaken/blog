@@ -6,7 +6,7 @@ tags:
   - Social-Media
   - Tech-Fails
   - Technology
-date: 01-02-2025
+date: 2025-02-01
 lastmod:
 ---
 BeReal, the social media app that encouraged users to share unfiltered, dual-image posts of themselves, experienced a rapid rise in popularity in 2022. I personally used it and it instantly became one of my favorite social media apps due to it's unique value proposition of promoting authenticity and realness amidst a sea of curated social media profiles garnered significant attention. However, within a year, the platform's growth stalled, and its user base began to decline.
