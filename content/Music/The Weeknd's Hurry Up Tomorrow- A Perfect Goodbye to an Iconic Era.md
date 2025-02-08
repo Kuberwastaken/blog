@@ -7,8 +7,7 @@ tags:
   - Music
   - Pop
   - Album-Review
-date: 2025-02-04
-lastmod: 2025-02-05
+date: 2025-02-07
 ---
 If you know me, you *know* **The Weeknd** is my absolute favorite artist. My friends, family, and even my imaginary girlfriend are sick of hearing about it. But after listening to his final album, ***Hurry Up Tomorrow***, I’m gonna say it again: **Abel Tesfaye is a generational talent**, and this album is the cinematic, soul-shaking farewell that we deserve, and trust me, I don't say this a lot.
 
@@ -31,7 +30,7 @@ Twelve seconds of raw, haunting audio. definitely a studio reenactment or a real
 A sultry single with a divisive twist: Anitta’s bridge vocals split the fanbase. But when Abel croons, “*I’ll love you ‘til we’re skin and bones*,” you forget everything else :)
 
 ### **5. Baptized In Fear**  
-Posted and deleted mysteriously pre-release, this track dives into **dark waters** - lyrically exploring the s word in a bathtub. The transition into *Open Hearts*? Chef’s kiss 🤌
+Posted and deleted mysteriously pre-release, this track dives into **dark waters** - lyrically exploring the s word in a bathtub. The transition into *Open Hearts*? Chef’s kiss 🤌🤌
 
 ### **6. Enjoy The Show ft. Future**  
 Absolutely freakin brilliant. Future’s here, but Abel and that *high-pitched vocal sample* steal the spotlight. Catchy, chaotic, and dare I say... criminally underrated.  
