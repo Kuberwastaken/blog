@@ -6,8 +6,7 @@ tags:
  
 Welcome to my **Mind Dump**—a space where I share thoughts, ideas, and deep dives into various topics.  
 
-I'm **Kuber Mehta**, founder of [**TREAT AI**](https://www.trytreat.tech/) and an AI & tech e 
-The rest of your content lives here. You can use **Markdown** here :)nthusiast. You can explore my portfolio here:  
+I'm **Kuber Mehta**, founder of [**TREAT AI**](https://www.trytreat.tech/) and an AI & tech enthusiast. You can explore my portfolio here:  
 [🌐 kuberwastaken.github.io](https://kuberwastaken.github.io/)  
 
 ## 📖 What You'll Find Here  
