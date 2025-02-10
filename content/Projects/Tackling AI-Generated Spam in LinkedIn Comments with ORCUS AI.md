@@ -6,6 +6,8 @@ tags:
   - ORCUS
   - AI
   - Internet-Enshittification
+  - "#Technology"
+  - "#Machine-Learning"
 date: 2025-01-07
 lastmod:
 ---
