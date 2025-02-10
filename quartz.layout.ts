@@ -36,6 +36,7 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
+    Component.Graph(),
     Component.RecentNotes({
       title: "Recent Posts", 
       limit: 3,
