@@ -8,6 +8,7 @@ tags:
   - Events
   - Ticketmaster
   - Taylor-Swfit
+  - "#Technology"
 date: 2025-02-06
 lastmod:
 ---
