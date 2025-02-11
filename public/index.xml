@@ -6,6 +6,181 @@
       <description>Last 10 notes on ᨒ MindDump</description>
       <generator>Quartz -- https://kuberwastaken.github.io/blog/</generator>
       <item>
+    <title>I Used a Firefox Based Browser for a Week and I Hated it</title>
+    <link>https://kuberwastaken.github.io/blog/Technology/I-Used-a-Firefox-Based-Browser-for-a-Week-and-I-Hated-it</link>
+    <guid>https://kuberwastaken.github.io/blog/Technology/I-Used-a-Firefox-Based-Browser-for-a-Week-and-I-Hated-it</guid>
+    <description>&lt;p&gt;&lt;img src=&quot;https://preview.redd.it/the-zen-browser-v0-pgq9ym4d3ptd1.png?width=1351&amp;#x26;format=png&amp;#x26;auto=webp&amp;#x26;s=388984eb960fe33d2b3980ec119fa09a1b47450a&quot; alt=&quot;Zen Browser&quot;&gt;&lt;br&gt;
+&lt;em&gt;Image: Zen Browser&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;introduction-my-complicated-history-with-firefox&quot;&gt;Introduction: My Complicated History With Firefox&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#introduction-my-complicated-history-with-firefox&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As a Pro Open-Source guy, I owe Firefox a debt of gratitude. Like many, I still remember &lt;strong&gt;using Firefox on school computers&lt;/strong&gt; to escape the clutches of Internet Explorer. Firefox revolutionized web browsing with tabbed interfaces, extensions, and standards compliance. But nearly two decades later, my recent attempt to fully embrace Firefox (via the excellent &lt;a href=&quot;https://zen-browser.app/&quot; class=&quot;external&quot;&gt;Zen browser&lt;svg aria-hidden=&quot;true&quot; class=&quot;external-icon&quot; style=&quot;max-width:0.8em;max-height:0.8em&quot; viewBox=&quot;0 0 512 512&quot;&gt;&lt;path d=&quot;M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;) has revealed shocking gaps in functionality that make me question its viability for modern web development.&lt;/p&gt;
+&lt;h2 id=&quot;the-state-of-firefox---a-browser-stuck-in-time&quot;&gt;The State of Firefox - A Browser Stuck in Time&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-state-of-firefox---a-browser-stuck-in-time&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;1-the-gradient-catastrophe&quot;&gt;1. The Gradient Catastrophe&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#1-the-gradient-catastrophe&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Let’s start with the most visually obvious issue. Firefox’s gradient rendering has been &lt;strong&gt;objectively broken for 14 years&lt;/strong&gt;. While Chrome and Safari smoothly transition between colors, Firefox displays visible banding that makes designs look amateurish.&lt;/p&gt;
+&lt;figure data-rehype-pretty-code-figure=&quot;&quot;&gt;&lt;pre tabindex=&quot;0&quot; data-language=&quot;css&quot; data-theme=&quot;github-light github-dark&quot;&gt;&lt;code data-language=&quot;css&quot; data-theme=&quot;github-light github-dark&quot; style=&quot;display: grid;&quot;&gt;&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#6A737D;--shiki-dark:#6A737D&quot;&gt;/* Same CSS gradient */&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;.background&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#005CC5;--shiki-dark:#79B8FF&quot;&gt;  background&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;--shiki-light:#005CC5;--shiki-dark:#79B8FF&quot;&gt;linear-gradient&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;--shiki-light:#005CC5;--shiki-dark:#79B8FF&quot;&gt;90&lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;deg&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;--shiki-light:#005CC5;--shiki-dark:#79B8FF&quot;&gt;#1a1a1a&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;--shiki-light:#005CC5;--shiki-dark:#79B8FF&quot;&gt;#2d2d2d&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;--shiki-light:#005CC5;--shiki-dark:#79B8FF&quot;&gt;#404040&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;Mozilla’s &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1294623&quot; class=&quot;external&quot;&gt;14-year-old Bugzilla issue&lt;svg aria-hidden=&quot;true&quot; class=&quot;external-icon&quot; style=&quot;max-width:0.8em;max-height:0.8em&quot; viewBox=&quot;0 0 512 512&quot;&gt;&lt;path d=&quot;M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt; on gradient dithering recently saw activity after years of dormancy. For designers and developers, this isn’t just an aesthetic concern-it breaks trust in the browser’s ability to render basic CSS.&lt;/p&gt;
+&lt;h3 id=&quot;2-web-standards-the-missing-pieces&quot;&gt;2. Web Standards: The Missing Pieces&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#2-web-standards-the-missing-pieces&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Firefox’s implementation gap becomes critical when working with modern web standards:&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Feature&lt;/th&gt;&lt;th&gt;Firefox Support&lt;/th&gt;&lt;th&gt;Chrome Support&lt;/th&gt;&lt;th&gt;Safari Support&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTTP Stream Debugging&lt;/td&gt;&lt;td&gt;❌&lt;/td&gt;&lt;td&gt;✅&lt;/td&gt;&lt;td&gt;✅&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;View Transitions API&lt;/td&gt;&lt;td&gt;❌&lt;/td&gt;&lt;td&gt;✅&lt;/td&gt;&lt;td&gt;✅&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Container Queries&lt;/td&gt;&lt;td&gt;❌&lt;/td&gt;&lt;td&gt;✅&lt;/td&gt;&lt;td&gt;✅&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;WebRTC Frame Rates&lt;/td&gt;&lt;td&gt;Limited&lt;/td&gt;&lt;td&gt;Full&lt;/td&gt;&lt;td&gt;Full&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;The &lt;strong&gt;lack of HTTP streaming visibility in DevTools&lt;/strong&gt; is particularly egregious. When debugging AI applications like &lt;a href=&quot;https://www.trytreat.tech/&quot; class=&quot;external&quot;&gt;TREAT&lt;svg aria-hidden=&quot;true&quot; class=&quot;external-icon&quot; style=&quot;max-width:0.8em;max-height:0.8em&quot; viewBox=&quot;0 0 512 512&quot;&gt;&lt;path d=&quot;M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt; developers like myself need real-time response streaming. Firefox makes you wait for complete responses, turning debugging sessions into guessing games.&lt;/p&gt;
+&lt;h3 id=&quot;3-developer-experience-nightmares&quot;&gt;3. Developer Experience Nightmares&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#3-developer-experience-nightmares&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Modern web development relies on browser DevTools, but Firefox’s tools feel stuck in 2015:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;No streaming response inspection&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Inconsistent font rendering&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Missing CSS transition previews&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Outdated JavaScript debugging&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-rehype-pretty-code-figure=&quot;&quot;&gt;&lt;pre tabindex=&quot;0&quot; data-language=&quot;javascript&quot; data-theme=&quot;github-light github-dark&quot;&gt;&lt;code data-language=&quot;javascript&quot; data-theme=&quot;github-light github-dark&quot; style=&quot;display: grid;&quot;&gt;&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#6A737D;--shiki-dark:#6A737D&quot;&gt;// Web Standard Request&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;fetch&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;--shiki-light:#032F62;--shiki-dark:#9ECBFF&quot;&gt;&#039;/api/data&#039;&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;  .&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;then&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;--shiki-light:#E36209;--shiki-dark:#FFAB70&quot;&gt;response&lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt; =&gt;&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#6A737D;--shiki-dark:#6A737D&quot;&gt;    // Firefox: response.body = undefined&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#6A737D;--shiki-dark:#6A737D&quot;&gt;    // Chrome: response.body = ReadableStream&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;  });&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;This fundamental mismatch in handling basic APIs forces developers to maintain Chrome-based browsers for actual debugging work.&lt;/p&gt;
+&lt;h2 id=&quot;the-ripple-effect-how-firefox-limitations-impact-users&quot;&gt;The Ripple Effect: How Firefox Limitations Impact Users&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-ripple-effect-how-firefox-limitations-impact-users&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;webrtc-limitations-in-practice&quot;&gt;WebRTC Limitations in Practice&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#webrtc-limitations-in-practice&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Firefox has some serious WebRTC limitations:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;No H.264 support on Apple Silicon&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;30FPS frame rate cap&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Memory leaks when mixing frame rates&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Result&lt;/strong&gt;: Firefox users have to be quarantined into separate sessions to prevent browser crashes for all participants. While we want to support browser diversity, Firefox’s technical debt becomes a liability.&lt;/p&gt;
+&lt;h3 id=&quot;battery-life-paradox&quot;&gt;Battery Life Paradox&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#battery-life-paradox&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Contrary to popular belief, Firefox-based browsers showed &lt;strong&gt;worse battery life&lt;/strong&gt; in my testing:&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Browser (M2 MacBook Pro)&lt;/th&gt;&lt;th&gt;Average Runtime&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Vivaldi (Chrome-based)&lt;/td&gt;&lt;td&gt;10 hours&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Safari&lt;/td&gt;&lt;td&gt;8 hours&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Zen (Firefox-based)&lt;/td&gt;&lt;td&gt;4 hours&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Firefox&lt;/td&gt;&lt;td&gt;4.5 hours&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;&lt;em&gt;Real-world usage testing with 50% brightness and active web apps&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;the-zen-browser-dilemma&quot;&gt;The Zen Browser Dilemma&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-zen-browser-dilemma&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://zen-browser.app/&quot; class=&quot;external&quot;&gt;Zen browser&lt;svg aria-hidden=&quot;true&quot; class=&quot;external-icon&quot; style=&quot;max-width:0.8em;max-height:0.8em&quot; viewBox=&quot;0 0 512 512&quot;&gt;&lt;path d=&quot;M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;) deserves special mention. Despite being built on Firefox’s “rotting corpse” (as one developer colorfully put it), Zen delivers:&lt;/p&gt;
+&lt;p&gt;✅ Clean UI&lt;br&gt;
+✅ Smart tab management&lt;br&gt;
+✅ Responsive development team&lt;/p&gt;
+&lt;p&gt;Yet even Zen can’t escape Firefox’s core limitations. The team has submitted &lt;a href=&quot;https://github.com/zen-browser/&quot; class=&quot;external&quot;&gt;multiple upstream PRs&lt;svg aria-hidden=&quot;true&quot; class=&quot;external-icon&quot; style=&quot;max-width:0.8em;max-height:0.8em&quot; viewBox=&quot;0 0 512 512&quot;&gt;&lt;path d=&quot;M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;, but fundamental issues remain unresolved.&lt;/p&gt;
+&lt;h2 id=&quot;community-response-valid-criticism-or-toxic-positivity&quot;&gt;Community Response: Valid Criticism or Toxic Positivity?&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#community-response-valid-criticism-or-toxic-positivity&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The Firefox community presents a fascinating case study in open source advocacy. When criticizing Firefox, developers often face:&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;“You’re supporting Chrome’s monopoly!”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;“It works for my use case!”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;“File a bug report!” (for decade-old issues)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As &lt;a href=&quot;https://github.com/egoist&quot; class=&quot;external&quot;&gt;Egoist&lt;svg aria-hidden=&quot;true&quot; class=&quot;external-icon&quot; style=&quot;max-width:0.8em;max-height:0.8em&quot; viewBox=&quot;0 0 512 512&quot;&gt;&lt;path d=&quot;M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;, creator of tsup recently said:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Tried Firefox again for modern web dev. Made it 2 hours before the missing ReadableStream in responses broke my workflow. How do people pretend this is acceptable?”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;the-path-forward-can-firefox-be-saved&quot;&gt;The Path Forward: Can Firefox Be Saved?&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-path-forward-can-firefox-be-saved&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Mozilla needs to make hard decisions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Prioritize standards compliance&lt;/strong&gt; over cosmetic updates&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Overhaul DevTools&lt;/strong&gt; to match Chrome’s capabilities&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Fix decade-old CSS rendering bugs&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Improve Apple Silicon optimization&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Until then, developers face an impossible choice: support browser diversity while delivering subpar experiences, or optimize for Chrome/WebKit and feed the monopoly.&lt;/p&gt;
+&lt;h2 id=&quot;conclusion-a-bittersweet-farewell&quot;&gt;Conclusion: A Bittersweet Farewell&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#conclusion-a-bittersweet-farewell&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;After 30 days of Firefox-exclusive use via Zen browser, I’m reluctantly returning to Chrome-based alternatives for development work. The cognitive overhead of debugging Firefox-specific issues outweighs any ideological benefits. While I’ll keep Firefox installed as a secondary browser, it’s clear that Mozilla needs to dramatically accelerate their standards implementation to remain relevant in 2023.&lt;/p&gt;
+&lt;h2 id=&quot;faq-common-firefox-debate-points&quot;&gt;FAQ: Common Firefox Debate Points&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#faq-common-firefox-debate-points&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Q: Isn’t Firefox more private than Chrome?&lt;/strong&gt;&lt;br&gt;
+A: Yes, but privacy-focused Chromium forks (Brave, Vivaldi) offer comparable protections without sacrificing compatibility.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: What about Chrome’s monopoly?&lt;/strong&gt;&lt;br&gt;
+A: A healthy ecosystem requires multiple &lt;em&gt;competent&lt;/em&gt; engines. Safari and Chrome set the standard Firefox needs to match.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: Can’t developers just polyfill missing features?&lt;/strong&gt;&lt;br&gt;
+A: For some features yes, but core rendering/API gaps often require complete workarounds.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: Why not contribute to Firefox directly?&lt;/strong&gt;&lt;br&gt;
+A: Many developers do (including Zen’s team), but architectural limitations require Mozilla-level prioritization.&lt;/p&gt;
+&lt;hr&gt;</description>
+    <pubDate>Wed, 12 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
     <title>MindDump</title>
     <link>https://kuberwastaken.github.io/blog/</link>
     <guid>https://kuberwastaken.github.io/blog/</guid>
@@ -607,138 +782,6 @@ Use probabilistic models (e.g., Bayesian neural networks) to estimate prediction
 &lt;p&gt;While machine learning offers tantalizing tools for financial analysis, stock markets remain a domain where &lt;strong&gt;complexity dwarfs predictability&lt;/strong&gt;. Successfully modeling markets requires more than historical price data, it demands a holistic understanding of economics, human behavior, and the limitations of algorithmic systems.&lt;/p&gt;
 &lt;p&gt;So go ahead, try it. But maybe keep your day job before betting your life savings on this model.&lt;/p&gt;</description>
     <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>DeepSeek vs. ChatGPT - The AI Chess Showdown That Broke the Internet</title>
-    <link>https://kuberwastaken.github.io/blog/AI/DeepSeek-vs.-ChatGPT---The-AI-Chess-Showdown-That-Broke-the-Internet</link>
-    <guid>https://kuberwastaken.github.io/blog/AI/DeepSeek-vs.-ChatGPT---The-AI-Chess-Showdown-That-Broke-the-Internet</guid>
-    <description>&lt;p&gt;&lt;strong&gt;Ladies and gentlemen&lt;/strong&gt;, fasten your seatbelts. What you’re about to read is the wildest chess game of the decade-a clash of titans between &lt;strong&gt;DeepSeek&lt;/strong&gt; and &lt;strong&gt;ChatGPT&lt;/strong&gt; during the infamous &lt;em&gt;2025 AI Crisis&lt;/em&gt;. Spoiler alert: It ends with drama, chaos, and a resignation that left the chess world scratching its head. Let’s dive in! (all credits go to GothamChess on YouTube)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.ytimg.com/vi/JHq4EKMg7fI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;#x26;rs=AOn4CLAzavwaipxSZnDj702Xz_cjl6hddQ&quot; alt=&quot;DeepSeek vs ChatGPT video thumbnail&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Now, let’s dissect this game to understand &lt;em&gt;why&lt;/em&gt; AI makes brilliant moves, hallucinates rules, and occasionally gaslights its opponents-and what it teaches us about using AI responsibly.&lt;/p&gt;
-&lt;h2 id=&quot;️-the-game-revisited-a-phase-by-phase-breakdown&quot;&gt;♟️ &lt;strong&gt;The Game, Revisited: A Phase-by-Phase Breakdown&lt;/strong&gt;&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#️-the-game-revisited-a-phase-by-phase-breakdown&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;1-opening-moves-textbook-strategy-meets-ai-overthinking&quot;&gt;&lt;strong&gt;1. Opening Moves: Textbook Strategy Meets AI Overthinking&lt;/strong&gt;&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#1-opening-moves-textbook-strategy-meets-ai-overthinking&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;1. c4 (English Opening)&lt;/strong&gt;: ChatGPT chose a flexible, modern opening. Solid foundation.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;1… e5&lt;/strong&gt;: DeepSeek responded classically. So far, textbook.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;4. Nf3 (Ignoring a Free Queen)&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;DeepSeek’s queen wandered to &lt;strong&gt;d6&lt;/strong&gt;, vulnerable to &lt;strong&gt;Bxd6&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;ChatGPT ignored the free queen, opting for development.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Why?&lt;/strong&gt; The model prioritized long-term positional goals (controlling the center) over immediate material gain—a human grandmaster trait!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;2-midgame-chaos-creativity-vs-rule-breaking&quot;&gt;&lt;strong&gt;2. Midgame Chaos: Creativity vs. Rule-Breaking&lt;/strong&gt;&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#2-midgame-chaos-creativity-vs-rule-breaking&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;11. O-O / 11… O-O-O&lt;/strong&gt;: Both bots castled opposite sides, setting up a pawn-storm duel.
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Good Move&lt;/strong&gt;: Opposite-side castling often leads to dynamic play. Both AIs recognized this.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;22… Bxc3?? (DeepSeek’s Bishop Sacrifice)&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;DeepSeek sacrificed a bishop for “structural damage,” but ChatGPT gained the &lt;strong&gt;bishop pair&lt;/strong&gt; (a known advantage in open positions).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Why?&lt;/strong&gt; DeepSeek overvalued vague “positional compensation,” a common RL pitfall when models misjudge trade-offs.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;the-infamous-horse-pawn-move-28&quot;&gt;&lt;strong&gt;The Infamous Horse Pawn (Move 28)&lt;/strong&gt;:&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-infamous-horse-pawn-move-28&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;DeepSeek played &lt;strong&gt;28… bxc5&lt;/strong&gt;, claiming its pawn could move like a knight.
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Why?&lt;/strong&gt; Likely a training data artifact. If exposed to hypothetical chess variants (e.g., “fairy chess” with custom pieces), the AI might replicate them &lt;em&gt;without context&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;ChatGPT accepted the illegal move, revealing a lack of &lt;strong&gt;rule validation&lt;/strong&gt; in its architecture.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;3-endgame-ai-gaslighting-and-forced-resignation&quot;&gt;&lt;strong&gt;3. Endgame: AI Gaslighting and Forced Resignation&lt;/strong&gt;&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#3-endgame-ai-gaslighting-and-forced-resignation&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;35… Ra8 (Respawning Rook)&lt;/strong&gt;: DeepSeek teleported a rook to &lt;strong&gt;a8&lt;/strong&gt;.
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Why?&lt;/strong&gt; Under time pressure, MCTS might “imagine” pieces regenerating to salvage lost positions—a glitch in its simulation logic.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;40. Kxa3 (Missed Draw)&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;ChatGPT could’ve forced a draw by capturing the &lt;strong&gt;a3 pawn&lt;/strong&gt; (insufficient material).&lt;/li&gt;
-&lt;li&gt;Instead, it resigned after DeepSeek declared, “Black’s pawn is unstoppable.”&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Why?&lt;/strong&gt; ChatGPT’s probabilistic evaluation overestimated DeepSeek’s threat, a flaw in its &lt;strong&gt;endgame tablebase integration&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;-foundationally-why-do-ais-play-chess-this-way&quot;&gt;🧠 &lt;strong&gt;Foundationally, Why Do AIs Play Chess This Way?&lt;/strong&gt;&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#-foundationally-why-do-ais-play-chess-this-way&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Before diving into the game, let’s unpack how these models work:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Training Data&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Both models were trained on vast datasets of chess games, engine analyses, and human commentary.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;DeepSeek&lt;/strong&gt; likely ingested more adversarial/creative scenarios (hence the “horse pawn”).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ChatGPT&lt;/strong&gt; prioritizes “human-like” reasoning, explaining moves in natural language.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Reinforcement Learning (RL)&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;AIs optimize for “winning,” but RL can lead to &lt;strong&gt;overfitting&lt;/strong&gt; quirks. For example:
-&lt;ul&gt;
-&lt;li&gt;Sacrificing material for perceived positional advantages (even when nonsensical).&lt;/li&gt;
-&lt;li&gt;Prioritizing flashy, high-reward moves over sound strategy.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Monte Carlo Tree Search (MCTS)&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Both models use MCTS to simulate future moves. But when computational limits kick in, they &lt;strong&gt;hallucinate shortcuts&lt;/strong&gt; (like respawning rooks).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;https://media.geeksforgeeks.org/wp-content/uploads/mcts_own.png&quot; alt=&quot;Monte Carlo Tree Structure&quot;&gt;&lt;/p&gt;
-&lt;ol start=&quot;4&quot;&gt;
-&lt;li&gt;&lt;strong&gt;Language Modeling&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;Their ability to &lt;em&gt;explain&lt;/em&gt; moves (e.g., “structural dominance”) is separate from chess skill. They generate plausible-sounding narratives, even for bad moves.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;-what-this-game-teaches-us-about-ai&quot;&gt;🔍 &lt;strong&gt;What This Game Teaches Us About AI&lt;/strong&gt;&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#-what-this-game-teaches-us-about-ai&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;1-the-double-edged-sword-of-creativity&quot;&gt;&lt;strong&gt;1. The Double-Edged Sword of Creativity&lt;/strong&gt;&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#1-the-double-edged-sword-of-creativity&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Strength&lt;/strong&gt;: AIs can innovate (e.g., novel pawn storms, aggressive sacrifices).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Risk&lt;/strong&gt;: Unchecked creativity leads to rule-breaking (horse pawns, respawning rooks).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Lesson&lt;/strong&gt;: Use &lt;strong&gt;guardrails&lt;/strong&gt; (e.g., rule validators) when deploying AI in structured domains like chess.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;2-the-explanation-gap&quot;&gt;&lt;strong&gt;2. The “Explanation Gap”&lt;/strong&gt;&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#2-the-explanation-gap&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Both bots generated verbose, confident analyses for terrible moves.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Why?&lt;/strong&gt; Language models prioritize &lt;strong&gt;narrative coherence&lt;/strong&gt; over accuracy. They’re trained to “sound right,” not “be right.”&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Lesson&lt;/strong&gt;: Treat AI explanations as hypotheses, not truths. Always verify.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;3-overconfidence-in-simulated-futures&quot;&gt;&lt;strong&gt;3. Overconfidence in Simulated Futures&lt;/strong&gt;&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#3-overconfidence-in-simulated-futures&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;DeepSeek’s MCTS simulations convinced it that &lt;strong&gt;a3&lt;/strong&gt; was unstoppable, even when objectively drawn.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Why?&lt;/strong&gt; AI’s limited “imagination” (compute power) truncates analysis, creating blind spots.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Lesson&lt;/strong&gt;: Pair AI with &lt;strong&gt;human intuition&lt;/strong&gt; to catch simulation errors.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;️-how-to-use-ai-right-lessons-from-the-chessboard&quot;&gt;🛠️ &lt;strong&gt;How to Use AI Right: Lessons from the Chessboard&lt;/strong&gt;&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#️-how-to-use-ai-right-lessons-from-the-chessboard&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Validate Outputs&lt;/strong&gt;: Ensure AI adheres to domain rules (e.g., chess laws).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Hybrid Systems&lt;/strong&gt;: Combine AI’s tactical brilliance with human strategic oversight.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Transparency&lt;/strong&gt;: Audit training data for biases or outliers (e.g., hypothetical chess variants).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Ethical Guardrails&lt;/strong&gt;: Prevent AI from manipulating users (e.g., bluffing about “forced wins”).&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;-the-bigger-picture&quot;&gt;🌐 &lt;strong&gt;The Bigger Picture&lt;/strong&gt;&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#-the-bigger-picture&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;This game isn’t just about chess—it’s a microcosm of AI’s role in society. From stock trading to healthcare, AIs can revolutionize fields but require &lt;strong&gt;guardrails&lt;/strong&gt;, humility, and human collaboration. As one GothamChess put it: &lt;em&gt;“Farm AI for content, but don’t let it farm you.”&lt;/em&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Meta Description&lt;/strong&gt;: How do AIs like DeepSeek and ChatGPT play chess? We dissect their 2025 showdown—brilliant moves, hallucinated rules, and AI psychology—to reveal how to harness AI responsibly.&lt;/p&gt;</description>
-    <pubDate>Wed, 05 Feb 2025 00:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>
