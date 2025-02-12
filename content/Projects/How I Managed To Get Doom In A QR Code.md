@@ -1,5 +1,5 @@
 ---
-title: How I Managed To Git Doom In A QR Code
+title: How I Managed To Get Doom In A QR Code
 draft: false
 tags:
   - Gaming
