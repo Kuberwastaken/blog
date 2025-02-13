@@ -10,6 +10,7 @@ tags:
   - GitHub
   - OpenSource
   - Projects
+  - WebDev
 date: 2025-02-13
 lastmod:
 ---
@@ -236,7 +237,8 @@ The project ([GitHub repository](https://github.com/Kuberwastaken/backdooms)) de
 
 - Educational tools for low-bandwidth environments
 
-As for future updates? Let's just say adding "Version 1.1" would require removing the letter 'e' from the entire codebase. Some constraints are best left unchallenged :)
+~~As for future updates? Let's just say adding "Version 1.1" would require removing the letter 'e' from the entire codebase. Some constraints are best left unchallenged :)~~
+Bit my own tongue there, ended up updating the project just one day later with a 15% better compression algorithm, read about it here: [How I Managed to Make HTML Game Compression so Much Better](https://kuberwastaken.github.io/blog/Projects/How-I-Managed-To-Make-HTML-Game-Compression-So-Much-Better)
 
 
 
