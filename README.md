@@ -3,7 +3,7 @@
 <p align="center"> “The Best Terminal-Inspired Blog Website on The Internet” </p>
 
 <p align="center">
-  <img src="[https://i.postimg.cc/KvK62CfD/screenshot-rocks.png](https://raw.githubusercontent.com/kuberwastaken/MindDump-Preview-Update/main/screenshot.png)" alt="daily-updating-homepage"> 
+  <img src="https://raw.githubusercontent.com/kuberwastaken/MindDump-Preview-Update/main/screenshot.png" alt="daily-updating-preview"> 
 </p>
 
 <p align="center">
