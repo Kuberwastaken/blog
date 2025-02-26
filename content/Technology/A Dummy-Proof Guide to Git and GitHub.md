@@ -6,8 +6,8 @@ tags:
   - "#Git"
   - "#GitHub"
   - "#OpenSource"
-date: 2025-02-03
-lastmod:
+created: 2025-02-03
+modified:
 ---
 If you've ever looked up a Git or GitHub tutorial, you've probably been overwhelmed by the complexity. It can seem like a huge, intimidating system full of jargon. But let me tell you, it doesn't need to be that complicated. In fact, I've been there, so I think I can break it down in the simplest way possible – like explaining it to a five-year-old. When I study too, that's exactly what I want from my teachers: teach me like I’m a beginner, because that’s how I learn best. So let’s start with Git and GitHub, making it as easy to understand as possible.
 

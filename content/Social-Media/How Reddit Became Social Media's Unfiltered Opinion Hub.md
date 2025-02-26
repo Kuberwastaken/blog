@@ -5,8 +5,8 @@ tags:
   - Social-Media
   - Reddit
   - Internet
-date: 2025-02-01
-lastmod:
+created: 2025-02-01
+modified:
 ---
 In a world where social media platforms often showcase carefully curated and filtered content, Reddit has emerged as a unique haven for unfiltered and honest opinions. With its distinct community-driven structure and anonymous nature, it has become a go-to destination for users seeking genuine and diverse perspectives on any given topic.
 

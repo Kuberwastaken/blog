@@ -5,8 +5,8 @@ tags:
   - Data-Science
   - Data-Analytics
   - Healthcare
-date: 2025-02-04
-lastmod:
+created: 2025-02-04
+modified:
 ---
 The field of healthcare is undergoing a significant transformation as data science techniques revolutionize the way medical professionals practice medicine and improve patient care. The ability to analyze vast datasets and extract meaningful insights is proving invaluable in this data-rich sector, leading to enhanced diagnostics, personalized treatments, and improved patient outcomes.
 

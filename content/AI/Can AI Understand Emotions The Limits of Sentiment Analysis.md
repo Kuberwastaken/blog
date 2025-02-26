@@ -6,8 +6,8 @@ tags:
   - Emotions
   - Sentiment-Analysis
   - AGI
-date: 2025-01-30
-lastmod:
+created: 2025-01-30
+modified:
 ---
  
 Artificial Intelligence has made incredible leaps in the last few years-from diagnosing diseases to composing music. However, one question has been left unaddressed by even the most advanced systems: **Can AI really understand human emotions?** While sentiment analysis tools claim to decode feelings from text, speech, or facial expressions, the ability of such machines to truly grasp the nuances of human emotion is limited. Let's dive into how sentiment analysis works, its shortcomings, and whether machines will ever truly achieve genuine emotional intelligence.

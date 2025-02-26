@@ -5,7 +5,7 @@ tags:
   - Business
   - Sustainability
   - Entrepreneurship
-date: 2025-01-30
+created: 2025-01-30
 ---
 Sustainability is no longer just a buzzword—it’s a business imperative. Companies that embed sustainability into their core operations are not only addressing global environmental concerns but also gaining a competitive advantage. As consumers demand eco-friendly products, businesses that prioritize sustainability are reshaping their strategies to align with this growing market shift.
 

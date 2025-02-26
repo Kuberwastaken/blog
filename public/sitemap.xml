@@ -5,10 +5,6 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://kuberwastaken.github.io/blog/AI/Can-AI-Understand-Emotions-The-Limits-of-Sentiment-Analysis</loc>
-    <lastmod>2025-01-30T00:00:00.000Z</lastmod>
-  </url>
-  <url>
     <loc>https://kuberwastaken.github.io/blog/AI/ChatGPT-Wrappers-Revolutionizing-User-Experience-or-Hiding-Limitations</loc>
     <lastmod>2025-02-04T00:00:00.000Z</lastmod>
   </url>
@@ -113,10 +109,6 @@
     <lastmod>2025-02-07T00:00:00.000Z</lastmod>
   </url>
   <url>
-    <loc>https://kuberwastaken.github.io/blog/Music/Event-Ticketing-The-Untapped-Industry-with-Deeply-Flawed-Competition</loc>
-    <lastmod>2025-02-06T00:00:00.000Z</lastmod>
-  </url>
-  <url>
     <loc>https://kuberwastaken.github.io/blog/Music/The-Best-Way-to-Learn-an-Instrument-Throw-Yourself-into-it</loc>
     <lastmod>2025-02-03T00:00:00.000Z</lastmod>
   </url>
@@ -145,10 +137,6 @@
     <lastmod>2025-01-07T00:00:00.000Z</lastmod>
   </url>
   <url>
-    <loc>https://kuberwastaken.github.io/blog/Social-Media/Hello-World</loc>
-    <lastmod>2025-01-25T00:00:00.000Z</lastmod>
-  </url>
-  <url>
     <loc>https://kuberwastaken.github.io/blog/Social-Media/How-Reddit-Became-Social-Media-s-Unfiltered-Opinion-Hub</loc>
     <lastmod>2025-02-01T00:00:00.000Z</lastmod>
   </url>
@@ -173,16 +161,8 @@
     <lastmod>2025-02-07T00:00:00.000Z</lastmod>
   </url>
   <url>
-    <loc>https://kuberwastaken.github.io/blog/Technology/A-Dummy-Proof-Guide-to-Git-and-GitHub</loc>
-    <lastmod>2025-02-03T00:00:00.000Z</lastmod>
-  </url>
-  <url>
     <loc>https://kuberwastaken.github.io/blog/Technology/I-Used-a-Firefox-Based-Browser-for-a-Week-and-I-Hated-it</loc>
     <lastmod>2025-02-12T00:00:00.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kuberwastaken.github.io/blog/Technology/Majorana-1-Why-Quantum-Computing-Matters-Now</loc>
-    <lastmod>2025-02-19T00:00:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://kuberwastaken.github.io/blog/Technology/QR-Codes-and-Malware-The-Hidden-Dangers-in-2025</loc>
@@ -194,6 +174,6 @@
   </url>
   <url>
     <loc>https://kuberwastaken.github.io/blog/</loc>
-    <lastmod>2025-02-25T08:49:37.129Z</lastmod>
+    <lastmod>2025-02-25T11:41:08.574Z</lastmod>
   </url>
 </urlset>

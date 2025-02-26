@@ -6,8 +6,8 @@ tags:
   - Gemini
   - AI
   - Artificial-Intelligence
-date: 2025-02-09
-lastmod:
+created: 2025-02-09
+modified:
 ---
 Remember when searching the web meant sifting through 10 pages of results? Google changed that forever. Now, they're doing it again with **artificial intelligence** – although slowly (and definitely because of #DeepSeek ) and this time, it’s not just about search. Let’s break down why Google Gemini 2.0 is making waves and what it means for the future of technology.
 

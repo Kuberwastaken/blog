@@ -3,8 +3,8 @@ title: "The Evolution of Gaming: From Pastimes to Powerful Industries"
 draft: false
 tags:
   - Gaming
-date: 2025-02-06
-lastmod:
+created: 2025-02-06
+modified:
 ---
 The world of gaming has undergone a remarkable transformation over the years, evolving from a niche hobby to a powerful global industry that captivates millions. The past decades have seen gaming rise from the realm of childhood pastimes to a complex, diverse, and sophisticated form of entertainment that transcends age groups and influences other art forms.
 

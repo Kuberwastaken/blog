@@ -11,8 +11,8 @@ tags:
   - Projects
   - HTML
   - WebDev
-date: 2025-02-14
-lastmod:
+created: 2025-02-14
+modified:
 ---
 Yesterday, I launched my game [The Backdooms](https://github.com/Kuberwastaken/backdooms) - my game inspired by DOOM and The Backrooms (read more about it [here](https://kuberwastaken.github.io/blog/Projects/How-I-Managed-To-Get-Doom-In-A-QR-Code)) based on my week-long web experiment that packs entire minified HTML games into scannable QR codes using aggressive compression. While the initial GZip-based implementation worked, I knew there was room for improvement. Enter Zlib: a compression method that promises **20% better density** than GZip. But there was a catch...
 

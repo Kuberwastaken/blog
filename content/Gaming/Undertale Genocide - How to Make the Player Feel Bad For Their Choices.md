@@ -5,8 +5,8 @@ tags:
   - Undertale
   - Gaming
   - Genocide-Route
-date: 2025-02-07
-lastmod:
+created: 2025-02-07
+modified:
 ---
 Undertale is a game so iconic that it feels impossible not to know about it. It is also, my favorite game. It’s a turn-based RPG that stands out with its unique mechanics, lovable characters, a masterful soundtrack, and deep lore. The game offers three main paths: **Neutral**, **Pacifist**, and **Genocide**. You can take these paths in any order, but the commonly recommended playthrough order is **Neutral**, followed by **Pacifist**, and finally, **Genocide**. And that’s exactly how I played it earlier this month.
 
