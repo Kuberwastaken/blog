@@ -6,8 +6,8 @@ tags:
   - Browsers
   - Firefox
   - OpenSource
-date: 2025-02-12
-lastmod:
+created: 2025-02-12
+modified:
 ---
 ![Zen Browser](https://preview.redd.it/the-zen-browser-v0-pgq9ym4d3ptd1.png?width=1351&format=png&auto=webp&s=388984eb960fe33d2b3980ec119fa09a1b47450a)  
 *Image: Zen Browser*

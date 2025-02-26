@@ -6,8 +6,8 @@ tags:
   - Guitar
   - Beginner
   - "#Instruments"
-date: 2025-02-02
-lastmod:
+created: 2025-02-02
+modified:
 ---
 Are you about to buy your first guitar? Before making a decision, it’s important to understand what to look for. I've personally made the mistake of buying a bad first guitar and ended up not playing for about 7 years (really, I thought I was the problem.) Whether you’re a complete beginner or an intermediate player, this guide will help you make an informed choice.
 

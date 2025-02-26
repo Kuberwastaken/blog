@@ -6,7 +6,7 @@ tags:
   - GenerativeAI
   - Copyright
   - Law
-date: 2024-12-20
+created: 2024-12-20
 ---
 
 ![](https://miro.medium.com/v2/resize:fit:875/0*ta9thFooxCF88yJg.jpg)

@@ -6,7 +6,7 @@ tags:
   - Music
   - Guitar
   - Deep-Learning
-date: 2025-02-03
+created: 2025-02-03
 ---
 Learning to play a musical instrument is a fulfilling pursuit, and a unique approach, which I'll refer to as the "throw yourself into it" method, can be incredibly productive. This spontaneous technique can kickstart your musical journey in an engaging and enjoyable way, as I'll illustrate with my personal experience of learning the guitar.
 

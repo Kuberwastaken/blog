@@ -5,7 +5,7 @@ tags:
   - AI
   - Startups
   - Business
-date: 2025-01-31
+created: 2025-01-31
 ---
 The AI startup boom has produced flashy demos and bold promises—but few sustainable businesses. While 80% of enterprises adopt AI, **90% of AI startups fail to scale beyond proof of concept**. What separates the winners from the also-rans? Let’s dissect the pitfalls and strategies for building AI ventures that last.
 

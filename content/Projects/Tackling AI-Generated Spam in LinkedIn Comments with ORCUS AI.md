@@ -8,8 +8,8 @@ tags:
   - Internet-Enshittification
   - "#Technology"
   - "#Machine-Learning"
-date: 2025-01-07
-lastmod:
+created: 2025-01-07
+modified:
 ---
 ### Introduction: The Growing Problem of AI-Generated Spam on LinkedIn
 

@@ -6,8 +6,8 @@ tags:
   - Reddit
   - r/place
   - "#art"
-date: 2025-02-10
-lastmod:
+created: 2025-02-10
+modified:
 ---
 In 2017, Reddit unleashed **r/Place** - a massive online canvas where users could paint just **one pixel every 10 minutes**. What followed was one of the internet's most chaotic, creative, and oddly beautiful experiments in communal art. Though it disappeared after 72 hours, its legend grew... until its surprise return in April 2022 cemented its status as **the internet's ultimate collaborative playground**.
 ## What Is r/Place? Digital Graffiti Meets Community Warfare

@@ -3,8 +3,8 @@ title: The Duality of Social Media Connecting the World or Dividing Opinions?
 draft: false
 tags:
   - Social-Media
-date: 2025-02-03
-lastmod:
+created: 2025-02-03
+modified:
 ---
 In today's world, social media has become an indelible part of the digital landscape, with far-reaching consequences that impact our daily lives in ways we are only beginning to understand. It has the power to unite strangers across geographical borders and foster connections that defy physical distances. Yet, this very tool that should bring us closer together also presents a nuanced and often controversial picture, acting as a double-edged sword that divides opinions and shapes our perception of the world.
 

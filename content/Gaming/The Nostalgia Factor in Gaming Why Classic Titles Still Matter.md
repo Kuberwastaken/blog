@@ -5,7 +5,7 @@ tags:
   - Retro
   - "#Gaming"
   - "#Nostalgia"
-date: 2025-01-31
+created: 2025-01-31
 ---
 Gaming nostalgia is a powerful emotion that transcends generations. The joy of booting up an old favorite, hearing its iconic soundtrack, and reliving the excitement of a childhood memory is an experience many gamers cherish. Whether it’s the simple pixelated charm of _Super Mario Bros._, the intense rivalries of _Tekken 3_, or the thrill of late-night _Counter-Strike 1.6_ sessions, nostalgia keeps classic games alive in a rapidly evolving industry.
 
