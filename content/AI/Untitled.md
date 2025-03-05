@@ -111,7 +111,3 @@ But old habits die hard. As Roy tweeted: *“They’ll cling to Leetcode like Bo
 ## Final Take: Is Roy Lee the Villain Tech Deserves?  
 
 Love him or hate him, Roy Lee has done the impossible: he made tech interviews *interesting*. Whether Interview Coder is a cheat tool or a wake-up call, one thing’s clear—**the era of Leetcode supremacy is over**.  
-
-As for Roy? He’s now interning at a crypto startup, reportedly working on an AI tool to automate *job resignations*. Some heroes don’t wear capes—they wear hoodies and chaos.  
-
-*So, dear reader: Is Roy Lee a genius, a grifter, or just a guy who really, really hates binary search? The comments section is waiting. Popcorn not included.* 🍿  
