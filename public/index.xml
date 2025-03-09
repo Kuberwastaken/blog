@@ -6,6 +6,204 @@
       <description>Last 10 notes on ᨒ MindDump</description>
       <generator>Quartz -- https://kuberwastaken.github.io/blog/</generator>
       <item>
+    <title>The AI Models Race to The Bottom in 2025</title>
+    <link>https://kuberwastaken.github.io/blog/AI/The-AI-Models-Race-to-The-Bottom-in-2025</link>
+    <guid>https://kuberwastaken.github.io/blog/AI/The-AI-Models-Race-to-The-Bottom-in-2025</guid>
+    <description>&lt;p&gt;The AI industry is undergoing a deflationary shock that would make Bitcoin miners blush. Since GPT-3’s 2020 debut, large language model (LLM) costs have collapsed from &lt;strong&gt;60 to 0.02 per million tokens&lt;/strong&gt;—a &lt;strong&gt;3,000x price implosion&lt;/strong&gt; reshaping business models, technical architectures, and power dynamics. Let’s dissect the undercurrents driving this race to zero and what comes next.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://media-hosting.imagekit.io//eef6c485ecf64673/Screenshot%202025-03-10%20013811.png?Expires=1836159218&amp;#x26;Key-Pair-Id=K2ZIVPTIP2VGHC&amp;#x26;Signature=v5fUX4vS~OlTijx~SyjNXV3lQqwzaqNBt9EbpG1iUK6uSyTMwpvN5acZJlB-6kxkZyjCFQw9VkEo~CNZ3XEcER0vHwjiOXtA3M4WttdJU5TNTQNBgS3i0Eaiko6R-4sVKxtkBQTnFPa1km6AF7PgsBV7wk4aGId459KMUZ5ea2yPzZhxco45R~Kiv09BUzq4VcmaT7EpywLrtvD~n2kkpvNDJQjKHWqkiX7vaEFeG-9mjhcBjODt2OEZ~9RyJsdVzFdGxfqlaEz7ceQjTolB4jbvVkpFm75axkyCHxUzoCrGUPhOE1sdgSh-q9wcam5wT1VvnTfVurAsWiwqsf6xGw__&quot; alt=&quot;Price of AI Models&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;phase-1-the-gpt-3-shockwave-2020-2022&quot;&gt;Phase 1: The GPT-3 Shockwave (2020-2022)&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#phase-1-the-gpt-3-shockwave-2020-2022&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Kuberwastaken/Dynamic-Readme-Images/raw/main/screenshot.png&quot; alt=&quot;Image of AI models Quality&quot;&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;font-size: small; font-weight: lighter;&quot;&gt; Fun fact, this static image updates daily thanks to my project - dynamic readme images &lt;/p&gt;
+&lt;p&gt;GPT-3’s release wasn’t just a technical leap—it was an economic anomaly. For 18 months, OpenAI operated in a vacuum:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pricing Power&lt;/strong&gt;: 60/MtokensdespitealternativeslikeJurassic−1(60/MtokensdespitealternativeslikeJurassic−1(45/M)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Architectural Lock-In&lt;/strong&gt;: Proprietary API with no open-source equivalents&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Developer Mindshare&lt;/strong&gt;: 92% of AI projects defaulted to OpenAI&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But cracks emerged by late 2022:&lt;/p&gt;
+&lt;h1 id=&quot;the-gpt-35-turbo-gambit-march-2023&quot;&gt;The “GPT-3.5 Turbo” Gambit (March 2023)&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-gpt-35-turbo-gambit-march-2023&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;This 30x price cut wasn’t generosity—it was defensive. Leaks suggested Meta’s LLaMA (released weeks earlier) achieved 80% GPT-3.5 quality at 1/20th the cost. OpenAI’s response? Flood the zone with a “good enough” budget model.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;phase-2-the-open-source-onslaught-2023-2024&quot;&gt;Phase 2: The Open-Source Onslaught (2023-2024)&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#phase-2-the-open-source-onslaught-2023-2024&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The dam broke when Mistral 7B (Sept 2023) proved small models could punch far above their weight&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The New Economics of AI&lt;/strong&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Model&lt;/th&gt;&lt;th&gt;Tokens/$ (Input)&lt;/th&gt;&lt;th&gt;MT-Bench Score&lt;/th&gt;&lt;th&gt;Hardware Cost/Hour&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;GPT-4 (2023)&lt;/td&gt;&lt;td&gt;5,000&lt;/td&gt;&lt;td&gt;8.8&lt;/td&gt;&lt;td&gt;$90 (A100 Cluster)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;LLaMA 3 70B&lt;/td&gt;&lt;td&gt;120,000&lt;/td&gt;&lt;td&gt;8.5&lt;/td&gt;&lt;td&gt;$12 (Consumer GPUs)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DeepSeek v2&lt;/td&gt;&lt;td&gt;1,000,000&lt;/td&gt;&lt;td&gt;8.7&lt;/td&gt;&lt;td&gt;$0.80 (LoRA Fine-Tuned)&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;Three tectonic shifts occurred:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;The China Factor&lt;/strong&gt;: DeepSeek’s team reportedly achieved 99% GPT-4 quality at 1/50th cost by combining:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Quantization-aware training&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dynamic sparse attention&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;State-sponsored GPU access&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Hardware Arbitrage&lt;/strong&gt;: Open-source let developers exploit cheaper hardware:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Consumer GPUs (RTX 4090s @ 0.12/kWhvscloudA100s@0.12/kWhvscloudA100s@1.10/kWh)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CPU inference via GGUF optimizations&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shared GPU pools (Petals, Together)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;The Mixture-of-Experts Revolution&lt;/strong&gt;: Models like Mixtral 8x7B used conditional parameter activation to reduce inference costs by 4-6x without quality loss.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;phase-3-the-great-commoditization-2024-present&quot;&gt;Phase 3: The Great Commoditization (2024-Present)&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#phase-3-the-great-commoditization-2024-present&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Today’s market resembles the 2010 cloud wars—margin compression has become existential:&lt;/p&gt;
+&lt;figure data-rehype-pretty-code-figure=&quot;&quot;&gt;&lt;pre tabindex=&quot;0&quot; data-language=&quot;javascript&quot; data-theme=&quot;github-light github-dark&quot;&gt;&lt;code data-language=&quot;javascript&quot; data-theme=&quot;github-light github-dark&quot; style=&quot;display: grid;&quot;&gt;&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#6A737D;--shiki-dark:#6A737D&quot;&gt;// Switching costs dropped to near-zero&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;const&lt;/span&gt;&lt;span style=&quot;--shiki-light:#005CC5;--shiki-dark:#79B8FF&quot;&gt; providers&lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt; =&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt; [openai, anthropic, google, deepseek];&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;const&lt;/span&gt;&lt;span style=&quot;--shiki-light:#005CC5;--shiki-dark:#79B8FF&quot;&gt; cheapestProvider&lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt; =&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt; providers.&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;sort&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;((&lt;/span&gt;&lt;span style=&quot;--shiki-light:#E36209;--shiki-dark:#FFAB70&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;--shiki-light:#E36209;--shiki-dark:#FFAB70&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;=&gt;&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt; a.pricePerToken &lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt; b.pricePerToken)[&lt;/span&gt;&lt;span style=&quot;--shiki-light:#005CC5;--shiki-dark:#79B8FF&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;];&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt; &lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#6A737D;--shiki-dark:#6A737D&quot;&gt;// Developers now route traffic algorithmically&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;app.&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;post&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;--shiki-light:#032F62;--shiki-dark:#9ECBFF&quot;&gt;&#039;/chat&#039;&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;async&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt; (&lt;/span&gt;&lt;span style=&quot;--shiki-light:#E36209;--shiki-dark:#FFAB70&quot;&gt;req&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;--shiki-light:#E36209;--shiki-dark:#FFAB70&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;=&gt;&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;  const&lt;/span&gt;&lt;span style=&quot;--shiki-light:#005CC5;--shiki-dark:#79B8FF&quot;&gt; response&lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt; =&lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt; await&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt; cheapestProvider.&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;generate&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(req.body.prompt);&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;  res.&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;send&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(response);&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;});&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;Oligopoly Under Siege&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;OpenAI’s Dilemma&lt;/strong&gt;: GPT-4o Mini’s $0.02/M price reportedly operates at &lt;strong&gt;-35% margins&lt;/strong&gt; to retain market share&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Anthropic’s Miscalculation&lt;/strong&gt;: Claude 3’s pricing ($15/M input tokens) led to 72% developer attrition per Artificial Analysis data&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Google’s Nuclear Option&lt;/strong&gt;: Gemini 1.5 Flash undercuts everyone at $0.0075/M using TPU v5e efficiency gains&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Startups now exploit this chaos through:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Model Roulette&lt;/strong&gt;: Auto-switching APIs like Unify.ai&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inference Hyperoptimization&lt;/strong&gt;:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-rehype-pretty-code-figure=&quot;&quot;&gt;&lt;pre tabindex=&quot;0&quot; data-language=&quot;rust&quot; data-theme=&quot;github-light github-dark&quot;&gt;&lt;code data-language=&quot;rust&quot; data-theme=&quot;github-light github-dark&quot; style=&quot;display: grid;&quot;&gt;&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#6A737D;--shiki-dark:#6A737D&quot;&gt;// Techniques squeezing 2-3x more tokens/sec&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;    fn&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt; optimize_inference&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(model&lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt; &amp;#x26;mut&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt; Graph&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;) {&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;      model&lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;apply&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;operator_fusion&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;()); &lt;/span&gt;&lt;span style=&quot;--shiki-light:#6A737D;--shiki-dark:#6A737D&quot;&gt;// Combine GPU ops&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;      model&lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;apply&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;kv_cache_quantization&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(8bit)); &lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;      model&lt;/span&gt;&lt;span style=&quot;--shiki-light:#D73A49;--shiki-dark:#F97583&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;apply&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;--shiki-light:#6F42C1;--shiki-dark:#B392F0&quot;&gt;speculative_decoding&lt;/span&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;(5x));&lt;/span&gt;&lt;/span&gt;
+&lt;span data-line=&quot;&quot;&gt;&lt;span style=&quot;--shiki-light:#24292E;--shiki-dark:#E1E4E8&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Legal Gray Zones&lt;/strong&gt;: NSFW/financial models avoiding cloud TOS bans&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;the-post-model-future&quot;&gt;The Post-Model Future&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-post-model-future&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;With LLMs becoming utilities, four new battlegrounds emerge:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Latency Wars&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Sub-100ms responses for real-time applications&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Batch processing at $0.0001/page&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Context Collapse&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;10M token windows enabling “whole company as context”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Retrieval-integrated models (RAG 3.0)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Agent Ecosystems&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AI “workers” costing $0.01/hour:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Regulatory Capture&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Lobbying for “Safety Compliance” standards that favor incumbents&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HIPAA/GDPR-certified model hosting&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;“OpenAI is pivoting to products because model leadership became a liability. But when every product is just a React frontend over the same 10 models, where’s the moat?”&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;The New Developer Playbook&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Treat LLMs as interchangeable commodities&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Architect for model fluidity (load balancers, fallback providers)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exploit regional pricing disparities (India’s GPU costs are 40% lower than Silicon Valley’s)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Prepare for $0.000001/token inference via photon-based optical computing (Lightmatter, Luminous)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The age of worshipping model size is over. The next frontier? Building tools that thrive in an ecosystem where intelligence is cheaper than RAM :P&lt;/p&gt;</description>
+    <pubDate>Mon, 10 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
     <title>MindDump</title>
     <link>https://kuberwastaken.github.io/blog/</link>
     <guid>https://kuberwastaken.github.io/blog/</guid>
@@ -30,11 +228,11 @@
 &lt;/ul&gt;
 &lt;h2 id=&quot;-browse-my-posts&quot;&gt;🔍 Browse My Posts&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#-browse-my-posts&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Dive into some articles :P&lt;/p&gt;</description>
-    <pubDate>Tue, 04 Mar 2025 16:25:42 GMT</pubDate>
+    <pubDate>Wed, 05 Mar 2025 12:08:43 GMT</pubDate>
   </item><item>
     <title>Roy Lee’s Interview Coder: Cheating or a Wake Up Call?</title>
-    <link>https://kuberwastaken.github.io/blog/AI/Untitled</link>
-    <guid>https://kuberwastaken.github.io/blog/AI/Untitled</guid>
+    <link>https://kuberwastaken.github.io/blog/AI/Roy-Lee's-Interview-Coder---Cheating-or-a-Wake-Up-Call</link>
+    <guid>https://kuberwastaken.github.io/blog/AI/Roy-Lee's-Interview-Coder---Cheating-or-a-Wake-Up-Call</guid>
     <description>&lt;p&gt;Imagine a world where coding interviews are as predictable as recent Marvel movie plot twists. Enter &lt;strong&gt;Roy Lee&lt;/strong&gt;, a Columbia University computer science sophomore who went from Reddit’s Leetcode Messiah to Twitter’s (I refuse to call it X) most controversial disruptor. Once known for solving 600+ DSA problems and, Roy did something that’s up for you to interpret: he built &lt;strong&gt;Interview Coder&lt;/strong&gt;, an AI tool that’s essentially a cheat code for Technical interviews. But this isn’t just a story about an app, it’s about Universities, Amazon drama, academic backlash, and a Twitter marketing campaign so bold it would make Kanye Blush.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://media-hosting.imagekit.io//fdb906f1bedd4f0e/Screenshot%202025-03-04%20002011.png?Expires=1835635830&amp;#x26;Key-Pair-Id=K2ZIVPTIP2VGHC&amp;#x26;Signature=gupBtCkBLj3ae3WWYcGBL0uU-4fbDJqgw4LH48eVz3G9CrvQwUxJBaUzEqYBq3vicCYOPGxfPWctqKu1yAg-fzOERtOg02O4W64sYCpl1PkFvLDFfcGas5ozlReiDuqXxjGfRE8wThmEf-ylUbwnRfzTDo3MQC07q-9Q7ZTKck4YZmS6eA-h8r8PNzJK5Jv29sgIWUH~4sjR5m~1QybClNVjrBeSAQh7seuBTSZA7Fn8ogb7AWM2rsyInXG740yXFmpdH6bO8uZXBDWEno3zXO7RtLEI2fj246jh3NULu~SdS876Vty0YFLxc-utoTpfS3xXUkK0HMhwlXGh9IgDEw__&quot; alt=&quot;Absolute Flex&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -1094,51 +1292,6 @@ With great data comes great responsibility. Google needs clearer guidelines abou
 &lt;p&gt;This isn’t just about technology – it’s about &lt;strong&gt;democratizing AI access&lt;/strong&gt;. Grandparents can now use tools that were exclusive to Silicon Valley engineers last year, and this is a win for absolutely everyone, which is what good tech is about!&lt;/p&gt;
 &lt;hr&gt;</description>
     <pubDate>Sun, 09 Feb 2025 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>Undertale Genocide - How to Make the Player Feel Bad For Their Choices</title>
-    <link>https://kuberwastaken.github.io/blog/Gaming/Undertale-Genocide---How-to-Make-the-Player-Feel-Bad-For-Their-Choices</link>
-    <guid>https://kuberwastaken.github.io/blog/Gaming/Undertale-Genocide---How-to-Make-the-Player-Feel-Bad-For-Their-Choices</guid>
-    <description>&lt;p&gt;Undertale is a game so iconic that it feels impossible not to know about it. It is also, my favorite game. It’s a turn-based RPG that stands out with its unique mechanics, lovable characters, a masterful soundtrack, and deep lore. The game offers three main paths: &lt;strong&gt;Neutral&lt;/strong&gt;, &lt;strong&gt;Pacifist&lt;/strong&gt;, and &lt;strong&gt;Genocide&lt;/strong&gt;. You can take these paths in any order, but the commonly recommended playthrough order is &lt;strong&gt;Neutral&lt;/strong&gt;, followed by &lt;strong&gt;Pacifist&lt;/strong&gt;, and finally, &lt;strong&gt;Genocide&lt;/strong&gt;. And that’s exactly how I played it earlier this month.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://img.redbull.com/images/c_limit,w_1500,h_1000/f_auto,q_auto/redbullcom/2018/09/07/3846aef4-2c63-4977-b334-20492f761835/undertale-landscape&quot; alt=&quot;A Screenshot from Undertale&quot;&gt;&lt;/p&gt;
-&lt;p&gt;While all three routes offer something unique, it was the &lt;strong&gt;Genocide&lt;/strong&gt; route that really stood out to me, despite its flaws. To be clear, I know this opinion will likely upset two groups of people: those who love the game and don’t want to hear any negativity, and those who disapprove of Genocide being my favorite path. I understand how confusing my stance might sound, but let me explain why the &lt;strong&gt;Genocide&lt;/strong&gt; route, despite its flaws, remains my favorite way to play Undertale.&lt;/p&gt;
-&lt;h2 id=&quot;a-weirdly-perfect-experience&quot;&gt;A Weirdly Perfect Experience&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#a-weirdly-perfect-experience&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;the-genocide-route-a-love-hate-relationship&quot;&gt;The Genocide Route: A Love-Hate Relationship&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-genocide-route-a-love-hate-relationship&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Imagine a book titled “What Not to Put in Your Video Game.” Now, picture the creator of the game, &lt;strong&gt;Toby Fox&lt;/strong&gt;, deliberately adding every single gameplay mechanic listed in that book. Yet, despite this, the result is a masterpiece. That’s the best way I can describe the &lt;strong&gt;Genocide&lt;/strong&gt; route.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i0.wp.com/www.the-pixels.com/wp-content/uploads/2016/07/undertale-bridge.gif?resize=632%2C473&amp;#x26;ssl=1&quot; alt=&quot;Ppayrus &amp;#x22;attacking&amp;#x22; the player&quot;&gt;&lt;/p&gt;
-&lt;p&gt;The core gameplay mechanics are bizarre and unorthodox, but the overall experience is unforgettable. It’s one of the weirdest video game experiences I’ve ever had. &lt;strong&gt;Genocide&lt;/strong&gt; is full of questionable design choices, but in the best possible way. I’ll get into why that is in this article.&lt;/p&gt;
-&lt;h2 id=&quot;enemy-grinding-the-heart-of-genocide&quot;&gt;Enemy Grinding: The Heart of Genocide&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#enemy-grinding-the-heart-of-genocide&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;what-is-enemy-grinding&quot;&gt;What is Enemy Grinding?&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#what-is-enemy-grinding&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;In the &lt;strong&gt;Genocide&lt;/strong&gt; route, one of the defining features is &lt;strong&gt;enemy grinding&lt;/strong&gt;. This mechanic is simple yet time-consuming: you need to kill all monsters in an area until a pop-up appears saying, “But nobody came.” This tells you that you’ve wiped out the entire population of that area, and it’s necessary to move on.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.ytimg.com/vi/L9EPrZvArYo/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGHIgRSg1MA8=&amp;#x26;rs=AOn4CLD9PuzpLh20ZSdiwWk5bp_rTW5Q0w&quot; alt=&quot;But nobody came&quot;&gt;&lt;/p&gt;
-&lt;p&gt;This process can take up to 15 minutes of walking in circles, continuously fighting enemies. It sounds tedious, right? And it is. But here’s where it gets interesting.&lt;/p&gt;
-&lt;h3 id=&quot;why-this-grind-is-genius&quot;&gt;Why this Grind is Genius&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#why-this-grind-is-genius&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;The endless killing may seem like a terrible design decision at first, but it actually serves a purpose. It’s a feature that discourages players from completing this route, making you feel like you’re not supposed to be doing it. Yet, the curiosity to see what happens next pushes you forward.&lt;/p&gt;
-&lt;p&gt;It’s like when an artist accidentally messes up their painting, but in the process, it becomes even better. The more enemies you kill, the more you feel the weight of your actions, and that makes the grind oddly compelling. It’s a fascinating design choice that grows on you, despite its repetitiveness.&lt;/p&gt;
-&lt;p&gt;At first, I really disliked the grinding mechanic because it felt boring. But looking at it from an artistic perspective, it’s one of the most unique features of the game. The grind might be tedious, but it keeps you engaged in the route. And honestly, it’s a lot more interesting than shiny hunting in Pokémon.&lt;/p&gt;
-&lt;h2 id=&quot;boss-fights---a-rollercoaster-of-difficulty&quot;&gt;Boss Fights - A Rollercoaster of Difficulty&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#boss-fights---a-rollercoaster-of-difficulty&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;the-genocide-bosses&quot;&gt;The Genocide Bosses&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-genocide-bosses&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;In &lt;strong&gt;Genocide&lt;/strong&gt;, every single boss fight is a one-shot kill, except for two: &lt;strong&gt;Undyne the Undying&lt;/strong&gt; and &lt;strong&gt;Sans&lt;/strong&gt;. These two are exclusive to this route and are, without a doubt, the highlight of the gameplay.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://preview.redd.it/why-didnt-sans-use-his-strongest-attack-first-is-he-stupid-v0-o5fraxpadcfb1.jpg?auto=webp&amp;#x26;s=2f209268637b58dd9dce4a1469fe40b6b35cab44&quot; alt=&quot;Sans being Sans&quot;&gt;&lt;/p&gt;
-&lt;p&gt;I absolutely loved these two bosses. They were challenging, requiring over two hours to defeat. But while they were incredibly tough, &lt;strong&gt;Undyne the Undying&lt;/strong&gt; and &lt;strong&gt;Sans&lt;/strong&gt; are also the only bosses that provide any real difficulty in &lt;strong&gt;Genocide&lt;/strong&gt;. This leads to a major issue with the &lt;strong&gt;Genocide&lt;/strong&gt; route: the &lt;strong&gt;difficulty curve&lt;/strong&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;the-difficulty-curve---its-a-feature-not-a-bug&quot;&gt;The Difficulty Curve - It’s a Feature, not a bug&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-difficulty-curve---its-a-feature-not-a-bug&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;A &lt;strong&gt;difficulty curve&lt;/strong&gt; refers to how a game gradually increases its difficulty. In &lt;strong&gt;Genocide&lt;/strong&gt;, the curve is all over the place. The majority of the route is easy, and then suddenly, you hit two bosses that are extremely hard. This sharp contrast creates a feeling of unfair difficulty that might ruin the experience in other games, but in &lt;strong&gt;Undertale&lt;/strong&gt;, it’s oddly fun and adds to the chaotic nature of &lt;strong&gt;Genocide&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;These two bosses are the only real challenge, and they make the route entertaining. Despite the difficulty curve being one of the worst in video game history, it ends up being a fun and memorable experience because of how bizarre and unpredictable it is.&lt;/p&gt;
-&lt;h2 id=&quot;music-the-part-that-will-make-you-fall-in-love-with-the-game&quot;&gt;Music: The Part that WILL Make You fall in love with the Game&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#music-the-part-that-will-make-you-fall-in-love-with-the-game&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;the-soundtrack&quot;&gt;The Soundtrack&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-soundtrack&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Undertale’s soundtrack is iconic, with great music across all paths. Half of YouTube uses the music in the videos. But for me, the &lt;strong&gt;Genocide&lt;/strong&gt; route stands out as having the most unique and powerful music in the game. Many of the tracks are disturbing, which only adds to the atmosphere of the route.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://valscrafts.wordpress.com/wp-content/uploads/2016/03/tumblr_nvcigotvie1rz7xugo1_540.gif?w=560&quot; alt=&quot;Listening to music with Napstablook&quot;&gt;&lt;/p&gt;
-&lt;p&gt;The overworld music gets remixed in &lt;strong&gt;Genocide&lt;/strong&gt;, slowing down and becoming eerie, creating a creepy and unsettling vibe that makes the experience so immersive. Without this shift in music, &lt;strong&gt;Genocide&lt;/strong&gt; wouldn’t have been nearly as impactful.&lt;/p&gt;
-&lt;h3 id=&quot;the-iconic-tracks-battle-against-a-true-hero-and-megalovania&quot;&gt;The Iconic Tracks: “Battle Against a True Hero” and “Megalovania”&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#the-iconic-tracks-battle-against-a-true-hero-and-megalovania&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Two tracks, in particular, stand out: &lt;strong&gt;“Battle Against a True Hero”&lt;/strong&gt; and &lt;strong&gt;“Megalovania.”&lt;/strong&gt; These are, in my opinion, the best tracks in the entire game, and possibly in all of video games. “Megalovania” has become popular, mostly because of memes, but it’s genuinely a masterpiece. It’s one of the best pieces of video game music I’ve ever heard, and it plays during one of the most intense moments in the game.&lt;/p&gt;
-&lt;p&gt;“&lt;strong&gt;Battle Against a True Hero&lt;/strong&gt;” is equally as incredible. These two tracks, along with the unforgettable moments they accompany, are what make the &lt;strong&gt;Genocide&lt;/strong&gt; route my favorite. They create a musical experience that’s just as unforgettable as the gameplay itself.&lt;/p&gt;
-&lt;h2 id=&quot;conclusion-why-genocide-is-my-favorite-route&quot;&gt;Conclusion: Why Genocide is My Favorite Route&lt;a role=&quot;anchor&quot; aria-hidden tabindex=&quot;-1&quot; data-no-popover href=&quot;#conclusion-why-genocide-is-my-favorite-route&quot; class=&quot;internal&quot;&gt;&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;So why, despite all the flaws, does &lt;strong&gt;Genocide&lt;/strong&gt; remain my favorite route in Undertale? It’s because, in a strange way, it feels like the &lt;strong&gt;real&lt;/strong&gt; Undertale. It’s the path that the game wasn’t really designed for, but it’s the one that I discovered out of my own curiosity. Despite its terrible game design, &lt;strong&gt;Genocide&lt;/strong&gt; became an experience that was unforgettable and truly unique.&lt;/p&gt;
-&lt;p&gt;Yes, there’s endless enemy grinding, a terrible difficulty curve, and an unsettling soundtrack. But all of these elements work together to create something that feels raw and real. It’s an imperfect experience, but it’s exactly what makes &lt;strong&gt;Genocide&lt;/strong&gt; stand out in a way that &lt;strong&gt;Neutral&lt;/strong&gt; and &lt;strong&gt;Pacifist&lt;/strong&gt; don’t.&lt;/p&gt;
-&lt;p&gt;If there’s one thing to take away from this article, it’s that video games can be weird, and sometimes the weirdest experiences are the best ones. &lt;strong&gt;Undertale&lt;/strong&gt; is definitely the weirdest game I’ve ever played, but it’s also one of the best.&lt;/p&gt;
-&lt;p&gt;Finally, if you’re someone who gets upset about others choosing the &lt;strong&gt;Genocide&lt;/strong&gt; route, take a step back. Understand that the beauty of a game like &lt;strong&gt;Undertale&lt;/strong&gt; is in the choices we make, and everyone should be free to play it the way they want.&lt;/p&gt;
-&lt;p&gt;Thanks for reading, and I’ll see you in the next one!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.redd.it/f7s4q6fq7ym61.jpg&quot; alt=&quot;The End Undertale&quot;&gt;&lt;/p&gt;</description>
-    <pubDate>Fri, 07 Feb 2025 00:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>
