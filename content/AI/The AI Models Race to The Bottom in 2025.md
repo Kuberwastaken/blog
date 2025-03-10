@@ -30,7 +30,7 @@ modified:
 
 GPT-3’s release wasn’t just a technical leap—it was an economic anomaly. For 18 months, OpenAI operated in a vacuum:
 
-- **Pricing Power**: 60/MtokensdespitealternativeslikeJurassic−1(60/MtokensdespitealternativeslikeJurassic−1(45/M)
+- **Pricing Power**: 60/M tokensdespitealternativeslikeJurassic−1(60/M tokensdespitealternativeslikeJurassic−1(45/M)
     
 - **Architectural Lock-In**: Proprietary API with no open-source equivalents
     
@@ -95,6 +95,7 @@ app.post('/chat', async (req, res) => {
   res.send(response);
 });
 ```
+
 **Oligopoly Under Siege**
 
 - **OpenAI’s Dilemma**: GPT-4o Mini’s $0.02/M price reportedly operates at **-35% margins** to retain market share
@@ -118,6 +119,7 @@ Startups now exploit this chaos through:
       model.apply(speculative_decoding(5x));
     }
 ```
+
 - **Legal Gray Zones**: NSFW/financial models avoiding cloud TOS bans
     
 ---
