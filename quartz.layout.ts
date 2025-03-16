@@ -39,6 +39,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Graph({
       localGraph: {
         depth: 2,
+        repelForce: 2,
       },
     }),
     Component.RecentNotes({
