@@ -66,6 +66,7 @@ Three tectonic shifts occurred:
     - Dynamic sparse attention
         
     - State-sponsored GPU access
+    
         
 2. **Hardware Arbitrage**: Open-source let developers exploit cheaper hardware:
     
