@@ -43,18 +43,13 @@ export const defaultContentPageLayout: PageLayout = {
       },
     }),
     Component.RecentNotes({
-      title: "Recent Posts", 
+      title: "Trending Posts", 
       limit: 3,
       showTags: false,
       filter: (file) => !file.slug?.startsWith("BITS/") && file.slug !== "index",
       sort: (f1: QuartzPluginData, f2: QuartzPluginData) => {
-        const date1Created = f1.dates?.created ? new Date(f1.dates.created) : new Date(0)
-        const date1Modified = f1.dates?.modified ? new Date(f1.dates.modified) : new Date(0)
-        const date2Created = f2.dates?.created ? new Date(f2.dates.created) : new Date(0)
-        const date2Modified = f2.dates?.modified ? new Date(f2.dates.modified) : new Date(0)
-        
-        const date1 = date1Modified > date1Created ? date1Modified : date1Created
-        const date2 = date2Modified > date2Created ? date2Modified : date2Created
+        const date1 = f1.dates?.created ? new Date(f1.dates.created) : new Date(0)
+        const date2 = f2.dates?.created ? new Date(f2.dates.created) : new Date(0)
         
         if (date2.getTime() === date1.getTime()) {
           return f2.slug?.localeCompare(f1.slug ?? "") ?? 0
