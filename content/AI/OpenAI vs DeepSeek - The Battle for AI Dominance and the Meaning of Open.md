@@ -81,6 +81,8 @@ Meanwhile, companies like Mistral AI, which position themselves as open alternat
 - They don't open-source "the interesting stuff"
 - There's no way to host their models as efficiently as they do internally
 
+I actually also had a "podcast" with Google's NotebookLM agents regarding this very conversation and this was one of the main topics of the conversation, you can [watch it here](https://www.linkedin.com/feed/update/urn:li:activity:7307229930675654656/) if you are curious
+
 It's like claiming your restaurant has an "open kitchen" because customers can peek through a tiny window, while your competitor is literally handing out all their recipes and cooking techniques for free.
 
 ## The Reality Behind DeepSeek
