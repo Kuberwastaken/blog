@@ -19,8 +19,11 @@ This blog covers a wide range of topics, including:
 ## Credits and Attributions 
 
 - Thanks to the wondrous contributors at Quartz to make the basis of the website
-- You can refer to the code of the website to see how it works here:
+- This website is #OpenSource check out how it works here:
 🌐 https://github.com/Kuberwastaken/blog
 
-## 🔍 Browse My Posts  
-Dive into some articles :P
+## 🔗 Connect With Me
+* [LinkedIn](https://www.linkedin.com/in/kubermehta/) &nbsp;  [𝕏](https://x.com/Kuberwastaken) &nbsp;  [GitHub](https://github.com/Kuberwastaken)
+
+
+
