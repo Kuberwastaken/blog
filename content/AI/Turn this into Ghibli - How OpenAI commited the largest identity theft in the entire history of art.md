@@ -1,5 +1,5 @@
 ---
-title: Turn this into Ghibli Art - How OpenAI commited the largest identity theft in the entire history of art
+title: Turn this into Ghibli - How OpenAI commited the largest identity theft in the entire history of art
 draft: false
 tags:
   - AI
