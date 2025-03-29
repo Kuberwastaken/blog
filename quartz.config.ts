@@ -85,7 +85,7 @@ const config: QuartzConfig = {
         enableSiteMap: true,
         enableRSS: true,
         rssLimit: 10,
-        rssFullHtml: true,
+        rssFullHtml: false,
         includeEmptyFiles: false,
       }),
       Plugin.Assets(),
