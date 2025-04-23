@@ -24,7 +24,7 @@ If you've been on social media in the past week, you've seen people react to thi
   
 ![Electrcity_costs](https://pbs.twimg.com/media/GpIV4i7XgAAAx4T?format=jpg&name=4096x4096)
 
-and not just regular people, self proclaimed "AI Experts", Founders and many with Executive level positions in a lot of major places (literally didn't even sort by latest, just searched OpenAI here)
+what is extremely funny is that many self proclaimed "AI Experts", Founders and people with Executive level positions in a lot of major places put out stuff like this (literally didn't even sort by latest, just searched OpenAI here)
 
 ![linkedinpostslol](<https://media-hosting.imagekit.io/98abaaa8741e4af4/linkedinpostslol.png?Expires=1839990453&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=AAzTzcqlJPrNf8bxCOacMpmsdAtooOPKjAoTjKva-e1QGYMeVQanL1uAW8da~r9r0pQYVr1YE9xz-q2gWfGOjRwgSaCC7~njYzzb~xSDsuYQ5Lo-BqNE4hRUqbybQo5q73RWDMY~u1ctsEKdXcracxFAeliKSawj43n3u8vKlKEIZxmImDpco94DBRu04pxzQUvOMF3eJ2szCtDX5DahdksLvBzjmLNp7DirWAgPzVADXdRKSr-6M7GUyUDYFaOdvy6PzEg7~K~2vnLI6FZ9uF63231MX2wc2Iu2nU95c~hPRMRig2xM5nObmCDFkJ04jfplaNZ06aO8WI5IQJ5r4A__>)
 
