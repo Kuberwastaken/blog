@@ -26,7 +26,7 @@ This isn't just tech nerd trivia. As I've written about before, Sam Altman is lo
 
 ## The Data Heist: What Are They Taking?
 
-Let's get real: these companies aren't casually browsing your life—they've built empires to vacuum up every digital crumb you drop. Here's what they're really after:
+Honestly, these companies aren't casually browsing your life, they've built empires to get every digital crumb you drop. Here's what they're really after:
 
 ## Microsoft's Omnipresent Digital Assistant
 
