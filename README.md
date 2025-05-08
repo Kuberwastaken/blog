@@ -16,7 +16,7 @@ Welcome to **MindDump**, a space where I, **Kuber Mehta**, share my thoughts, id
 
 ## About Me
 I'm a student, the founder of **TREAT AI** and an AI & tech enthusiast. You can explore my portfolio here:  
-[🌐 kuberwastaken.github.io](https://kuberwastaken.github.io/)
+[🌐 kuber.studio](https://kuber.studio/)
 
 ## 📖 What You'll Find Here
 This blog covers a wide range of topics, including, but not limited to:
@@ -30,7 +30,7 @@ This blog covers a wide range of topics, including, but not limited to:
 This blog is designed with a beautiful and responsive theme that ensures a great reading experience on any device. The theme supports both light and dark modes, which can be toggled based on your preference. The color scheme and typography are carefully chosen to provide a pleasant and distraction-free reading experience.
 
 ## 🔍 Browse My Posts
-[Dive into some articles and explore the content](https://kuberwastaken.github.io/blog/)
+[Dive into some articles and explore the content](https://kuber.studio/blog/)
 
 ## 🛠️ Technologies Used
 This blog is built using modern web technologies and tools:
