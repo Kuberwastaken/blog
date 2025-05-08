@@ -11,7 +11,7 @@ const config: QuartzConfig = {
        provider: 'google', tagId: "G-5C2HC21CS5" 
     },
     locale: "en-US",
-    baseUrl: "kuberwastaken.github.io/blog",
+    baseUrl: "kuber.studio/blog",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     generateSocialImages: {
