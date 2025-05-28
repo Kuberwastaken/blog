@@ -1,7 +1,15 @@
 ---
 title: "AsianMOM: A WebGPU-Powered AI That Roasts You Like an Asian Mother"
 draft: false
-tags: 
+tags:
+  - AsianMOM
+  - AI
+  - Artificial-Intelligence
+  - GenerativeAI
+  - Browsers
+  - Internet
+  - Technology
+  - Projects
 created: 2025-05-27
 modified: 2025-05-27
 ---
