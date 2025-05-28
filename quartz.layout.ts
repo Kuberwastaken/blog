@@ -1,18 +1,27 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { QuartzPluginData } from "./quartz/plugins/vfile"
+import CustomHead from "./components/Head"
+
+// This file is used to define the layout of the site
+// You can customize it to your liking
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
-  head: Component.Head(),
-  header: [],
-  afterBody: [],
+  head: CustomHead,
+  header: [
+    Component.Darkmode,
+    Component.Header,
+  ],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/kuberwastaken",
       LinkedIn: "https://www.linkedin.com/in/kubermehta/",
     },
   }),
+  afterBody: [
+    Component.Search,
+  ],
 }
 
 // components for pages that display a single page (e.g. a single note)
@@ -82,4 +91,37 @@ export const defaultListPageLayout: PageLayout = {
     })),
   ],
   right: [],
+}
+
+export const sharedLayout: SharedLayout = {
+  head: CustomHead,
+  header: [
+    Component.Darkmode,
+    Component.Header,
+  ],
+  footer: Component.Footer,
+  afterBody: [
+    Component.Search,
+  ],
+}
+
+export const defaultLayout: PageLayout = {
+  beforeBody: [
+    Component.Breadcrumbs,
+    Component.ArticleTitle,
+    Component.ContentMeta,
+    Component.TagList,
+  ],
+  left: [
+    Component.PageTitle,
+    Component.MobileOnly(Component.Spacer),
+    Component.Search,
+    Component.Darkmode,
+    Component.DesktopOnly(Component.Explorer),
+  ],
+  right: [
+    Component.Graph,
+    Component.DesktopOnly(Component.TableOfContents),
+    Component.Backlinks,
+  ],
 }
