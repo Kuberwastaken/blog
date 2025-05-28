@@ -11,14 +11,14 @@ const config: QuartzConfig = {
        provider: 'google', tagId: "G-5C2HC21CS5" 
     },
     locale: "en-US",
-    baseUrl: "https://kuber.studio/blog",
+    baseUrl: "kuber.studio/blog",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     generateSocialImages: {
       colorScheme: "darkMode", // what colors to use for generating image, same as theme colors from config, valid values are "darkMode" and "lightMode"
       width: 1200, // width to generate with (in pixels)
       height: 630, // height to generate with (in pixels)
-      excludeRoot: false, // whether to exclude "/" index path to be excluded from auto generated images (false = use auto, true = use default og image)
+      excludeRoot: false, // wether to exclude "/" index path to be excluded from auto generated images (false = use auto, true = use default og image)
     },
     theme: {
       fontOrigin: "googleFonts",
