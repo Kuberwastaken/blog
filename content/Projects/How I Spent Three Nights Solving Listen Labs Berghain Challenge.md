@@ -17,11 +17,9 @@ modified:
 ---
 ![The Berghain Billboard](https://assets.sfstandard.com/image/994911177489/image_tchl2nok5t0kp0lsv0rb1eal3v/-S1024x683-FPNG)
 <p align="center" style="font-size: small; font-weight: lighter;">
-
-    When a cryptic billboard led to the most addictive coding challenge of 2025
-
+    When a cryptic billboard led to the most addictive coding challenge of 2025
 </p>
-a
+
 Optimization problems are quite literally digital crack cocaine. Once you get a taste of turning 1,200 rejections into 1,150, then 1,000, then watching that number drop digit by agonizing digit - you're hooked (even when each run takes ~40 minutes). And when Listen Labs accidentally created the most engaging technical challenge of 2025 with their Berghain Challenge, I found myself tumbling down a rabbit hole that would consume days of my life and introduce me to some of the most brilliant problem-solvers on the internet.
 
 ![16th-on-leaderboard](https://cdn.kuber.studio/assets/media/berghain/16-leaderboard.png)
@@ -47,7 +45,7 @@ Someone cracked it within hours (because the internet never sleeps). The numbers
 
 And just like that, Listen Labs had created the kind of puzzle that gets shared in every engineering Slack channel and Discord server. The hook was perfect - accessible enough that anyone with basic knowledge could solve it, but mysterious enough to create genuine curiosity.
 
-### The Growth Hack Anatomy
+## The Growth Hack Anatomy
 
 I don't just like programming with a monkey brain, I love clever marketing and honestly this was really, really good from a pure marketing perspective, Listen Labs nailed every viral coefficient multiplier:
 
@@ -56,7 +54,8 @@ I don't just like programming with a monkey brain, I love clever marketing and h
 - **Challenge Phase**: Berghain game provides addictive optimization loop
 - **Competition Phase**: Leaderboard dynamics create retention through ego
 
-They expected maybe 10 concurrent users. They got 30,000 in the first few hours, LMAO power of X virallity with 1M+ views on Alfred's announcement tweet.
+They expected maybe 10 concurrent users. They got 30,000 in the first few hours, 
+LOL power of X virallity with 1M+ views on Alfred's announcement tweet.
 
 ![16th-on-leaderboard](https://cdn.kuber.studio/assets/media/berghain/berghain-views.png)
 
@@ -95,7 +94,7 @@ Your constraints for Scenario 1:
 "Easy," you think. 
 "I'll just accept everyone who helps with a constraint."
 
-**Wrong.**
+### **Wrong.**
 
 The attributes are correlated. Some young people are also well_dressed. Accept too many of these "duals" early and you'll overshoot one quota while undershooting the other. Reject too many and you'll run out of people before meeting your minimums.
 
@@ -319,7 +318,7 @@ of course this had no other issues since the official communications were done t
 
 I spent hours analyzing repositories, correlating commit timestamps with leaderboard changes, and understanding how different approaches performed across scenarios. It was like having access to a real-time research lab with thousands of parallel experiments.
 
-### Phase 4: Studying The Masters
+## Studying The Masters
 
 John's solution was a thing of beauty. For context, I mentioned John in a post I made about a Berghain run for fun since he was #2 on the leaderboard then and funnily enough he replied on the post. We talked for a while about a lot of parts of the contest and later he dropped a nice dissection of his approach on X
 
@@ -342,7 +341,7 @@ He also confirmed the luck problem I spoke of:
 
 This luck factor was something everyone dealt with. Some people had beefier hardware and could run more parallel sessions. Others got better random sequences. The combination of algorithmic skill and computational resources created an interesting dynamic.
 
-## Dissecting Victory: David Heineman's Dual Threshold Solver
+## Dissecting Victory - David Heineman's Dual Threshold Solver
 
 When David Heineman released his winning repository, I dove deep into understanding what made it so effective. His `DualThresholdSolver` was a masterclass in pragmatic optimization.
 
@@ -515,4 +514,5 @@ And sometimes, that's worth more than any ranking.
 
 ---
 
-*The code for all my approaches is available across the different project folders on GitHub at https://github.com/Kuberwastaken/Berghain. Feel free to explore, iterate, and improve. After all, the best optimization problems are the ones that keep evolving.* You can still do the challenges - just not get to Berghain with them, welp.
+*The code for all my approaches is available across the different project folders on GitHub at https://github.com/Kuberwastaken/Berghain. 
+Feel free to explore, iterate, and improve. After all, the best optimization problems are the ones that keep evolving.* You can still do the challenges - just not get to Berghain with them, welp.
