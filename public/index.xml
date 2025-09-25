@@ -2,69 +2,69 @@
 <rss version="2.0">
     <channel>
       <title>ᨒ MindDump</title>
-      <link>https://kuberwastaken.github.io/blog</link>
+      <link>https://kuber.studio/blog</link>
       <description>Last 10 notes on ᨒ MindDump</description>
       <generator>Quartz -- https://kuberwastaken.github.io/blog/</generator>
       <item>
+    <title>How People use ChatGPT and Why You Should Care</title>
+    <link>https://kuber.studio/blog/AI/How-People-use-ChatGPT-and-Why-You-Should-Care</link>
+    <guid>https://kuber.studio/blog/AI/How-People-use-ChatGPT-and-Why-You-Should-Care</guid>
+    <description>OpenAI just put out a very detailed paper and post covering what in my opinion is one of the most important pieces of information for anybody using or building with AI How do People use ...</description>
+    <pubDate>Thu, 25 Sep 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>How People use ChatGPT and Why You Should Care</title>
+    <link>https://kuber.studio/blog/AI/How-People-use-ChatGPT-and-Why-You-Should-Care---An-In-Depth-Analysis</link>
+    <guid>https://kuber.studio/blog/AI/How-People-use-ChatGPT-and-Why-You-Should-Care---An-In-Depth-Analysis</guid>
+    <description>OpenAI just put out a very detailed paper and post covering what in my opinion is one of the most important pieces of information for anybody using or building with AI How do People use ...</description>
+    <pubDate>Thu, 25 Sep 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Character Conversions with AI - Wan 2.2 Animate</title>
+    <link>https://kuber.studio/blog/Tutorials/Character-Conversions-with-AI---Wan-2.2-Animate</link>
+    <guid>https://kuber.studio/blog/Tutorials/Character-Conversions-with-AI---Wan-2.2-Animate</guid>
+    <description>Hey! you probably saw my post and were curious how to recreate it haha, I know I sent these out a little late but that’s because every single service that offers these models for free is ...</description>
+    <pubDate>Wed, 24 Sep 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>How I Spent Three Nights Solving Listen Labs Berghain Challenge</title>
+    <link>https://kuber.studio/blog/Projects/How-I-Spent-Three-Nights-Solving-Listen-Labs-Berghain-Challenge</link>
+    <guid>https://kuber.studio/blog/Projects/How-I-Spent-Three-Nights-Solving-Listen-Labs-Berghain-Challenge</guid>
+    <description> When a cryptic billboard led to the most addictive coding challenge of 2025 Optimization problems are quite literally digital crack cocaine. Once you get a taste of turning 1,200 rejections into 1,150, then 1,000, then watching that number drop digit by agonizing digit - you’re hooked (even when each run takes ~40 minutes).</description>
+    <pubDate>Sun, 21 Sep 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>AsianMOM: A WebGPU-Powered AI That Roasts You Like an Asian Mother</title>
+    <link>https://kuber.studio/blog/Projects/AsianMOM---A-WebGPU-Powered-AI-That-Roasts-You-Like-an-Asian-Mother</link>
+    <guid>https://kuber.studio/blog/Projects/AsianMOM---A-WebGPU-Powered-AI-That-Roasts-You-Like-an-Asian-Mother</guid>
+    <description>People are making AI apps that contribute to the society or make others’ lives easier. I was bored of that. So I made an AI app that roasts you with the sharp-witted, no-nonsense energy of an Asian mom, and I had the perfect, most creative name for it -AsianMOM (well technically it’s Artificial Surveillance with Interactive Analysis and Nagging Maternal Oversight Model) This isn’t the most crazy part though, the crazy part is, it runs on YOUR browser.</description>
+    <pubDate>Tue, 27 May 2025 00:00:00 GMT</pubDate>
+  </item><item>
     <title>MindDump</title>
-    <link>https://kuberwastaken.github.io/blog/</link>
-    <guid>https://kuberwastaken.github.io/blog/</guid>
+    <link>https://kuber.studio/blog/</link>
+    <guid>https://kuber.studio/blog/</guid>
     <description>Welcome to my Mind Dump—a space where I share thoughts, ideas, and deep dives into various topics. I’m Kuber Mehta, founder of TREAT AI and an AI &amp; tech enthusiast.</description>
-    <pubDate>Fri, 25 Apr 2025 20:12:15 GMT</pubDate>
+    <pubDate>Fri, 25 Apr 2025 20:15:13 GMT</pubDate>
   </item><item>
     <title>OpenAI CEO Draws Line Between &#039;Regular Cute&#039; and &#039;Gay Cute&#039; for AI Models</title>
-    <link>https://kuberwastaken.github.io/blog/AI/OpenAI-CEO-Draws-Line-Between-'Regular-Cute'-and-'Gay-Cute'-for-AI-Models</link>
-    <guid>https://kuberwastaken.github.io/blog/AI/OpenAI-CEO-Draws-Line-Between-'Regular-Cute'-and-'Gay-Cute'-for-AI-Models</guid>
+    <link>https://kuber.studio/blog/AI/OpenAI-CEO-Draws-Line-Between-'Regular-Cute'-and-'Gay-Cute'-for-AI-Models</link>
+    <guid>https://kuber.studio/blog/AI/OpenAI-CEO-Draws-Line-Between-'Regular-Cute'-and-'Gay-Cute'-for-AI-Models</guid>
     <description>This is a clickbait title. Here’s what he actually said: Yes, it’s intended to be that way so people read it and react to it. I know it, so does everyone that writes articles like these.</description>
     <pubDate>Wed, 23 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>I Got Early Access to Manus AI - Let&#039;s Talk About it!</title>
-    <link>https://kuberwastaken.github.io/blog/AI/I-Got-Early-Access-to-Manus-AI---Let's-Talk-About-it</link>
-    <guid>https://kuberwastaken.github.io/blog/AI/I-Got-Early-Access-to-Manus-AI---Let's-Talk-About-it</guid>
+    <link>https://kuber.studio/blog/AI/I-Got-Early-Access-to-Manus-AI---Let's-Talk-About-it</link>
+    <guid>https://kuber.studio/blog/AI/I-Got-Early-Access-to-Manus-AI---Let's-Talk-About-it</guid>
     <description> In the rapidly evolving landscape of artificial intelligence, we’re accustomed to AI assistants that seem to require a lot of effort. Constant hand-holding and a ton clarifying questions often make these tools more bothersome than helpful for a lot of more complex jobs.</description>
     <pubDate>Fri, 11 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>The Big Tech Data Dilemma - When Your Life Becomes AI Training Material</title>
-    <link>https://kuberwastaken.github.io/blog/AI/The-Big-Tech-Data-Dilemma---When-Your-Life-Becomes-AI-Training-Material</link>
-    <guid>https://kuberwastaken.github.io/blog/AI/The-Big-Tech-Data-Dilemma---When-Your-Life-Becomes-AI-Training-Material</guid>
+    <link>https://kuber.studio/blog/AI/The-Big-Tech-Data-Dilemma---When-Your-Life-Becomes-AI-Training-Material</link>
+    <guid>https://kuber.studio/blog/AI/The-Big-Tech-Data-Dilemma---When-Your-Life-Becomes-AI-Training-Material</guid>
     <description>In today’s digital wild west, your online life is more valuable than a gold. Tech titans like Microsoft, Meta, and Google aren’t just collecting your data, they’re drilling it like oil rigs to power their AI empires in their enormous data centers.</description>
     <pubDate>Thu, 03 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>Turn this into Ghibli - How OpenAI commited the largest identity theft in the entire history of art</title>
-    <link>https://kuberwastaken.github.io/blog/AI/Turn-this-into-Ghibli---How-OpenAI-commited-the-largest-identity-theft-in-the-entire-history-of-art</link>
-    <guid>https://kuberwastaken.github.io/blog/AI/Turn-this-into-Ghibli---How-OpenAI-commited-the-largest-identity-theft-in-the-entire-history-of-art</guid>
+    <link>https://kuber.studio/blog/AI/Turn-this-into-Ghibli---How-OpenAI-commited-the-largest-identity-theft-in-the-entire-history-of-art</link>
+    <guid>https://kuber.studio/blog/AI/Turn-this-into-Ghibli---How-OpenAI-commited-the-largest-identity-theft-in-the-entire-history-of-art</guid>
     <description> OpenAI’s ChatGPT turning everything into Studio Ghibli art. If you’ve been anywhere near the internet this week, you’ve seen it—selfies, memes, even Elon Musk, all morphed into that lush, whimsical Ghibli vibe.</description>
     <pubDate>Fri, 28 Mar 2025 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>Why I Switched to the Nothing Phone 3a Pro and Can’t Stop Talking About It</title>
-    <link>https://kuberwastaken.github.io/blog/Technology/Untitled</link>
-    <guid>https://kuberwastaken.github.io/blog/Technology/Untitled</guid>
-    <description>Why I Switched to the Nothing Phone 3a Pro and Can’t Stop Talking About It Caption: Unboxing my phone, and yes I still use BeReal A few days ago, I ditched my old phone for the Nothing Phone ...</description>
-    <pubDate>Thu, 27 Mar 2025 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>OpenAI vs DeepSeek - The Battle for AI Dominance and the Meaning of &quot;Open&quot;</title>
-    <link>https://kuberwastaken.github.io/blog/AI/OpenAI-vs-DeepSeek---The-Battle-for-AI-Dominance-and-the-Meaning-of-Open</link>
-    <guid>https://kuberwastaken.github.io/blog/AI/OpenAI-vs-DeepSeek---The-Battle-for-AI-Dominance-and-the-Meaning-of-Open</guid>
-    <description> In the rapidly evolving landscape of artificial intelligence, a new rivalry has emerged that’s reshaping the entire industry. OpenAI, once the poster child for open-source AI research, has taken a controversial stance by proposing that the U.S.</description>
-    <pubDate>Sun, 16 Mar 2025 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>The AI Models Race to The Bottom in 2025</title>
-    <link>https://kuberwastaken.github.io/blog/AI/The-AI-Models-Race-to-The-Bottom-in-2025</link>
-    <guid>https://kuberwastaken.github.io/blog/AI/The-AI-Models-Race-to-The-Bottom-in-2025</guid>
-    <description>The AI industry is undergoing a deflationary shock that would make Bitcoin miners blush. Since GPT-3’s 2020 debut, large language model (LLM) costs have collapsed from 60 to 0.02 per million tokens—a 3,000x price implosion reshaping business models, technical architectures, and power dynamics.</description>
-    <pubDate>Mon, 10 Mar 2025 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>Roy Lee’s Interview Coder: Cheating or a Wake Up Call?</title>
-    <link>https://kuberwastaken.github.io/blog/AI/Roy-Lee's-Interview-Coder---Cheating-or-a-Wake-Up-Call</link>
-    <guid>https://kuberwastaken.github.io/blog/AI/Roy-Lee's-Interview-Coder---Cheating-or-a-Wake-Up-Call</guid>
-    <description>Imagine a world where coding interviews are as predictable as recent Marvel movie plot twists. Enter Roy Lee, a Columbia University computer science sophomore who went from Reddit’s Leetcode Messiah to Twitter’s (I refuse to call it X) most controversial disruptor.</description>
-    <pubDate>Tue, 04 Mar 2025 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>QR Codes and Malware - The Hidden Dangers in 2025</title>
-    <link>https://kuberwastaken.github.io/blog/Technology/QR-Codes-and-Malware---The-Hidden-Dangers-in-2025</link>
-    <guid>https://kuberwastaken.github.io/blog/Technology/QR-Codes-and-Malware---The-Hidden-Dangers-in-2025</guid>
-    <description>QR codes have revolutionized everyday interactions, from restaurant menus to contactless payments. Yet beneath their simple, pixelated exterior lies a VERY complex world of data encoding, error correction, and potential vulnerabilities ripe for exploitation.</description>
-    <pubDate>Mon, 24 Feb 2025 00:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>
