@@ -27,7 +27,6 @@ export const defaultContentPageLayout: PageLayout = {
   left: [
     Component.PageTitle({
       text: "MindDump",
-      subtext: "by Kuber Mehta",
     }),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
@@ -36,17 +35,30 @@ export const defaultContentPageLayout: PageLayout = {
       filterFn: (node) => {
         return node.name !== "BITS" && node.name !== "index"
       },
-    })),
-  ],
-  right: [
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Graph({
+        })),
+      ],
+      right: [
+        Component.DesktopOnly(Component.TableOfContents()),
+        Component.Graph({
       localGraph: {
         depth: 2,
         repelForce: 2,
+        centerForce: 0.4,
+        linkDistance: 50,
+        fontSize: 0.8,
+        focusOnHover: true,
       },
-    }),
-    Component.RecentNotes({
+      globalGraph: {
+        depth: -1,
+        scale: 0.9,
+        repelForce: 1.5,
+        centerForce: 0.4,
+        linkDistance: 45,
+        fontSize: 0.7,
+        focusOnHover: true,
+      },
+        }),
+        Component.RecentNotes({
       title: "Trending Posts", 
       limit: 3,
       showTags: false,
