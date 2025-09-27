@@ -83,6 +83,6 @@ anddd you should be done, click on the download button on the top right of the M
 ---
 
 If you found this useful, drop me a Follow! 
-[X](x.com/kuberwastaken)   [LinkedIn](https://www.linkedin.com/in/kubermehta/)  [Instagram](https://www.instagram.com/yokuber/)
+[X](https://www.x.com/kuberwastaken)   [LinkedIn](https://www.linkedin.com/in/kubermehta/)  [Instagram](https://www.instagram.com/yokuber/)
 
 Feel free to Reach out or DM me if you want to talk, have any problems or need any help too, I'll try my best!
