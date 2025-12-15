@@ -20,7 +20,7 @@ This blog covers a wide range of topics, including (But not limited to):
 ## Credits and Attributions 
 
 - Thanks to the wondrous contributors at Quartz to help set up the base of this website, which I modified
-- This website is #OpenSource, you can [check out how it works here]([https://github.com/Kuberwastaken/blog](https://github.com/Kuberwastaken/blog))
+- This website is #OpenSource, you can [check out how it works here](https://github.com/Kuberwastaken/blog)
 
 You can find a [RSS stream for this website here to add it to your reader](https://kuber.studio/blog/index.xml)
 
