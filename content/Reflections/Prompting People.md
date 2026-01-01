@@ -22,4 +22,4 @@ What's funny is that this isn't even intentional - it's what I believe in my hea
 
 The more surprising part is the unusual reactions of the other people getting a better picture and context of what I'm explaining without the usual back and forth - which has landed me my fair share of complaints of having to hear mini lectures, but not more than people appreciative of the fuller picture.
 
-It made me realize that while we're training AI to be more human, the conversations might be training us to be more structured and honestly I’m not sure if this makes me a better communicator or just a better prompt engineer, but it’s a hard habit to break.
+It made me realize that while we're training AI to be more human, the conversations might be training us to be more structured and honestly I’m not sure if this makes me a better communicator or just a better prompt writer, but it’s a hard habit to break.
