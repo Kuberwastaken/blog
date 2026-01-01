@@ -12,7 +12,7 @@ modified:
 ---
 I just gave my final end semester exam a couple days ago when I bumped into an old friend and we got into talking and discussing some important topics for the test.
 
-I was midway through explaining a concept he hadn't covered when he stopped me. He pointed out that my way of speaking had completely changed and how it was unusually structured and didn't give him the opportunity to ask follow up questions.
+I was midway through explaining a concept he hadn't covered when he stopped me and pointed out my way of speaking had changed and how it was way more structured and didn't give him the opportunity to ask follow up questions.
 
 and that's when it hit me - I think **the more often I use AI, the more I start talking to people like how I engineer prompts for LLMs** and not just over messages or text - even in person.
 
