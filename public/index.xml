@@ -3,9 +3,33 @@
     <channel>
       <title>ᨒ MindDump</title>
       <link>https://kuber.studio/blog</link>
-      <description>Last 10 notes on ᨒ MindDump</description>
+      <description>Last 100 notes on ᨒ MindDump</description>
       <generator>Quartz -- https://kuberwastaken.github.io/blog/</generator>
       <item>
+    <title>How I Made DOOM Run Inside a GitHub Readme</title>
+    <link>https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme</link>
+    <guid>https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme</guid>
+    <description>...</description>
+    <pubDate>Sun, 04 Jan 2026 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Prompting People</title>
+    <link>https://kuber.studio/blog/Reflections/Prompting-People</link>
+    <guid>https://kuber.studio/blog/Reflections/Prompting-People</guid>
+    <description>I just gave my final end semester exam a couple days ago when I bumped into an old friend and we got into talking and discussing some important topics for the test ...</description>
+    <pubDate>Fri, 02 Jan 2026 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>How to Statistically Never Lose in Wordle Again</title>
+    <link>https://kuber.studio/blog/Post-Extended/How-to-Statistically-Never-Lose-in-Wordle-Again</link>
+    <guid>https://kuber.studio/blog/Post-Extended/How-to-Statistically-Never-Lose-in-Wordle-Again</guid>
+    <description>...</description>
+    <pubDate>Mon, 29 Dec 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>I Read Sam Bhagwat&#039;s AI Agents Bible So You Don&#039;t Have To (But Probably Should)</title>
+    <link>https://kuber.studio/blog/Post-Extended/I-Read-Sam-Bhagwat's-AI-Agents-Bible-So-You-Don't-Have-To</link>
+    <guid>https://kuber.studio/blog/Post-Extended/I-Read-Sam-Bhagwat's-AI-Agents-Bible-So-You-Don't-Have-To</guid>
+    <description> So Sam Bhagwat recently dropped a 150-page book on building AI agents, and it’s all around the internet. He sent me a copy too and honestly? It’s actually kinda good (well until 2025 ends at least) Whenever someone asks me how do they “Learn AI”, my standard answer is always FAFO (F around and Find out) And it’s still very relevant! By the time someone launches a course or writes a book (which usually suck btw) - and by the time you finish it, it’s already outdated.</description>
+    <pubDate>Tue, 11 Nov 2025 00:00:00 GMT</pubDate>
+  </item><item>
     <title>MindDump</title>
     <link>https://kuber.studio/blog/</link>
     <guid>https://kuber.studio/blog/</guid>
@@ -65,6 +89,306 @@
     <guid>https://kuber.studio/blog/Technology/Untitled</guid>
     <description>Why I Switched to the Nothing Phone 3a Pro and Can’t Stop Talking About It Caption: Unboxing my phone, and yes I still use BeReal A few days ago, I ditched my old phone for the Nothing Phone ...</description>
     <pubDate>Thu, 27 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>OpenAI vs DeepSeek - The Battle for AI Dominance and the Meaning of &quot;Open&quot;</title>
+    <link>https://kuber.studio/blog/AI/OpenAI-vs-DeepSeek---The-Battle-for-AI-Dominance-and-the-Meaning-of-Open</link>
+    <guid>https://kuber.studio/blog/AI/OpenAI-vs-DeepSeek---The-Battle-for-AI-Dominance-and-the-Meaning-of-Open</guid>
+    <description> In the rapidly evolving landscape of artificial intelligence, a new rivalry has emerged that’s reshaping the entire industry. OpenAI, once the poster child for open-source AI research, has taken a controversial stance by proposing that the U.S.</description>
+    <pubDate>Sun, 16 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>The AI Models Race to The Bottom in 2025</title>
+    <link>https://kuber.studio/blog/AI/The-AI-Models-Race-to-The-Bottom-in-2025</link>
+    <guid>https://kuber.studio/blog/AI/The-AI-Models-Race-to-The-Bottom-in-2025</guid>
+    <description>The AI industry is undergoing a deflationary shock that would make Bitcoin miners blush. Since GPT-3’s 2020 debut, large language model (LLM) costs have collapsed from 60 to 0.02 per million tokens—a 3,000x price implosion reshaping business models, technical architectures, and power dynamics.</description>
+    <pubDate>Mon, 10 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Roy Lee’s Interview Coder: Cheating or a Wake Up Call?</title>
+    <link>https://kuber.studio/blog/AI/Roy-Lee's-Interview-Coder---Cheating-or-a-Wake-Up-Call</link>
+    <guid>https://kuber.studio/blog/AI/Roy-Lee's-Interview-Coder---Cheating-or-a-Wake-Up-Call</guid>
+    <description>Imagine a world where coding interviews are as predictable as recent Marvel movie plot twists. Enter Roy Lee, a Columbia University computer science sophomore who went from Reddit’s Leetcode Messiah to Twitter’s (I refuse to call it X) most controversial disruptor.</description>
+    <pubDate>Tue, 04 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>QR Codes and Malware - The Hidden Dangers in 2025</title>
+    <link>https://kuber.studio/blog/Technology/QR-Codes-and-Malware---The-Hidden-Dangers-in-2025</link>
+    <guid>https://kuber.studio/blog/Technology/QR-Codes-and-Malware---The-Hidden-Dangers-in-2025</guid>
+    <description>QR codes have revolutionized everyday interactions, from restaurant menus to contactless payments. Yet beneath their simple, pixelated exterior lies a VERY complex world of data encoding, error correction, and potential vulnerabilities ripe for exploitation.</description>
+    <pubDate>Mon, 24 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Majorana 1 - Why Quantum Computing Matters Now</title>
+    <link>https://kuber.studio/blog/Technology/Majorana-1---Why-Quantum-Computing-Matters-Now</link>
+    <guid>https://kuber.studio/blog/Technology/Majorana-1---Why-Quantum-Computing-Matters-Now</guid>
+    <description>Introduction: A Potential New Era of Computing Imagine a computer so powerful it could solve problems in minutes that would take today’s fastest supercomputers billions of years ...</description>
+    <pubDate>Wed, 19 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>How I Managed To Make HTML Game Compression So Much Better</title>
+    <link>https://kuber.studio/blog/Projects/How-I-Managed-To-Make-HTML-Game-Compression-So-Much-Better</link>
+    <guid>https://kuber.studio/blog/Projects/How-I-Managed-To-Make-HTML-Game-Compression-So-Much-Better</guid>
+    <description>Yesterday, I launched my game The Backdooms - my game inspired by DOOM and The Backrooms (read more about it here) based on my week-long web experiment that packs entire minified HTML ...</description>
+    <pubDate>Fri, 14 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>How I Managed To Get Doom In A QR Code</title>
+    <link>https://kuber.studio/blog/Projects/How-I-Managed-To-Get-Doom-In-A-QR-Code</link>
+    <guid>https://kuber.studio/blog/Projects/How-I-Managed-To-Get-Doom-In-A-QR-Code</guid>
+    <description> Yes, this is literally the entire game. Scan it and play if you want to. DOOM is a game known for running everywhere because of the ports it has had since 1993, there have been memes on &quot;It Runs Doom&quot; on Tumbler since over a decade ago.</description>
+    <pubDate>Thu, 13 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>I Used a Firefox Based Browser for a Week and I Hated it</title>
+    <link>https://kuber.studio/blog/Technology/I-Used-a-Firefox-Based-Browser-for-a-Week-and-I-Hated-it</link>
+    <guid>https://kuber.studio/blog/Technology/I-Used-a-Firefox-Based-Browser-for-a-Week-and-I-Hated-it</guid>
+    <description> Image: Zen Browser Introduction: My Complicated History With Firefox As a Pro Open-Source guy, I owe Firefox a debt of gratitude. Like many, I still remember using Firefox on school computers to escape the clutches of Internet Explorer.</description>
+    <pubDate>Wed, 12 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>r/Place - The Internet&#039;s Greatest Communal Art Experiment</title>
+    <link>https://kuber.studio/blog/Social-Media/rPlace---The-Internet's-Greatest-Communal-Art-Experiment</link>
+    <guid>https://kuber.studio/blog/Social-Media/rPlace---The-Internet's-Greatest-Communal-Art-Experiment</guid>
+    <description>In 2017, Reddit unleashed r/Place - a massive online canvas where users could paint just one pixel every 10 minutes. What followed was one of the internet’s most chaotic, creative, and oddly beautiful experiments in communal art.</description>
+    <pubDate>Mon, 10 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>How Google Gemini 2.0 Caught Up in the AI Race</title>
+    <link>https://kuber.studio/blog/AI/How-Google-Gemini-2.0-Caught-Up-in-the-AI-Race</link>
+    <guid>https://kuber.studio/blog/AI/How-Google-Gemini-2.0-Caught-Up-in-the-AI-Race</guid>
+    <description>Remember when searching the web meant sifting through 10 pages of results? Google changed that forever. Now, they’re doing it again with artificial intelligence – although slowly (and definitely because of DeepSeek ) and this time, it’s not just about search.</description>
+    <pubDate>Sun, 09 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Undertale Genocide - How to Make the Player Feel Bad For Their Choices</title>
+    <link>https://kuber.studio/blog/Gaming/Undertale-Genocide---How-to-Make-the-Player-Feel-Bad-For-Their-Choices</link>
+    <guid>https://kuber.studio/blog/Gaming/Undertale-Genocide---How-to-Make-the-Player-Feel-Bad-For-Their-Choices</guid>
+    <description>Undertale is a game so iconic that it feels impossible not to know about it. It is also, my favorite game. It’s a turn-based RPG that stands out with its unique mechanics, lovable characters, a masterful soundtrack, and deep lore.</description>
+    <pubDate>Fri, 07 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>The Weeknd&#039;s Hurry Up Tomorrow- A Perfect Goodbye to an Iconic Era</title>
+    <link>https://kuber.studio/blog/Music/The-Weeknd's-Hurry-Up-Tomorrow--A-Perfect-Goodbye-to-an-Iconic-Era</link>
+    <guid>https://kuber.studio/blog/Music/The-Weeknd's-Hurry-Up-Tomorrow--A-Perfect-Goodbye-to-an-Iconic-Era</guid>
+    <description>If you know me, you know The Weeknd is my absolute favorite artist. My friends, family, and even my imaginary girlfriend are sick of hearing about it. But after listening to his final album, Hurry Up Tomorrow, I’m gonna say it again: Abel Tesfaye is a generational talent, and this album is the cinematic, soul-shaking farewell that we deserve, and trust me, I don’t say this a lot.</description>
+    <pubDate>Fri, 07 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>The Idol - The Weeknd&#039;s Show with its Mistakes and Missed Opportunities</title>
+    <link>https://kuber.studio/blog/TV/The-Idol---The-Weeknd's-Show-with-its-Mistakes-and-Missed-Opportunities</link>
+    <guid>https://kuber.studio/blog/TV/The-Idol---The-Weeknd's-Show-with-its-Mistakes-and-Missed-Opportunities</guid>
+    <description>HBO’s The Idol promised a gritty, unflinching look at the music industry’s underbelly-think Euphoria meets Behind the Music. Instead, it stumbled into a confusing mix of shock value, half-baked ideas, and missed opportunities.</description>
+    <pubDate>Fri, 07 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>The Evolution of Gaming: From Pastimes to Powerful Industries</title>
+    <link>https://kuber.studio/blog/Gaming/The-Evolution-of-Gaming-From-Pastimes-to-Powerful-Industries</link>
+    <guid>https://kuber.studio/blog/Gaming/The-Evolution-of-Gaming-From-Pastimes-to-Powerful-Industries</guid>
+    <description>The world of gaming has undergone a remarkable transformation over the years, evolving from a niche hobby to a powerful global industry that captivates millions ...</description>
+    <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Event Ticketing - The Untapped Industry with Deeply Flawed Competition</title>
+    <link>https://kuber.studio/blog/Music/Event-Ticketing---The-Untapped-Industry-with-Deeply-Flawed-Competition</link>
+    <guid>https://kuber.studio/blog/Music/Event-Ticketing---The-Untapped-Industry-with-Deeply-Flawed-Competition</guid>
+    <description>The event ticketing industry stands at a very interesting state, with a pressing need for innovation amidst a landscape dominated by longstanding players like Ticketmaster ...</description>
+    <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Why Using Machine Learning for Stock Market isn&#039;t a Great Idea</title>
+    <link>https://kuber.studio/blog/Technology/Why-Using-Machine-Learning-for-Stock-Market-isn't-a-Great-Idea</link>
+    <guid>https://kuber.studio/blog/Technology/Why-Using-Machine-Learning-for-Stock-Market-isn't-a-Great-Idea</guid>
+    <description>So, you want to use machine learning (ML) to predict stock prices and build an AI Warren Buffett? Don’t. (But since you’re already here, let’s unpack why this is a terrible idea usually disguised as a genius one.) 🧠 A Classical case of the Time-Series Prediction Yes, Machine learning models like LSTMs and Transformers are amazing at predicting the next item in a sequence.</description>
+    <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>DeepSeek vs. ChatGPT - The AI Chess Showdown That Broke the Internet</title>
+    <link>https://kuber.studio/blog/AI/DeepSeek-vs.-ChatGPT---The-AI-Chess-Showdown-That-Broke-the-Internet</link>
+    <guid>https://kuber.studio/blog/AI/DeepSeek-vs.-ChatGPT---The-AI-Chess-Showdown-That-Broke-the-Internet</guid>
+    <description>Ladies and gentlemen, fasten your seatbelts. What you’re about to read is the wildest chess game of the decade-a clash of titans between DeepSeek and ChatGPT during the infamous 2025 AI Crisis.</description>
+    <pubDate>Wed, 05 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>ChatGPT Wrappers: Revolutionizing User Experience or Hiding Limitations?</title>
+    <link>https://kuber.studio/blog/AI/ChatGPT-Wrappers---Revolutionizing-User-Experience-or-Hiding-Limitations</link>
+    <guid>https://kuber.studio/blog/AI/ChatGPT-Wrappers---Revolutionizing-User-Experience-or-Hiding-Limitations</guid>
+    <description>In the ever-evolving world of natural language processing and AI, ChatGPT wrappers are creating quite a stir. These innovative tools act as intermediaries between users and ChatGPT, the cutting-edge language model developed by OpenAI.</description>
+    <pubDate>Tue, 04 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Unlocking the Potential - Data Science in Healthcare</title>
+    <link>https://kuber.studio/blog/Data-Science/Unlocking-the-Potential-Data-Science-in-Healthcare</link>
+    <guid>https://kuber.studio/blog/Data-Science/Unlocking-the-Potential-Data-Science-in-Healthcare</guid>
+    <description>The field of healthcare is undergoing a significant transformation as data science techniques revolutionize the way medical professionals practice medicine and improve patient ...</description>
+    <pubDate>Tue, 04 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>The Best Way to Learn an Instrument - Throw Yourself into it</title>
+    <link>https://kuber.studio/blog/Music/The-Best-Way-to-Learn-an-Instrument---Throw-Yourself-into-it</link>
+    <guid>https://kuber.studio/blog/Music/The-Best-Way-to-Learn-an-Instrument---Throw-Yourself-into-it</guid>
+    <description>Learning to play a musical instrument is a fulfilling pursuit, and a unique approach, which I’ll refer to as the “throw yourself into it” method, can be incredibly productive ...</description>
+    <pubDate>Mon, 03 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>The TikTokification of Music: Unraveling the Complex Impact of Social Media</title>
+    <link>https://kuber.studio/blog/Music/The-TikTokification-of-Music---Unraveling-the-Complex-Impact-of-Social-Media</link>
+    <guid>https://kuber.studio/blog/Music/The-TikTokification-of-Music---Unraveling-the-Complex-Impact-of-Social-Media</guid>
+    <description>The rise of social media, notably TikTok, has ignited a profound discussion about the evolving nature of music and its increasing optimization for digital platforms ...</description>
+    <pubDate>Mon, 03 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>The Duality of Social Media Connecting the World or Dividing Opinions?</title>
+    <link>https://kuber.studio/blog/Social-Media/The-Duality-of-Social-Media-Connecting-the-World-or-Dividing-Opinions</link>
+    <guid>https://kuber.studio/blog/Social-Media/The-Duality-of-Social-Media-Connecting-the-World-or-Dividing-Opinions</guid>
+    <description>In today’s world, social media has become an indelible part of the digital landscape, with far-reaching consequences that impact our daily lives in ways we are only beginning to understand ...</description>
+    <pubDate>Mon, 03 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>A Dummy-Proof Guide to Git and GitHub</title>
+    <link>https://kuber.studio/blog/Technology/A-Dummy-Proof-Guide-to-Git-and-GitHub</link>
+    <guid>https://kuber.studio/blog/Technology/A-Dummy-Proof-Guide-to-Git-and-GitHub</guid>
+    <description>If you’ve ever looked up a Git or GitHub tutorial, you’ve probably been overwhelmed by the complexity. It can seem like a huge, intimidating system full of jargon.</description>
+    <pubDate>Mon, 03 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>The Ultimate Guide to Buying Your First Guitar</title>
+    <link>https://kuber.studio/blog/Music/The-Ultimate-Guide-to-Buying-Your-First-Guitar</link>
+    <guid>https://kuber.studio/blog/Music/The-Ultimate-Guide-to-Buying-Your-First-Guitar</guid>
+    <description>Are you about to buy your first guitar? Before making a decision, it’s important to understand what to look for. I’ve personally made the mistake of buying a bad first guitar and ended up not playing for about 7 years (really, I thought I was the problem.) Whether you’re a complete beginner or an intermediate player, this guide will help you make an informed choice.</description>
+    <pubDate>Sun, 02 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Marks Calculators</title>
+    <link>https://kuber.studio/blog/BITS/Marks-Calculators/</link>
+    <guid>https://kuber.studio/blog/BITS/Marks-Calculators/</guid>
+    <description> Semester 1: mega.nz/file/cV4kgbLK#FfV-AtP_6Tm7Tu1Mo51RyltSY-yCGSigZr6ChJ-DQQc .</description>
+    <pubDate>Sat, 01 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Demystifying Data Science Jargon&quot; A Beginner&#039;s Guide</title>
+    <link>https://kuber.studio/blog/Data-Science/Demystifying-Data-Science-Jargon-A-Beginner's-Guide</link>
+    <guid>https://kuber.studio/blog/Data-Science/Demystifying-Data-Science-Jargon-A-Beginner's-Guide</guid>
+    <description>Data Science is a fascinating realm, but it often comes with an intimidating vocabulary that can leave newcomers feeling lost. Fear not! This guide is your friendly companion to some of the most common (and confusing) terms in the Data Science lexicon.</description>
+    <pubDate>Sat, 01 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Cyberpunk 2077: From Most Anticipated to Bug-Plagued Launch and Redemption</title>
+    <link>https://kuber.studio/blog/Gaming/Cyberpunk-2077--From-Most-Anticipated-to-Bug-Plagued-Launch-and-Redemption</link>
+    <guid>https://kuber.studio/blog/Gaming/Cyberpunk-2077--From-Most-Anticipated-to-Bug-Plagued-Launch-and-Redemption</guid>
+    <description>The gaming industry witnessed a unique phenomenon with the highly anticipated release of Cyberpunk 2077, a title that captured the imaginations of players worldwide with its futuristic ...</description>
+    <pubDate>Sat, 01 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>How Reddit Became Social Media&#039;s Unfiltered Opinion Hub</title>
+    <link>https://kuber.studio/blog/Social-Media/How-Reddit-Became-Social-Media's-Unfiltered-Opinion-Hub</link>
+    <guid>https://kuber.studio/blog/Social-Media/How-Reddit-Became-Social-Media's-Unfiltered-Opinion-Hub</guid>
+    <description>In a world where social media platforms often showcase carefully curated and filtered content, Reddit has emerged as a unique haven for unfiltered and honest opinions ...</description>
+    <pubDate>Sat, 01 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>The Rise and Fall of BeReal: A Tale of Social Media&#039;s Fleeting Nature</title>
+    <link>https://kuber.studio/blog/Social-Media/The-Rise-and-Fall-of-BeReal-A-Tale-of-Social-Media's-Fleeting-Nature</link>
+    <guid>https://kuber.studio/blog/Social-Media/The-Rise-and-Fall-of-BeReal-A-Tale-of-Social-Media's-Fleeting-Nature</guid>
+    <description>BeReal, the social media app that encouraged users to share unfiltered, dual-image posts of themselves, experienced a rapid rise in popularity in 2022 ...</description>
+    <pubDate>Sat, 01 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>DM</title>
+    <link>https://kuber.studio/blog/BITS/Exam-Materials/Sem-0.5/DM</link>
+    <guid>https://kuber.studio/blog/BITS/Exam-Materials/Sem-0.5/DM</guid>
+    <description>DISCRETE MATHEMATICS Here’s the content I used for DM: mega.nz/folder/cIgjGAZA#t812Ak1GCUbxNgDX0gObcA Honestly a bit easy for being a mathematics course for some reason? Study ...</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>ITP</title>
+    <link>https://kuber.studio/blog/BITS/Exam-Materials/Sem-0.5/ITP</link>
+    <guid>https://kuber.studio/blog/BITS/Exam-Materials/Sem-0.5/ITP</guid>
+    <description>INTRODUCTION TO PROGRAMMING Here’s the content I used for ITP: mega.nz/folder/0Iw0mKoK#uy2sav76WLlP8iSJh753zA AWESOME course Professor Jagat is a chill guy and actually does ...</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>WP</title>
+    <link>https://kuber.studio/blog/BITS/Exam-Materials/Sem-0.5/WP</link>
+    <guid>https://kuber.studio/blog/BITS/Exam-Materials/Sem-0.5/WP</guid>
+    <description>WRITING PRACTICE Here’s the content I used for WP: mega.nz/folder/8Io0ELDB#oM3_-xgB0enqU-3zwfs9Dw Extremely easy for what it’s worth, if you’re good in English and literature, ...</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Semester 0.5 Material</title>
+    <link>https://kuber.studio/blog/BITS/Exam-Materials/Sem-0.5/</link>
+    <guid>https://kuber.studio/blog/BITS/Exam-Materials/Sem-0.5/</guid>
+    <description> Introduction To Programming Discrete Mathematics Writing Practice .</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>BE</title>
+    <link>https://kuber.studio/blog/BITS/Exam-Materials/Sem-1/BE</link>
+    <guid>https://kuber.studio/blog/BITS/Exam-Materials/Sem-1/BE</guid>
+    <description>BASIC ELECTRONICS Alright I seem to have completely misplaced my BE folder for some reason haha, please use drive.google.com/drive/folders/10tlLEI93SrbMcCigCRczgmZrLQhrLdB4 ...</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>ICS</title>
+    <link>https://kuber.studio/blog/BITS/Exam-Materials/Sem-1/ICS</link>
+    <guid>https://kuber.studio/blog/BITS/Exam-Materials/Sem-1/ICS</guid>
+    <description>INTRODUCTION TO COMPUTING SYSTEMS Here’s the content I used for ICS: mega.nz/folder/sEBDUIDZ#DbGs2jivV7muWY4ArxymdA Pro tip: The course starts off slow but gets intense quick, ...</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>LAO</title>
+    <link>https://kuber.studio/blog/BITS/Exam-Materials/Sem-1/LAO</link>
+    <guid>https://kuber.studio/blog/BITS/Exam-Materials/Sem-1/LAO</guid>
+    <description>LINEAR ALGEBRA AND OPTIMIZATIONS Here’s the material I used for LAO: mega.nz/folder/odAhmLLK#m_quqX4HYq06hV_yV65C9g Honorable mention to atozmath.com/ ‘s calculator (SAVED ...</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Semester 1 Material</title>
+    <link>https://kuber.studio/blog/BITS/Exam-Materials/Sem-1/</link>
+    <guid>https://kuber.studio/blog/BITS/Exam-Materials/Sem-1/</guid>
+    <description> Introduction To Computing Systems Linear Algebra and Optimisation Basic Electronics .</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Exam Materials and Reference books</title>
+    <link>https://kuber.studio/blog/BITS/Exam-Materials/</link>
+    <guid>https://kuber.studio/blog/BITS/Exam-Materials/</guid>
+    <description>This part contains the reference materials I used for exams (yes, even in the online test) is it the absolute best set of materials to study the subjects? no would it be good enough to ...</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>BITS Survival Guide</title>
+    <link>https://kuber.studio/blog/BITS/</link>
+    <guid>https://kuber.studio/blog/BITS/</guid>
+    <description>Hi! If you are here, you’re probably a BITS Online student or you just like to find easter eggs in websites :P Those of you who don’t know me, Hi! My name is Kuber Mehta and I’m a C4 student ...</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Why Most AI Startups Fail: Lessons from the Trenches</title>
+    <link>https://kuber.studio/blog/Business/Why-Most-AI-Startups-Fail</link>
+    <guid>https://kuber.studio/blog/Business/Why-Most-AI-Startups-Fail</guid>
+    <description>The AI startup boom has produced flashy demos and bold promises—but few sustainable businesses. While 80% of enterprises adopt AI, 90% of AI startups fail to scale beyond proof of concept.</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>The Nostalgia Factor in Gaming: Why Classic Titles Still Matter</title>
+    <link>https://kuber.studio/blog/Gaming/The-Nostalgia-Factor-in-Gaming-Why-Classic-Titles-Still-Matter</link>
+    <guid>https://kuber.studio/blog/Gaming/The-Nostalgia-Factor-in-Gaming-Why-Classic-Titles-Still-Matter</guid>
+    <description>Gaming nostalgia is a powerful emotion that transcends generations. The joy of booting up an old favorite, hearing its iconic soundtrack, and reliving the excitement of a childhood memory is an experience many gamers cherish.</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>How the Internet Shapes Modern Opinions</title>
+    <link>https://kuber.studio/blog/Social-Media/How-the-Internet-Shapes-Modern-Opinions</link>
+    <guid>https://kuber.studio/blog/Social-Media/How-the-Internet-Shapes-Modern-Opinions</guid>
+    <description>The internet has revolutionized the way we form opinions, consume information, and engage in discussions. No longer are we limited to traditional media outlets with gatekeepers dictating the flow of information - today, anyone with an internet connection can share, challenge, or reinforce ideas, influencing everything from personal beliefs to global movements.</description>
+    <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Can AI Understand Emotions The Limits of Sentiment Analysis</title>
+    <link>https://kuber.studio/blog/AI/Can-AI-Understand-Emotions-The-Limits-of-Sentiment-Analysis</link>
+    <guid>https://kuber.studio/blog/AI/Can-AI-Understand-Emotions-The-Limits-of-Sentiment-Analysis</guid>
+    <description>Artificial Intelligence has made incredible leaps in the last few years-from diagnosing diseases to composing music. However, one question has been left unaddressed by even the most advanced systems: Can AI really understand human emotions? While sentiment analysis tools claim to decode feelings from text, speech, or facial expressions, the ability of such machines to truly grasp the nuances of human emotion is limited.</description>
+    <pubDate>Thu, 30 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Sustainability as a Business Model: A Competitive Edge, Not Just an Ethical Choice</title>
+    <link>https://kuber.studio/blog/Business/Sustainability-as-a-Business-Model</link>
+    <guid>https://kuber.studio/blog/Business/Sustainability-as-a-Business-Model</guid>
+    <description>Sustainability is no longer just a buzzword—it’s a business imperative. Companies that embed sustainability into their core operations are not only addressing global environmental concerns but also gaining a competitive advantage.</description>
+    <pubDate>Thu, 30 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>DeepSeek R1 vs ChatGPT: Why This Isn&#039;t a Zero-Sum Game</title>
+    <link>https://kuber.studio/blog/AI/DeepSeek-R1-vs-ChatGPT-Why-This-Isn't-a-Zero-Sum-Game</link>
+    <guid>https://kuber.studio/blog/AI/DeepSeek-R1-vs-ChatGPT-Why-This-Isn't-a-Zero-Sum-Game</guid>
+    <description>The recent discussions around DeepSeek R1 and its supposed impact on OpenAI, NVIDIA, or Meta have sparked intense debates in the AI community. Some have gone as far as to claim that DeepSeek R1 could shake the foundations of these giants, while others have dismissed it as an underwhelming competitor.</description>
+    <pubDate>Wed, 29 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>The No-Code Revolution: Empowering Entrepreneurs Without Coding Skills</title>
+    <link>https://kuber.studio/blog/Business/The-No-Code-Revolution</link>
+    <guid>https://kuber.studio/blog/Business/The-No-Code-Revolution</guid>
+    <description>No-code platforms like Bubble, Webflow, and Adalo are turning “non-technical” into a misnomer. These tools let founders build apps, automate workflows, and launch MVPs without writing a single line of code—but they’re not a silver bullet.</description>
+    <pubDate>Wed, 29 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Hello World</title>
+    <link>https://kuber.studio/blog/Social-Media/Hello-World</link>
+    <guid>https://kuber.studio/blog/Social-Media/Hello-World</guid>
+    <description>This is my very first blog :) .</description>
+    <pubDate>Sat, 25 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Beyond Traditional Dashboards: The Future of Data Visualization</title>
+    <link>https://kuber.studio/blog/Data-Science/Beyond-Traditional-Dashboards---The-Future-of-Data-Visualization</link>
+    <guid>https://kuber.studio/blog/Data-Science/Beyond-Traditional-Dashboards---The-Future-of-Data-Visualization</guid>
+    <description>Static dashboards are becoming relics of the past. As organizations drown in data but thirst for insights, the future of data visualization lies in AI-driven interactivity, real-time storytelling, and immersive experiences.</description>
+    <pubDate>Thu, 23 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Tackling AI-Generated Spam in LinkedIn Comments with ORCUS AI</title>
+    <link>https://kuber.studio/blog/Projects/Tackling-AI-Generated-Spam-in-LinkedIn-Comments-with-ORCUS-AI</link>
+    <guid>https://kuber.studio/blog/Projects/Tackling-AI-Generated-Spam-in-LinkedIn-Comments-with-ORCUS-AI</guid>
+    <description>Introduction: The Growing Problem of AI-Generated Spam on LinkedIn LinkedIn today has evolved into what is one of the biggest networking platforms in the world ...</description>
+    <pubDate>Tue, 07 Jan 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Generative AI and the Copyright System - The Legal Gray Area</title>
+    <link>https://kuber.studio/blog/AI/Generative-AI-and-the-Copyright-System---The-Legal-Gray-Area</link>
+    <guid>https://kuber.studio/blog/AI/Generative-AI-and-the-Copyright-System---The-Legal-Gray-Area</guid>
+    <description>...</description>
+    <pubDate>Fri, 20 Dec 2024 00:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>

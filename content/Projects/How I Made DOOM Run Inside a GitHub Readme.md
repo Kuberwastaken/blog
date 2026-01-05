@@ -1,6 +1,6 @@
 ---
 title: How I Made DOOM Run Inside a GitHub Readme
-draft: true
+draft: false
 tags:
   - AI
   - Browsers
@@ -17,7 +17,7 @@ created: 2026-01-04
 modified:
 ---
 <p align="center">
-<a href="=https://github.com/Kuberwastaken/DoomMe/blob/main/menu/episode_1.md=">
+<a href="https://github.com/Kuberwastaken/DoomMe/blob/main/menu/episode_1.md">
 <img src="https://cdn.jsdelivr.net/gh/Kuberwastaken/DoomMe@main/static/start-visual.gif" alt="Click to Play DOOM" width="640">
 </a>
 <br>
@@ -37,7 +37,7 @@ I thought: "What if... instead of Mario... I put **Doom**?"
 
 Not a GIF *of* Doom. Actual, playable, controllable Doom. Where you click buttons and the view changes.
 
-### Why DOOM Specifically?
+# Why DOOM Specifically?
 
 Well, if you're unfamiliar with DOOM's cult following on the Internet, I'll give you a bit of context:
 
@@ -87,7 +87,7 @@ I had an idea where I could do something similar!
 Cloudflare has this cool demo called [DOOM WASM](https://github.com/cloudflare/doom-wasm) where they run Chocolate Doom in WebAssembly on their edge network called doom-wasm and it's literally open source!
 
 <p align="center">
-    <img src="https://cdn.kuber.studio/assets/media/doomme/img1.png" alt="Cloudflare WASM Demo" width="500" />
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img1.png" alt="Cloudflare WASM Demo" />
 </p>
 
 
@@ -163,11 +163,7 @@ This is called a **Stateless Engine**
 How do I know?
 
 <p align="center">
-    <img src="https://cdn.kuber.studio/assets/media/doomme/img3.png" alt="IYKYK" width="500" />
-</p>
-<p align="center" style="font-size: small; font-weight: lighter;">
-    iykyk
-
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img3.png" alt="IYKYK" />
 </p>
 
 Now DOOM is a BIG game
@@ -184,7 +180,7 @@ That's a lot. But it's *finite*. And finite means *possible*.
 
 # Mapping The World
 
-![Tweeting about playing with DOOM again](https://x.com/kuberwastaken/status/2007102533635039684)
+<blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" align="center"><p lang="en" dir="ltr">playing around with an old friend again <a href="https://t.co/ltwZ4I9gBg">pic.twitter.com/ltwZ4I9gBg</a></p>&mdash; Kuber (@kuberwastaken) <a href="https://twitter.com/kuberwastaken/status/2007102533635039684?ref_src=twsrc%5Etfw">January 2, 2026</a></blockquote>
 
 Alright so we did narrow our scope a lot with just E1M1 but that was still a lot to do manually
 
@@ -209,9 +205,7 @@ WAD stands for "**W**here's **A**ll the **D**ata?" (Yes, really. That's the offi
     <img src="https://cdn.kuber.studio/assets/media/doomme/img4.png" alt="IYKYK" width="500" />
 </p>
 <p align="center" style="font-size: small; font-weight: lighter;">
-    This is what a Doom level looks like as raw data. Just points and lines.
-    
-     (remember these maps for later - it would be useful)
+    (remember these maps for later - it would be useful)
 </p>
 
 This separation is what made the Doom modding community explode. You didn't need source code access to make new levels. You just needed to edit the WAD.
@@ -255,7 +249,7 @@ and boy was it awful
 - The bot fell in acid and freakin died, I'm not even joking
 
 <p align="center">
-    <img src="https://cdn.kuber.studio/assets/media/doomme/img5.png" alt="Here's even Claude losing his sanity realising it" width="500" />
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img5.png" alt="Here's even Claude losing his sanity realising it" />
 </p>
 <p align="center" style="font-size: small; font-weight: lighter;">
 
@@ -374,7 +368,7 @@ So I did something a little unhinged: I went to the Doom Wiki and the Ultimate D
 and got it to give me step by step instructions
 
 <p align="center">
-    <img src="https://cdn.kuber.studio/assets/media/doomme/img6.png" alt="Here's gemini helping me out" width="500" />
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img6.png" alt="Here's gemini helping me out" />
 </p>
 
 I followed the steps. I messed up thrice. But on the third try, I had a clean `doom1.wad` with all gates open.
@@ -383,7 +377,7 @@ I ran the mapper again.
 
 **1,089 positions.** The entire level. Every room. Every secret.
 
-![The Ultimate DOOM Builder Tweet](https://x.com/kuberwastaken/status/2007395057163481157)
+<blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" align="center"><p lang="en" dir="ltr">cooking something insane today <a href="https://t.co/wHdvG4ro22">pic.twitter.com/wHdvG4ro22</a></p>&mdash; Kuber (@kuberwastaken) <a href="https://twitter.com/kuberwastaken/status/2007395057163481157?ref_src=twsrc%5Etfw">January 3, 2026</a></blockquote>
 
 # A Moment to Reflect
 
@@ -463,7 +457,7 @@ This was a quiet win: **the reason this can stay up forever is because it's ligh
 The `linker.py` script is what transforms a pile of images into a *playable game*.
 It's the most important 300 lines of Python in the entire project, and it does something genuinely cool: generating a **directed graph** where every node is a markdown file and every edge is a hyperlink.
 
-![How it looks](https://x.com/kuberwastaken/status/2007519739493622032?s=20)
+<blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" align="center"><p lang="en" dir="ltr">might break the internet next week <a href="https://t.co/zlP7oLpRgU">pic.twitter.com/zlP7oLpRgU</a></p>&mdash; Kuber (@kuberwastaken) <a href="https://twitter.com/kuberwastaken/status/2007519739493622032?ref_src=twsrc%5Etfw">January 3, 2026</a></blockquote>
 
 ## The Graph Structure
 
