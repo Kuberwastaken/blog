@@ -19,6 +19,8 @@ import { JSResource, CSSResource } from "../../util/resources"
 import calloutScript from "../../components/scripts/callout.inline.ts"
 // @ts-ignore
 import checkboxScript from "../../components/scripts/checkbox.inline.ts"
+// @ts-ignore
+import twitterScript from "../../components/scripts/twitter.inline.ts"
 import { FilePath, pathToRoot, slugTag, slugifyFilePath } from "../../util/path"
 import { toHast } from "mdast-util-to-hast"
 import { toHtml } from "hast-util-to-html"
@@ -36,6 +38,7 @@ export interface Options {
   parseBlockReferences: boolean
   enableInHtmlEmbed: boolean
   enableYouTubeEmbed: boolean
+  enableTwitterEmbed: boolean
   enableVideoEmbed: boolean
   enableCheckbox: boolean
 }
@@ -51,6 +54,7 @@ const defaultOptions: Options = {
   parseBlockReferences: true,
   enableInHtmlEmbed: false,
   enableYouTubeEmbed: true,
+  enableTwitterEmbed: true,
   enableVideoEmbed: true,
   enableCheckbox: false,
 }
@@ -138,6 +142,7 @@ const tagRegex = new RegExp(
 const blockReferenceRegex = new RegExp(/\^([-_A-Za-z0-9]+)$/g)
 const ytLinkRegex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
 const ytPlaylistLinkRegex = /[?&]list=([^#?&]*)/
+const twitterLinkRegex = /^https?:\/\/(?:www\.)?(?:twitter\.com|x\.com)\/([\w]+)\/status\/(\d+)/
 const videoExtensionRegex = new RegExp(/\.(mp4|webm|ogg|avi|mov|flv|wmv|mkv|mpg|mpeg|3gp|m4v)$/)
 const wikilinkImageEmbedRegex = new RegExp(
   /^(?<alt>(?!^\d*x?\d*$).*?)?(\|?\s*?(?<width>\d+)(x(?<height>\d+))?)?$/,
@@ -396,6 +401,24 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                 const newNode: Html = {
                   type: "html",
                   value: `<video controls src="${node.url}"></video>`,
+                }
+
+                parent.children.splice(index, 1, newNode)
+                return SKIP
+              }
+            })
+          }
+        })
+      }
+
+      if (opts.enableTwitterEmbed) {
+        plugins.push(() => {
+          return (tree: Root, _file) => {
+            visit(tree, "image", (node, index, parent) => {
+              if (parent && index != undefined && twitterLinkRegex.test(node.url)) {
+                const newNode: Html = {
+                  type: "html",
+                  value: `<blockquote class="twitter-tweet" data-theme="dark"><a href="${node.url}">${node.alt || "View Tweet"}</a></blockquote>`,
                 }
 
                 parent.children.splice(index, 1, newNode)
@@ -813,6 +836,14 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
       if (opts.callouts) {
         js.push({
           script: calloutScript,
+          loadTime: "afterDOMReady",
+          contentType: "inline",
+        })
+      }
+
+      if (opts.enableTwitterEmbed) {
+        js.push({
+          script: twitterScript,
           loadTime: "afterDOMReady",
           contentType: "inline",
         })

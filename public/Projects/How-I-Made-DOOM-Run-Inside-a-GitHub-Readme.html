@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>How I Made DOOM Run Inside a GitHub Readme</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="ᨒ MindDump"/><meta property="og:title" content="How I Made DOOM Run Inside a GitHub Readme"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="How I Made DOOM Run Inside a GitHub Readme"/><meta name="twitter:description" content="..."/><meta property="og:description" content="..."/><meta property="og:image:type" content="image/webp"/><meta property="og:image:alt" content="..."/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:url" content="https://kuber.studio/blog/static/social-images/content-Projects-How I Made DOOM Run Inside a GitHub Readme.md.webp"/><meta name="twitter:image" content="https://kuber.studio/blog/static/social-images/content-Projects-How I Made DOOM Run Inside a GitHub Readme.md.webp"/><meta property="og:image" content="https://kuber.studio/blog/static/social-images/content-Projects-How I Made DOOM Run Inside a GitHub Readme.md.webp"/><meta property="twitter:domain" content="kuber.studio/blog"/><meta property="og:url" content="https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme"/><meta property="twitter:url" content="https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="..."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">ᨒ MindDump</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button><div class="explorer desktop-only"><button type="button" id="explorer" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-tree="[{&quot;path&quot;:&quot;AI&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Business&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Data-Science&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Gaming&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Music&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Post-Extended&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Projects&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Reflections&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Social-Media&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Technology&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Tutorials&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;TV&quot;,&quot;collapsed&quot;:true}]" aria-controls="explorer-content" aria-expanded="false"><h2>Blogs</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-content"><ul class="overflow" id="explorer-ul"><li><div class="folder-outer open"><ul style="padding-left:0;" class="content" data-folderul><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="AI"><button class="folder-button"><span class="folder-title">AI</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="AI"><li><a href="../AI/Can-AI-Understand-Emotions-The-Limits-of-Sentiment-Analysis" data-for="AI/Can-AI-Understand-Emotions-The-Limits-of-Sentiment-Analysis">Can AI Understand Emotions The Limits of Sentiment Analysis</a></li><li><a href="../AI/ChatGPT-Wrappers---Revolutionizing-User-Experience-or-Hiding-Limitations" data-for="AI/ChatGPT-Wrappers---Revolutionizing-User-Experience-or-Hiding-Limitations">ChatGPT Wrappers: Revolutionizing User Experience or Hiding Limitations?</a></li><li><a href="../AI/DeepSeek-R1-vs-ChatGPT-Why-This-Isn't-a-Zero-Sum-Game" data-for="AI/DeepSeek-R1-vs-ChatGPT-Why-This-Isn't-a-Zero-Sum-Game">DeepSeek R1 vs ChatGPT: Why This Isn't a Zero-Sum Game</a></li><li><a href="../AI/DeepSeek-vs.-ChatGPT---The-AI-Chess-Showdown-That-Broke-the-Internet" data-for="AI/DeepSeek-vs.-ChatGPT---The-AI-Chess-Showdown-That-Broke-the-Internet">DeepSeek vs. ChatGPT - The AI Chess Showdown That Broke the Internet</a></li><li><a href="../AI/Generative-AI-and-the-Copyright-System---The-Legal-Gray-Area" data-for="AI/Generative-AI-and-the-Copyright-System---The-Legal-Gray-Area">Generative AI and the Copyright System - The Legal Gray Area</a></li><li><a href="../AI/How-Google-Gemini-2.0-Caught-Up-in-the-AI-Race" data-for="AI/How-Google-Gemini-2.0-Caught-Up-in-the-AI-Race">How Google Gemini 2.0 Caught Up in the AI Race</a></li><li><a href="../AI/How-People-use-ChatGPT-and-Why-You-Should-Care" data-for="AI/How-People-use-ChatGPT-and-Why-You-Should-Care">How People use ChatGPT and Why You Should Care</a></li><li><a href="../AI/I-Got-Early-Access-to-Manus-AI---Let's-Talk-About-it" data-for="AI/I-Got-Early-Access-to-Manus-AI---Let's-Talk-About-it">I Got Early Access to Manus AI - Let's Talk About it!</a></li><li><a href="../AI/OpenAI-CEO-Draws-Line-Between-'Regular-Cute'-and-'Gay-Cute'-for-AI-Models" data-for="AI/OpenAI-CEO-Draws-Line-Between-'Regular-Cute'-and-'Gay-Cute'-for-AI-Models">OpenAI CEO Draws Line Between 'Regular Cute' and 'Gay Cute' for AI Models</a></li><li><a href="../AI/OpenAI-vs-DeepSeek---The-Battle-for-AI-Dominance-and-the-Meaning-of-Open" data-for="AI/OpenAI-vs-DeepSeek---The-Battle-for-AI-Dominance-and-the-Meaning-of-Open">OpenAI vs DeepSeek - The Battle for AI Dominance and the Meaning of &quot;Open&quot;</a></li><li><a href="../AI/Roy-Lee's-Interview-Coder---Cheating-or-a-Wake-Up-Call" data-for="AI/Roy-Lee's-Interview-Coder---Cheating-or-a-Wake-Up-Call">Roy Lee’s Interview Coder: Cheating or a Wake Up Call?</a></li><li><a href="../AI/The-AI-Models-Race-to-The-Bottom-in-2025" data-for="AI/The-AI-Models-Race-to-The-Bottom-in-2025">The AI Models Race to The Bottom in 2025</a></li><li><a href="../AI/The-Big-Tech-Data-Dilemma---When-Your-Life-Becomes-AI-Training-Material" data-for="AI/The-Big-Tech-Data-Dilemma---When-Your-Life-Becomes-AI-Training-Material">The Big Tech Data Dilemma - When Your Life Becomes AI Training Material</a></li><li><a href="../AI/Turn-this-into-Ghibli---How-OpenAI-commited-the-largest-identity-theft-in-the-entire-history-of-art" data-for="AI/Turn-this-into-Ghibli---How-OpenAI-commited-the-largest-identity-theft-in-the-entire-history-of-art">Turn this into Ghibli - How OpenAI commited the largest identity theft in the entire history of art</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Business"><button class="folder-button"><span class="folder-title">Business</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Business"><li><a href="../Business/Sustainability-as-a-Business-Model" data-for="Business/Sustainability-as-a-Business-Model">Sustainability as a Business Model: A Competitive Edge, Not Just an Ethical Choice</a></li><li><a href="../Business/The-No-Code-Revolution" data-for="Business/The-No-Code-Revolution">The No-Code Revolution: Empowering Entrepreneurs Without Coding Skills</a></li><li><a href="../Business/Why-Most-AI-Startups-Fail" data-for="Business/Why-Most-AI-Startups-Fail">Why Most AI Startups Fail: Lessons from the Trenches</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Data-Science"><button class="folder-button"><span class="folder-title">Data-Science</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Data-Science"><li><a href="../Data-Science/Beyond-Traditional-Dashboards---The-Future-of-Data-Visualization" data-for="Data-Science/Beyond-Traditional-Dashboards---The-Future-of-Data-Visualization">Beyond Traditional Dashboards: The Future of Data Visualization</a></li><li><a href="../Data-Science/Demystifying-Data-Science-Jargon-A-Beginner's-Guide" data-for="Data-Science/Demystifying-Data-Science-Jargon-A-Beginner's-Guide">Demystifying Data Science Jargon&quot; A Beginner's Guide</a></li><li><a href="../Data-Science/Unlocking-the-Potential-Data-Science-in-Healthcare" data-for="Data-Science/Unlocking-the-Potential-Data-Science-in-Healthcare">Unlocking the Potential - Data Science in Healthcare</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Gaming"><button class="folder-button"><span class="folder-title">Gaming</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Gaming"><li><a href="../Gaming/Cyberpunk-2077--From-Most-Anticipated-to-Bug-Plagued-Launch-and-Redemption" data-for="Gaming/Cyberpunk-2077--From-Most-Anticipated-to-Bug-Plagued-Launch-and-Redemption">Cyberpunk 2077: From Most Anticipated to Bug-Plagued Launch and Redemption</a></li><li><a href="../Gaming/The-Evolution-of-Gaming-From-Pastimes-to-Powerful-Industries" data-for="Gaming/The-Evolution-of-Gaming-From-Pastimes-to-Powerful-Industries">The Evolution of Gaming: From Pastimes to Powerful Industries</a></li><li><a href="../Gaming/The-Nostalgia-Factor-in-Gaming-Why-Classic-Titles-Still-Matter" data-for="Gaming/The-Nostalgia-Factor-in-Gaming-Why-Classic-Titles-Still-Matter">The Nostalgia Factor in Gaming: Why Classic Titles Still Matter</a></li><li><a href="../Gaming/Undertale-Genocide---How-to-Make-the-Player-Feel-Bad-For-Their-Choices" data-for="Gaming/Undertale-Genocide---How-to-Make-the-Player-Feel-Bad-For-Their-Choices">Undertale Genocide - How to Make the Player Feel Bad For Their Choices</a></li></ul></div></li><li><div class="folder-outer "><ul style="padding-left:0;" class="content" data-folderul></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Music"><button class="folder-button"><span class="folder-title">Music</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Music"><li><a href="../Music/Event-Ticketing---The-Untapped-Industry-with-Deeply-Flawed-Competition" data-for="Music/Event-Ticketing---The-Untapped-Industry-with-Deeply-Flawed-Competition">Event Ticketing - The Untapped Industry with Deeply Flawed Competition</a></li><li><a href="../Music/The-Best-Way-to-Learn-an-Instrument---Throw-Yourself-into-it" data-for="Music/The-Best-Way-to-Learn-an-Instrument---Throw-Yourself-into-it">The Best Way to Learn an Instrument - Throw Yourself into it</a></li><li><a href="../Music/The-TikTokification-of-Music---Unraveling-the-Complex-Impact-of-Social-Media" data-for="Music/The-TikTokification-of-Music---Unraveling-the-Complex-Impact-of-Social-Media">The TikTokification of Music: Unraveling the Complex Impact of Social Media</a></li><li><a href="../Music/The-Ultimate-Guide-to-Buying-Your-First-Guitar" data-for="Music/The-Ultimate-Guide-to-Buying-Your-First-Guitar">The Ultimate Guide to Buying Your First Guitar</a></li><li><a href="../Music/The-Weeknd's-Hurry-Up-Tomorrow--A-Perfect-Goodbye-to-an-Iconic-Era" data-for="Music/The-Weeknd's-Hurry-Up-Tomorrow--A-Perfect-Goodbye-to-an-Iconic-Era">The Weeknd's Hurry Up Tomorrow- A Perfect Goodbye to an Iconic Era</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Post-Extended"><button class="folder-button"><span class="folder-title">Post-Extended</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Post-Extended"><li><a href="../Post-Extended/How-to-Statistically-Never-Lose-in-Wordle-Again" data-for="Post-Extended/How-to-Statistically-Never-Lose-in-Wordle-Again">How to Statistically Never Lose in Wordle Again</a></li><li><a href="../Post-Extended/I-Read-Sam-Bhagwat's-AI-Agents-Bible-So-You-Don't-Have-To" data-for="Post-Extended/I-Read-Sam-Bhagwat's-AI-Agents-Bible-So-You-Don't-Have-To">I Read Sam Bhagwat's AI Agents Bible So You Don't Have To (But Probably Should)</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Projects"><button class="folder-button"><span class="folder-title">Projects</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Projects"><li><a href="../Projects/AsianMOM---A-WebGPU-Powered-AI-That-Roasts-You-Like-an-Asian-Mother" data-for="Projects/AsianMOM---A-WebGPU-Powered-AI-That-Roasts-You-Like-an-Asian-Mother">AsianMOM: A WebGPU-Powered AI That Roasts You Like an Asian Mother</a></li><li><a href="../Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme" data-for="Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme">How I Made DOOM Run Inside a GitHub Readme</a></li><li><a href="../Projects/How-I-Managed-To-Get-Doom-In-A-QR-Code" data-for="Projects/How-I-Managed-To-Get-Doom-In-A-QR-Code">How I Managed To Get Doom In A QR Code</a></li><li><a href="../Projects/How-I-Managed-To-Make-HTML-Game-Compression-So-Much-Better" data-for="Projects/How-I-Managed-To-Make-HTML-Game-Compression-So-Much-Better">How I Managed To Make HTML Game Compression So Much Better</a></li><li><a href="../Projects/How-I-Spent-Three-Nights-Solving-Listen-Labs-Berghain-Challenge" data-for="Projects/How-I-Spent-Three-Nights-Solving-Listen-Labs-Berghain-Challenge">How I Spent Three Nights Solving Listen Labs Berghain Challenge</a></li><li><a href="../Projects/Tackling-AI-Generated-Spam-in-LinkedIn-Comments-with-ORCUS-AI" data-for="Projects/Tackling-AI-Generated-Spam-in-LinkedIn-Comments-with-ORCUS-AI">Tackling AI-Generated Spam in LinkedIn Comments with ORCUS AI</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Reflections"><button class="folder-button"><span class="folder-title">Reflections</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Reflections"><li><a href="../Reflections/Prompting-People" data-for="Reflections/Prompting-People">Prompting People</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Social-Media"><button class="folder-button"><span class="folder-title">Social-Media</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Social-Media"><li><a href="../Social-Media/Hello-World" data-for="Social-Media/Hello-World">Hello World</a></li><li><a href="../Social-Media/How-Reddit-Became-Social-Media's-Unfiltered-Opinion-Hub" data-for="Social-Media/How-Reddit-Became-Social-Media's-Unfiltered-Opinion-Hub">How Reddit Became Social Media's Unfiltered Opinion Hub</a></li><li><a href="../Social-Media/How-the-Internet-Shapes-Modern-Opinions" data-for="Social-Media/How-the-Internet-Shapes-Modern-Opinions">How the Internet Shapes Modern Opinions</a></li><li><a href="../Social-Media/rPlace---The-Internet's-Greatest-Communal-Art-Experiment" data-for="Social-Media/rPlace---The-Internet's-Greatest-Communal-Art-Experiment">r/Place - The Internet's Greatest Communal Art Experiment</a></li><li><a href="../Social-Media/The-Duality-of-Social-Media-Connecting-the-World-or-Dividing-Opinions" data-for="Social-Media/The-Duality-of-Social-Media-Connecting-the-World-or-Dividing-Opinions">The Duality of Social Media Connecting the World or Dividing Opinions?</a></li><li><a href="../Social-Media/The-Rise-and-Fall-of-BeReal-A-Tale-of-Social-Media's-Fleeting-Nature" data-for="Social-Media/The-Rise-and-Fall-of-BeReal-A-Tale-of-Social-Media's-Fleeting-Nature">The Rise and Fall of BeReal: A Tale of Social Media's Fleeting Nature</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Technology"><button class="folder-button"><span class="folder-title">Technology</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Technology"><li><a href="../Technology/A-Dummy-Proof-Guide-to-Git-and-GitHub" data-for="Technology/A-Dummy-Proof-Guide-to-Git-and-GitHub">A Dummy-Proof Guide to Git and GitHub</a></li><li><a href="../Technology/I-Used-a-Firefox-Based-Browser-for-a-Week-and-I-Hated-it" data-for="Technology/I-Used-a-Firefox-Based-Browser-for-a-Week-and-I-Hated-it">I Used a Firefox Based Browser for a Week and I Hated it</a></li><li><a href="../Technology/Majorana-1---Why-Quantum-Computing-Matters-Now" data-for="Technology/Majorana-1---Why-Quantum-Computing-Matters-Now">Majorana 1 - Why Quantum Computing Matters Now</a></li><li><a href="../Technology/QR-Codes-and-Malware---The-Hidden-Dangers-in-2025" data-for="Technology/QR-Codes-and-Malware---The-Hidden-Dangers-in-2025">QR Codes and Malware - The Hidden Dangers in 2025</a></li><li><a href="../Technology/Untitled" data-for="Technology/Untitled">Why I Switched to the Nothing Phone 3a Pro and Can’t Stop Talking About It</a></li><li><a href="../Technology/Why-Using-Machine-Learning-for-Stock-Market-isn't-a-Great-Idea" data-for="Technology/Why-Using-Machine-Learning-for-Stock-Market-isn't-a-Great-Idea">Why Using Machine Learning for Stock Market isn't a Great Idea</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="Tutorials"><button class="folder-button"><span class="folder-title">Tutorials</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="Tutorials"><li><a href="../Tutorials/Character-Conversions-with-AI---Wan-2.2-Animate" data-for="Tutorials/Character-Conversions-with-AI---Wan-2.2-Animate">Character Conversions with AI - Wan 2.2 Animate</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="TV"><button class="folder-button"><span class="folder-title">TV</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="TV"><li><a href="../TV/The-Idol---The-Weeknd's-Show-with-its-Mistakes-and-Missed-Opportunities" data-for="TV/The-Idol---The-Weeknd's-Show-with-its-Mistakes-and-Missed-Opportunities">The Idol - The Weeknd's Show with its Mistakes and Missed Opportunities</a></li></ul></div></li></ul></div></li><li id="explorer-end"></li></ul></div></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../Projects/">Projects</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>How I Made DOOM Run Inside a GitHub Readme</a></div></nav><h1 class="article-title">How I Made DOOM Run Inside a GitHub Readme</h1><p show-comma="true" class="content-meta"><time datetime="2026-01-04T00:00:00.000Z">Jan 04, 2026</time><span>19 min read</span></p><ul class="tags"><li><a href="../tags/AI" class="internal tag-link">AI</a></li><li><a href="../tags/Browsers" class="internal tag-link">Browsers</a></li><li><a href="../tags/Data-Science" class="internal tag-link">Data-Science</a></li><li><a href="../tags/Gaming" class="internal tag-link">Gaming</a></li><li><a href="../tags/GitHub" class="internal tag-link">GitHub</a></li><li><a href="../tags/Internet" class="internal tag-link">Internet</a></li><li><a href="../tags/OpenSource" class="internal tag-link">OpenSource</a></li><li><a href="../tags/Programming" class="internal tag-link">Programming</a></li><li><a href="../tags/Projects" class="internal tag-link">Projects</a></li><li><a href="../tags/Social-Media" class="internal tag-link">Social-Media</a></li><li><a href="../tags/Technology" class="internal tag-link">Technology</a></li></ul></div></div><article class="popover-hint"><p align="center">
+<a href="https://github.com/Kuberwastaken/DoomMe/blob/main/menu/episode_1.md" class="external">
+<img src="https://cdn.jsdelivr.net/gh/Kuberwastaken/DoomMe@main/static/start-visual.gif" alt="Click to Play DOOM" width="640"/>
+<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+<br/>
+<sub><strong>Yes, this is literally DOOM, Click to Play</strong></sub>
+</p>
+<p>You know how GitHub allows you to embed markdown GIFs on your profile README</p>
+<p>for the longest time - I had a super Mario programming themed GIF on it.</p>
+<p>It looked cool, matched my personality and had a “locked-in” character on top of my GitHub profile, what more could I ask for?</p>
+<p><img src="https://camo.githubusercontent.com/d61f7b9b674900570c595ca72ecde53c5654897e3abf81e44fc3cf91c78ba9dd/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a313130302f666f726d61743a776562702f312a5671307351373951495a56365631522d743771746d772e676966" alt="Mario GIF"/></p>
+<p>Though I caught myself staring at my profile over and over and it’s 2026 now
+I thought: “What if… instead of Mario… I put <strong>Doom</strong>?”</p>
+<p>Not a GIF <em>of</em> Doom. Actual, playable, controllable Doom. Where you click buttons and the view changes.</p>
+<h1 id="why-doom-specifically">Why DOOM Specifically?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#why-doom-specifically" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Well, if you’re unfamiliar with DOOM’s cult following on the Internet, I’ll give you a bit of context:</p>
+<p>DOOM is a game known for running everywhere because of the ports it has had since 1993 and the company behind it - ID Software did the really smart move of releasing the initial levels of the game as “freeware”</p>
+<p>because of this accessibility and MASSIVE community of such a huge game being so open and moddable, people took it to extreme levels - there have been memes on “It Runs Doom” on Tumblr since over a decade ago. People have put doom in toasters, macbook touchbars, smart fridges.</p>
+<p>now with that out of the way, the question remains.</p>
+<p>But how the actual heck do you even put an entire game with a sophisticated engine in a GitHub README</p>
+<h2 id="you-literally-cant">You Literally Can’t<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#you-literally-cant" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>GitHub’s markdown renderer is very sandboxed.
+No JavaScript. No iframes. No WebAssembly. No external scripts. It’s basically a fancy text file viewer with markdown formatting and image support.</p>
+<p>Even if I could somehow embed code, where would the game <em>run</em>? There’s no server. There’s no client-side execution. The “user” is just… reading a document.</p>
+<p>I spent an embarrassing amount of time looking for loopholes. Surely <em>someone</em> had hacked GitHub’s markdown parser before?</p>
+<p><em>Spoiler: They hadn’t.</em></p>
+<p>Now, I’ve done something “impossible” with Doom before. Last year, I managed to <a href="https://kuber.studio/blog/Projects/How-I-Managed-To-Get-Doom-In-A-QR-Code" class="external">squeeze a playable Doom-like game into a QR code<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>. 3kb of space - so surely, I could do <em>something</em> with a GitHub Readme, right?</p>
+<p><del>At least something enough to clickbait Hacker News again?</del></p>
+<p>So with some extra time on my hands after my semester end and a lot of boredom, I started to experiment and FAFO</p>
+<p>Although looking back - at this point I had no clue that I’d be in for a ride of a 3 day long journey of talking to AI for hours, getting to know some of the coolest retro game enthusiasts on the internet and creating something that I’d truly be proud of.</p>
+<h1 id="the-failed-ideas">The Failed Ideas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-failed-ideas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Before landing on the actual solution, I went through a graveyard of “almost good enough” concepts and ideas</p>
+<h2 id="idea-1-twitch-plays-pokemon---but-github">Idea 1: Twitch Plays Pokemon - but GitHub<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#idea-1-twitch-plays-pokemon---but-github" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>You know those <a href="https://www.youtube.com/watch?v=k1ea0TGdBmk" class="external">streams of “Twitch Plays Pokemon”’<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ?</p>
+<p>The chat votes on inputs, and a bot presses the buttons to a pokemon game like Fire Red live.</p>
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img0.png" alt="Twitch Plays Pokemon" width="500"/>
+</p>
+<p>I had an idea where I could do something similar!</p>
+<p>Cloudflare has this cool demo called <a href="https://github.com/cloudflare/doom-wasm" class="external">DOOM WASM<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> where they run Chocolate Doom in WebAssembly on their edge network called doom-wasm and it’s literally open source!</p>
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img1.png" alt="Cloudflare WASM Demo"/>
+</p>
+<p>Better yet, it even had MULTIPLAYER SUPPORT - so I could somehow even make versions people could fork and put on THEIR profiles so there could be a whole DOOM chain</p>
+<p>What if I:</p>
+<ol>
+<li>Hosted a WASM Doom instance on a server.</li>
+<li>Read “votes” from GitHub Issues or Comments.</li>
+<li>Updated the Readme image every few seconds with the current game state.</li>
+</ol>
+<p><strong>Why it failed</strong>:</p>
+<ul>
+<li>I’m broke. Serverless functions cost money at scale.</li>
+<li>Even with a free tier, I’d burn through it in a week if the project got popular.</li>
+<li>This needs to stay up <em>forever</em>. I can’t babysit a server.</li>
+</ul>
+<h2 id="idea-2-github-actions-as-the-backend">Idea 2: GitHub Actions as the “Backend”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#idea-2-github-actions-as-the-backend" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>GitHub Actions are free (with limits). What if each user’s “move” triggered a workflow?</p>
+<ol>
+<li>User clicks a link that triggers a workflow dispatch.</li>
+<li>Workflow runs a headless Doom instance.</li>
+<li>Workflow takes a screenshot of the new position.</li>
+<li>Workflow commits the new screenshot to the repo.</li>
+<li>Readme updates.</li>
+</ol>
+<p><strong>Why it failed</strong>:</p>
+<ul>
+<li>GitHub Actions have a monthly limit (~2,000 minutes on free tier) - and I already run a lot of them for other repos and automations (<a href="https://github.com/kuberwastaken/blog/" class="external">like taking screenshots of this blog being updated daily<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</li>
+<li>If 100s of people played, I’d hit the limit in a day.</li>
+</ul>
+<p>Also, <strong>only one person can play at a time</strong>. The game state is global. It’s not “my” Doom, it’s “our” Doom, comrade.</p>
+<h2 id="but-what-if-there-was-no-state-at-all">But What if there was no “state” at all?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#but-what-if-there-was-no-state-at-all" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>I was lying in bed, frustrated, when I thought</p>
+<p>What if I didn’t need to run Doom? What if I just needed to <em>show</em> Doom?</p>
+<h1 id="idea-3-choose-your-own-adventure-the-stateless-engine">Idea 3: Choose Your Own Adventure (The Stateless Engine)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#idea-3-choose-your-own-adventure-the-stateless-engine" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="the-concept">The Concept<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-concept" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Do you remember those “Choose Your Own Adventure” books from the 80s?</p>
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img2.png" alt="Cool Choose your own adventure books" width="500"/>
+</p>
+<p>The book doesn’t <em>simulate</em> the stories - theyre… well books. It just has pre-written descriptions for every possible path you could take. The “state” is which page you’re currently reading.</p>
+<p>or if you want a more new (and fun) example - videos like these:</p>
+<p><iframe class="external-embed youtube" allow="fullscreen" frameborder="0" width="600px" src="https://www.youtube.com/embed/j64oZLF443g"></iframe></p>
+<p>(God, I used to love these old Markiplier videos)</p>
+<h2 id="what-if-i-did-this-for-doom">What if I did this for Doom?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#what-if-i-did-this-for-doom" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Instead of running a game engine, I could:</p>
+<ol>
+<li>Pre-render a screenshot for <em>every single position</em> you could stand in the map.</li>
+<li>Pre-render that screenshot for <em>every angle</em> you could face.</li>
+<li>Create a markdown file for each (position, angle) combination.</li>
+<li>Link them together with hyperlinks.</li>
+</ol>
+<p>When you click “⬆️ Forward”, You’re just loading a different markdown file. A different page in the book of you may.</p>
+<p>The engine <em>doesn’t exist</em>. There’s just a web of thousands+ files hyperlinked together.</p>
+<p>This is called a <strong>Stateless Engine</strong>
+How do I know?</p>
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img3.png" alt="IYKYK"/>
+</p>
+<p>Now DOOM is a BIG game</p>
+<p>Especially when you include clicking pictures for each part that very easily scaling to 10s if not 100s of thousands of images</p>
+<p>So I chose to cover the most iconic level 1 part 1 - or as it’s lovingly called E1M1</p>
+<p>E1M1 is still a big deal to map.
+E1M1 is roughly 4,000 x 2,500 Doom units in size (yes that is a thing, more on that later.)</p>
+<p>That’s very likely THOUSANDS of screenshots still
+That’s a lot. But it’s <em>finite</em>. And finite means <em>possible</em>.</p>
+<h1 id="mapping-the-world">Mapping The World<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mapping-the-world" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" align="center"><p lang="en" dir="ltr">playing around with an old friend again <a href="https://t.co/ltwZ4I9gBg" class="external">pic.twitter.com/ltwZ4I9gBg<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>— Kuber (@kuberwastaken) <a href="https://twitter.com/kuberwastaken/status/2007102533635039684?ref_src=twsrc%5Etfw" class="external">January 2, 2026<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></blockquote>
+<p>Alright so we did narrow our scope a lot with just E1M1 but that was still a lot to do manually</p>
+<h2 id="the-data-heist">The Data Heist<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-data-heist" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>I couldn’t just walk around Doom manually and take 4,356 screenshots. That would take weeks. I needed to automate it.</p>
+<p>But to automate it, I needed to know exactly <em>where</em> I could stand. I needed the map data.</p>
+<p>Luckily, Doom is one of the most hackable games in history, thanks to its file format: the <strong>WAD</strong>.</p>
+<h2 id="wheres-all-the-data">Where’s All the Data?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#wheres-all-the-data" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>In 1993, John Carmack made a genius decision: separate the <em>engine</em> from the <em>data</em>.</p>
+<ul>
+<li><code>DOOM.EXE</code>: The game logic. How to render, how physics work.</li>
+<li><code>DOOM1.WAD</code>: Everything else. The levels, the textures, the sounds, the sprites.</li>
+</ul>
+<p>WAD stands for “<strong>W</strong>here’s <strong>A</strong>ll the <strong>D</strong>ata?” (Yes, really. That’s the official name.)</p>
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img4.png" alt="IYKYK" width="500"/>
+</p>
+<p align="center" style="font-size:small;font-weight:lighter;">
+    (remember these maps for later - it would be useful)
+</p>
+<p>This separation is what made the Doom modding community explode. You didn’t need source code access to make new levels. You just needed to edit the WAD.</p>
+<h3 id="the-lumps">The Lumps<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-lumps" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A WAD is a binary file containing “lumps” (chunks of data). For a single map like E1M1, the key lumps are:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Lump</th><th>Description</th><th>What it Does</th></tr></thead><tbody><tr><td><code>VERTEXES</code></td><td>The X,Y coordinates of every corner</td><td>Defines map geometry</td></tr><tr><td><code>LINEDEFS</code></td><td>Lines connecting vertices</td><td>Walls, triggers, doors</td></tr><tr><td><code>SECTORS</code></td><td>Floor/ceiling heights, light levels</td><td><strong>Tells me where the floor is</strong></td></tr><tr><td><code>THINGS</code></td><td>Sprites (enemies, items, player start)</td><td>Where does the player spawn?</td></tr><tr><td></td><td></td><td></td></tr></tbody></table></div>
+<p>The <code>SECTORS</code> lump is insanely cool. Every sector has a <code>floor_height</code> and <code>ceiling_height</code>. If <code>ceiling - floor &lt; 56</code> (the player’s height), you can’t stand there.</p>
+<h2 id="depth-first-search-algorithms---the-blind-roomba-attempt-1">Depth First Search Algorithms - The Blind Roomba (Attempt #1)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#depth-first-search-algorithms---the-blind-roomba-attempt-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>My first approach was… dumb.</p>
+<p>I launched Doom in <strong>VizDoom</strong> (a tool for AI research that lets you control Doom programmatically), spawned a bot, and basically got it to walk randomly while recording its coordinates.</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="python" data-theme="github-light github-dark"><code data-language="python" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Terrible pseudocode</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">while</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> True</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">:</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> random() </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">></span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 0.5</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        move_forward()</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    else</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        turn_random_direction()</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    save_position(get_x(), get_y())</span></span></code></pre></figure>
+<p>and boy was it awful</p>
+<ul>
+<li>
+<p>The bot got stuck in corners.</p>
+</li>
+<li>
+<p>The bot missed the <em>entire</em> Blue Armor secret room.</p>
+</li>
+<li>
+<p>Coverage: maybe 40% of the map.</p>
+</li>
+<li>
+<p>The bot fell in acid and freakin died, I’m not even joking</p>
+</li>
+</ul>
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img5.png" alt="Here's even Claude losing his sanity realising it"/>
+</p>
+<p align="center" style="font-size:small;font-weight:lighter;">
+</p><p>    Here’s even Claude losing his sanity realising it</p>
+<p></p>
+<p>This was the “Roomba cleaning method”: random bouncing until you hopefully cover everything. It doesn’t work for structured environments.</p>
+<p>I needed a smarter approach. Instead of <em>discovering</em> positions, I needed a way to somehow <em>declare</em> them.</p>
+<h3 id="omgifol-the-wad-parser">Omgifol: “THE” WAD Parser<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#omgifol-the-wad-parser" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>I used a Python library called <strong><code>omgifol</code></strong> that was literally a lifesaver in this project and is an acronym for <strong>Oh My God! It’s Full Of Lumps!</strong> (you might be noticing a pattern with the names here)</p>
+<p>It lets you open a WAD like a Python dictionary:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="python" data-theme="github-light github-dark"><code data-language="python" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> omg </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">import</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> WAD</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, MapEditor</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">wad </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> WAD(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;doom1.wad&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">editor </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> MapEditor(wad.maps[</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;E1M1&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">])</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">print</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;E1M1 has </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">{len</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(editor.sectors)</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> sectors&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">print</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;E1M1 has </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">{len</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(editor.linedefs)</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> walls&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Output:</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># E1M1 has 88 sectors</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># E1M1 has 486 walls</span></span></code></pre></figure>
+<p>This was my “in”. I could programmatically scan the entire level.</p>
+<h2 id="the-grid-method">The Grid Method<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-grid-method" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Okay so here’s a general idea of what I did</p>
+<ol>
+<li>Define a grid across the entire map. One point every 64 units.</li>
+<li>For each grid point, check: “Is this inside a walkable sector?”</li>
+<li>If yes, add it to my list.</li>
+</ol>
+<p>This is called <strong>Point-in-Polygon</strong> testing. For each point, I cast a mathematical ray and see how many sector boundaries it crosses. If it’s an odd number, the point is inside.</p>
+<pre><code>def point_in_sector(x, y, sector_lines):
+    &quot;&quot;&quot;Ray casting algorithm for point-in-polygon.&quot;&quot;&quot;
+    inside = False
+    for (x1, y1), (x2, y2) in sector_lines:
+        if ((y1 > y) != (y2 > y)):  # Line crosses horizontal ray
+            intersect_x = (x2 - x1) * (y - y1) / (y2 - y1) + x1
+            if x &lt; intersect_x:
+                inside = not inside
+    return inside
+</code></pre>
+<h3 id="why-64-units">Why 64 Units?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#why-64-units" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Because I like minecraft
+no, really</p>
+<p>Doom’s textures are 64x64 pixels. Floors are tiled 64x64. Most geometry is aligned to 64-unit boundaries.</p>
+<p><strong>64 was the sweet spot.</strong> It matches Doom’s internal rhythm. When you step forward, you move exactly one floor tile. It <em>felt</em> right.</p>
+<p>I ran the Point-in-Polygon script. It scanned through thousands of grid points. It spit out a JSON file.</p>
+<p>see all this theoretically should’ve worked</p>
+<p>And… <strong>it only mapped like 15% of the level.</strong></p>
+<p>The spawn room? Fine. The first hallway? Fine. That zigzag room in the middle? <strong>Nothing.</strong></p>
+<p>I stared at the output for an hour. The math was right. The sectors were being detected correctly. So why were huge chunks of the map missing?</p>
+<h2 id="why-wont-it-move-further">Why Won’t It Move Further?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#why-wont-it-move-further" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>The whole idea for the bot was to bounce from the walls and move forward
+… then I realised</p>
+<p><strong>The bot was bouncing off the walls.</strong>
+Not <em>walls</em>. <strong>Gates.</strong> Doors. The closed doors in E1M1.</p>
+<p>in DOOM you open the Gates by interacting with it (by a spacebar) but the bot could not do this</p>
+<p>plus in my Stateless Engine, there is… no state. If I take a screenshot of a closed door, and the user clicks “Forward”, the next screenshot must show them <em>behind</em> the door. But visually, nothing opened. It’s jarring.</p>
+<p>when VizDoom tries to teleport the player there… the door is closed. The <code>warp</code> command works, but the player immediately gets pushed back because they’re inside a solid object.</p>
+<p>I was mapping the <em>geometry</em> correctly. But I couldn’t <em>photograph</em> it because the game state included closed doors.</p>
+<h3 id="what-the-heck-do-i-even-do-about-this">”What the heck do I even DO about this?”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#what-the-heck-do-i-even-do-about-this" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>I was genuinely stuck. The WAD file is a binary blob. I can <em>read</em> it with omgifol. But <em>editing</em> it? Changing door behaviors? That sounded like rocket science.</p>
+<p>I did what any desperate developer does in 2026: <strong>I asked an LLM.</strong></p>
+<p>I’ve been having ongoing conversations with ChatGPT, Claude, and Gemini throughout this project. They’ve been invaluable for debugging Python, explaining VizDoom quirks, and just rubber-ducking ideas.</p>
+<p>When I described this door problem to <strong>Gemini</strong>, it casually suggested:</p>
+<blockquote>
+<p>“You could edit the WAD file to remove the door mechanics entirely. Tools like Ultimate Doom Builder let you modify sector heights and linedef flags.”</p>
+</blockquote>
+<p>I stared at the screen.</p>
+<p><strong>Edit. The. WAD.</strong></p>
+<p>I’m not a level designer. I’ve never touched a Doom map editor in my life.
+But okay. If an AI says it’s possible, maybe it is.</p>
+<h3 id="dumping-the-wiki-into-context">Dumping the Wiki into Context<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#dumping-the-wiki-into-context" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>I found <strong>Ultimate Doom Builder</strong> (UDB). Downloaded it. Opened <code>doom1.wad</code>. And I was immediately lost. There are like 47 buttons and panels. Linedef flags. Sector specials. Thing types.</p>
+<p>So I did something a little unhinged: I went to the Doom Wiki and the Ultimate Doom Builder wiki, and I started copy-pasting documentation pages into Gemini’s context window.</p>
+<p>and got it to give me step by step instructions</p>
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img6.png" alt="Here's gemini helping me out"/>
+</p>
+<p>I followed the steps. I messed up thrice. But on the third try, I had a clean <code>doom1.wad</code> with all gates open.</p>
+<p>I ran the mapper again.</p>
+<p><strong>1,089 positions.</strong> The entire level. Every room. Every secret.</p>
+<blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" align="center"><p lang="en" dir="ltr">cooking something insane today <a href="https://t.co/wHdvG4ro22" class="external">pic.twitter.com/wHdvG4ro22<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>— Kuber (@kuberwastaken) <a href="https://twitter.com/kuberwastaken/status/2007395057163481157?ref_src=twsrc%5Etfw" class="external">January 3, 2026<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></blockquote>
+<h1 id="a-moment-to-reflect">A Moment to Reflect<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#a-moment-to-reflect" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>I want to pause here because this was genuinely surreal.</p>
+<p>2 years ago, I couldn’t have done this. Not because I’m not smart. But because the knowledge friction was too high. Learning Doom modding from scratch? Reading 30 wiki pages? Understanding binary formats? That’s weeks of work.</p>
+<p>With an LLM, I did it in <em>an afternoon</em>.</p>
+<p>I didn’t just use AI to “write code for me.” I used it as a <em>force multiplier</em>. A tutor that could ingest an entire wiki and answer my very specific, very weird questions.</p>
+<p>That kind of contextual, domain-specific answer would have taken me hours to find on a forum. The LLM gave it to me in seconds.</p>
+<p><strong>95% of this project was done in 3 days.</strong> Not because I’m a genius. Because I had an LLM pair-programming with me the entire time. It wrote half the code (which I reviewed and fixed). It explained the obscure VizDoom API. It taught me how to edit a 30-year-old binary format.</p>
+<p>I’m not saying “AI will replace programmers.” I’m saying AI let <em>me</em>, a person who knew nothing about Doom modding, become temporarily competent enough to pull this off.</p>
+<p>That’s kind of amazing.</p>
+<h3 id="the-doomwiki-e1m1-map">The DoomWiki E1M1 Map<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-doomwiki-e1m1-map" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Remember the visual map I showed you before? I found them way too late</p>
+<p>The Doom Wiki has these <em>beautiful</em> top-down map images for every level and it saved me hours</p>
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img7.png" alt="DOOM wiki map" width="500"/>
+</p>
+<p>I wrote a script to superimpose my grid points onto it. This let me visually verify if I’m covering the whole map and if I miss any sectors</p>
+<p>When I saw the purple dots cover the entire layout, I knew the algorithm was working.</p>
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img8.png" alt="DOOM wiki map overlayed" width="500"/>
+</p>
+<p><strong>Final count: 1,089 valid positions.</strong></p>
+<h2 id="the-setup">The Setup<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-setup" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Now I had 1,089 coordinates. I needed 4 screenshots at each one (N, E, S, W). That’s 4,356 images.</p>
+<p>I used <strong>VizDoom</strong> to automate this. VizDoom is normally used for training AI to play Doom, but I used it as a glorified camera tripod.</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="python" data-theme="github-light github-dark"><code data-language="python" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> capture_at_node</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(game, x, y):</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">    &quot;&quot;&quot;Teleport to (x, y) and capture 4 angles.&quot;&quot;&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    game.send_game_command(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;warp </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">x</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">}</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> {</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">y</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    for</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> angle </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">in</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">90</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">180</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">270</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]:  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># East, North, West, South</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        turn_to_angle(game, angle)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        </span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        screen </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> game.get_state().screen_buffer</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        img </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> convert_to_webp(screen, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">quality</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">85</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        </span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        save(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;doom_</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">x</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">_</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">y</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">_</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">angle</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">.webp&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, img)</span></span></code></pre></figure>
+<p>The <code>warp</code> command teleports the player to exact coordinates. No walking needed.</p>
+<p>and sweet, we got all our images!</p>
+<h2 id="wait-wont-github-explode">Wait, Won’t GitHub Explode?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#wait-wont-github-explode" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>At this point I had 4,356 WebP screenshots sitting in <code>assets/</code>. The markdown files were tiny ~1KB each, just links and image tags. But the images? Even at 85 quality, I braced for a multi-gigabyte repo.</p>
+<p><code>du -sh assets/</code></p>
+<p><strong>200MB total.</strong></p>
+<p>That’s ~44KB per screenshot. WebP is black magic. The whole repo, WAD editor, Python scripts, thousands of files clocks in at less than your static website’s <code>node_modules</code> folder.</p>
+<p>This was a quiet win: <strong>the reason this can stay up forever is because it’s lighter than a single 4K wallpaper.</strong></p>
+<h1 id="thats-cute-but-how-do-you-control-it">That’s Cute, but How Do YOU Control it?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#thats-cute-but-how-do-you-control-it" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>The <code>linker.py</code> script is what transforms a pile of images into a <em>playable game</em>.
+It’s the most important 300 lines of Python in the entire project, and it does something genuinely cool: generating a <strong>directed graph</strong> where every node is a markdown file and every edge is a hyperlink.</p>
+<blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" align="center"><p lang="en" dir="ltr">might break the internet next week <a href="https://t.co/zlP7oLpRgU" class="external">pic.twitter.com/zlP7oLpRgU<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>— Kuber (@kuberwastaken) <a href="https://twitter.com/kuberwastaken/status/2007519739493622032?ref_src=twsrc%5Etfw" class="external">January 3, 2026<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></blockquote>
+<h2 id="the-graph-structure">The Graph Structure<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-graph-structure" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Let me explain the data structure before diving into code.</p>
+<h3 id="nodes">Nodes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#nodes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Each <strong>node</strong> in the graph represents a unique game state:</p>
+<ul>
+<li><strong>Position</strong>: <code>(x, y)</code> — where you’re standing on the E1M1 grid</li>
+<li><strong>Angle</strong>: <code>0°, 90°, 180°, 270°</code> — which direction you’re facing</li>
+</ul>
+<p>So a node is a 3-tuple: <code>(x, y, angle)</code></p>
+<p>For example:</p>
+<ul>
+<li><code>(1024, -3648, 90)</code> means “standing at coordinates (1024, -3648), facing North”</li>
+<li><code>(1024, -3648, 0)</code> means “same spot, but facing East”</li>
+</ul>
+<p>These are <strong>different nodes</strong> even though the position is identical. Your view changes when you turn.</p>
+<h3 id="edges">Edges<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#edges" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Each node can connect to <strong>up to 10 other nodes</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Action</th><th>Effect</th><th>Target Node</th></tr></thead><tbody><tr><td>⬆️ Forward</td><td>Move 64 units in facing direction</td><td><code>(x', y', angle)</code> — same angle</td></tr><tr><td>⬇️ Backward</td><td>Move 64 units opposite direction</td><td><code>(x', y', angle)</code> — same angle</td></tr><tr><td>⬅️ Turn Left</td><td>Rotate 90° counter-clockwise</td><td><code>(x, y, angle+90)</code> — same position</td></tr><tr><td>➡️ Turn Right</td><td>Rotate 90° clockwise</td><td><code>(x, y, angle-90)</code> — same position</td></tr><tr><td>↖️ Strafe NW</td><td>Move diagonally forward-left</td><td><code>(x+dx, y+dy, angle)</code> — same angle</td></tr><tr><td>↗️ Strafe NE</td><td>Move diagonally forward-right</td><td><code>(x+dx, y+dy, angle)</code> — same angle</td></tr><tr><td>↙️ Strafe SW</td><td>Move diagonally backward-left</td><td><code>(x+dx, y+dy, angle)</code> — same angle</td></tr><tr><td>↘️ Strafe SE</td><td>Move diagonally backward-right</td><td><code>(x+dx, y+dy, angle)</code> — same angle</td></tr><tr><td>💥 Shoot</td><td>Stay in place (or trigger end)</td><td><code>(x, y, angle)</code> — same state</td></tr></tbody></table></div>
+<p><strong>Total edges per node</strong>: Up to 9 (8 movement + 1 self-loop for shoot). In practice, many are blocked by walls.</p>
+<h2 id="the-linker-algorithm">The Linker Algorithm<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-linker-algorithm" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Here’s how it works in simplified pseudocode:</p>
+<pre><code>LOAD all valid positions from map_data.json
+    → Result: Set of (x, y) coordinates
+
+FOR EACH (x, y) position:
+    FOR EACH angle in [0°, 90°, 180°, 270°]:
+        
+        CALCULATE 8 movement targets:
+            forward  = position + step in facing direction
+            backward = position - step in facing direction
+            diagonals = combinations of forward/back + left/right strafe
+        
+        CALCULATE 2 rotation targets:
+            turn_left  = same position, angle + 90°
+            turn_right = same position, angle - 90°
+        
+        FOR EACH target:
+            IF target exists in valid positions:
+                CREATE clickable link → target file
+            ELSE:
+                CREATE faded (disabled) button
+        
+        BUILD markdown file:
+            - Screenshot image
+            - 3×3 navigation table with links
+            - Compass showing current direction
+        
+        SAVE as &quot;{x}_{y}_{angle}.md&quot;
+</code></pre>
+<p>The filename encodes the state. When you click <code>1024_-3648_90.md</code>, you’re loading “facing North at (1024, -3648).”</p>
+<h3 id="walls--missing-edges">Walls = Missing Edges<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#walls--missing-edges" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Here’s the elegant part: <strong>collision detection is just a set lookup</strong>.</p>
+<pre><code>IF target_position IN valid_positions:
+    → Clickable link (you can go there)
+ELSE:
+    → Faded button (wall blocking you)
+</code></pre>
+<p>The walls aren’t enforced at runtime. They’re baked into the graph structure. Missing edges <em>are</em> the walls.</p>
+<h2 id="the-strafe-trick">The Strafe Trick<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-strafe-trick" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Most first-person games in markdown use “tank controls”: turn, move, turn, move. To walk diagonally across a room takes <strong>4 clicks</strong>.</p>
+<p>I tried to use diagonal movement that preserves your facing angle</p>
+<pre><code>WHEN you click ↖️ (Forward-Left):
+    new_x = x + forward_offset + left_offset
+    new_y = y + forward_offset + left_offset
+    new_angle = SAME as before  ← This is the key!
+</code></pre>
+<p>You physically <em>sidestep</em> without rotating the camera. One click instead of four because well, every frame reloads</p>
+<h2 id="the-end-trigger">The End Trigger<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#the-end-trigger" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>One last clever bit: how do you “win”?</p>
+<p>In real Doom, you hit a switch at the end of the level. I don’t have switches (no state!), so I used a <strong>proximity trigger</strong>:</p>
+<p>When you reach the end room and click the 💥 button, it takes you to <code>end_game.md</code> instead of looping back. That file shows the victory screen.</p>
+<p>The beauty is that the player doesn’t know this until they reach the end. The 💥 button looks the same everywhere. But in that final room, it becomes the “exit switch.”</p>
+<h1 id="it-works">IT… WORKS<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#it-works" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>After all the scripting, debugging, WAD surgery, and linking… I pushed the repo.</p>
+<p>I clicked “Episode 1”. I clicked “Knee Deep in the Dead”. I clicked “Ultra-Violence” (because of course I did).</p>
+<p>The spawn room loaded.
+I clicked “⬆️”.</p>
+<p><strong>The screen updated.</strong></p>
+<p>I clicked “⬆️” 5 times again.</p>
+<p><strong>I was in the next room.</strong></p>
+<p>I turned left. I walked down the hallway. I saw the armor bonus in the alcove. I walked into the zigzag room.</p>
+<p>I was <em>playing Doom</em>.
+In a <em>README file</em>.
+On <em>GitHub</em>.</p>
+<p>I sat there for a good five minutes, just clicking around, making sure it wasn’t a fluke. Every direction worked. Every corner rendered well. The switch at the end of the level linked to an “end_game.md” file with a victory screen.</p>
+<p><strong>It actually worked.</strong></p>
+<p>4,357 markdown files. 4,356 screenshots.
+Just hyperlinks. Thousands and thousands of hyperlinks.</p>
+<p>and I knew what I had to do</p>
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/doomme/img9.png" alt="A Screenshot of my GitHub Profile" width="500"/>
+</p>
+<p>… add it to my GitHub profile README</p>
+<h1 id="a-thank-you-to-the-doom-community">A Thank You to the Doom Community<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#a-thank-you-to-the-doom-community" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>This project is built on the shoulders of <em>thirty years</em> of community work.</p>
+<ul>
+<li><strong>John Carmack &amp; id Software</strong>: For open-sourcing the engine in 1997 and creating the WAD format that made modding possible in 1993.</li>
+<li><strong>The Doom Wiki</strong>: For meticulously documenting every aspect of the game, including those beautiful map images that saved my sanity.</li>
+<li><strong>The <code>omgifol</code> developers</strong>: For maintaining a Python WAD parser in 2026 for a game from 1993.</li>
+<li><strong>The AMAZING discord servers</strong> I joined that still have a community of Ultimate DOOM Editors and WADs</li>
+<li><strong>The VizDoom team</strong>: For building an AI training tool that I hilariously misused as a screenshot farm.</li>
+<li><strong>The Ultimate Doom Builder maintainers</strong>: For keeping level editing alive and accessible.</li>
+</ul>
+<p>The fact that I could even <em>attempt</em> this project is a testament to one of gaming’s most passionate and enduring communities.</p>
+<p>And now it runs on GitHub Readmes, I guess.</p>
+<p>If you liked this maybe you’d like <a href="https://github.com/Kuberwastaken/DoomMe" class="external">the repo<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>! Click around and maybe drop a star?
+and if you like seeing fun and weird sidequests with tech and AI - consider dropping me a follow at the links below !</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#why-doom-specifically" data-for="why-doom-specifically">Why DOOM Specifically?</a></li><li class="depth-1"><a href="#you-literally-cant" data-for="you-literally-cant">You Literally Can’t</a></li><li class="depth-0"><a href="#the-failed-ideas" data-for="the-failed-ideas">The Failed Ideas</a></li><li class="depth-1"><a href="#idea-1-twitch-plays-pokemon---but-github" data-for="idea-1-twitch-plays-pokemon---but-github">Idea 1: Twitch Plays Pokemon - but GitHub</a></li><li class="depth-1"><a href="#idea-2-github-actions-as-the-backend" data-for="idea-2-github-actions-as-the-backend">Idea 2: GitHub Actions as the “Backend”</a></li><li class="depth-1"><a href="#but-what-if-there-was-no-state-at-all" data-for="but-what-if-there-was-no-state-at-all">But What if there was no “state” at all?</a></li><li class="depth-0"><a href="#idea-3-choose-your-own-adventure-the-stateless-engine" data-for="idea-3-choose-your-own-adventure-the-stateless-engine">Idea 3: Choose Your Own Adventure (The Stateless Engine)</a></li><li class="depth-1"><a href="#the-concept" data-for="the-concept">The Concept</a></li><li class="depth-1"><a href="#what-if-i-did-this-for-doom" data-for="what-if-i-did-this-for-doom">What if I did this for Doom?</a></li><li class="depth-0"><a href="#mapping-the-world" data-for="mapping-the-world">Mapping The World</a></li><li class="depth-1"><a href="#the-data-heist" data-for="the-data-heist">The Data Heist</a></li><li class="depth-1"><a href="#wheres-all-the-data" data-for="wheres-all-the-data">Where’s All the Data?</a></li><li class="depth-2"><a href="#the-lumps" data-for="the-lumps">The Lumps</a></li><li class="depth-1"><a href="#depth-first-search-algorithms---the-blind-roomba-attempt-1" data-for="depth-first-search-algorithms---the-blind-roomba-attempt-1">Depth First Search Algorithms - The Blind Roomba (Attempt #1)</a></li><li class="depth-2"><a href="#omgifol-the-wad-parser" data-for="omgifol-the-wad-parser">Omgifol: “THE” WAD Parser</a></li><li class="depth-1"><a href="#the-grid-method" data-for="the-grid-method">The Grid Method</a></li><li class="depth-2"><a href="#why-64-units" data-for="why-64-units">Why 64 Units?</a></li><li class="depth-1"><a href="#why-wont-it-move-further" data-for="why-wont-it-move-further">Why Won’t It Move Further?</a></li><li class="depth-2"><a href="#what-the-heck-do-i-even-do-about-this" data-for="what-the-heck-do-i-even-do-about-this">”What the heck do I even DO about this?”</a></li><li class="depth-2"><a href="#dumping-the-wiki-into-context" data-for="dumping-the-wiki-into-context">Dumping the Wiki into Context</a></li><li class="depth-0"><a href="#a-moment-to-reflect" data-for="a-moment-to-reflect">A Moment to Reflect</a></li><li class="depth-2"><a href="#the-doomwiki-e1m1-map" data-for="the-doomwiki-e1m1-map">The DoomWiki E1M1 Map</a></li><li class="depth-1"><a href="#the-setup" data-for="the-setup">The Setup</a></li><li class="depth-1"><a href="#wait-wont-github-explode" data-for="wait-wont-github-explode">Wait, Won’t GitHub Explode?</a></li><li class="depth-0"><a href="#thats-cute-but-how-do-you-control-it" data-for="thats-cute-but-how-do-you-control-it">That’s Cute, but How Do YOU Control it?</a></li><li class="depth-1"><a href="#the-graph-structure" data-for="the-graph-structure">The Graph Structure</a></li><li class="depth-2"><a href="#nodes" data-for="nodes">Nodes</a></li><li class="depth-2"><a href="#edges" data-for="edges">Edges</a></li><li class="depth-1"><a href="#the-linker-algorithm" data-for="the-linker-algorithm">The Linker Algorithm</a></li><li class="depth-2"><a href="#walls--missing-edges" data-for="walls--missing-edges">Walls = Missing Edges</a></li><li class="depth-1"><a href="#the-strafe-trick" data-for="the-strafe-trick">The Strafe Trick</a></li><li class="depth-1"><a href="#the-end-trigger" data-for="the-end-trigger">The End Trigger</a></li><li class="depth-0"><a href="#it-works" data-for="it-works">IT… WORKS</a></li><li class="depth-0"><a href="#a-thank-you-to-the-doom-community" data-for="a-thank-you-to-the-doom-community">A Thank You to the Doom Community</a></li></ul></div></div><div class="graph"><h3>MindMap</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:2,&quot;scale&quot;:1.1,&quot;repelForce&quot;:2,&quot;centerForce&quot;:0.4,&quot;linkDistance&quot;:50,&quot;fontSize&quot;:0.8,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:1.5,&quot;centerForce&quot;:0.4,&quot;linkDistance&quot;:45,&quot;fontSize&quot;:0.7,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="recent-notes"><h3>Trending Posts</h3><ul class="recent-ul"><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme" class="internal">How I Made DOOM Run Inside a GitHub Readme</a></h3></div><p class="meta"><time datetime="2026-01-04T00:00:00.000Z">Jan 04, 2026</time></p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../Reflections/Prompting-People" class="internal">Prompting People</a></h3></div><p class="meta"><time datetime="2026-01-02T00:00:00.000Z">Jan 02, 2026</time></p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../Post-Extended/How-to-Statistically-Never-Lose-in-Wordle-Again" class="internal">How to Statistically Never Lose in Wordle Again</a></h3></div><p class="meta"><time datetime="2025-12-29T00:00:00.000Z">Dec 29, 2025</time></p></div></li></ul></div></div><footer class><p>© 2026 kuberwastaken</p><ul><li><a href="https://www.linkedin.com/in/kubermehta/">LinkedIn</a></li><li><a href="https://x.com/kuberwastaken">X</a></li><li><a href="https://github.com/kuberwastaken">GitHub</a></li></ul></footer></div></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+        const socket = new WebSocket('ws://localhost:3001')
+        // reload(true) ensures resources like images and scripts are fetched again in firefox
+        socket.addEventListener('message', () => document.location.reload(true))
+      </script><script src="../postscript.js" type="module"></script></html>
