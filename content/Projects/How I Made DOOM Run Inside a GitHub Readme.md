@@ -18,7 +18,7 @@ modified:
 ---
 <p align="center">
 <a href="https://github.com/Kuberwastaken/DoomMe/blob/main/menu/episode_1.md">
-<img src="https://cdn.jsdelivr.net/gh/Kuberwastaken/DoomMe@main/static/start-visual.gif" alt="Click to Play DOOM" width="640">
+<img src="https://cdn.jsdelivr.net/gh/Kuberwastaken/DoomMe@main/static/start-visual.gif" alt="Click to Play DOOM">
 </a>
 <br>
 <sub><strong>Yes, this is literally DOOM, Click to Play</strong></sub>
@@ -27,7 +27,6 @@ modified:
 You know how GitHub allows you to embed markdown GIFs on your profile README
 
 for the longest time - I had a super Mario programming themed GIF on it.
-
 It looked cool, matched my personality and had a "locked-in" character on top of my GitHub profile, what more could I ask for?
 
 ![Mario GIF](https://camo.githubusercontent.com/d61f7b9b674900570c595ca72ecde53c5654897e3abf81e44fc3cf91c78ba9dd/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a313130302f666f726d61743a776562702f312a5671307351373951495a56365631522d743771746d772e676966)
@@ -46,8 +45,7 @@ DOOM is a game known for running everywhere because of the ports it has had sinc
 because of this accessibility and MASSIVE community of such a huge game being so open and moddable, people took it to extreme levels - there have been memes on "It Runs Doom" on Tumblr since over a decade ago. People have put doom in toasters, macbook touchbars, smart fridges.
 
 now with that out of the way, the question remains.
-
-But how the actual heck do you even put an entire game with a sophisticated engine in a GitHub README
+how the actual heck do you even put an entire game with a sophisticated engine in a GitHub README
 
 ## You Literally Can't
 
@@ -128,7 +126,7 @@ I was lying in bed, frustrated, when I thought
 
 What if I didn't need to run Doom? What if I just needed to *show* Doom?
 
-# Idea 3: Choose Your Own Adventure (The Stateless Engine)
+# Idea 3: The Stateless Engine
 
 ## The Concept
 
