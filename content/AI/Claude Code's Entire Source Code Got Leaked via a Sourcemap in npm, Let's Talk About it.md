@@ -55,7 +55,6 @@ The funniest part is, there's an entire system called ["Undercover Mode"](#under
 They built a whole subsystem to stop their AI from accidentally revealing internal codenames in git commits... and then shipped the entire source in a `.map` file, likely by Claude.
 
 ---
-
 ## What's Claude Under The Hood?
 
 If you've been living under a rock, Claude Code is Anthropic's official CLI tool for coding with Claude and the most popular AI coding agent.
@@ -67,7 +66,6 @@ From the inside, It's a **785KB [`main.tsx`](https://github.com/kuberwastaken/cl
 Enough yapping, here's some parts about the source code that are genuinely cool that I found after an afternoon deep dive:
 
 ---
-
 ## BUDDY - A Tamagotchi Inside Your Terminal
 
 I am not making this up.
@@ -239,13 +237,11 @@ NEVER include in commit messages or PR descriptions:
 ```
 
 The activation logic:
-
 - `CLAUDE_CODE_UNDERCOVER=1` forces it ON (even in internal repos)
 - Otherwise it's **automatic**: active UNLESS the repo remote matches an internal allowlist
 - There is **NO force-OFF** - *"if we're not confident we're in an internal repo, we stay undercover."*
 
 So this confirms:
-
 1. **Anthropic employees actively use Claude Code to contribute to open-source** - and the AI is told to hide that it's an AI
 2. **Internal model codenames are animal names** - Capybara, Tengu, etc.
 3. **"Tengu"** appears hundreds of times as a prefix for feature flags and analytics events - it's almost certainly **Claude Code's internal project codename**
@@ -350,6 +346,14 @@ Claude Code's tool system lives in [`tools/`](https://github.com/kuberwastaken/c
 | **WorkflowTool** | Execute workflow scripts |
 | **ConfigTool** | Modify settings (**internal only**) |
 | **TungstenTool** | Advanced features (**internal only**) |
+| **MCPTool** | Generic MCP tool execution |
+| **McpAuthTool** | MCP server authentication |
+| **SyntheticOutputTool** | Structured output via dynamic JSON schemas |
+| **SuggestBackgroundPRTool** | Suggest background PRs (**internal only**) |
+| **VerifyPlanExecutionTool** | Verify plan execution (gated by `CLAUDE_CODE_VERIFY_PLAN`) |
+| **CtxInspectTool** | Context window inspection (gated by `CONTEXT_COLLAPSE`) |
+| **TerminalCaptureTool** | Terminal panel capture (gated by `TERMINAL_PANEL`) |
+| **CronCreateTool** / **CronDeleteTool** / **CronListTool** | Granular cron job management (under `ScheduleCronTool/`) |
 | **SendUserFile** / **PushNotification** / **SubscribePR** | KAIROS-exclusive tools |
 
 Tools are registered via `getAllBaseTools()` and filtered by feature gates, user type, environment flags, and permission deny rules. There's a **tool schema cache** ([`toolSchemaCache.ts`](https://github.com/kuberwastaken/claude-code/blob/main/src-rust/crates/tools/src/lib.rs)) that caches JSON schemas for prompt efficiency.
@@ -395,6 +399,33 @@ The [`constants/betas.ts`](https://github.com/kuberwastaken/claude-code/blob/mai
 ```
 
 `redact-thinking`, `afk-mode`, and `advisor-tool` are also not released.
+
+---
+
+## Upcoming Models - Capybara, Opus 4.7, and Sonnet 4.8
+
+The codebase contains references to unreleased Anthropic models that haven't been publicly announced:
+
+- **Claude "Capybara"** - A new model family already in version 2, with a variant called `capybara-v2-fast` being prepared with a **1M context window**
+- **Capybara comes in "fast" and regular thinking** tiers
+- **Opus 4.7** and **Sonnet 4.8** are already referenced within the code
+
+### Production Engineering Around Capybara
+
+The code reveals that Anthropic observed a **real production failure mode**: Capybara can prematurely stop generating when the prompt shape resembles a turn boundary after tool results. Rather than waiting for a model fix, they mitigated it with **prompt-shape surgery**:
+
+1. **Force a safe boundary marker** (`Tool loaded.`) to prevent ambiguous turn boundaries
+2. **Relocate risky sibling blocks** that could trigger premature stops
+3. **Smoosh reminder text into tool results** to maintain generation flow
+4. **Add non-empty markers for empty tool outputs** to avoid confusing the model
+
+All of this is wrapped with **kill-switchable gates** (`tengu_*` prefixed flags) so rollout can be staged and reverted quickly.
+
+- Comments include **concrete A/B test evidence** (not hand-wavy), which typically means this area was **launch-critical** and closely monitored
+- Comments like *"un-gate once validated on external via A/B"* confirm that **ant/internal users are canary lanes** before broader rollout
+- The strongest interpretation: Anthropic is working toward a **Capybara model family** with a fast-tier variant (`capybara-v2-fast`), supporting up to **1M context**
+
+Nothing confirms a launch date or official SKU naming, but the implementation signatures fit a model family that is actively being prepared for release ;)
 
 ---
 
@@ -469,3 +500,7 @@ A few things stand out:
 **The internal culture shows.** Animal codenames (Tengu, Fennec, Capybara), playful feature names (Penguin Mode, Dream System), a Tamagotchi pet system with gacha mechanics. Some people at Anthropic is having fun.
 
 If there's one takeaway this has, it's that security is hard. But `.npmignore` is harder, apparently :P
+
+---
+
+A writeup by [Kuber Mehta](https://kuber.studio/)
