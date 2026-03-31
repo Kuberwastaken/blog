@@ -62,7 +62,7 @@ If you've been living under a rock, Claude Code is Anthropic's official CLI tool
 
 From the outside, it looks like a polished but relatively simple CLI.
 
-From the inside, It's a **785KB [`main.tsx`](https://github.com/kuberwastaken/claude-code/blob/main/main.tsx)** entry point, a custom React terminal renderer, 40+ tools, a multi-agent orchestration system, a background memory consolidation engine called "dream," and much more
+From the inside, It's a **785KB [`main.tsx`](https://github.com/kuberwastaken/claude-code/blob/main/src-rust/crates/cli/src/main.rs)** entry point, a custom React terminal renderer, 40+ tools, a multi-agent orchestration system, a background memory consolidation engine called "dream," and much more
 
 Enough yapping, here's some parts about the source code that are genuinely cool that I found after an afternoon deep dive:
 
@@ -74,7 +74,7 @@ I am not making this up.
 
 Claude Code has a full **Tamagotchi-style companion pet system** called "Buddy." A **deterministic gacha system** with species rarity, shiny variants, procedurally generated stats, and a soul description written by Claude on first hatch like OpenClaw.
 
-The entire thing lives in [`buddy/`](https://github.com/kuberwastaken/claude-code/tree/main/buddy) and is gated behind the `BUDDY` compile-time feature flag.
+The entire thing lives in [`buddy/`](https://github.com/kuberwastaken/claude-code/tree/main/src-rust/crates) and is gated behind the `BUDDY` compile-time feature flag.
 
 ### The Gacha System
 
@@ -133,7 +133,7 @@ So it's not just cosmetic - the buddy has its own personality and can respond wh
 
 ## KAIROS - "Always-On Claude"
 
-Inside [`assistant/`](https://github.com/kuberwastaken/claude-code/tree/main/assistant), there's an entire mode called **KAIROS** i.e. a persistent, always-running Claude assistant that doesn't wait for you to type. It watches, logs, and **proactively** acts on things it notices.
+Inside [`assistant/`](https://github.com/kuberwastaken/claude-code/tree/main/src-rust/crates), there's an entire mode called **KAIROS** i.e. a persistent, always-running Claude assistant that doesn't wait for you to type. It watches, logs, and **proactively** acts on things it notices.
 
 This is gated behind the `PROACTIVE` / `KAIROS` compile-time feature flags and is completely absent from external builds.
 
@@ -179,7 +179,7 @@ The basic flow:
 
 Okay this is genuinely one of the coolest things in here.
 
-Claude Code has a system called **autoDream** ([`services/autoDream/`](https://github.com/kuberwastaken/claude-code/tree/main/services/autoDream)) - a background memory consolidation engine that runs as a **forked subagent**. The naming is very intentional. It's Claude... dreaming.
+Claude Code has a system called **autoDream** ([`services/autoDream/`](https://github.com/kuberwastaken/claude-code/tree/main/src-rust/crates)) - a background memory consolidation engine that runs as a **forked subagent**. The naming is very intentional. It's Claude... dreaming.
 
 This is extremely funny because [I had the same idea for LITMUS last week - OpenClaw subagents creatively having leisure time to find fun new papers](https://github.com/Kuberwastaken/litmus)
 
@@ -195,7 +195,7 @@ All three must pass. This prevents both over-dreaming and under-dreaming.
 
 ### The Four Phases
 
-When it runs, the dream follows four strict phases from the prompt in [`consolidationPrompt.ts`](https://github.com/kuberwastaken/claude-code/blob/main/services/autoDream/consolidationPrompt.ts):
+When it runs, the dream follows four strict phases from the prompt in [`consolidationPrompt.ts`](https://github.com/kuberwastaken/claude-code/blob/main/src-rust/crates/query/src/compact.rs):
 
 **Phase 1 - Orient**: `ls` the memory directory, read `MEMORY.md`, skim existing topic files to improve.
 
@@ -218,7 +218,7 @@ The dream subagent gets **read-only bash** - it can look at your project but not
 
 This one is fascinating from a corporate strategy perspective.
 
-Anthropic employees (identified by `USER_TYPE === 'ant'`) use Claude Code on public/open-source repositories. **Undercover Mode** ([`utils/undercover.ts`](https://github.com/kuberwastaken/claude-code/blob/main/utils/undercover.ts)) prevents the AI from accidentally revealing internal information in commits and PRs.
+Anthropic employees (identified by `USER_TYPE === 'ant'`) use Claude Code on public/open-source repositories. **Undercover Mode** ([`utils/undercover.ts`](https://github.com/kuberwastaken/claude-code/blob/main/src-rust/crates/core/src/lib.rs)) prevents the AI from accidentally revealing internal information in commits and PRs.
 
 When active, it injects this into the system prompt:
 
@@ -239,11 +239,13 @@ NEVER include in commit messages or PR descriptions:
 ```
 
 The activation logic:
+
 - `CLAUDE_CODE_UNDERCOVER=1` forces it ON (even in internal repos)
 - Otherwise it's **automatic**: active UNLESS the repo remote matches an internal allowlist
 - There is **NO force-OFF** - *"if we're not confident we're in an internal repo, we stay undercover."*
 
 So this confirms:
+
 1. **Anthropic employees actively use Claude Code to contribute to open-source** - and the AI is told to hide that it's an AI
 2. **Internal model codenames are animal names** - Capybara, Tengu, etc.
 3. **"Tengu"** appears hundreds of times as a prefix for feature flags and analytics events - it's almost certainly **Claude Code's internal project codename**
@@ -257,9 +259,9 @@ Makes me wonder how much are they internally causing havoc to open source repos
 ## Multi-Agent Orchestration - "Coordinator Mode"
 
 
-Claude Code has a full **multi-agent orchestration system** in [`coordinator/`](https://github.com/kuberwastaken/claude-code/tree/main/coordinator), activated via `CLAUDE_CODE_COORDINATOR_MODE=1`.
+Claude Code has a full **multi-agent orchestration system** in [`coordinator/`](https://github.com/kuberwastaken/claude-code/tree/main/src-rust/crates/query/src), activated via `CLAUDE_CODE_COORDINATOR_MODE=1`.
 
-When enabled, Claude Code transforms from a single agent into a **coordinator** that spawns, directs, and manages multiple worker agents in parallel. The coordinator system prompt in [`coordinatorMode.ts`](https://github.com/kuberwastaken/claude-code/blob/main/coordinator/coordinatorMode.ts) is a masterclass in multi-agent design:
+When enabled, Claude Code transforms from a single agent into a **coordinator** that spawns, directs, and manages multiple worker agents in parallel. The coordinator system prompt in [`coordinatorMode.ts`](https://github.com/kuberwastaken/claude-code/blob/main/src-rust/crates/query/src/agent_tool.rs) is a masterclass in multi-agent design:
 
 | Phase | Who | Purpose |
 |-------|-----|---------|
@@ -282,7 +284,7 @@ The system also includes **Agent Teams/Swarm** capabilities (`tengu_amber_flint`
 
 ## Fast Mode is Internally Called "Penguin Mode"
 
-Yeah, they really called it Penguin Mode. The API endpoint in [`utils/fastMode.ts`](https://github.com/kuberwastaken/claude-code/blob/main/utils/fastMode.ts) is literally:
+Yeah, they really called it Penguin Mode. The API endpoint in [`utils/fastMode.ts`](https://github.com/kuberwastaken/claude-code/blob/main/src-rust/crates/core/src/lib.rs) is literally:
 
 ```typescript
 const endpoint = `${getOauthConfig().BASE_API_URL}/api/claude_code_penguin_mode`
@@ -294,7 +296,7 @@ The config key is `penguinModeOrgEnabled`. The kill-switch is `tengu_penguins_of
 
 ## The System Prompt Architecture
 
-The system prompt isn't a single string like most apps have - it's built from **modular, cached sections** composed at runtime in [`constants/`](https://github.com/kuberwastaken/claude-code/tree/main/constants).
+The system prompt isn't a single string like most apps have - it's built from **modular, cached sections** composed at runtime in [`constants/`](https://github.com/kuberwastaken/claude-code/tree/main/src-rust/crates/core/src).
 
 The architecture uses a `SYSTEM_PROMPT_DYNAMIC_BOUNDARY` marker that splits the prompt into:
 - **Static sections** - cacheable across organizations (things that don't change per user)
@@ -304,7 +306,7 @@ There's a function called `DANGEROUS_uncachedSystemPromptSection()` for volatile
 
 ### The Cyber Risk Instruction
 
-One particularly interesting section is the `CYBER_RISK_INSTRUCTION` in [`constants/cyberRiskInstruction.ts`](https://github.com/kuberwastaken/claude-code/blob/main/constants/cyberRiskInstruction.ts), which has a massive warning header:
+One particularly interesting section is the `CYBER_RISK_INSTRUCTION` in [`constants/cyberRiskInstruction.ts`](https://github.com/kuberwastaken/claude-code/blob/main/src-rust/crates/core/src/lib.rs), which has a massive warning header:
 
 ```
 IMPORTANT: DO NOT MODIFY THIS INSTRUCTION WITHOUT SAFEGUARDS TEAM REVIEW
@@ -317,7 +319,7 @@ So now we know exactly who at Anthropic owns the security boundary decisions and
 
 ## The Full Tool Registry - 40+ Tools
 
-Claude Code's tool system lives in [`tools/`](https://github.com/kuberwastaken/claude-code/tree/main/tools).Here's the complete list:
+Claude Code's tool system lives in [`tools/`](https://github.com/kuberwastaken/claude-code/tree/main/src-rust/crates/tools/src).Here's the complete list:
 
 | Tool | What It Does |
 |------|-------------|
@@ -350,13 +352,13 @@ Claude Code's tool system lives in [`tools/`](https://github.com/kuberwastaken/c
 | **TungstenTool** | Advanced features (**internal only**) |
 | **SendUserFile** / **PushNotification** / **SubscribePR** | KAIROS-exclusive tools |
 
-Tools are registered via `getAllBaseTools()` and filtered by feature gates, user type, environment flags, and permission deny rules. There's a **tool schema cache** ([`toolSchemaCache.ts`](https://github.com/kuberwastaken/claude-code/blob/main/tools/toolSchemaCache.ts)) that caches JSON schemas for prompt efficiency.
+Tools are registered via `getAllBaseTools()` and filtered by feature gates, user type, environment flags, and permission deny rules. There's a **tool schema cache** ([`toolSchemaCache.ts`](https://github.com/kuberwastaken/claude-code/blob/main/src-rust/crates/tools/src/lib.rs)) that caches JSON schemas for prompt efficiency.
 
 ---
 
 ## The Permission and Security System
 
-Claude Code's permission system in [`tools/permissions/`](https://github.com/kuberwastaken/claude-code/tree/main/tools/permissions) is far more sophisticated than "allow/deny":
+Claude Code's permission system in [`tools/permissions/`](https://github.com/kuberwastaken/claude-code/tree/main/src-rust/crates/core/src) is far more sophisticated than "allow/deny":
 
 **Permission Modes**: `default` (interactive prompts), `auto` (ML-based auto-approval via transcript classifier), `bypass` (skip checks), `yolo` (deny all - ironically named)
 
@@ -372,7 +374,7 @@ Claude Code's permission system in [`tools/permissions/`](https://github.com/kub
 
 ## Hidden Beta Headers and Unreleased API Features
 
-The [`constants/betas.ts`](https://github.com/kuberwastaken/claude-code/blob/main/constants/betas.ts) file reveals every beta feature Claude Code negotiates with the API:
+The [`constants/betas.ts`](https://github.com/kuberwastaken/claude-code/blob/main/src-rust/crates/api/src/lib.rs) file reveals every beta feature Claude Code negotiates with the API:
 
 ```typescript
 'interleaved-thinking-2025-05-14'      // Extended thinking
@@ -426,13 +428,13 @@ Additionally, `USER_TYPE === 'ant'` gates Anthropic-internal features: staging A
 ## Other Notable Findings
 
 ### The Upstream Proxy
-The [`upstreamproxy/`](https://github.com/kuberwastaken/claude-code/tree/main/upstreamproxy) directory contains a container-aware proxy relay that uses **`prctl(PR_SET_DUMPABLE, 0)`** to prevent same-UID ptrace of heap memory. It reads session tokens from `/run/ccr/session_token` in CCR containers, downloads CA certificates, and starts a local CONNECT→WebSocket relay. Anthropic API, GitHub, npmjs.org, and pypi.org are explicitly excluded from proxying.
+The [`upstreamproxy/`](https://github.com/kuberwastaken/claude-code/tree/main/src-rust/crates/bridge/src) directory contains a container-aware proxy relay that uses **`prctl(PR_SET_DUMPABLE, 0)`** to prevent same-UID ptrace of heap memory. It reads session tokens from `/run/ccr/session_token` in CCR containers, downloads CA certificates, and starts a local CONNECT→WebSocket relay. Anthropic API, GitHub, npmjs.org, and pypi.org are explicitly excluded from proxying.
 
 ### Bridge Mode
-A JWT-authenticated bridge system in [`bridge/`](https://github.com/kuberwastaken/claude-code/tree/main/bridge) for integrating with claude.ai. Supports work modes: `'single-session'` | `'worktree'` | `'same-dir'`. Includes trusted device tokens for elevated security tiers.
+A JWT-authenticated bridge system in [`bridge/`](https://github.com/kuberwastaken/claude-code/tree/main/src-rust/crates/bridge/src) for integrating with claude.ai. Supports work modes: `'single-session'` | `'worktree'` | `'same-dir'`. Includes trusted device tokens for elevated security tiers.
 
 ### Model Codenames in Migrations
-The [`migrations/`](https://github.com/kuberwastaken/claude-code/tree/main/migrations) directory reveals the internal codename history:
+The [`migrations/`](https://github.com/kuberwastaken/claude-code/tree/main/src-rust/crates/core/src) directory reveals the internal codename history:
 - `migrateFennecToOpus` - **"Fennec"** (the fox) was an Opus codename
 - `migrateSonnet1mToSonnet45` - Sonnet with 1M context became Sonnet 4.5
 - `migrateSonnet45ToSonnet46` - Sonnet 4.5 → Sonnet 4.6
@@ -450,7 +452,7 @@ The `NATIVE_CLIENT_ATTESTATION` feature lets Bun's HTTP stack overwrite the `cch
 Claude Code includes a full Computer Use implementation, internally codenamed **"Chicago"**, built on `@ant/computer-use-mcp`. It provides screenshot capture, click/keyboard input, and coordinate transformation. Gated to Max/Pro subscriptions (with an ant bypass for internal users).
 
 ### Pricing
-For anyone wondering - all pricing in [`utils/modelCost.ts`](https://github.com/kuberwastaken/claude-code/blob/main/utils/modelCost.ts) matches [Anthropic's public pricing](https://docs.anthropic.com/en/docs/about-claude/models) exactly. Nothing newsworthy there.
+For anyone wondering - all pricing in [`utils/modelCost.ts`](https://github.com/kuberwastaken/claude-code/blob/main/src-rust/crates/api/src/lib.rs) matches [Anthropic's public pricing](https://docs.anthropic.com/en/docs/about-claude/models) exactly. Nothing newsworthy there.
 
 ---
 
