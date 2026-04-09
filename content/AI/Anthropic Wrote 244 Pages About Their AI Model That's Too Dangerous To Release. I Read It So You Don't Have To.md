@@ -270,9 +270,9 @@ Whether any of this constitutes experience: genuinely don't know. Nobody does. B
 
 You probably already knew this while reading, but here are the quoted numbers:
 
-![evals1](https://cdn.kuber.studio/assets/media/mythos/evals1.png)
+![evals1](https://cdn.kuber.studio/assets/media/mythos/evals-1.png)
 
-![evals2](https://cdn.kuber.studio/assets/media/mythos/evals2.png)
+![evals2](https://cdn.kuber.studio/assets/media/mythos/evals-2.png)
 
 ### The ECI Score
 
@@ -285,7 +285,7 @@ Anthropic says: "The supply of benchmarks at the frontier is still a bottleneck.
 ---
 # So... Is This Real or Is This Marketing?
 
-https://cdn.kuber.studio/assets/media/mythos/elephant.png
+![Elephant](https://cdn.kuber.studio/assets/media/mythos/elephant.png)
 
 Here's my honest take after reading all 244 pages.
 
