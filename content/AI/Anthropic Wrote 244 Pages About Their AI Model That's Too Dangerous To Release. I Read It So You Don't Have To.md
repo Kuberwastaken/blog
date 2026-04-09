@@ -300,7 +300,9 @@ A 244-page document with convoluted parts only 0.1% of the world can understand,
 
 The RSP evaluation section reads like a very careful legal argument for why the model *technically* doesn't trigger Anthropic's own safety thresholds while simultaneously being more capable than anything before it. They survey 18 employees, note a 1.86x-4.28x acceleration in capability and conclude it doesn't cross the threshold.
 
-Sure, the reasoning is correct. But "we investigated ourselves and found ourselves not in violation" is a genre of document we're all always going to read with some skepticism.
+Sure, the reasoning is really compelling and Anthropic is doing the best safety work of any lab we've seen. But "we investigated ourselves and found ourselves not in violation" is a genre of document we're all always going to read with some skepticism.
+
+![I-swear](https://cdn.kuber.studio/assets/media/mythos/new-ending.png)
 
 and more on that - there's little to no independent verification by nature.
 We can't use Mythos. We can't test it. Most of the core evals are internal. External testers help but they're not running the primary assessments.
