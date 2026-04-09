@@ -309,7 +309,9 @@ If you ask me, the most honest sentence in all 244 pages is buried somewhere in 
 > "We are not confident that we have identified all issues along these lines."
 
 But that's not the red flag.
-The real question isn't whether Anthropic is being straight with us., it's whether _anyone_, Anthropic included is actually equipped or positioned to evaluate something like this. And the honest answer, the one the document almost arrives at before retreating into careful corporate language, is: probably not yet.
+The real question isn't whether Anthropic is being straight with us., it's whether _anyone_, Anthropic included is actually equipped or positioned to evaluate something like this.
+
+And the honest answer, the one the document almost arrives at before retreating into careful corporate language, is: probably not yet.
 
 ---
 
