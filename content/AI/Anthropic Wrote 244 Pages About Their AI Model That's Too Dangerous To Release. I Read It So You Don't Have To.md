@@ -305,8 +305,11 @@ Sure, the reasoning is correct. But "we investigated ourselves and found ourselv
 and more on that - there's little to no independent verification by nature.
 We can't use Mythos. We can't test it. Most of the core evals are internal. External testers help but they're not running the primary assessments.
 
-The most honest sentence in all 244 pages is buried somewhere in the middle:
+If you ask me, the most honest sentence in all 244 pages is buried somewhere in the middle:
 > "We are not confident that we have identified all issues along these lines."
+
+But that's not the red flag.
+The real question isn't whether Anthropic is being straight with us., it's whether _anyone_, Anthropic included is actually equipped or positioned to evaluate something like this. And the honest answer, the one the document almost arrives at before retreating into careful corporate language, is: probably not yet.
 
 ---
 
