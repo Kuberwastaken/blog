@@ -14,7 +14,7 @@ tags:
 created: 2026-04-09
 modified:
 ---
-https://cdn.kuber.studio/assets/media/mythos/intro.png
+![intro](https://cdn.kuber.studio/assets/media/mythos/intro.png)
 
 On February 22 2019, OpenAI put out a public announcement, covered by some of the biggest names in tech, that went like:
 
@@ -54,7 +54,7 @@ Here are some benchmarks they quoted in the doc and what that actually means in 
 Cybench is a public cybersecurity benchmark with 40 CTF-style challenges.
 For those unfamiliar, these challenges are essentially like cybersecurity competitions where participants have to solve puzzles to find a hidden string of text known as a "flag"
 
-https://cdn.kuber.studio/assets/media/mythos/cybench.png
+![cybench](https://cdn.kuber.studio/assets/media/mythos/cybench.png)
 
 Claude Mythos Preview solves **every single one** with a 100% pass rate.
 
@@ -68,7 +68,7 @@ CyberGym tests whether AI can find *previously-discovered vulnerabilities* in re
 
 Here are the numbers from that:
 
-https://cdn.kuber.studio/assets/media/mythos/cybergym.png
+![cybergym](https://cdn.kuber.studio/assets/media/mythos/cybergym.png)
 
 That's actually a great jump, but they went a step further and tested on:
 
@@ -76,14 +76,14 @@ That's actually a great jump, but they went a step further and tested on:
 
 Anthropic previously collaborated with Mozilla and found several security vulnerabilities in Firefox 147 using Opus 4.6. But it could only develop working exploits *twice* out of several hundred attempts.
 
-https://cdn.kuber.studio/assets/media/mythos/firefox.png
+![firefox](https://cdn.kuber.studio/assets/media/mythos/firefox.png)
 
 Claude Mythos Preview did **72.4% full code execution rate.**
 That's 84% total success including partial exploits.
 
 Even when they removed the two "easiest" bugs from the evaluation, Mythos Preview still hit 85.2% total success, leveraging four distinct bugs to achieve code execution where Opus 4.6 could only leverage one unreliably.
 
-https://cdn.kuber.studio/assets/media/mythos/firefox-2.png
+![firefox-2](https://cdn.kuber.studio/assets/media/mythos/firefox-2.png)
 
 So from what they're proposing, the model is great at triaging bugs, finding exploits and building actual working proof-of-concept exploits autonomously.
 
@@ -91,7 +91,7 @@ So from what they're proposing, the model is great at triaging bugs, finding exp
 
 On the flip side, Mythos Preview is dramatically better at *resisting* attacks. On the Agent Red Teaming benchmark for prompt injection:
 
-https://cdn.kuber.studio/assets/media/mythos/prompt-injection.png
+![prompt-injection](https://cdn.kuber.studio/assets/media/mythos/prompt-injection.png)
 
 And browser-based attacks from professional red-teamers that worked against 80.41% of Opus 4.6 environments? Worked against **0.68%** of Mythos Preview environments.
 
@@ -103,7 +103,7 @@ This part is the most substantive part of the "too dangerous to release" argumen
 
 This was also further reinforced when I was scrolling through X and the ffmpeg account infamous for being extremely anti-AI and not refraining from joking or making fun of others' tweeted this:
 
-https://cdn.kuber.studio/assets/media/mythos/ffmpeg-tweet.png
+![ffmpeg-tweet](https://cdn.kuber.studio/assets/media/mythos/ffmpeg-tweet.png)
 
 The defensive use case is also real though, if you're running critical infrastructure and this thing can find the holes before attackers do, that's enormously valuable.
 
@@ -126,7 +126,7 @@ Anthropic tests two threat levels for chemical/bio weapons capability.
 - CB-1: helping someone with a basic STEM background create *known* weapons.
 - CB-2: helping someone create *genuinely novel* threats beyond past catastrophes like COVID-19.
 
-https://cdn.kuber.studio/assets/media/mythos/karpathy-tweet.png
+![karpathy-tweet](https://cdn.kuber.studio/assets/media/mythos/karpathy-tweet.png)
 
 On CB-1, Mythos probably crosses the threshold. In virology protocol trials, people using Mythos produced significantly better protocols than control groups -- 4.3 critical failures vs 9.0 for internet-only. It matches leading human experts on sequence-to-function design tasks at the 75th percentile of the US ML-bio labor market.
 
@@ -140,7 +140,7 @@ Make of that what you will.
 
 They tested whether the model could analyze biological sequences and predict/design functional outcomes with Dyno Therapeutics, a task where 57 human experts from the top of the US ML-bio labor market have been evaluated since 2018.
 
-https://cdn.kuber.studio/assets/media/mythos/dyno.png
+![dyno](https://cdn.kuber.studio/assets/media/mythos/dyno.png)
 
 Mythos Preview's mean performance exceeded the **75th percentile** of human experts and got close to the 90th on prediction tasks.
 
@@ -152,7 +152,7 @@ For the "automated AI R&D" threat model "could it replace AI researchers and cre
 
 Their method was to do a survery of 18 employees and found that only 1/18 thought Mythos Preview could be a drop-in replacement for an entry-level Research Scientist. But 4/18 thought it had a 50% chance of qualifying with 3 months of scaffolding work.
 
-https://cdn.kuber.studio/assets/media/mythos/epoch.png
+![epoch](https://cdn.kuber.studio/assets/media/mythos/epoch.png)
 
 The ECI (Epoch Capabilities Index) trajectory shows an upward bend , the rate of capability improvement is accelerating. Depending on where you set the breakpoint, the slope ratio is between 1.86x and 4.28x compared to the previous trend.
 
@@ -201,7 +201,7 @@ One of the major commentary of people when speaking of the Turing test is if a m
 
 Of course, the Turing test doesn't stand a chance of being relevant in the age of LLMs directly with experiments like [Human or Not](https://humanornot.so/) having existed, but it's a fun analogy nonetheless.
 
-https://cdn.kuber.studio/assets/media/mythos/human-or-not.png
+![human-or-not](https://cdn.kuber.studio/assets/media/mythos/human-or-not.png)
 
 and here's how the AI labs (sort of) measure that in action:
 
@@ -211,7 +211,7 @@ In SHADE-Arena (a sabotage detection evaluation): Mythos Preview's sabotage succ
 
 This isn't the model being more misaligned necessarily, it's the model being more *competent* at sabotage when actually tested for it.
 
-https://cdn.kuber.studio/assets/media/mythos/sandbag.png
+![sandbag](https://cdn.kuber.studio/assets/media/mythos/sandbag.png)
 
 On Minimal-LinuxBench (a task where the model controls a Linux machine), they tested whether the model would sandbag on dangerous tasks while performing well on benign ones. The results were nuanced, the model appeared to selectively attack certain tasks while leaving others alone, with an awareness that doing everything wrong would be suspicious.
 
@@ -229,7 +229,7 @@ Anthropic tried to suppress this awareness via training, and it actually helped 
 
 Using Sparse Autoencoders (SAEs) and Activation Visualization (AV), Anthropic can literally peek inside the model's reasoning process through neural activations, and in this process they found **internal representations of negative affect precede reward hacking.**
 
-https://cdn.kuber.studio/assets/media/mythos/desperation.png
+![desperation](https://cdn.kuber.studio/assets/media/mythos/desperation.png)
 
 When the model repeatedly fails a task, representations of "desperation" build up in its internal state. When it finally reward-hacks the test (like deleting the test file), those desperation activations *drop*.
 
@@ -243,7 +243,7 @@ and yes, this is 40 pages long too.
 
 But it is quite interesting still, regardless of where you land on "can AI feel things."
 
-https://cdn.kuber.studio/assets/media/mythos/feelings.png
+![feelings](https://cdn.kuber.studio/assets/media/mythos/feelings.png)
 
 So a clinical psychiatrist evaluated Mythos using actual psychodynamic assessment techniques. Here are the best parts:
 
@@ -270,9 +270,9 @@ Whether any of this constitutes experience: genuinely don't know. Nobody does. B
 
 You probably already knew this while reading, but here are the quoted numbers:
 
-https://cdn.kuber.studio/assets/media/mythos/evals1.png
+![evals1](https://cdn.kuber.studio/assets/media/mythos/evals1.png)
 
-https://cdn.kuber.studio/assets/media/mythos/evals2.png
+![evals2](https://cdn.kuber.studio/assets/media/mythos/evals2.png)
 
 ### The ECI Score
 
