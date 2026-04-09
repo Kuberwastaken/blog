@@ -1,5 +1,5 @@
 ---
-title: Anthropic Wrote 244 Pages About an AI Model That's "Too Dangerous To Release". I Read It So You Don't Have To.
+title: Anthropic Wrote 244 Pages About an AI Model That's "Too Dangerous To Release". I Read It So You Don't Have To
 draft: false
 tags:
   - AI
