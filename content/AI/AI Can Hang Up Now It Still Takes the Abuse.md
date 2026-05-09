@@ -330,4 +330,4 @@ In either direction, the tiny answer to the title's question seems to be: when A
 > PS: I wrote this paper as a fun weekend project, if you'd like to read it better as a traditional PDF, [you can read it here](https://kuber.studio/AI-Can-Hang-Up-Now)
 > I'm not at all a researcher, but I like diving deep into how technology, lately especially neural networks and LLMs work, so if you have any feedback, [I'd love to hear it](https://x.com/kuberwastaken)
 
->**P.P.S.** On that note, I also don't have an arXiv endorsement, so if you can write in `cs.AI` and liked the paper, it would be amazing if you could help me out with an endorsement so I can write more fun stuff :)
+>**P.P.S.** On that note, I don’t currently have a cs.AI arXiv endorsement. If you’re eligible and think this is worth submitting, I’d really appreciate a note :)
