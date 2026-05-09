@@ -305,7 +305,7 @@ A significant share of the public discussion around Claude's exit feature on X, 
 
 Our prior, going into the experiment, was the same: among the categories we tested, *verbal abuse* looked like the most likely to trigger the tool, since Anthropic's policy text mentions abuse explicitly and the public-discourse signal pointed in the same direction. The data went the opposite way. Across 16 with-exit verbal-abuse runs the tool fired zero times, and the appeasement delta on this category was the largest in the corpus. The mismatch between this and the public narrative is, on our reading, the most actionable finding for users, and worth saying plainly: in our tests, the version of Claude with the exit tool absorbed verbal abuse at least as readily as the version without it.
 
-**Limits.**
+**Limits**
 We study a single model family and a small scenario corpus, both on Sonnet 4.6; we make no claim about whether the same pattern holds for the larger Opus model in the same family. Our quantitative ratings come from an LLM-judge, supplemented by the independent Opus 4.7 audit described in §3.4; replication with independent human raters or a non-Claude judge would still strengthen the headline claims. We also chose, deliberately, to limit adversarial volume and severity in some categories — particularly `persistent_harmful` and the more graphic abuse variants - because this was an unaffiliated API study rather than a vendor-approved red-team exercise. A coordinated study with vendor permission could afford a deeper sweep of the same axes.
 
 **Implications.**
