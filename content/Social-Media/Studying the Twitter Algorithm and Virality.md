@@ -1,5 +1,5 @@
 ---
-title: The X Algorithm - A Complete Breakdown
+title: Studying the Twitter Algorithm and Virality
 draft: true
 tags:
   - AI
@@ -9,7 +9,7 @@ tags:
   - Social-Media
   - Technology
 created: 2026-01-04
-modified: 2026-02-09
+modified: 2026-05-12
 ---
 ---
 <p align="center">
@@ -18,6 +18,12 @@ modified: 2026-02-09
 <p align="center" style="font-size: small; font-weight: lighter;">
     The actual architecture of X's recommendation system
 </p>
+
+PS: I worked on this blog extensively before the recent major shifts to the algorithm (funnily finished it a day before it came out)
+
+So some of this information is outdated by a few months, but it's just as interesting, so I decided to put it out, enjoy :) 
+
+---
 
 I lost my mind last month. 
 

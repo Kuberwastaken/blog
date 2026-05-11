@@ -12,189 +12,281 @@ tags:
 created: 2025-04-11
 modified:
 ---
+Most AI assistants still feel like they need too much hand-holding.
 
-![AI agent visualization](<https://media-hosting.imagekit.io/49fd30ed36894a99/manus%20Ss.png?Expires=1838964691&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=cktIx6a6JdbqHMuSCCYJHWV3jgMG6PMBKm4DS0WzbwqL5P97HGM2f~T6JgSTcrnSDqmyzMYG7aVjKxywGmWo2jlOFKZkyKrfQu9oGhWIH4a4jMYrr6pGIxrFQswxoM-SLrVMhsnWKRF76EOUvdaTw6f37j0s2zmKuQG~00wGF~sGTievTqdQ-vN246uCG5njhvViUQ09RCTa2vaDqWauCkKTv0GfrRZHNi85OqdaeLrMMmGFmzrmxv4X8H2ZTEVlVhE21sMYMXznasn04mZfwTU1YVejSLs-ohmfjFEnqrAj~sq9azh~4bPo4fmzuPWpamdJ65kmVW4RxGvtn4CZoA__>)
+You ask for something slightly complex and suddenly you are stuck answering clarifying questions, breaking the task into smaller parts, fixing missing context, and checking whether it understood the basics.
 
-In the rapidly evolving landscape of artificial intelligence, we're accustomed to AI assistants that seem to require a lot of effort. Constant hand-holding and a ton clarifying questions often make these tools more bothersome than helpful for a lot of more complex jobs. But what if AI could truly work for us, rather than the other way around? What if an AI could be an autonomous agent, understanding intricate requests and finding relevant information without much input from us?
+That works for simple things. It gets annoying fast when the task is actually multi-step.
 
-Enter Manus AI, a game-changer in the world of digital assistants. Manus ushers in a new era of AI, one that operates with a high degree of independence and genuine understanding. It's time we started expecting more from our AI tools.
+So when people talk about agentic AI, this is the part I care about most. Can it take a messy request, figure out the steps, use the right tools, and give me something complete without needing constant babysitting?
 
-Andd.. I recently got early access to it, let's talk about it!
+I recently got early access to Manus AI, so I wanted to test exactly that.
 
-## What Exactly is Agentic AI?
+## What Is Agentic AI?
 
-Before diving into Manus specifically, it's worth understanding what sets agentic AI apart from conventional AI assistants. True AI agents should:
+Before getting into Manus, it helps to define what I mean by agentic AI.
+
+A useful AI agent should be able to:
 
 1. **Work independently** without constant user guidance
-2. **Plan and execute** multi-step processes
-3. **Access and integrate** information from various sources
-4. **Make reasonable decisions** when faced with ambiguity
-5. **Deliver complete solutions**, not just partial answers
+2. **Plan and execute** multi-step tasks
+3. **Find and combine** information from different sources
+4. **Make reasonable decisions** when something is unclear
+5. **Deliver a finished output** instead of a partial answer
 
-Most AI tools available today fail at one or more of these criteria (even Manus, somewhat.) They might provide information but require you to synthesize it, or they might need constant clarification and guidance.
+Most AI tools still fail at some part of this. They may answer well, but they often need you to guide the workflow. They may give research, but you still have to organize it. They may generate a plan, but they stop before turning it into something usable.
 
-## Hands-On with Manus AI: A New Kind of Digital Assistant
+Manus is interesting because it tries to handle the whole task.
 
-Recently, I gained access to Manus AI and decided to test just how "agentic" it really is. Rather than starting with a simple request, I threw a complex, multi-faceted challenge at it:
+## Testing Manus AI With a Real Task
+
+I wanted to avoid giving it a tiny demo prompt. Those usually make every AI tool look better than it is.
+
+So I gave it a proper travel-planning task:
 
 > "I need a 7-day Singapore (4 nights) Malaysia (3 nights) itinerary for June (we have flexibility) from New Delhi, India, for 3 adults and 1 kid. There isn't a set budget but we don't want to overspend. We love fun activities, good food, and good views without it being too tiring. We're planning on getting an Airbnb because hotels would be too expensive. Please provide a detailed itinerary, proposed budgets, things to do, any events during the time, places to stay at, weather and everything else you can get hands on and a simple HTML with everything we've talked about we can reference throughout our journey."
 
-This request contains multiple constraints, preferences, and deliverables—exactly the kind of complex task that typically requires human expertise or, at minimum, several back-and-forth exchanges with an AI.
+This was the kind of request that usually needs a lot of back and forth.
+
+It had:
+
+- Two countries
+- Flights from India
+- Adults and a child
+- Budget flexibility
+- Airbnb preference
+- Activities, food, views, and pacing constraints
+- Weather and events
+- A final HTML page as the output
+
+That is a lot for one prompt.
 
 ## What Manus Actually Delivered
 
 ![Website Screenshot](<https://media-hosting.imagekit.io/6e607481bb9049a0/Screenshot%202025-04-11%20130558.png?Expires=1838964975&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=OIfHUEhfK8Yriyso7qnD7sBazy9a1vwL-spEdSzuRJo4M32ruHJ2X1wNCxnF1QwHNKK-QZHvLz23jSENrWwuS0tV8sYhV-6fNM3RH-NLyEm8GTbcng13HgR8wlYhrdz6r4HZuSxZERCsn07XisnEU7ovaMBlOu7Yk3v1706k08PlB2K~4DCHbkrws0Sa8hPE-8eKYPSk6m9krJw5NGqrUgRmoHJC5QJhe6o2ZXZuONkycXwlzCntXGd2wPdF54qTd3sRhlXUmFw83aqBNqIp68WfKNSlWS23FJZ8p--bIMV4ZS7ck5MyWD-BlKERI-31SqctYM5R6WV6qhrlyVoI9w__>)
 
-What happened next demonstrated why Manus represents a new generation of AI agent. Without any follow-up questions or clarifications, it produced:
+It handled the task without asking follow-up questions.
 
-- A complete day-by-day itinerary spanning two countries
-- Budget estimates broken down by category (accommodation, food, activities, transportation)
-- Location-specific recommendations considering the presence of a child
-- Transportation logistics between countries
-- Weather forecasts and seasonal considerations
-- Neighborhood recommendations for Airbnb stays with price estimates
-- Cultural and safety tips relevant to the destinations
-- A complete, formatted HTML document for offline reference
+The output included:
 
-(You can check out the website it generated here: https://kuberwastaken.github.io/Singapore-Plan/)
+- A complete day-by-day itinerary across Singapore and Malaysia
+- Budget estimates for stay, food, activities, and transport
+- Suggestions that made sense for a family with a child
+- Transport planning between countries
+- Weather notes and seasonal considerations
+- Airbnb-friendly neighborhood suggestions
+- Cultural and safety tips
+- A finished HTML page for reference during the trip
 
-All of this was delivered in a single package with zero additional input from me. This level of autonomous execution is what separates true AI agents from simple AI assistants.
+You can check out the website it generated here:
 
-As @MattMickiewicz from Twitter said themselves too: "Manus AI lives up to the hype. It's a genius at planning complex, multi-country, multi-stop itineraries including nailing down the optimal routing."
+https://kuberwastaken.github.io/Singapore-Plan/
 
-and yeah! I totally agree!
-## Beyond Travel: Manus AI as a General-Purpose Agent
+The impressive part was not that it wrote an itinerary. A lot of tools can do that.
 
-While my travel planning experience provides a concrete example of Manus's capabilities, what's particularly impressive is its versatility across domains. According to the company and user reports, Manus can autonomously handle tasks including:
+The impressive part was that it turned a messy planning request into a usable package without needing me to manage every step.
 
-- **Data Analysis**: Creating detailed stock performance dashboards with visualizations
-- **Education**: Developing curriculum materials, interactive lessons, and study resources
-- **Financial Planning**: Comparing complex insurance policies and investment options
-- **Web Development**: Building functional web applications and interactive tools
-- **Content Creation**: Producing comprehensive guides, presentations, and multimedia content
-- **Research**: Gathering and synthesizing information from diverse sources
+Matt Mickiewicz on Twitter also said something similar:
 
-This versatility suggests we're looking at a general-purpose AI agent rather than a domain-specific tool, representing a significant advancement in practical AI application.
+> "Manus AI lives up to the hype. It's a genius at planning complex, multi-country, multi-stop itineraries including nailing down the optimal routing."
 
-## The Technology Behind Manus AI's Autonomy
+After trying it, I get the hype.
 
-Manus AI, developed by China-based company Butterfly Effect, has been in development for a bit over one year. The name "Manus" comes from the Latin word for "hand," symbolizing its role in bridging idea generation and execution.
+## Beyond Travel Planning
 
-Manus achieved state-of-the-art performance on the GAIA benchmark, which evaluates AI agents on their ability to perform real-world tasks. This benchmark tests an AI's capacity to plan, reason, and execute multi-step processes which are precisely the skills required for genuine autonomy.
+Travel planning was just the easiest way for me to test it.
 
-What makes Manus particularly interesting is its transparency. Several users on X have highlighted that Manus shows its "work" behind the scenes, giving insight into how it makes decisions and gathers information.
+The more interesting part is that Manus seems built as a general-purpose agent. Based on company demos and user reports, it can handle things like:
 
-For tasks like travel planning, Manus pulls data from sources like Tripadvisor and specialized travel sites, integrating this information into coherent outputs. This ability to independently access and synthesize information from multiple sources is a hallmark of truly agentic AI.
+- **Data analysis**: Creating dashboards and visual reports
+- **Education**: Building lessons, study material, and curriculum resources
+- **Financial planning**: Comparing policies, plans, and options
+- **Web development**: Creating simple apps and interactive pages
+- **Content creation**: Producing guides, presentations, and structured documents
+- **Research**: Gathering and summarizing information from multiple sources
 
-## The Credit System: How Manus Quantifies Computational Work
+That makes it feel less like a single-purpose tool and more like an early version of what general AI agents might become.
 
-Manus operates on a credit system that reflects the computational resources required for different tasks. Each request consumes credits based on complexity, duration, and resource utilization (including LLM tokens, virtual machines, and third-party API calls).
+## The Technology Behind Manus AI
 
-For example:
+Manus AI was developed by Butterfly Effect, a China-based company. It has reportedly been in development for a bit over a year.
 
-- My travel itinerary consumed over 570 credits
-- An NBA player scoring efficiency chart: 200 credits (15 minutes)
-- A wedding invitation webpage: 360 credits (25 minutes)
-- A daily sky events app: 900 credits (80 minutes)
+The name "Manus" comes from the Latin word for "hand", which fits the product pretty well. The whole idea is to move from thinking to execution.
 
-The current pricing structure starts at $39/month for 3,900 credits on the Starter plan. This credit system provides insight into how AI agent workloads are quantified, something we'll likely see more of as AI agents become more sophisticated and resource-intensive (but which is also awfully expensive now, but hopefully not later like most other AI applications: check out [AI Models Race to the Bottom](https://kuberwastaken.github.io/blog/AI/The-AI-Models-Race-to-The-Bottom-in-2025) if you want to learn more! )
+Manus has also performed strongly on the GAIA benchmark, which tests AI agents on real-world tasks that require reasoning, tool use, and multi-step execution.
 
-## The Frontier of Agentic AI: Comparing Manus to Other Systems
+One thing I noticed is that Manus appears to use **Browser Use**, an open-source repository for browser-based AI tasks. That makes sense for a product like this. If an agent needs to browse websites, gather information, compare sources, and interact with pages, browser automation becomes a core part of the stack.
 
-To understand Manus's position in the emerging field of agentic AI, it's helpful to compare it with other approaches:
+Another nice part is that Manus shows some of its work while running. You can see it planning, searching, checking sources, and building the output. That makes the process feel less like a black box.
 
-### Traditional AI Assistants (ChatGPT, Claude)
+For travel planning, it pulled information from sources like Tripadvisor and travel websites, then turned that into a structured plan.
 
-- **Interaction model**: Conversational, requiring multiple exchanges
-- **Information access**: Limited to training data, may use plugins/tools
-- **Execution ability**: Primarily informational, limited action capabilities
-- **Output quality**: Variable, depends heavily on prompt quality
+That is where the agentic part becomes clear. It is not only generating text from a prompt. It is using tools, gathering information, and assembling the final result.
 
-### Task-Specific AI Tools (Wonderplan, Trip Planner AI)
+## The Credit System
 
-- **Interaction model**: Guided interfaces with predefined options
-- **Information access**: Domain-specific databases
-- **Execution ability**: Limited to specific functions
-- **Output quality**: Good within narrow parameters
+Manus uses a credit system.
 
-### Manus AI (New Generation Agent)
+Each task consumes credits based on complexity, duration, tool usage, LLM tokens, virtual machines, and third-party API calls.
 
-- **Interaction model**: One comprehensive request yields complete solution
-- **Information access**: Multiple sources integrated autonomously
-- **Execution ability**: Complex, multi-step planning and content creation
-- **Output quality**: High, with minimal user guidance
+Some examples:
 
-### AutoGPT and Similar Frameworks
+- My travel itinerary used over **570 credits**
+- An NBA scoring efficiency chart used around **200 credits**
+- A wedding invitation webpage used around **360 credits**
+- A daily sky events app used around **900 credits**
 
-- **Interaction model**: Set goal and watch execution
-- **Information access**: Web and tool-based
-- **Execution ability**: Multiple steps but often requires oversight
-- **Output quality**: Variable, sometimes gets stuck in loops
+The Starter plan currently starts at **$39/month** for **3,900 credits**.
 
-Honestly, Manus is one of the best we have for "Agentic AI" and it actually does show
+This is one of the more interesting parts of the product. Agentic AI is expensive because it is doing more than a normal chatbot response. It may run for longer, use browsers, call tools, generate files, and keep checking its own work.
 
-## The Implications: What Truly Autonomous AI Means
+That also means the pricing feels steep right now.
 
-The emergence of genuinely agentic AI like Manus has far-reaching implications:
+Hopefully, like most AI infrastructure, this gets cheaper over time. I wrote more about that here:
 
-### 1. Expertise Democratization
+[AI Models Race to the Bottom](https://kuberwastaken.github.io/blog/AI/The-AI-Models-Race-to-The-Bottom-in-2025)
 
-Tools like Manus democratize access to expertise. Not everyone can afford specialized consultants or has the time to become an expert in every domain, but agentic AI can provide specialized knowledge on demand. My travel planning experience demonstrated this—I received expert-level planning without needing to consult a travel agent or spend weeks researching.
+## How Manus Compares to Other AI Tools
 
-### 2. Time Value Revolution
+To understand where Manus fits, it helps to compare it with a few other types of AI tools.
 
-The real value proposition of agentic AI isn't just convenience—it's the reclamation of time. Complex tasks that might take hours or days of human effort can be compressed into minutes. This fundamentally changes the equation of what's worth outsourcing versus doing yourself.
+### Traditional AI Assistants
 
-### 3. New Interaction Paradigms
+Examples: ChatGPT, Claude
 
-As AI becomes truly agentic, our interaction patterns will shift from conversational exchanges to outcome-focused requests. Instead of breaking down tasks into small, manageable chunks for AI, we can present complex, holistic requests and expect complete solutions.
+- Conversational by default
+- Usually need multiple messages for complex tasks
+- Strong at reasoning and writing
+- Limited unless connected to tools
+- Output quality depends heavily on prompting
 
-### 4. Skill Augmentation vs. Replacement
+These are great assistants, but they still often need you to manage the task.
 
-Agentic AI like Manus doesn't simply replace human skills—it augments them by handling routine aspects of complex tasks while allowing humans to focus on higher-level decisions and creativity. The AI handles the "how" while humans focus on the "what" and "why."
+### Task-Specific AI Tools
 
-## Room for Improvement in the Agentic AI Space
+Examples: Wonderplan, Trip Planner AI
 
-While Manus represents a significant advancement, there are several areas where agentic AI still needs to evolve:
+- Built for one clear use case
+- Usually have guided forms or templates
+- Work well inside their domain
+- Less flexible outside their intended use
 
-### 1. Action Execution
+These can be useful, but they are narrow.
 
-Currently, Manus excels at planning and content creation but stops short of executing actions like making bookings or purchases. As Mario Gavira from Kiwi.com noted, it doesn't yet navigate booking sites or complete transactions. True end-to-end agency would include these capabilities.
+### Manus AI
 
-### 2. Real-Time Data Integration
+- Takes one larger request
+- Plans the workflow itself
+- Uses multiple sources
+- Produces a finished result
+- Handles research, writing, and formatting together
 
-While Manus accesses various information sources, integrating real-time data (like current prices, availability, or live conditions) would further enhance its utility.
+This is the part that makes it feel closer to an actual agent.
 
-### 3. Customization and Learning
+### AutoGPT-Style Frameworks
 
-Truly personalized agentic AI would learn from past interactions and user preferences, becoming increasingly tailored to individual needs over time.
+- Goal-based agents
+- Can use tools and browse the web
+- Often need oversight
+- Can get stuck or loop
+- Output quality varies a lot
 
-### 4. Resource Optimization
+Manus feels like a more polished version of that idea. It still has limits, but the execution is much more usable.
 
-At 570+ credits for a travel itinerary, there's room for more efficient processing. As AI technology advances, we should expect higher efficiency from agentic systems.
+Honestly, Manus is one of the strongest examples of agentic AI I have tried so far.
 
-### 5. Error Handling and Recovery
+## Why This Matters
 
-The ability to recognize when something isn't working, adjust course, and recover from errors is essential for fully autonomous systems.
+### 1. Access to Expertise
 
-## The Future Landscape of Autonomous AI Agents
+A tool like Manus can give people access to work that usually takes experience or a lot of research.
 
-As companies like OpenAI, Anthropic, and Google develop their own agentic systems, we're entering a new phase of AI utility. The race is on to create AI that can truly act as an independent agent rather than just a responsive assistant.
+For the travel plan, I got something close to what I would expect from a decent travel planner. I did not have to spend days researching locations, routes, activities, weather, neighborhoods, and costs.
 
-Recent developments like:
+That is useful.
 
-- OpenAI's potential "Agent Store"
-- Google's work on AI agents that can use tools
-- Anthropic's research into constitutional AI for safer autonomy
+### 2. Time Savings
 
-All point to a future where agentic AI becomes commonplace. Manus represents an early but impressive entry in this new category.
+The biggest value is time.
 
-## The Conclusion
+A complex task that might take hours can be compressed into one request. That changes what feels worth delegating.
 
-Manus AI offers a glimpse into the future of human-AI interaction—one where we can delegate complex, multi-step tasks with natural language instructions and receive complete solutions. It represents a shift from AI as a tool we must actively wield to AI as an agent that works independently on our behalf.
+If the agent can do the boring research and formatting, the human can focus on taste, judgment, and final decisions.
 
-While still in early preview and with room for improvement, Manus demonstrates what's possible when AI moves beyond conversation toward genuine agency. For professionals, creatives, and anyone who values their time, this evolution represents perhaps the most significant advancement in practical AI application since the introduction of large language models.
+### 3. A New Way to Talk to Software
 
-The question is no longer whether AI can be truly agentic, but how quickly these capabilities will become the new standard for AI assistance... that, we'll find out with time :)
+Most software still makes you operate it step by step.
 
----
+Agentic AI changes that interaction. Instead of clicking through menus or breaking a job into tiny instructions, you describe the outcome you want.
+
+The agent figures out the workflow.
+
+That is a big shift.
+
+### 4. Skill Augmentation
+
+I do not think tools like Manus simply replace human skill.
+
+They handle the repetitive parts of complex work. The human still decides what matters, what feels right, and what needs to change.
+
+The AI handles the execution layer. The human handles taste and direction.
+
+## Where Manus Still Needs Work
+
+Manus is impressive, but it is still early.
+
+### 1. Real Action Execution
+
+Right now, Manus is strong at planning and creating outputs.
+
+It does not fully handle actions like booking flights, reserving hotels, or completing purchases. That is where true end-to-end agency would become much more powerful.
+
+### 2. Real-Time Data
+
+For tasks like travel, prices and availability change quickly.
+
+The more real-time data Manus can use, the more useful it becomes.
+
+### 3. Personalization
+
+A stronger agent should learn from previous tasks.
+
+If it knows how I travel, what kind of food I like, how much walking I prefer, and what I consider overpriced, the output becomes much better.
+
+### 4. Cost and Efficiency
+
+A 570-credit itinerary is useful, but it is not cheap.
+
+Agentic systems need to become more efficient before people use them casually for everything.
+
+### 5. Error Recovery
+
+A good agent needs to know when it is stuck.
+
+It should be able to change approach, retry, verify, and recover from bad paths without falling apart.
+
+## The Future of AI Agents
+
+Manus feels like an early look at where AI tools are heading.
+
+OpenAI, Anthropic, Google, and others are all moving toward agents that can use tools, browse, write code, create files, and complete workflows.
+
+The direction is obvious.
+
+AI is moving from answering questions to doing work.
+
+Manus is not perfect, but it shows what that shift can look like in practice.
+
+## Final Thoughts
+
+Manus AI is one of the first AI agents I have used that actually feels meaningfully different from a chatbot.
+
+It took a broad, messy request and turned it into a complete output. It planned, researched, structured the result, and built a usable HTML page.
+
+There is still a lot to improve. The pricing is high, action execution is limited, and real-time reliability will matter more as people use tools like this for serious tasks.
+
+Still, the direction is exciting.
+
+We are moving toward AI tools that do not need every step spelled out. You give them the goal, and they figure out how to get there.
+
+That is the part that feels new.
