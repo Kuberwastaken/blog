@@ -2,30 +2,25 @@
 title: MindDump
 draft: false
 ---
-Hey! welcome to my Blog, this is where I share my thoughts, deep dive into topics and share the new things I learn with the Internet.
+Hey! Welcome to my Blog, I'm **Kuber Mehta**, founder of [**PolyThink Labs**](https://www.polyth.ink/) and previously TREAT (acq.)
+I like to build (& break) things across AI, technology, and whatever else catches my curiosity.
 
-I'm **Kuber Mehta**, founder of [**PolyThink**](https://www.polyth.ink/)and [**TREAT AI**](https://www.trytreat.tech/) and an AI & tech enthusiast. 
-
-You can learn more about me through my [overengineered portfolio](https://kuber.studio/) 
+Most of my work starts as an intrusive idea and turns into what I call a [SideQuest](https://github.com/kuberwastaken). you can learn more about me through my [overengineered portfolio.](https://kuber.studio/) 
 ## What You'll Find Here  
 
-This blog covers a wide range of topics, including (But not limited to):  
+Mostly things I’m building, thinking about, or trying to understand better.
 
-- **Artificial Intelligence** - Insights and explorations in #AI, #Machine-Learning and #Technology.
-- **Business** - Discussions on #Business strategies, models, and market trends, especially around #Startups 
-- **Social Media** - Analysis and commentary on #Social-Media trends and impacts.
-- **Data Science** - Deep dives into #Data-Science, #Data-Analytics, visualization, and applications. 
-- **My Hobbies & Interests** - #Gaming, #Music, #Instruments and more 
-- and some #Projects and #tutorials sometimes
+- **AI and technology** - Experiments, notes, and opinions around #AI, #Machine-Learning, and #Technology.  
+- **Projects** - Behind-the-scenes writeups on my #Projects usually with the odd motivations and parts that caught on fire before release.
+- **Reflections** - short #Reflections on building, the internet, ambition, taste, life and whatever else has been stuck in my head.
+- **Internet culture** - Thoughts on #Social-Media, #Gaming, #Startups trends, and the things I sometimes expand on through #Post-Extended.  
+- **Tutorials** - Occasional #tutorials and practical notes when I learn something worth writing down.
 ## Credits and Attributions 
 
-- Thanks to the wondrous contributors at Quartz to help set up the base of this website, which I modified
+- Thanks to the wonderful contributors at Quartz, which made the initial basis of the blog.
 - This website is #OpenSource, you can [check out how it works here](https://github.com/Kuberwastaken/blog)
 
 You can find a [RSS stream for this website here to add it to your reader](https://kuber.studio/blog/index.xml)
 
 ## 🔗 Connect With Me
 * [LinkedIn](https://www.linkedin.com/in/kubermehta/) &nbsp;  [𝕏](https://x.com/Kuberwastaken) &nbsp;  [GitHub](https://github.com/Kuberwastaken)
-
-
-
