@@ -14,7 +14,7 @@ created: 2024-12-20
 
 Who owns AI-generated content? Is it the creator who utilizes the tool, the platform that designed the AI, or the incomprehensible amount and sources of data used to train the model? This perplexing question sits at the heart of one of the most contentious debates in modern copyright law. As generative AI reshapes creative industries, offering new avenues for music, art, and text creation, it also plunges creators and legal experts into uncharted territory.
 
-AI systems like Suno AI, OpenAI’s DALL-E, and MidJourney allow users to produce content that is innovative, quick and easy to make, yet deeply tied to the material these models were trained on — much of which may already be under copyright protection. The result is a complex legal gray area: while generative AI opens doors for creativity, it also raises urgent questions about ownership, authenticity, and the potential for exploitation. Who truly owns the output when the process involves countless unseen (involuntary) contributors?
+AI systems like Suno AI, OpenAI’s DALL-E, and MidJourney allow users to produce content that is innovative, quick and easy to make, yet deeply tied to the material these models were trained on, much of which may already be under copyright protection. The result is a complex legal gray area: while generative AI opens doors for creativity, it also raises urgent questions about ownership, authenticity, and the potential for exploitation. Who truly owns the output when the process involves countless unseen (involuntary) contributors?
 
 ![](https://miro.medium.com/v2/resize:fit:875/1*VIecP4HC83S9s6D1yxfmuQ.png)
 

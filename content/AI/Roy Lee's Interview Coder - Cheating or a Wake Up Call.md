@@ -15,99 +15,229 @@ tags:
 created: 2025-03-04
 modified:
 ---
-Imagine a world where coding interviews are as predictable as recent Marvel movie plot twists. Enter **Roy Lee**, a Columbia University computer science sophomore who went from Reddit’s Leetcode Messiah to Twitter’s (I refuse to call it X) most controversial disruptor. Once known for solving 600+ DSA problems and, Roy did something that's up for you to interpret: he built **Interview Coder**, an AI tool that’s essentially a cheat code for Technical interviews. But this isn’t just a story about an app, it’s about Universities, Amazon drama, academic backlash, and a Twitter marketing campaign so bold it would make Kanye Blush.
+Coding interviews have been broken for a while.
+
+For years, companies have treated LeetCode-style questions like the gold standard for hiring engineers. Grind enough DSA, memorize enough patterns, and suddenly you are considered “interview ready.”
+
+Then Roy Lee came along and made the whole thing look ridiculous.
+
+Roy, a Columbia University computer science student, was already known in some online circles for solving hundreds of DSA problems. Then he built **Interview Coder**, an AI tool designed to help candidates solve coding interview questions in real time.
+
+Depending on who you ask, it is either a cheating tool, a protest against broken interviews, or both.
 
 ![Absolute Flex](<https://media-hosting.imagekit.io//fdb906f1bedd4f0e/Screenshot%202025-03-04%20002011.png?Expires=1835635830&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=gupBtCkBLj3ae3WWYcGBL0uU-4fbDJqgw4LH48eVz3G9CrvQwUxJBaUzEqYBq3vicCYOPGxfPWctqKu1yAg-fzOERtOg02O4W64sYCpl1PkFvLDFfcGas5ozlReiDuqXxjGfRE8wThmEf-ylUbwnRfzTDo3MQC07q-9Q7ZTKck4YZmS6eA-h8r8PNzJK5Jv29sgIWUH~4sjR5m~1QybClNVjrBeSAQh7seuBTSZA7Fn8ogb7AWM2rsyInXG740yXFmpdH6bO8uZXBDWEno3zXO7RtLEI2fj246jh3NULu~SdS876Vty0YFLxc-utoTpfS3xXUkK0HMhwlXGh9IgDEw__>)
 
----
+## What Is Interview Coder?
 
-## Chapter 1: What is Interview Coder?
+Interview Coder is a desktop app that costs around **$60/month**.
 
-For **$60/month**, Interview Coder is a desktop app that uses AI (Still pretty unclear what models) to:  
-- **Solve Leetcode problems in real time** during interviews, like a ghostwriter for code.  
-- **Debug and optimize code** with a keystroke (⌘ + ↵, because typing is *so* 2010).  
-- Evade detection by screen-recording software and browser APIs
+The pitch is simple: use AI during technical interviews without getting caught.
 
-It works on Zoom, Hackerrank, Microsoft Teams, and more, turning even the most "algorithmically clueless" candidate into a faux coding prodigy. Roy’s pitch? *“Why grind for months when AI can grind for you?”*
+It can:
 
----
+- Solve LeetCode-style problems in real time
+- Help debug and optimize code
+- Work through shortcuts like **⌘ + Enter**
+- Run during interviews on platforms like Zoom, HackerRank, and Microsoft Teams
+- Avoid some common screen-recording and browser-based detection methods
 
-## Chapter 2: The Amazon Interview Incident
+The model details are still a little unclear, but the idea is obvious. It acts like a coding copilot during live technical interviews.
 
-### The Day Amazon’s HR Department Imploded  
-In early 2024, Roy decided to test Interview Coder in the wild. He applied for a software engineering role at **Amazon**, armed with his AI sidekick. During the virtual interview, he casually triggered Interview Coder’s AI to solve a notoriously tricky graph traversal problem. The result? A flawless solution, delivered faster than Amazon Prime shipping.  
+Roy’s pitch was basically this:
 
-But here’s the twist: **Roy recorded the entire interaction and leaked it on YouTube**. The video went viral, showcasing:  
-- The interviewer’s impressed reaction (*“Wow, you’re… uh… really prepared!”*).  
-- Roy’s deadpan confession post-hire: *“BTW, an AI did this. Your process is broken.”*  
+> Why grind LeetCode for months if AI can solve the problem for you?
 
-Amazon was *not* amused. They rescinded his offer, banned him from future applications, and reportedly sent a **strongly worded letter to Columbia University** accusing Roy of “academic dishonesty” and “undermining the integrity of the hiring process.” Columbia, caught in the crossfire, launched an investigation but ultimately took no action—likely because *technically*, Roy hadn’t violated any academic codes. The incident, however, became a rallying cry for critics of tech hiring practices.
+That is exactly why people got mad.
 
----
+## The Amazon Interview Incident
 
-## Chapter 3: Columbia University Strikes Back (Sort Of)
+The biggest controversy came from Roy allegedly using Interview Coder during an Amazon interview.
 
-### The Letter Heard ‘Round the Tech World  
-Columbia’s response to Amazon’s complaint was… bureaucratic gold. The university’s dean of students issued a statement that read like a masterclass in passive-aggressive academia:  
-*“While we encourage innovation, students are reminded to uphold ethical standards in all professional endeavors. The university does not endorse tools that compromise the integrity of third-party processes.”*  
+The story goes that he applied for a software engineering role and used the tool during a virtual technical round. When the coding problem came up, Interview Coder helped generate the solution live.
 
-Translation: *“We’re not mad, just disappointed.”*  
+From the outside, it looked like a clean interview performance.
 
-Roy, ever the provocateur, tweeted the letter with the caption: **“Columbia’s stance on ‘innovation’: ✅ Nuclear physics. ❌ Exposing broken tech interviews.”** The tweet racked up 50k likes, with replies ranging from *“Based”* to *“You’re why we can’t have nice things.”*
+Then Roy posted about it.
 
----
+That is where everything exploded.
 
-## Chapter 4: DSA Interviews—The Emperor’s New Code
+The clip and story spread online, with people arguing over whether this was cheating, activism, or just a very public way to expose a weak hiring process.
 
-### Why Leetcode Problems Are Now Pointless  
-For decades, tech companies treated Data Structures and Algorithms (DSA) interviews like sacred rituals. The logic? *“If you can invert a binary tree on a whiteboard, you can debug our spaghetti code!”* But Interview Coder exposed the fatal flaw: **AI solves these problems faster than you can say ‘O(n log n).’**  
+Amazon reportedly did not take it well. His offer was rescinded and the situation reached Columbia.
 
-### The Three Horsemen of the DSA Apocalypse  
-1. **AI > Human Memorization**: Why test DFS/BFS regurgitation when GPT-4 can generate 10 solutions in 2 seconds?  
-2. **Real-World Skills ≠ Leetcode Skills**: Newsflash—nobody cares if you can solve “Two Sum” if you can’t build a CRUD app.  
-3. **The Automation Paradox**: If companies use automated coding tests, why can’t candidates automate right back?  
+Whether you see Roy as reckless or smart, the point landed. If a candidate can use AI to beat a coding interview this easily, the interview format itself has a problem.
 
-As one Hacker News user put it: *“Leetcode is like asking chefs to solve Sudoku. It’s a puzzle, not a meal.”*  
+## Columbia’s Response
 
----
+Columbia was pulled into the situation after the controversy spread.
 
-## Chapter 5: Roy’s X Marketing Masterclass
+The university’s response seemed careful. It did not exactly celebrate what happened, but it also did not turn the whole thing into a major punishment story.
 
-### How to Go Viral Without Really Trying  
-Roy didn’t just build Interview Coder—he **marketed it like a Silicon Valley supervillain**. His X campaign included:  
-- **Leaked Amazon footage**: *“Watch me break Amazon’s interview process.”*  
-- **Meme Warfare**: Posts comparing Leetcode grinders to *“hamsters on a wheel”* and DSA interviews to *“measuring IQ with a Magic 8-Ball.”*  
-- **Controversial Polls**: *“Would you use an AI tool to cheat interviews? Asking for a friend.”* (Results: 62% Yes, 38% No.)  
+The general message was clear enough:
 
-He even partnered with coding influencers for “demonstration interviews,” where guests used Interview Coder live. One guest, a self-taught developer, solved a Hard Leetcode problem while *literally eating a sandwich*. The video title? **“Coding Interviews Are a Joke. Here’s the Punchline.”**
+Innovation is fine. Undermining third-party processes is not something the university wants to endorse.
 
----
+Roy leaned into it anyway.
 
-## Chapter 6: Ethical Armageddon—Cheat Tool or Necessary Evil?
+He framed the backlash as proof that institutions are fine with innovation until it makes them uncomfortable. That framing worked well online because the tech crowd already has a love-hate relationship with LeetCode interviews.
 
-### The Great Debate: Is Roy Lee a Hero or a Menace?  
-- **Team “Cheating”**: *“This is why we can’t have nice things!”* Unqualified hires = bad code = apps crashing mid-launch.  
-- **Team “System’s Broken”**: *“If interviews test memorization, not skill, why play fair?”*  
+Some people saw him as exposing a broken system.
 
-Even ethicists are divided. As one Redditor wrote: *“Interview Coder isn’t cheating—it’s Darwinism for hiring processes.”*  
+Others saw him as proving why companies are paranoid in the first place.
 
-### The Accessibility Argument  
-Roy’s sneakiest defense? *“Not everyone has 6 months to grind Leetcode.”* He positioned Interview Coder as a tool for leveling the playing field—a Robin Hood for coders drowning in algorithmic trivia. Critics fired back: *“So your solution to inequality is… more inequality?”*  
+## Why This Hit a Nerve
 
----
+The reason Interview Coder got so much attention is not because it solved coding questions.
 
-## Chapter 7: The Aftermath—What Now?
+AI tools can already do that.
 
-### Will Tech Companies Adapt or Die?  
-The Interview Coder saga has forced a reckoning. Companies are scrambling for alternatives:  
-- **Take-home projects**: *“Build a mini-app instead of solving binary tree riddles.”*  
-- **Pair programming**: *“Watch candidates code in real time. No AI can fake that… yet.”*  
-- **Behavioral interviews**: *“Tell me about a time you resolved a merge conflict… emotionally.”*  
+It got attention because it attacked one of the most annoying rituals in software hiring.
 
-But old habits die hard. As Roy tweeted: *“They’ll cling to Leetcode like Boomers cling to cable TV.”*  
+For years, candidates have been told that DSA interviews are necessary because they test problem-solving ability. In practice, they often reward pattern memorization, interview prep time, and the ability to perform under artificial pressure.
 
----
+That creates a weird system.
 
-## Final Take: Is Roy Lee the Villain Tech Deserves?  
+You may be great at building real software, but still fail because you did not remember a graph trick.
 
-Love him or hate him, Roy Lee has done the impossible: he made tech interviews *interesting*. Whether Interview Coder is a cheat tool or a wake-up call, one thing’s clear—**the era of Leetcode supremacy is over**.  
+At the same time, someone can grind hundreds of problems and pass interviews without necessarily being good at shipping production code.
+
+Interview Coder made that contradiction impossible to ignore.
+
+## The Problem With DSA Interviews
+
+DSA interviews are not useless.
+
+They can test fundamentals. They can show how someone thinks. They can help filter candidates at scale.
+
+The problem is how much weight companies put on them.
+
+A typical LeetCode-style interview often tests:
+
+1. Whether you have seen the pattern before
+2. Whether you can stay calm under pressure
+3. Whether you practiced enough similar problems
+4. Whether you can explain your thinking while coding
+5. Whether you can avoid small mistakes in a stressful environment
+
+That is not the same as testing whether someone can build good software.
+
+Most engineering work is not solving “Hard” LeetCode problems under a timer. It is reading messy code, debugging weird edge cases, making tradeoffs, communicating clearly, and building things that survive real users.
+
+That gap is why so many people were ready to cheer when someone made the system look dumb.
+
+## Roy’s Marketing Was the Real Product
+
+Interview Coder became controversial because of what it did.
+
+It went viral because of how Roy marketed it.
+
+He understood the internet perfectly.
+
+The messaging was provocative, simple, and designed to make people argue. It hit all the right pressure points:
+
+- Candidates hate LeetCode grinding
+- Companies hate interview cheating
+- Engineers love arguing about hiring
+- AI makes every old process look fragile
+- A college student taking on Big Tech is naturally clickable
+
+The product was useful to some people, but the controversy was the growth engine.
+
+That is what made the launch so effective. Every angry quote tweet was still free distribution.
+
+## Sooo was it a Cheat Tool
+
+This is where the debate gets interesting.
+
+One side says Interview Coder is obviously cheating.
+
+They are not wrong.
+
+If a company asks you to solve a problem live and you secretly use an AI tool, you are misrepresenting your ability. That creates real risk. A bad hire can waste time, break systems, and make teams worse.
+
+The other side says the system deserved this.
+
+They are not entirely wrong either.
+
+If interviews reward memorized puzzle patterns more than real engineering ability, candidates will optimize for the test. AI is simply the newest optimization.
+
+That does not make cheating ethical.
+
+It does make the hiring process look outdated.
+
+## The Accessibility Argument
+
+One of Roy’s strongest arguments is that not everyone has months to grind LeetCode.
+
+That part is fair.
+
+Some candidates have school, jobs, family responsibilities, financial pressure, or less access to coaching and prep resources. The interview system already favors people with time and support.
+
+But using AI secretly does not fully solve that inequality.
+
+It may even create a new one. Now the advantage goes to people who can afford better tools, know how to hide them, and are willing to take the risk.
+
+So the accessibility argument is real, but it does not automatically make the tool harmless.
+
+## What Companies Might Do Next
+
+The obvious response is that companies will try to make interviews harder to cheat.
+
+That could mean:
+
+- More in-person interviews
+- Stricter proctoring
+- Better screen monitoring
+- Live pair programming
+- More follow-up questions
+- More system design rounds
+- Take-home projects
+- Work trials or practical tasks
+
+Some of these are better than LeetCode.
+
+Some are worse.
+
+Take-home projects can become unpaid labor. Pair programming can still be stressful and artificial. Proctoring can become invasive. In-person interviews make access harder for candidates who cannot travel.
+
+There is no perfect fix.
+
+But the old model of “solve this puzzle while we watch” is clearly under pressure.
+
+## Better Interviews Are Possible
+
+The best interviews should look more like the actual job.
+
+That could mean asking candidates to:
+
+- Debug a small broken app
+- Explain tradeoffs in an existing system
+- Review code and suggest improvements
+- Build a small feature with reasonable constraints
+- Talk through past projects in detail
+- Use AI openly and explain the output
+- Make judgment calls instead of only writing algorithms
+
+The last one matters a lot.
+
+AI is already part of software development. Pretending candidates will never use it is unrealistic.
+
+A better interview might allow AI but test whether the candidate can use it well. Can they verify the answer? Can they catch mistakes? Can they adapt the solution? Can they explain what the code actually does?
+
+That feels much closer to modern engineering than pretending everyone codes in a vacuum.
+
+## Final Take
+
+Roy Lee did not kill LeetCode interviews by himself.
+
+He exposed how fragile they already were.
+
+Interview Coder is uncomfortable because it sits right in the middle of a real problem. Secretly using AI in interviews is dishonest. At the same time, the format it exploits is often a poor measure of actual engineering ability.
+
+That is why the story spread so far.
+
+It gave candidates a villain, companies a threat, and everyone else a reason to argue about whether technical hiring still makes sense.
+
+The era of pure LeetCode supremacy is probably ending.
+
+Good riddance, honestly.
