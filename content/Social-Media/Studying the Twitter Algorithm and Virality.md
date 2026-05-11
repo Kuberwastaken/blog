@@ -1,6 +1,6 @@
 ---
 title: Studying the Twitter Algorithm and Virality
-draft: true
+draft: false
 tags:
   - AI
   - Data-Science
