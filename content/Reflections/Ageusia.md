@@ -18,7 +18,7 @@ That difficulty produced a certain kind of internet. Not necessarily good, but l
 
 Now that friction is vanishing.
 
-and honestly, it's genuinely great. Founders test ideas in hours, people can build what once required small teams and more people have access to build what they want than any point in history.
+and honestly, it's genuinely great. Founders test ideas in hours, people can build what once required small teams and more people have access to build what they want than at any point in history.
 
 But when one constraint disappears, another reveals itself.
 
