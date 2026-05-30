@@ -10,8 +10,6 @@ tags:
 created: 2026-05-30
 modified:
 ---
-![hero](https://cdn.kuber.studio/assets/media/ageusia/hero.png)
-
 For a long time, the hard part of making things on the internet was making them at all.
 
 If you wanted a website, you learned HTML and CSS. If you wanted it to do something, you learned JavaScript. If you wanted good pictures or designs, you learned to use the right apps or a camera.
@@ -62,6 +60,8 @@ But then we started noticing - the hands, the teeth, the yellow filter over ever
 
 The websites with the blurple gradient, the rounded cards, the single glowing button. An over-explained hero section with the same floating dashboard mockup and the same names in the testimonials.
 
+![Sora 2 Clips](https://cdn.kuber.studio/assets/media/ageusia/sora-clips.png)
+
 Then AI video -  I remember downloading Sora clips from Twitter because it was hard to access. When I found them again months later, I couldn't believe they had ever fooled me. The physics looked soft. The motion was off and The audio sync wasn't great.
 
 Each time, the cycle repeated: a capability arrived, people used it indiscriminately because they could, novelty eroded, and what seemed impressive became recognizable.
@@ -98,9 +98,9 @@ The same thing happened with pop-up ads, Flash intros, skeuomorphic design, and 
 
 Whenever a new capability arrives, people use it indiscriminately because they can. But as novelty erodes and what once seemed exciting becomes legible, the only people who survive the filter are the ones who were using the capability with intent from the beginning.
 
-We are in the indiscriminate phase.
+We are in the indiscriminate phase, this is what ageusia looks like at scale with a flood of plausible outputs arriving before anyone has learned how to refuse them.
 
-This is what ageusia looks like at scale: a flood of plausible outputs arriving before anyone has learned how to refuse them. But the collective palate is adjusting, as it always has.
+But the collective palate is adjusting, as it always has.
 
 ---
 
@@ -111,5 +111,7 @@ I largely believe taste is not a gift - it is the residue of everything you have
 In a world where anyone can generate anything, taste is the only reliable signal that someone was there.
 
 The old internet rewarded effort because effort was scarce. The new internet will reward taste because output is infinite.
+
+Without experiencing enough, not wanting enough - I don't know what that produces. I don't think anyone does.
 
 And taste, in the end, is just the proof that someone was there and cared enough to look at what they made and said "not yet."
