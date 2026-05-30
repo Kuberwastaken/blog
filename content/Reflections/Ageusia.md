@@ -10,6 +10,8 @@ tags:
 created: 2026-05-30
 modified:
 ---
+![hero](https://cdn.kuber.studio/assets/media/ageusia/hero.png)
+
 For a long time, the hard part of making things on the internet was making them at all.
 
 If you wanted a website, you learned HTML and CSS. If you wanted it to do something, you learned JavaScript. If you wanted good pictures or designs, you learned to use the right apps or a camera.
@@ -38,8 +40,6 @@ It is competence without conviction - pages that look like pages, apps that func
 
 I have started calling this **Ageusia.**
 
-![hero](https://cdn.kuber.studio/assets/media/ageusia/hero.png)
-
 In medicine, it refers to a rare condition that causes the complete loss of taste. On the internet, I think it describes something adjacent: not the innate inability to judge, but the absence of feeling any need to.
 
 When generation feels effortless, you can skip the part where you decide what you actually want.
@@ -57,6 +57,8 @@ It was AI images.
 When they arrived, they felt like magic. A person could externalize an image from their head without technical training.
 
 But then we started noticing - the hands, the teeth, the yellow filter over everything. Not just researchers or early adopters, but everyone who had seen enough: grandparents, kids, people who had never thought about color grading in their lives.
+
+![Yellow tint](https://cdn.kuber.studio/assets/media/ageusia/yellow-tint.png)
 
 The websites with the blurple gradient, the rounded cards, the single glowing button. An over-explained hero section with the same floating dashboard mockup and the same names in the testimonials.
 
