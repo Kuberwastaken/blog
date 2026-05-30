@@ -60,9 +60,9 @@ But then we started noticing - the hands, the teeth, the yellow filter over ever
 
 The websites with the blurple gradient, the rounded cards, the single glowing button. An over-explained hero section with the same floating dashboard mockup and the same names in the testimonials.
 
-![Sora 2 Clips](https://cdn.kuber.studio/assets/media/ageusia/sora-clips.png)
-
 Then AI video -  I remember downloading Sora clips from Twitter because it was hard to access. When I found them again months later, I couldn't believe they had ever fooled me. The physics looked soft. The motion was off and The audio sync wasn't great.
+
+![Sora 2 Clips](https://cdn.kuber.studio/assets/media/ageusia/sora-clips.png)
 
 Each time, the cycle repeated: a capability arrived, people used it indiscriminately because they could, novelty eroded, and what seemed impressive became recognizable.
 
