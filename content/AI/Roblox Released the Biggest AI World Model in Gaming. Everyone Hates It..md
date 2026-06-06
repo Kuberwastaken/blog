@@ -68,9 +68,10 @@ The issue is, it's a demo - a rushed one at that shipped as a game to an audienc
 
 Frankly, this isn't actually new either.
 
-![gameplay](https://cdn.kuber.studio/assets/media/roblox-world-model/guilded.png)
-
 In August 2021, Roblox acquired Guilded, a Discord competitor built for gaming communities, for $87.2 million.
+
+
+![gameplay](https://cdn.kuber.studio/assets/media/roblox-world-model/guilded.png)
 
 Guilded had raised $10.2 million total and had around 500,000 downloads at the time. Roblox integrated it, maintained it for a few years with barely any additions and minor integrations before shutting it down at the end of 2025.
 
