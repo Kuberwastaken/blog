@@ -44,7 +44,7 @@ People caught on what happened, tried the game and safe to say, it did not go we
 
 ![rating](https://cdn.kuber.studio/assets/media/roblox-world-model/rating.png)
 
-5% rating. One of the lowest scores any large-scale Roblox project has received.
+3% rating. One of the lowest scores any large-scale Roblox project has received.
 
 The game is US-only, built on what Roblox is calling "game cartridge architecture." to connect to their GPU runtimes, with this one letting you choose between Realistic or Anime modes to navigate a generated environment in space as an explorer to survive.
 
@@ -83,6 +83,6 @@ Roblox has more to work with here than almost anyone else could.
 
 Millions of games, an enormous corpus of gameplay data, the budget to build real infrastructure, instead, this seems like another box that needed to be checked before the acquisition could sit comfortably on an earnings call.
 
-The 5% rating is more than earned - the technology isn't the problem here, the execution and rush is and sadly with all new tech, first impressions do matter - and this wasn't a great one and it'll carry forward for anyone trying to continue innovating in the space.
+The 3% rating is more than earned - the technology isn't the problem here, the execution and rush is and sadly with all new tech, first impressions do matter - and this wasn't a great one and it'll carry forward for anyone trying to continue innovating in the space.
 
 ![ending](https://cdn.kuber.studio/assets/media/roblox-world-model/ending.png)
