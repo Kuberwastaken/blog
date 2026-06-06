@@ -53,6 +53,7 @@ Of course, you could break the country restriction by just VPN'ing to US instead
 ![gameplay](https://cdn.kuber.studio/assets/media/roblox-world-model/gameplay.mp4)
 
 This was insane.
+
 It took me 4 tries of reconnecting to get a session, in non-peak hours, which performed poorly and disconnected in less than 2 minutes too.
  
 There game itself has no real gameplay loop while having other annoyances like an extreme input latency, textures that some reviewers called "a YouTube video from 2005," persistent visual glitches, and the game dropping connections mid-session because the infrastructure cannot hold it together.
@@ -63,13 +64,19 @@ It's a navigable, "real" game with mostly stable states and a way to ship to a p
 
 The issue is, it's a demo - a rushed one at that shipped as a game to an audience that was expecting a game.
 
+---
+
 Frankly, this isn't actually new either.
+
+![gameplay](https://cdn.kuber.studio/assets/media/roblox-world-model/guilded.png)
 
 In August 2021, Roblox acquired Guilded, a Discord competitor built for gaming communities, for $87.2 million.
 
 Guilded had raised $10.2 million total and had around 500,000 downloads at the time. Roblox integrated it, maintained it for a few years with barely any additions and minor integrations before shutting it down at the end of 2025.
 
 The technology and the team existed and Guilded had a loyal fanbase before acquisition but Roblox just could not execute on it, could not compete with Discord, and wound down something they had spent nearly $90 million on.
+
+---
 
 Roblox has more to work with here than almost anyone else could.
 
