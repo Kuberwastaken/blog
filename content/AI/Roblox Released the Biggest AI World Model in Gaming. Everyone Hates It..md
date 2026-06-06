@@ -76,3 +76,5 @@ Roblox has more to work with here than almost anyone else could.
 Millions of games, an enormous corpus of gameplay data, the budget to build real infrastructure, instead, this seems like another box that needed to be checked before the acquisition could sit comfortably on an earnings call.
 
 The 5% rating is more than earned - the technology isn't the problem here, the execution and rush is and sadly with all new tech, first impressions do matter - and this wasn't a great one and it'll carry forward for anyone trying to continue innovating in the space.
+
+![ending](https://cdn.kuber.studio/assets/media/roblox-world-model/ending.png)
