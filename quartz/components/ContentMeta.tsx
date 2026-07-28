@@ -5,6 +5,7 @@ import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
 import { JSX } from "preact"
 import style from "./styles/contentMeta.scss"
+import { siteAuthor } from "../util/identity"
 
 interface ContentMetaOptions {
   /**
@@ -12,11 +13,18 @@ interface ContentMetaOptions {
    */
   showReadingTime: boolean
   showComma: boolean
+  /**
+   * Whether to credit the author inline. Structured data alone is invisible to
+   * anything that only reads rendered text, so the byline is also stated in
+   * plain prose right under the title.
+   */
+  showAuthor: boolean
 }
 
 const defaultOptions: ContentMetaOptions = {
   showReadingTime: true,
   showComma: true,
+  showAuthor: true,
 }
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
@@ -28,6 +36,17 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
     if (text) {
       const segments: (string | JSX.Element)[] = []
+
+      if (options.showAuthor) {
+        segments.push(
+          <span class="content-meta-author">
+            by{" "}
+            <a href={siteAuthor.url} rel="author">
+              {siteAuthor.name}
+            </a>
+          </span>,
+        )
+      }
 
       if (fileData.dates) {
         segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
