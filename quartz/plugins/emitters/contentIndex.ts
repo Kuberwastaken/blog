@@ -6,7 +6,7 @@ import { FilePath, FullSlug, SimpleSlug, joinSegments, simplifySlug } from "../.
 import { QuartzEmitterPlugin } from "../types"
 import { toHtml } from "hast-util-to-html"
 import { write } from "./helpers"
-import { i18n } from "../../i18n"
+import { siteAuthor, sitePublication } from "../../util/identity"
 import DepGraph from "../../depgraph"
 
 export type ContentIndex = Map<FullSlug, ContentDetails>
@@ -77,11 +77,15 @@ ${urls}
 function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: number): string {
   const base = cfg.baseUrl ?? ""
 
+  // dc:creator rather than RSS's own <author>, which requires an email address.
   const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<item>
     <title>${escapeHTML(content.title)}</title>
     <link>https://${joinSegments(base, encodeURI(slug))}</link>
     <guid>https://${joinSegments(base, encodeURI(slug))}</guid>
-    <description>${content.richContent ?? content.description}</description>
+    <dc:creator>${escapeHTML(siteAuthor.name)}</dc:creator>
+    <description>${content.richContent ?? content.description}</description>${content.tags
+      .map((tag) => `\n    <category>${escapeHTML(tag)}</category>`)
+      .join("")}
     <pubDate>${content.date?.toUTCString()}</pubDate>
   </item>`
 
@@ -102,14 +106,21 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
     .join("")
 
   return `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
       <title>${escapeHTML(cfg.pageTitle)}</title>
-      <link>https://${base}</link>
-      <description>${!!limit ? i18n(cfg.locale).pages.rss.lastFewNotes({ count: limit }) : i18n(cfg.locale).pages.rss.recentNotes} on ${escapeHTML(
-        cfg.pageTitle,
-      )}</description>
-      <generator>Quartz -- https://kuberwastaken.github.io/blog/</generator>
+      <link>https://${base}/</link>
+      <atom:link href="https://${base}/index.xml" rel="self" type="application/rss+xml" />
+      <description>${escapeHTML(sitePublication.description)}</description>
+      <language>${cfg.locale ?? "en-US"}</language>
+      <copyright>© ${new Date().getFullYear()} ${escapeHTML(siteAuthor.name)}</copyright>
+      <dc:creator>${escapeHTML(siteAuthor.name)}</dc:creator>
+      <image>
+        <url>${escapeHTML(siteAuthor.image)}</url>
+        <title>${escapeHTML(cfg.pageTitle)}</title>
+        <link>https://${base}/</link>
+      </image>
+      <generator>Quartz -- https://${base}/</generator>
       ${items}
     </channel>
   </rss>`
