@@ -38,14 +38,18 @@ export const Description: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             }
 
             const desc = frontMatterDescription ?? text
-            const sentences = desc.replace(/\s+/g, " ").split(/\.\s/)
+            // The trim matters: collapsing whitespace turns a leading newline into
+            // a leading space, so the first "word" of the first sentence is empty,
+            // the truncation loop breaks immediately, and the description comes out
+            // as a bare "...". Any post whose body starts on a new line hits this.
+            const sentences = desc.replace(/\s+/g, " ").trim().split(/\.\s/)
             const finalDesc: string[] = []
             const len = opts.descriptionLength
             let sentenceIdx = 0
             let currentDescriptionLength = 0
 
             if (sentences[0] !== undefined && sentences[0].length >= len) {
-              const firstSentence = sentences[0].split(" ")
+              const firstSentence = sentences[0].split(" ").filter((word) => word.length > 0)
               while (currentDescriptionLength < len) {
                 const sentence = firstSentence[sentenceIdx]
                 if (!sentence) break
