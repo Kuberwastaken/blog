@@ -1,0 +1,13 @@
+node_modules
+.quartz-cache
+tsconfig.tsbuildinfo
+prof
+
+# Build output. `quartz build` rimrafs and regenerates this directory, and the
+# deploy workflow builds it from source before uploading, so a committed copy is
+# never served — it only goes stale and hides which files are actually sources.
+public
+
+private/
+.obsidian
+.DS_Store

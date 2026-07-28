@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /BITS/
-Disallow: /blog/BITS/
-
-Sitemap: https://kuber.studio/blog/sitemap.xml
-Allow: /blog/sitemap.xml
-Allow: /blog/index.xml 
