@@ -32,6 +32,11 @@ jobs:
         run: chmod +x ./quartz/bootstrap-cli.mjs
       - name: Build Quartz
         run: npx quartz build
+      # Gates the artifact: esbuild strips types without checking them, so an
+      # emitter that stops running or a component that stops emitting authorship
+      # would otherwise ship a "successful" build with unattributed pages.
+      - name: Verify machine-readable output
+        run: npm run verify -- public
       - name: Verify sitemap
         run: cat public/sitemap.xml
       - name: Verify build output
