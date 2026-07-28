@@ -26,7 +26,10 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.PageTitle({
-      text: "MindDump",
+      // Kept as the configured pageTitle so the sidebar renders exactly as before;
+      // PageTitle used to ignore this option entirely.
+      text: "ᨒ MindDump",
+      subtext: "by Kuber Mehta",
     }),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
@@ -79,10 +82,15 @@ export const defaultContentPageLayout: PageLayout = {
 
 // components for pages that display lists of pages (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [
+    Component.Breadcrumbs(),
+    Component.ArticleTitle(),
+    // Listing pages aren't authored articles, so no byline on the meta line.
+    Component.ContentMeta({ showAuthor: false }),
+  ],
   left: [
     Component.PageTitle({
-      text: "MindDump",
+      text: "ᨒ MindDump",
       subtext: "by Kuber Mehta",
     }),
     Component.MobileOnly(Component.Spacer()),
