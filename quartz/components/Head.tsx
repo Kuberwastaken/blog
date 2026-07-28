@@ -8,6 +8,8 @@ import fs from "fs"
 import sharp from "sharp"
 import { ImageOptions, SocialImageOptions, getSatoriFont, defaultImage } from "../util/og"
 import { unescapeHTML } from "../util/escape"
+import { absoluteUrl, siteAuthor, siteBaseUrl, sitePublication } from "../util/identity"
+import { buildJsonLd, classifyPage, serializeJsonLd } from "../util/jsonld"
 
 /**
  * Generates social image (OG/twitter standard) and saves it as `.webp` inside the public folder
@@ -154,9 +156,31 @@ export default (() => {
     const socialUrl =
       fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
 
+    // Canonical differs from socialUrl on index pages: `folder/index` and the
+    // root `index` both resolve to the directory URL everything actually links
+    // to, so without this two URLs compete for the same content.
+    const canonicalUrl =
+      fileData.slug === "404"
+        ? `${siteBaseUrl(cfg)}/404`
+        : absoluteUrl(cfg, fileData.slug!)
+
+    const pageKind = classifyPage(fileData)
+    const isArticle = pageKind === "article"
+    const tags = (fileData.frontmatter?.tags ?? []) as string[]
+    const publishedDate = fileData.dates?.created
+    const rssUrl = `${siteBaseUrl(cfg)}/index.xml`
+    const jsonLd = serializeJsonLd(
+      buildJsonLd(cfg, fileData, { title, description, image: ogImagePath }),
+    )
+
     return (
       <head>
-        <title>{title}</title>
+        {/* The document title is the single strongest text signal on the page and
+            the string that shows up in search results and AI citations, so the
+            author's name rides along unless the title already carries it. */}
+        <title>
+          {title.includes(siteAuthor.name) ? title : `${title} — ${siteAuthor.name}`}
+        </title>
         <meta charSet="utf-8" />
         {cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && (
           <>
@@ -170,8 +194,27 @@ export default (() => {
         {/* OG/Twitter meta tags */}
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={title} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={isArticle ? "article" : "website"} />
+        <meta property="og:locale" content={(cfg.locale ?? "en-US").replace("-", "_")} />
+        {isArticle && (
+          <>
+            <meta property="article:author" content={siteAuthor.url} />
+            <meta property="article:publisher" content={siteAuthor.url} />
+            {publishedDate && (
+              <meta property="article:published_time" content={publishedDate.toISOString()} />
+            )}
+            {tags.map((tag) => (
+              <meta key={tag} property="article:tag" content={tag} />
+            ))}
+          </>
+        )}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={`@${siteAuthor.twitterHandle}`} />
+        <meta name="twitter:creator" content={`@${siteAuthor.twitterHandle}`} />
+        {/* Renders as a visible "Written by / Kuber Mehta" row on the card, and is
+            plain crawlable text for anything that reads meta tags. */}
+        <meta name="twitter:label1" content="Written by" />
+        <meta name="twitter:data1" content={siteAuthor.name} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
@@ -197,6 +240,28 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        {/* Authorship + canonical identity. Quartz emits none of this by default,
+            which is why posts here read as authorless to crawlers. */}
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="author" content={siteAuthor.name} />
+        <link rel="author" href={siteAuthor.url} />
+        <meta
+          name="copyright"
+          content={`© ${new Date().getFullYear()} ${siteAuthor.name}`}
+        />
+        {/* rel="me" is the IndieWeb/Mastodon convention for machine-verifiable
+            identity: it links this site to the same person's other profiles. */}
+        {siteAuthor.sameAs.map((profile) => (
+          <link key={profile} rel="me" href={profile} />
+        ))}
+        {tags.length > 0 && <meta name="keywords" content={tags.join(", ")} />}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={`${sitePublication.name} by ${siteAuthor.name}`}
+          href={rssUrl}
+        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
