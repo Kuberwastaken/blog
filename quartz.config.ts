@@ -91,6 +91,10 @@ const config: QuartzConfig = {
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.NotFoundPage(),
+      // Machine-readable surfaces. Both must be emitted rather than committed to
+      // `public/`, which the build wipes before every run.
+      Plugin.LlmsTxt(),
+      Plugin.RobotsTxt(),
     ],
   },
 }
