@@ -1,5 +1,5 @@
 ---
-title: DeepSeek is Trying the Costco Strategy to Reach AGI
+title: DeepSeek's Plan for AGI is the Costco Hot Dog
 draft: false
 tags:
   - AI
@@ -13,13 +13,15 @@ tags:
 created: 2026-08-01
 modified:
 ---
+![hero-image](https://cdn.kuber.studio/assets/media/deepseek-meeting/hero.png)
+
 Liang Wenfeng might be the most consequential person in AI who has essentially never spoken in public.
 
 He founded DeepSeek - the lab that came out of nowhere in January 2025 with R1, matched OpenAI's O1 at a fraction of the cost, and cost NVIDIA half a trillion dollars of market cap in a day.
 
-In the years since, he has given exactly two long-form interviews, both in text to the same Chinese publication. He communicates with the world through model weights and papers, and perhaps most interestingly - his lab was bankrolled entirely by High-Flyer, his own quant hedge fund, and took no outside money until this year.
+In the years since, he has given exactly two long-form interviews, both in text to the same Chinese publication, and perhaps most interestingly - his lab was bankrolled entirely by High-Flyer, his own quant hedge fund, and took no outside money until this year.
 
-So when a 3 hour 44 minute transcript of him talking to his new investors started circulating on a May 20th meeting, it instantly became the largest sample of him thinking out loud that exists anywhere, spreading across WeChat before the original post was pulled and almost no one heard of it.
+So when a 3 hour 44 minute transcript of him talking to his new investors this may started circulating - it instantly became the largest sample of him thinking out loud that exists anywhere, spreading across WeChat before the original post was pulled and almost no one heard of it.
 
 The best part was that midway through the recording, the meeting host pleads with attendees: please don't spread these numbers, please don't screen-record this.
 
@@ -64,15 +66,16 @@ DeepSeek has its own version of that internal law, and it might be the single mo
 @media (max-width:560px){.gpu-t10{left:0;transform:none}.gpu-t60{display:none}}
 </style>
 
-And the cap, in his telling, is itself the AGI strategy rather than just the business model that funds it. Cheap tokens and open weights pull the world onto DeepSeek's stack and standardize the ecosystem around them. The renounced profit buys what he actually needs: researchers who join for the mission and stay ("open source and low prices make employees feel a real sense of accomplishment... give the organization cohesion"), an industry with no reason to fight them, and a revenue floor that funds research without dragging the lab into product wars. He states the causality plainly: this kind of restraint, over the long horizon, "can increase the probability that we achieve AGI."
+And the cap, in his telling, is itself the AGI strategy rather than just the business model that funds it.
+
+Cheap tokens and open weights pull the world onto DeepSeek's stack and standardize the ecosystem around them. The renounced profit buys what he actually needs: researchers who join for the mission and stay ("open source and low prices make employees feel a real sense of accomplishment... give the organization cohesion"), an industry with no reason to fight them, and a revenue floor that funds research without dragging the lab into product wars.
 
 Liang is convinced that intelligence is bound to become a commodity and his entire strategy relies on this one bet - but the breakthrough he wants most might just end up being the thing that breaks his own playbook. Hold that thought.
 
 ---
-
 ## "Restraint is a Strategy"
 
-If you remember one phrase from this entire meeting, it's this one. He says it over and over, like a mantra:
+If you took away just one phrase from the entire meeting, he wanted this to be it- he said it over and over like a mantra.
 
 > "Restraint is a strategy. It lies in the fact that sometimes you can give up some things in exchange for many other things."
 
@@ -89,17 +92,19 @@ Much of the meeting concerned what DeepSeek deliberately refuses to do. In four 
 - No to vertically integrating into chips
 - No to overtime, even
 
-Every AI company on Earth is currently in a land-grab. Grab users, grab revenue, grab verticals, grab GPUs, grab the entire value chain if you can. And here's the guy who arguably has the *most* momentum to grab with, saying the quiet part in the opposite direction: the grabbing itself is what kills you.
+Every AI company on Earth is currently in a land-grab. Grab users, grab revenue, grab verticals, grab GPUs, grab the entire value chain if you can. And here's the guy who arguably had the *most* momentum to grab with is saying the grabbing itself is what kills you.
 
-## The GDP Math That Explains Everything
+## The AI Industry through a Quant's Perspective.
 
-Liang views AI like a quant: as an allocation problem governed by incentives, margins, and adversarial responses. He thinks AI will eventually be worth something like **ten percent of humanity's GDP**, and where most founders would start drawing their slice of the pie chart, his conclusion is that trying to monopolize it means being "cast aside by history."
+Liang views AI like a quant: as an allocation problem governed by incentives, margins, and adversarial responses.
 
-He then plays the game out like an iterated auction. OpenAI's math works on paper, but a rival willing to take one percent of that pie beats the one aiming for ten, and someone willing to take a tenth of a percent beats them both. Then the kicker, which might be my favorite quote of the entire meeting:
+He thinks AI will eventually be worth something like **ten percent of humanity's GDP**, and that trying to monopolize it means being "cast aside by history."
+
+He then says OpenAI's math works on paper, but a rival willing to take one percent of that pie beats the one aiming for ten, and someone willing to take a tenth of a percent beats them both, followed by my favorite quote of the entire meeting:
 
 > "You don't even need to actually take more; **if your vision is to take more, you will be beaten by those whose vision is to take less.** Actually no one has taken any money yet; it is just a vision. If your vision is to take more, you have already lost."
 
-Nobody has captured the value yet; the pie itself is still hypothetical. He's saying the *intention* alone is enough to lose, because your intention shapes your pricing, your openness, your hiring, and how hard the rest of the world works to route around you. The stakes are asymmetric too - when OpenAI needs to charge $200/month to justify its infrastructure while DeepSeek runs on the ten-month rule, only one of them needs fat margins to survive.
+The stakes are asymmetric too - when OpenAI needs to charge $200/month to justify its infrastructure while DeepSeek runs on the ten-month rule (more on that in a bit), only one of them needs fat margins to survive.
 
 ### Where the Auction Logic Breaks
 
@@ -122,6 +127,8 @@ Which is funny exactly because
 ## AI Labs are Petitioning to Stop Continual Learning
 
 The week I'm writing this, over a thousand employees across the Western frontier labs (OpenAI, Anthropic, DeepMind, Meta, with Anthropic's CEO and several co-founders among the signatories) published a joint statement called "Pacing the Frontier," and both OpenAI's and Anthropic's official accounts endorsed it.
+
+![pacing-frontier](https://cdn.kuber.studio/assets/media/deepseek-meeting/pacing-frontier.png)
 
 The ask, in the statement's own words: that the US government support an international effort to build "the technical and governance tools needed to deliberately pace the frontier of automated AI development." Strip the policy language and the thing they want a brake pedal for is models improving models, the recursive loop that sits one stair above continual learning on Liang's own staircase.
 
