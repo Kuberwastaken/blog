@@ -15,15 +15,19 @@ modified:
 ---
 Costco runs one of the strangest pricing policies in American retail: markups are capped around 14-15% as a matter of internal law, and the $1.50 hot dog combo has survived every inflation cycle since 1985. The cap looks like generosity and works like a weapon. Once you're the structurally reasonable one, every competitor who needs fat margins has to fight you on terrain where fat margins are impossible. Nobody can undercut a company that has already decided to keep almost nothing.
 
-Somewhere in Hangzhou, the most feared AI lab on Earth is running the same playbook on frontier intelligence, and this May its famously invisible founder spent almost four hours explaining it out loud.
+Somewhere in Hangzhou, the most feared AI lab on Earth is running the same playbook on frontier intelligence. This May, its founder spent almost four hours explaining it out loud, and to understand why that sentence is remarkable, you need to know who he is.
 
-Liang Wenfeng has given roughly two long-form interviews in his life, both in text, both to the same Chinese publication. He runs DeepSeek, the lab that came out of nowhere in January 2025 with R1, matched OpenAI's o1 at a fraction of the cost, and erased a trillion dollars of NVIDIA's market cap in a single day. The lab was bankrolled entirely by High-Flyer, his quant fund, and took no outside money until this year. The meeting in question was him explaining to his hand-picked first outside investors what they had just bought into.
+Liang Wenfeng might be the most consequential person in AI who has essentially never spoken in public. He founded DeepSeek, the lab that came out of nowhere in January 2025 with R1, matched OpenAI's o1 at a fraction of the cost, and erased a trillion dollars of NVIDIA's market cap in a single day. Across all of that he has given roughly two long-form interviews in his entire life, both in text, both to the same Chinese publication. He has skipped every keynote, podcast, X account, and Lex Fridman three-hour special, communicating with the world almost exclusively through model weights and arXiv papers. His lab was bankrolled entirely by High-Flyer, his quant hedge fund, and took no outside money until this year.
 
-A ~34,000-word transcript of that call spread across WeChat last month before the original post got pulled. DeepSeek has never confirmed it, but the details line up with independent reporting and the voice matches the two known interviews exactly. It is the longest sample of Liang Wenfeng thinking out loud that exists anywhere, by a factor of several. My favorite detail: midway through, the host pleads with attendees to keep the numbers private and to please avoid screen-recording.
+So when a ~3 hour 44 minute audio recording of him talking to investors started circulating, from a May 20th meeting around what appears to be DeepSeek's first-ever outside funding round, it instantly became the single largest sample of Liang Wenfeng thinking out loud that exists anywhere. A ~34,000-word transcript spread across WeChat before the original post got pulled. DeepSeek has never confirmed it, but the details line up with independent reporting and the voice matches the two known interviews exactly. This is the longest we have *ever* heard this man talk, by a factor of several.
+
+The best part? Somewhere in the middle of the recording, the meeting host pleads with attendees: *please don't spread these numbers, please don't screen-record this.*
 
 and here we are :)
 
-I read the whole thing (machine-transcribed and machine-translated, so hold the exact figures loosely), along with the quote compilations circulating in Chinese tech media, and almost nobody in the English-speaking world seems to have done the same. So this post is both a tour and an argument. The tour covers what he actually said about pricing, open source, chips, and the road to AGI. The argument is that DeepSeek's entire strategy is the Costco cap applied to intelligence, that it only works if intelligence becomes a commodity, and that the most interesting tension in all four hours is this: the breakthrough Liang wants most might be the thing that breaks his own playbook.
+One warning before we start: the transcript is machine-transcribed and machine-translated, speakers aren't labeled, and model names occasionally come out mangled. At one point it renders what is almost certainly "Opus 4.7" as "O4.7", and I refuse to believe there's a model called "MILOS". Hold the exact figures loosely; the *thinking* comes through crystal clear.
+
+I went through the whole thing, along with the quote compilations circulating in Chinese tech media, and almost nobody in the English-speaking world seems to have done the same. So this post is both a tour and an argument. The tour covers what he actually said about pricing, open source, chips, and the road to AGI. The argument is that DeepSeek's entire strategy is the Costco cap applied to intelligence, that it only works if intelligence becomes a commodity, and that the most interesting tension in all four hours is this: the breakthrough Liang wants most might be the thing that breaks his own playbook.
 
 Let's break it all down.
 
@@ -160,6 +164,8 @@ Then he tells this story, which I haven't stopped thinking about:
 
 The employees *cheered a price cut.* Find me one other AI company where the group chat celebrates revenue going down. It sounds like PR fluff until you realize it's structural: if your people joined to make intelligence cheap and abundant, a price cut IS the win condition. The vision does the incentive alignment that RSUs do everywhere else.
 
+(He does clock the other side of it, deadpan: "price cuts are certainly not a good thing for our competitors; they are definitely not cheering." That's your ARR, halved, by a man who describes it as sharing joy.)
+
 ### The Open Source Logic, Minus the Romance
 
 I've written about DeepSeek-as-open-champion before, back when OpenAI was trying to get them banned. What's striking in this meeting is that Liang's own defense of open source contains zero romance. It's three cold observations:
@@ -245,6 +251,20 @@ This is what the four hours add up to: a research group that secretes products t
 
 My favorite moment in the whole recording makes the same point by accident. An investor delivers a full minute of poetry about DeepSeek as a banyan tree sheltering an ecosystem of little birds, "benefiting all things without contending." Liang's response, in its entirety, is to answer the technical question. That's the whole company in one exchange: the world keeps offering it metaphors, and it keeps replying with engineering.
 
+## Loose Gems From the Q&A
+
+A few things that fit nowhere above and were too good to cut. First, the takes that would each be a headline if he tweeted them:
+
+- **On Anthropic being on top:** "Anthropic now being ahead of OpenAI is not long-term; it's a phase. In the future, OpenAI and Google will most likely rise in alternation." Followed by this gem of internal honesty: "Maybe half the people in our company, at any given time, half feel OpenAI is better." Imagine an American CEO volunteering that half his researchers prefer the rival's model, as a neutral weather report.
+- **On China's endgame role:** the world's *largest producer* of intelligence, with the most chips, the most electricity, and systematically the cheapest output, "just as the services China provides in other industries may be cheaper." He treats AI as manufacturing, and made-in-China intelligence will sell at made-in-China prices.
+- **On the domestic bloodbath:** too many Chinese labs building the same foundation models; it "will definitely converge" to maybe two big and two small, and maybe even fewer. It's brutal when you remember he's the reason half of them raised money.
+
+And the human moments no comms team would have survived:
+
+- "I hear you, but the video seems to have dropped, boss." Even the most consequential AI briefing of the year has Zoom problems.
+- He offers the room a break three hours in ("do you want to eat something first?") then just keeps going when nobody objects.
+- Asked how he'll balance pure research against his new capital-market obligations, the reassurance he offers his brand-new investors is essentially: *worst case we're merely a very good business.* "We hope to have a bigger dream, but we also have a fallback performance we can put out."
+
 ---
 
 # So Do I Buy It?
@@ -265,7 +285,7 @@ Time for the elephant. This is a man talking to his own investors, in a meeting 
 
 Three, if you skimmed everything else:
 
-1. **Strategy is subtraction.** The refusals and the rationing are the same move: every "no" on that list, and even the compute scarcity itself, gets reinvested as focus. One-twentieth of the compute is what forced the ideas everyone now copies, and the unwritten vision does the alignment work that KPIs and RSUs do everywhere else, apparently better.
+1. **Strategy is subtraction.** Every "no" on that four-hour list is focus reinvested into the single thing they believe matters, and the unwritten vision does the alignment work that KPIs and RSUs do everywhere else, apparently better.
 
 2. **Taking less wins, but only in commodity markets.** Capped margins are an un-undercuttable moat and intention sorts the battlefield before revenue exists, yet the whole trick rests on tokens staying fungible. Watch switching costs; the day models remember you is the day this lesson expires.
 
@@ -277,4 +297,4 @@ There was never a hidden agenda to find. The plan sits in public, in the weights
 
 ---
 
-*This post is based on the widely-circulated recording and ~34,000-word transcript of DeepSeek's May 20th investor meeting (~3h44m of audio), which spread through Chinese tech media over the past month before the original post was taken down; DeepSeek has not confirmed its authenticity. The transcript is auto-transcribed and machine-translated (speakers are unlabeled and some numbers and model names are visibly mangled in transcription), so treat specific figures as approximate and quotes as faithful-in-meaning rather than word-perfect. The only English-language coverage I've come across is [a short video by Squintist](https://www.youtube.com/watch?v=BcKQk0NeBV0) (not affiliated, as always). Liang Wenfeng's two prior long-form interviews, with the Chinese outlet 暗涌 Waves (2023 and 2024), remain the only other substantial public record of his thinking, and are worth reading alongside this.*
+*This post is based on the widely-circulated recording and ~34,000-word transcript of DeepSeek's May 20th investor meeting (~3h44m of audio), which spread through Chinese tech media over the past month before the original post was taken down; DeepSeek has not confirmed its authenticity. Quotes are faithful-in-meaning rather than word-perfect for the reasons flagged up top. The only English-language coverage I've come across is [a short video by Squintist](https://www.youtube.com/watch?v=BcKQk0NeBV0) (not affiliated, as always). Liang Wenfeng's two prior long-form interviews, with the Chinese outlet 暗涌 Waves (2023 and 2024), remain the only other substantial public record of his thinking, and are worth reading alongside this.*
