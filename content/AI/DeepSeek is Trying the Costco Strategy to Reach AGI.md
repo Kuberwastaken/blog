@@ -25,11 +25,13 @@ And here we are :)
 
 This is a deep dive about who is this man, what is DeepSeek doing different and how it's planning to achieve AGI using Costco's strategy.
 
-## Okay, but what is the Costco stratergy.
+## Okay, but what is the Costco strategy.
 
 Costco runs one of the strangest pricing policies in American retail, capping its markups around 14-15% as a matter of internal law, and the $1.50 hot dog combo has survived every inflation cycle since 1985.
 
 The cap looks like generosity and works like a weapon - every competitor who needs fat margins has to fight you on terrain where fat margins are impossible. Nobody can undercut a company that has already decided to keep almost nothing.
+
+DeepSeek has its own version of that internal law, and it might be the single most important number in this whole leak: buy a batch of GPUs, then price the API so the hardware pays for itself in **ten months**. That is the entire pricing policy. Over a server's three-to-five-year life it works out to roughly a sixfold margin on compute, he considers that "a reasonable profit", and everything else in this post (the open weights, the refused product lines, the price cuts that make his own employees cheer) hangs off that one self-imposed cap.
 
 Liang is convinced that intelligence is bound to become a commodity and his entire strategy relies on this one bet - but the breakthrough he wants most might just end up being the thing that breaks his own playbook.
 
@@ -209,7 +211,9 @@ Then there's the scaling-wall take, which is the best subtweet of Silicon Valley
 
 > "When Silicon Valley says Scaling has hit its limit, **that is for Silicon Valley;** for Chinese people, we are still very far from that. We haven't Scaled to anywhere near that degree."
 
-"The wall" becomes a regional phenomenon, a luxury complaint, like billionaires debating whether money buys happiness while you're rationing H100s. His capital allocation follows accordingly and it is barbarically simple: turn every yuan into GPUs as fast as physically possible, premium acceptable, since money in the bank earns two percent and an NVIDIA card pays itself back in ten months. The only bottleneck is that the cards literally cannot be bought fast enough.
+"The wall" becomes a regional phenomenon, a luxury complaint, like billionaires debating whether money buys happiness while you're rationing H100s.
+
+And the ten-month payback number returns here, because it turns out to double as his entire capital allocation strategy. Money in the bank earns two percent a year; a GPU earns its own price back in ten months. So the plan for the billions they just raised is barbarically simple: turn all of it into cards, as fast as physically possible, paying a premium where needed, because "turning money into Nvidia cards is definitely better than putting it in the bank." His stated ideal is spending the entire financing round within half a year, and his stated frustration is that it can't be done; the cards physically cannot be bought fast enough. If procurement manages to spend twenty billion this year, they would "count as super high performers." Imagine your KPI being *spend money faster*, and still missing it.
 
 ## "Nvidia Is Digging Its Own Grave"
 
