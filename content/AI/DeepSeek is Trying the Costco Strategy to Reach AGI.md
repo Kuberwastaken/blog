@@ -13,23 +13,25 @@ tags:
 created: 2026-08-01
 modified:
 ---
-Costco runs one of the strangest pricing policies in American retail: markups are capped around 14-15% as a matter of internal law, and the $1.50 hot dog combo has survived every inflation cycle since 1985. The cap looks like generosity and works like a weapon. Once you're the structurally reasonable one, every competitor who needs fat margins has to fight you on terrain where fat margins are impossible. Nobody can undercut a company that has already decided to keep almost nothing.
+Liang Wenfeng might be the most consequential person in AI who has essentially never spoken in public.
 
-Somewhere in Hangzhou, the most feared AI lab on Earth is running the same playbook on frontier intelligence. This May, its founder spent almost four hours explaining it out loud, and to understand why that sentence is remarkable, you need to know who he is.
+He founded DeepSeek - the lab that came out of nowhere in January 2025 with R1, matched OpenAI's o1 at a fraction of the cost, and costed NVIDIA a trillion dollars of market cap in a day. He had given two long-form interviews in his life, both in text to the same Chinese publication. He communicates with the world through model weights and papers and perhaps most interestingly - his lab was bankrolled entirely by High-Flyer, his own quant hedge fund, and took no outside money until this year.
 
-Liang Wenfeng might be the most consequential person in AI who has essentially never spoken in public. He founded DeepSeek, the lab that came out of nowhere in January 2025 with R1, matched OpenAI's o1 at a fraction of the cost, and erased a trillion dollars of NVIDIA's market cap in a single day. Across all of that he has given roughly two long-form interviews in his entire life, both in text, both to the same Chinese publication. He has skipped every keynote, podcast, X account, and Lex Fridman three-hour special, communicating with the world almost exclusively through model weights and arXiv papers. His lab was bankrolled entirely by High-Flyer, his quant hedge fund, and took no outside money until this year.
+So when a 3 hour 44 minute transcript of him talking to his new investors started circulating on a May 20th meeting, it instantly became the largest sample of him thinking out loud that exists anywhere, spreading across WeChat before the original post was pulled and almost no one heard of it.
 
-So when a ~3 hour 44 minute audio recording of him talking to investors started circulating, from a May 20th meeting around what appears to be DeepSeek's first-ever outside funding round, it instantly became the single largest sample of Liang Wenfeng thinking out loud that exists anywhere. A ~34,000-word transcript spread across WeChat before the original post got pulled. DeepSeek has never confirmed it, but the details line up with independent reporting and the voice matches the two known interviews exactly. This is the longest we have *ever* heard this man talk, by a factor of several.
+The best part was that midway through the recording, the meeting host pleads with attendees: please don't spread these numbers, please don't screen-record this.
 
-The best part? Somewhere in the middle of the recording, the meeting host pleads with attendees: *please don't spread these numbers, please don't screen-record this.*
+And here we are :)
 
-and here we are :)
+This is a deep dive about who is this man, what is DeepSeek doing different and how it's planning to achieve AGI using Costco's strategy.
 
-One warning before we start: the transcript is machine-transcribed and machine-translated, speakers aren't labeled, and model names occasionally come out mangled. At one point it renders what is almost certainly "Opus 4.7" as "O4.7", and I refuse to believe there's a model called "MILOS". Hold the exact figures loosely; the *thinking* comes through crystal clear.
+## Okay, but what is the Costco stratergy.
 
-I went through the whole thing, along with the quote compilations circulating in Chinese tech media, and almost nobody in the English-speaking world seems to have done the same. So this post is both a tour and an argument. The tour covers what he actually said about pricing, open source, chips, and the road to AGI. The argument is that DeepSeek's entire strategy is the Costco cap applied to intelligence, that it only works if intelligence becomes a commodity, and that the most interesting tension in all four hours is this: the breakthrough Liang wants most might be the thing that breaks his own playbook.
+Costco runs one of the strangest pricing policies in American retail, capping its markups around 14-15% as a matter of internal law, and the $1.50 hot dog combo has survived every inflation cycle since 1985.
 
-Let's break it all down.
+The cap looks like generosity and works like a weapon - every competitor who needs fat margins has to fight you on terrain where fat margins are impossible. Nobody can undercut a company that has already decided to keep almost nothing.
+
+Liang is convinced that intelligence is bound to become a commodity and his entire strategy relies on this one bet - but the breakthrough he wants most might just end up being the thing that breaks his own playbook.
 
 ---
 
@@ -39,7 +41,8 @@ If you remember one phrase from this entire meeting, it's this one. He says it o
 
 > "Restraint is a strategy. It lies in the fact that sometimes you can give up some things in exchange for many other things."
 
-Here's the list of things Liang Wenfeng said **no** to, in one four-hour sitting:
+A large focus on his meeting was around things he wanted to deny doing at DeepSeek
+In four hours, he said:
 
 - No to maximizing profit
 - No to chasing users
@@ -58,19 +61,21 @@ His reasoning is game theory rather than spirituality, and it deserves both the 
 
 ## The GDP Math That Explains Everything
 
-Liang thinks AI will eventually be worth something like **ten percent of humanity's GDP**, a double-digit percentage of everything humans produce. Most founders would hear that and start drawing their slice of the pie chart. Liang's take:
+Liang's lens of looking through AI is very interesting and quant-like in my opinion and to understand that, I'll mostly be quoting parts of the translated transcript here to understand him.
+
+Liang thinks AI will eventually be worth something like **ten percent of humanity's GDP**, a double-digit percentage of everything humans produce, and his take was:
 
 > "If we tried to monopolize that benefit, we would surely be cast aside by history."
 
-And then he plays the whole game out loud, like an iterated auction:
+followed by:
 
 > "Look at OpenAI: the way they do that math seems to work out; theoretically there's no problem. But they have a problem: they'll be beaten by another person willing to occupy only one percent. Because another person says, I do it this well, but I only need to take one percent of global GDP, and then he'll beat him. At that point, if yet another person emerges saying I only need zero point one percent, then he'll beat the previous person again."
 
-And then the kicker, which might be my favorite quote of the entire meeting:
-
 > "You don't even need to actually take more; **if your vision is to take more, you will be beaten by those whose vision is to take less.** Actually no one has taken any money yet; it is just a vision. If your vision is to take more, you have already lost."
 
-Nobody has captured the value yet; the pie itself is still hypothetical. He's saying the *intention* alone is enough to lose, because your intention shapes your pricing, your openness, your hiring, and how hard the rest of the world works to route around you. This is the Costco cap from the top of this post, rebuilt as game theory, and the stakes are asymmetric: when OpenAI needs to charge $200/month to justify its infrastructure while DeepSeek prices its API to recoup hardware costs in ten months, the two are playing different games on purpose, and only one of them needs the fat margins to survive.
+Nobody has captured the value yet; the pie itself is still hypothetical. He's saying the *intention* alone is enough to lose, because your intention shapes your pricing, your openness, your hiring, and how hard the rest of the world works to route around you.
+
+This is his AI game theory, and the stakes are asymmetric - when OpenAI needs to charge $200/month to justify its infrastructure while DeepSeek prices its API to recoup hardware costs in ten months, the two are playing different games on purpose, and only one of them needs the fat margins to survive.
 
 ### Where the Auction Logic Breaks
 
