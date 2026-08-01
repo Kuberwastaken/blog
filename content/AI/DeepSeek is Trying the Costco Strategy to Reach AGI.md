@@ -37,6 +37,14 @@ The cap looks like generosity and works like a weapon - every competitor who nee
 
 DeepSeek has its own version of that internal law, and it might be the single most important number in this whole leak: buy a batch of GPUs, then price the API so the hardware pays for itself in **ten months**. That is the entire pricing policy. Over a server's three-to-five-year life it works out to roughly a sixfold margin on compute, he considers that "a reasonable profit", and everything else in this post hangs off that one self-imposed cap.
 
+```mermaid
+timeline
+    title One GPU server over five years
+    Month 0 : DeepSeek buys the GPUs
+    Months 1 to 10 : API revenue pays back the entire hardware cost
+    Months 11 to 60 : Pure margin, roughly sixfold by end of life
+```
+
 And the cap, in his telling, is itself the AGI strategy rather than just the business model that funds it. Cheap tokens and open weights pull the world onto DeepSeek's stack and standardize the ecosystem around them. The renounced profit buys what he actually needs: researchers who join for the mission and stay ("open source and low prices make employees feel a real sense of accomplishment... give the organization cohesion"), an industry with no reason to fight them, and a revenue floor that funds research without dragging the lab into product wars. He states the causality plainly: this kind of restraint, over the long horizon, "can increase the probability that we achieve AGI."
 
 Liang is convinced that intelligence is bound to become a commodity and his entire strategy relies on this one bet - but the breakthrough he wants most might just end up being the thing that breaks his own playbook. Hold that thought.
@@ -122,7 +130,18 @@ Meanwhile everyone else fought over the chatbot market until, in his words, "the
 
 Liang lays out the path to AGI as a staircase where each step stands on the previous one:
 
-**Language models → Chain-of-Thought → Agents → Continual Learning → (gradual) Singularity → Embodiment**
+```mermaid
+flowchart LR
+    LM["Language Models"] --> COT["Chain-of-Thought<br/><em>last year, climbed</em>"]
+    COT --> AG["Agents<br/><em>this year, climbing</em>"]
+    AG -.-> CL["Continual Learning<br/><em>the next stair, unsolved</em>"]
+    CL -.-> SG["Singularity<br/><em>gradual, AI develops AI</em>"]
+    SG -.-> EM["Embodiment<br/><em>the endpoint</em>"]
+    style AG stroke:#50a789,stroke-width:3px
+    style CL stroke-dasharray:6 4
+    style SG stroke-dasharray:6 4
+    style EM stroke-dasharray:6 4
+```
 
 Last year's step was CoT, this year's is agents, and in his telling each step gets climbed until it caps out. CoT, he claims, is already a completed stair: it surpassed the very top humans at olympiad math and competitive programming, and still stopped short of AGI. The thing the entire industry is currently valued on, filed under *finished*.
 
