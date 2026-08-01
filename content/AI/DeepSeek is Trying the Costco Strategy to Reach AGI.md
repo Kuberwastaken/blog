@@ -37,13 +37,33 @@ The cap looks like generosity and works like a weapon - every competitor who nee
 
 DeepSeek has its own version of that internal law, and it might be the single most important number in this whole leak: buy a batch of GPUs, then price the API so the hardware pays for itself in **ten months**. That is the entire pricing policy. Over a server's three-to-five-year life it works out to roughly a sixfold margin on compute, he considers that "a reasonable profit", and everything else in this post hangs off that one self-imposed cap.
 
-```mermaid
-timeline
-    title One GPU server over five years
-    Month 0 : DeepSeek buys the GPUs
-    Months 1 to 10 : API revenue pays back the entire hardware cost
-    Months 11 to 60 : Pure margin, roughly sixfold by end of life
-```
+<div class="gpu-payback" aria-label="Timeline of one GPU server over five years: months one to ten pay back the hardware, months eleven to sixty are margin">
+  <div class="gpu-title">one server · five years · one rule</div>
+  <div class="gpu-bar">
+    <div class="gpu-seg gpu-pay"><span>payback</span></div>
+    <div class="gpu-seg gpu-margin"><span>pure margin · the other ~5x · price stays put anyway</span></div>
+  </div>
+  <div class="gpu-axis">
+    <span class="gpu-t0">month 0<br/>buy the GPUs</span>
+    <span class="gpu-t10">month 10<br/>fully paid off</span>
+    <span class="gpu-t60">month 60<br/>server retires</span>
+  </div>
+</div>
+
+<style>
+.gpu-payback{margin:1.9rem 0;font-family:var(--codeFont),monospace}
+.gpu-title{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);margin-bottom:.5rem}
+.gpu-bar{display:flex;height:3.1rem;border:1px solid var(--lightgray);border-radius:.45rem;overflow:hidden}
+.gpu-seg{display:flex;align-items:center;justify-content:center;font-size:.67rem;line-height:1.25;text-align:center;padding:0 .45rem}
+.gpu-pay{width:16.67%;min-width:66px;background:var(--secondary);color:var(--light);font-weight:700;letter-spacing:.04em}
+.gpu-margin{flex:1;color:var(--darkgray);background:repeating-linear-gradient(-45deg,color-mix(in srgb,var(--secondary) 15%,transparent) 0 10px,color-mix(in srgb,var(--secondary) 6%,transparent) 10px 20px);border-left:2px solid var(--secondary)}
+.gpu-axis{position:relative;height:2.5rem;margin-top:.4rem;font-size:.61rem;color:var(--gray);line-height:1.35}
+.gpu-axis span{position:absolute;top:0}
+.gpu-t0{left:0;text-align:left}
+.gpu-t10{left:16.67%;transform:translateX(-50%);text-align:center;color:var(--secondary);font-weight:700}
+.gpu-t60{right:0;text-align:right}
+@media (max-width:480px){.gpu-t0{display:none}.gpu-t10{transform:none;text-align:left;left:2px}}
+</style>
 
 And the cap, in his telling, is itself the AGI strategy rather than just the business model that funds it. Cheap tokens and open weights pull the world onto DeepSeek's stack and standardize the ecosystem around them. The renounced profit buys what he actually needs: researchers who join for the mission and stay ("open source and low prices make employees feel a real sense of accomplishment... give the organization cohesion"), an industry with no reason to fight them, and a revenue floor that funds research without dragging the lab into product wars. He states the causality plainly: this kind of restraint, over the long horizon, "can increase the probability that we achieve AGI."
 
@@ -130,18 +150,50 @@ Meanwhile everyone else fought over the chatbot market until, in his words, "the
 
 Liang lays out the path to AGI as a staircase where each step stands on the previous one:
 
-```mermaid
-flowchart LR
-    LM["Language Models"] --> COT["Chain-of-Thought<br/><em>last year, climbed</em>"]
-    COT --> AG["Agents<br/><em>this year, climbing</em>"]
-    AG -.-> CL["Continual Learning<br/><em>the next stair, unsolved</em>"]
-    CL -.-> SG["Singularity<br/><em>gradual, AI develops AI</em>"]
-    SG -.-> EM["Embodiment<br/><em>the endpoint</em>"]
-    style AG stroke:#50a789,stroke-width:3px
-    style CL stroke-dasharray:6 4
-    style SG stroke-dasharray:6 4
-    style EM stroke-dasharray:6 4
-```
+<div class="agi-stairs" aria-label="DeepSeek's staircase to AGI: language models, chain-of-thought, agents (current), continual learning, singularity, embodiment">
+  <div class="stair done" style="--i:1;">
+    <span class="stair-name">Language Models</span>
+    <span class="stair-note">the base</span>
+  </div>
+  <div class="stair done" style="--i:2;">
+    <span class="stair-name">Chain-of-Thought</span>
+    <span class="stair-note">climbed last year</span>
+  </div>
+  <div class="stair now" style="--i:3;">
+    <span class="stair-tag">you are here</span>
+    <span class="stair-name">Agents</span>
+    <span class="stair-note">climbing this year</span>
+  </div>
+  <div class="stair todo" style="--i:4;">
+    <span class="stair-name">Continual Learning</span>
+    <span class="stair-note">the next stair, unsolved</span>
+  </div>
+  <div class="stair todo" style="--i:5;">
+    <span class="stair-name">Singularity</span>
+    <span class="stair-note">gradual, AI develops AI</span>
+  </div>
+  <div class="stair todo" style="--i:6;">
+    <span class="stair-name">Embodiment</span>
+    <span class="stair-note">the endpoint</span>
+  </div>
+</div>
+<div class="agi-stairs-cap">filled steps are climbed · dashed steps are ahead · not a single step wasted</div>
+
+<style>
+.agi-stairs{display:flex;align-items:flex-end;gap:.3rem;margin:1.9rem 0 .35rem;overflow-x:auto;border-bottom:2px solid var(--lightgray);scrollbar-width:thin}
+.agi-stairs .stair{flex:1 1 0;min-width:98px;height:calc(2.7rem + var(--i)*2.05rem);box-sizing:border-box;padding:.55rem .6rem;border:1px solid var(--lightgray);border-bottom:none;border-radius:.45rem .45rem 0 0;display:flex;flex-direction:column;font-family:var(--codeFont),monospace;transition:transform .18s ease,box-shadow .18s ease}
+.agi-stairs .stair:hover{transform:translateY(-3px)}
+.agi-stairs .stair-name{font-size:.76rem;font-weight:700;color:var(--dark);line-height:1.25}
+.agi-stairs .stair-note{font-size:.63rem;color:var(--gray);margin-top:.2rem;line-height:1.3}
+.agi-stairs .done{background:color-mix(in srgb,var(--secondary) 13%,transparent);border-color:color-mix(in srgb,var(--secondary) 40%,var(--lightgray))}
+.agi-stairs .now{background:color-mix(in srgb,var(--secondary) 24%,transparent);border:1.5px solid var(--secondary);border-bottom:none;box-shadow:0 0 20px color-mix(in srgb,var(--secondary) 28%,transparent)}
+.agi-stairs .todo{border-style:dashed;background:transparent;opacity:.72}
+.agi-stairs .stair-tag{align-self:flex-start;font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;background:var(--secondary);color:var(--light);padding:.12rem .38rem;border-radius:.25rem;margin-bottom:.32rem;white-space:nowrap}
+.agi-stairs .now .stair-name::after{content:"▮";margin-left:.25rem;color:var(--secondary);animation:agiblink 1.1s steps(1) infinite}
+.agi-stairs-cap{font-family:var(--codeFont),monospace;font-size:.62rem;color:var(--gray);margin-bottom:1.6rem}
+@keyframes agiblink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.agi-stairs .now .stair-name::after{animation:none}.agi-stairs .stair{transition:none}}
+</style>
 
 Last year's step was CoT, this year's is agents, and in his telling each step gets climbed until it caps out. CoT, he claims, is already a completed stair: it surpassed the very top humans at olympiad math and competitive programming, and still stopped short of AGI. The thing the entire industry is currently valued on, filed under *finished*.
 
