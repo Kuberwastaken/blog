@@ -15,7 +15,9 @@ modified:
 ---
 Liang Wenfeng might be the most consequential person in AI who has essentially never spoken in public.
 
-He founded DeepSeek - the lab that came out of nowhere in January 2025 with R1, matched OpenAI's o1 at a fraction of the cost, and cost NVIDIA a trillion dollars of market cap in a day. In the years since, he has given exactly two long-form interviews, both in text, both to the same Chinese publication. He communicates with the world through model weights and papers and perhaps most interestingly - his lab was bankrolled entirely by High-Flyer, his own quant hedge fund, and took no outside money until this year.
+He founded DeepSeek - the lab that came out of nowhere in January 2025 with R1, matched OpenAI's O1 at a fraction of the cost, and cost NVIDIA half a trillion dollars of market cap in a day.
+
+In the years since, he has given exactly two long-form interviews, both in text to the same Chinese publication. He communicates with the world through model weights and papers, and perhaps most interestingly - his lab was bankrolled entirely by High-Flyer, his own quant hedge fund, and took no outside money until this year.
 
 So when a 3 hour 44 minute transcript of him talking to his new investors started circulating on a May 20th meeting, it instantly became the largest sample of him thinking out loud that exists anywhere, spreading across WeChat before the original post was pulled and almost no one heard of it.
 
@@ -23,9 +25,9 @@ The best part was that midway through the recording, the meeting host pleads wit
 
 And here we are :)
 
-*A note on sourcing before we go further: everything here comes from a ~34,000-word Chinese transcript of that audio, which circulated on WeChat for about a day before the original post was deleted. DeepSeek has never confirmed the meeting. The details are consistent with independent reporting on the funding round and the thinking matches his two known interviews closely, but the audio itself is not public, the transcript is machine-transcribed and machine-translated (it garbles model names, rendering what is almost certainly "Opus 4.7" as "O4.7"), and the specific figures in it, GPU counts, revenue, parameter sizes, are single-sourced and unverifiable. Quotes below are faithful in meaning rather than word-perfect, and anything with a number attached deserves a mental asterisk.*
-
 This is a deep dive about who is this man, what is DeepSeek doing different and how it's planning to achieve AGI using Costco's strategy.
+
+*PS: everything here comes from a ~34,000-word Chinese transcript of that audio, which circulated on WeChat for about a day before the original post was deleted. The details are consistent with independent reporting on the funding round and the thinking matches his two known interviews closely. the transcript is machine-transcribed and translated through Claude Opus 5, the specific figures in it, GPU counts, revenue, parameter sizes, are single-sourced and unverifiable. Quotes below are faithful in meaning rather than word-perfect, and anything with a number attached deserves a mental asterisk.*
 
 ## Okay, but what is the Costco strategy.
 
@@ -74,21 +76,31 @@ Nobody has captured the value yet; the pie itself is still hypothetical. He's sa
 
 ### Where the Auction Logic Breaks
 
-Now the stress test, because that auction argument gets quoted a little too admiringly, including above, by me.
+I already know that the auction argument would get quoted a little too admiringly, including above, by me - so let's run it back.
 
-"The one who takes less beats the one who takes more" is true in exactly one kind of market: a commodity market with near-zero switching costs. Hot dogs qualify, and so does electricity. It is genuinely unclear that intelligence does. If distribution, integration, habit, and trust are the real moats, the 1% player loses to the 10% player all day long. Apple has taken the fattest margins in consumer hardware for two decades and every ascetic competitor has bounced off, because an iPhone is a habit and an ecosystem rather than a fungible good. ChatGPT is a verb in a way an API price list will never be. Enterprises sign multi-year contracts precisely so they can stop re-evaluating vendors.
+"The one who takes less beats the one who takes more" is true in exactly one kind of market - a commodity market with near-zero switching costs and contrary to tech twitter, we're still not sure if intelligence becomes one.
 
-Liang seems to know this, and his answer is hiding in his own words. Asked where model competition ultimately lands, he names exactly three moats: cost, time, and user experience. "Apart from these, there may be no gap." That sentence is the tell. The auction logic is really a bet that intelligence commoditizes, that models converge until tokens are interchangeable and price is the product. He even expects his own margin to compress, saying the sixfold profit will likely fall to fourfold or threefold over time. Every piece of the strategy (open weights, capped margins, refusing the super app) is downstream of that single assumption. If it holds, he wins on discipline. If it breaks, the company hoarding users and integrations wins instead, and the restraint was just leaving money on the table.
+If distribution, integration, habit, and trust are the real moats, the 1% player loses to the 10% player all day long.
 
-Which sets up the best irony in the whole transcript: the breakthrough Liang wants most is a model that learns continuously, absorbing your context the way a new employee does. To be precise, continual learning does not automatically mean private per-customer memory; a model can keep improving globally without embedding itself in anyone's business. But the version Liang describes, a model that joins your company and learns it for two months like a hire, is exactly the embedding kind. That model is the least fungible product imaginable. Memory is a switching cost. If DeepSeek gets exactly what it wants, intelligence stops being a commodity, and the Costco math stops binding.
+Apple has taken the fattest margins in consumer hardware for two decades and every ascetic competitor has bounced off, because an iPhone is a habit and an ecosystem rather than a fungible good. ChatGPT is a verb in a way an API price list will never be. Enterprises sign multi-year contracts precisely so they can stop re-evaluating vendors.
+
+Liang seems to know this, and his answer is hiding in his own words. Asked where model competition ultimately lands, he names exactly three moats: cost, time, and user experience. "Apart from these, there may be no gap."
+
+Which sets up the best irony in the whole transcript: the breakthrough Liang wants most is a model that learns continuously, absorbing your context the way a new employee does.
+
+To be precise, continual learning does not automatically mean private per-customer memory; a model can keep improving globally without embedding itself in anyone's business. But the version Liang describes - a model that joins your company and learns it for two months like a hire, is exactly the embedding kind. That model is the least fungible product imaginable. If DeepSeek gets exactly what it wants, intelligence stops being a commodity, and the Costco math stops binding.
 
 Which is funny exactly because
 
 ## AI Labs are Petitioning to Stop Continual Learning
 
-The week I'm writing this, over a thousand employees across the Western frontier labs (OpenAI, Anthropic, DeepMind, Meta, with Anthropic's CEO and several co-founders among the signatories) published a joint statement called "Pacing the Frontier," and both OpenAI's and Anthropic's official accounts endorsed it. The ask, in the statement's own words: that the US government support an international effort to build "the technical and governance tools needed to deliberately pace the frontier of automated AI development." Strip the policy language and the thing they want a brake pedal for is models improving models, the recursive loop that sits one stair above continual learning on Liang's own staircase. This came weeks after Anthropic published research on recursive self-improvement and OpenAI started openly measuring how much of its research loop its models now run. The people closest to the frontier looked at the next stair and asked the government to help build a railing first. [Theo has the best breakdown of the whole saga](https://youtu.be/yz0SZIng2Po) (not affiliated, as always).
+The week I'm writing this, over a thousand employees across the Western frontier labs (OpenAI, Anthropic, DeepMind, Meta, with Anthropic's CEO and several co-founders among the signatories) published a joint statement called "Pacing the Frontier," and both OpenAI's and Anthropic's official accounts endorsed it.
 
-And here's the detail that connects it back to this post: Chinese labs were excluded from signing. The letter is addressed to the US government, and its organizers said plainly that they decided against accepting signatories from Chinese companies at this time. So the industry's brake pedal, if it ever gets built, is being designed without the lab whose entire published roadmap is the thing being braked. DeepSeek couldn't have signed the petition against its own next stair even if it wanted to, and everything in the transcript says it wouldn't have wanted to.
+The ask, in the statement's own words: that the US government support an international effort to build "the technical and governance tools needed to deliberately pace the frontier of automated AI development." Strip the policy language and the thing they want a brake pedal for is models improving models, the recursive loop that sits one stair above continual learning on Liang's own staircase.
+
+This came weeks after Anthropic published research on recursive self-improvement and OpenAI started openly measuring how much of its research loop its models now run. The people closest to the frontier looked at the next stair and asked the government to help build a railing first. [Theo has the best breakdown of the whole saga](https://youtu.be/yz0SZIng2Po) (not affiliated, as always).
+
+The part of note is that Chinese labs were excluded from signing. The letter is addressed to the US government, and its organizers said plainly that they decided against accepting signatories from Chinese companies at this time. So the industry's brake pedal, if it ever gets built, is being designed without the lab whose entire published roadmap is the thing being braked. DeepSeek couldn't have signed the petition against its own next stair even if it wanted to, and everything in the transcript says it wouldn't have wanted to.
 
 The strategy is perfectly tuned for an era its own roadmap is trying to end, and half the industry just petitioned to stop that ending from arriving.
 
@@ -98,15 +110,15 @@ The single best analogy in the meeting is Liang's own, explaining why they didn'
 
 > "The reason we don't fight for that is that **there are watermelons behind, and what's in front may all be sesame seeds.** Of course this sesame seed may be a fairly large one, but I don't think it counts as big."
 
-DeepSeek accidentally became the fastest-growing consumer app on the planet, and every growth playbook says: monetize, retain, you will never get this chance again. Instead they kept the users at deliberately minimal cost, ran no retention push, built no super app. Going viral "was not in our script," and at one point they didn't even want to maintain the users anymore, but **"the users couldn't be driven away."**
+DeepSeek accidentally became the fastest-growing consumer app on the planet, and every growth playbook says: monetize, retain, you will never get this chance again. Instead they kept the users at deliberately minimal cost, ran no retention push, built no super app.
 
-Meanwhile everyone else fought over the chatbot market until, in his words, "their heads were bloodied," and the season's most-downloaded chatbot came from the one company that sat the war out. His explanation is what he calls a "dimensional-reduction strike" (降维打击, a Three-Body Problem reference that Chinese tech discourse uses the way we use "10x"): if you're organized around AGI and your model is genuinely at the frontier, consumer products and enterprise revenue fall out the bottom as byproducts. The company fighting for the product has to be better at products than you are at models, and right now, models matter more. He sums it up with a line that reads like a fortune cookie until you remember he's describing his own P&L: the thing you most want, you can't get, while the thing you don't care about comes easily.
+Going viral "was not in our script," and at one point they didn't even want to maintain the users anymore, but **"the users couldn't be driven away."**
+
+Meanwhile everyone else fought over the chatbot market until, in his words, "their heads were bloodied," and the season's most-downloaded chatbot came from the one company that sat the war out. His explanation is what he calls a "dimensional-reduction strike" (降维打击, a Three-Body Problem reference that Chinese tech discourse uses the way we use "10x"): if you're organized around AGI and your model is genuinely at the frontier, consumer products and enterprise revenue fall out the bottom as byproducts.
 
 ---
 
-## The Staircase: DeepSeek's Actual Roadmap
-
-This is where the meeting stops being a business call and becomes a research seminar, and where you remember that this "company" is really a lab with a billing department.
+## DeepSeek's Staircase to AGI
 
 Liang lays out the path to AGI as a staircase where each step stands on the previous one:
 
@@ -114,93 +126,89 @@ Liang lays out the path to AGI as a staircase where each step stands on the prev
 
 Last year's step was CoT, this year's is agents, and in his telling each step gets climbed until it caps out. CoT, he claims, is already a completed stair: it surpassed the very top humans at olympiad math and competitive programming, and still stopped short of AGI. The thing the entire industry is currently valued on, filed under *finished*.
 
-So what's the next stair? His answer is the most clarifying explanation of AI's actual bottleneck I've read anywhere, and he does it with an office errand. A new employee spends two months absorbing context, and afterward you can say "go get Little Wang" and they just do it. An AI model gets zero of those two months; every conversation is its first day on the job, forever. You'd have to explain who Little Wang is, where he sits, and how to approach him, every single time.
+He goes further than I would, claiming AI today "does not lack taste or intuition," only the ability to keep learning - circling back to the point earlier.
 
-> "AI cannot replace your employees. But if AI has the ability of continual learning, if, like your employee, it comes into the company and learns for two months, **then it could replace everyone in the world.**"
+On when this gets solved, he said nobody knows, "the whole world still hasn't found a good method; everyone is groping." Internally they call this kind of research "scratching lottery tickets": it needs almost no GPUs, resists being staffed like a project, and nobody knows which ticket pays out.
 
-That's the whole game in two sentences, and anyone who has worked with AI agents knows this is exactly the wall you hit; the model is amnesiac rather than dumb. He goes further than I would, claiming AI today "does not lack taste or intuition," only the ability to keep learning. Taste was supposed to be the last human moat, and here is the founder of the most efficiency-obsessed lab in the field saying the models have taste, they just can't remember your name.
-
-On when this gets solved, he's refreshingly honest: nobody knows, "the whole world still hasn't found a good method; everyone is groping." Internally they call this kind of research "scratching lottery tickets": it needs almost no GPUs, resists being staffed like a project, and nobody knows which ticket pays out. The next breakthrough is currently a thought rather than a training run, sitting unclaimed in someone's head. And per the auction-logic irony above, whoever's head it comes out of will have ended the commodity era.
-
-The staircase also explains every refusal from earlier. Video generation is "a good business" with "nothing to do with intelligence." World models are off the main line at this stage. Multimodality is a component that V4 will ship natively, but a component only. Hallucinations, the thing that launched ten thousand LinkedIn thinkpieces, are classified internally as a "product problem" to be fixed with better post-training, which is to say: a backlog ticket. Even the roadmap's ordering is engineered laziness: solve learning first, and the model helps build everything after it, which is why robotics sits last. The first customer for all of it is DeepSeek itself; the models exist, in his words, first to be useful to their own developers, because that is the fastest way to AGI. The model exists to build its successor.
+Here he also mentions why they would never touch video generation, world models, vertical agents or 3D in general - because he thinks they are useful additions but not in the path of AGI.
 
 ---
 
-## The Economics: A Lab That Accidentally Makes Money
+## How does DeepSeek Price it's AI (and makes Profit)
 
-The ten-month rule from the top plays out with almost comic discipline. He openly admits demand is inelastic, meaning he could double prices tomorrow and roughly double revenue. He just... won't. At one point someone on the call pushes back on-screen that a ten-month payback is actually too profitable, and he simply agrees: "indeed there's still room to cut prices."
+Liang mentions something interesting he calls the ten-month rule for the compute he acquires.
+
+The API is priced to make the servers pay for themselves in 10 months - since a server runs for 3-5 years, everything after that is profit.
+
+He openly admits demand is inelastic, meaning he could double prices tomorrow and roughly double revenue. He just... won't.
+At one point someone on the call pushes back that a ten-month payback is actually too profitable, and he simply agrees: "indeed there's still room to cut prices."
 
 Then there's this story:
 
 > "With one of our models, we initially worried that demand would be too high, so we set the price fairly high. Later we cut it to a quarter, and many people in the company group chat cheered. Because this is exactly the purpose of putting so much care into building this model well: to let everyone use it fully."
 
-The employees *cheered a price cut.* It sounds like PR fluff until you realize it's structural: if your people joined to make intelligence cheap and abundant, a price cut IS the win condition. The vision does the incentive alignment that RSUs do everywhere else. (He does clock the other side of it, deadpan: "price cuts are certainly not a good thing for our competitors; they are definitely not cheering." That's your ARR, halved, by a man who describes it as sharing joy.)
-
-Open source gets the same unromantic treatment, in three cold observations. Closed buys you nothing: "ByteDance's model is closed-source; what benefit does it get? I don't see any benefit." Open costs you nothing, provided you only want a reasonable profit: running frontier weights well at scale is brutally hard, and at his price point, third parties deploying his own open model against him lose money; open source only threatens you "if you want to make a hundredfold profit." The restraint and the open-sourcing are load-bearing for each other. And it's a size-class advantage: startups lack the strength, big companies can't organize it, "a sweet spot that belongs to companies of our size."
-
-The detail that should quietly embarrass several labs: the open weights are the **same weights they serve**, with no secret better version held back. And buried in the Q&A, the fallback plan, delivered with a shrug: worst case, if all technical progress froze today, "just selling the API could probably support a public company." The doomsday scenario is a profitable business. Must be nice.
+If your people joined to make intelligence cheap and abundant, a price cut IS the win condition.
 
 ---
 
 ## The Compute Section (or: The Numbers They Asked Everyone Not to Share)
 
-This is the part the host explicitly begged attendees to keep quiet, which of course means it's the part everyone shared first. The headline narrative, in his framing: DeepSeek lags the US by one to two years while using one-twentieth of the compute, and the goal is to rewrite that ratio, "shorten the time gap further, down to 6 months, 3 months."
+This is the part the host explicitly begged attendees to keep quiet, which of course means it's the part everyone shared first. In his framing: DeepSeek lags the US by one to two years while using 1/20th of the compute, and the goal is to shorten it further.
 
-Per the transcript (and remember the asterisk from the top), DeepSeek sits on roughly twenty thousand H-equivalent GPUs, most freshly arrived. He estimates the largest US frontier models at ~800B *active* parameters while DeepSeek operates at a few tens of billions active, with the next generation targeted at 150-250B. Training at US scale would take fifty thousand GB300s he cannot buy at any price.
+Per the transcript (and remember the asterisk from the top), DeepSeek sits on roughly at 20,000 H-equivalent GPUs, most freshly arrived. He estimates the largest US frontier models at ~800B *active* parameters while DeepSeek operates at ~47 billions active, with the next generation targeted at 150-250B. Training at US scale would take fifty thousand GB300s he cannot buy at any price.
 
-He also settles "is DeepSeek efficient by choice?" once and for all:
+and he did admit the following:
 
 > "We train models this big not because I think a model this big is enough, but because **that is all the resources we have.**"
 
-All the architectural cleverness, the entire "does more with less" mythos, is rationing rather than philosophy, and he's completely unsentimental about it. He extends the point to people: the China-US talent gap is roughly zero ("it's literally the same pool of people"), but fewer chips means fewer experiments means slower researcher development. Even the talent gap is a compute gap in a trenchcoat.
+He extends the point to people: the China-US talent gap is roughly zero ("it's literally the same pool of people"), but fewer chips means fewer experiments means slower researcher development - so even the talent gap is a compute gap in a trenchcoat.
 
-Then the best subtweet of Silicon Valley discourse I've ever read:
+He also said:
 
 > "When Silicon Valley says Scaling has hit its limit, **that is for Silicon Valley;** for Chinese people, we are still very far from that. We haven't Scaled to anywhere near that degree."
 
-"The wall" becomes a regional phenomenon, a luxury complaint, like billionaires debating whether money buys happiness while you're rationing H100s.
+Remember the 10 month plan earlier? He literally says here - money in the bank earns two percent a year; a GPU earns its own price back in ten months.
 
-And the ten-month payback number returns here, because it doubles as his entire capital allocation strategy. Money in the bank earns two percent a year; a GPU earns its own price back in ten months. So the plan for the billions they just raised is barbarically simple: turn all of it into cards as fast as physically possible, paying a premium where needed, because "turning money into Nvidia cards is definitely better than putting it in the bank." His stated ideal is spending the entire round within half a year, and his stated frustration is that the cards physically cannot be bought fast enough. If procurement spends twenty billion this year, they "count as super high performers." Imagine your KPI being *spend money faster*, and still missing it.
+So the plan for the billions they just raised is barbarically simple: turn all of it into cards as fast as physically possible, paying a premium where needed, because "turning money into Nvidia cards is definitely better than putting it in the bank."
+
+His stated ideal is spending the entire round within half a year, and his stated frustration is that the cards physically cannot be bought fast enough. If procurement spends twenty billion this year, they "count as super high performers."
 
 ## "Nvidia Is Digging Its Own Grave"
 
-The most geopolitically spicy claim in the recording: when DeepSeek trained V3, they used NVIDIA's cards while sidestepping NVIDIA's ecosystem entirely, on their own compiler layer called TileLang, at an efficiency cost he puts at one to two percent. CUDA, the twenty-year fortress that makes NVIDIA worth more than entire G7 economies, is in his view "being dismantled rapidly," and the reason has a poetic circularity: AI can write code now. The lock-in was always really a "porting is expensive" lock-in, and AI cratered the cost of porting. The moat is being drained by the very thing it irrigates.
+The most geopolitically spicy claim in the recording: when DeepSeek trained V3, they used NVIDIA's cards while sidestepping NVIDIA's ecosystem entirely, on their own compiler layer called TileLang, at an efficiency cost he puts at one to two percent.
 
-On Huawei he gives the most precise benchmark of domestic silicon I've seen anywhere: the gap is "four times plus two years", four Huawei 950s to match one top NVIDIA card, on hardware trailing by two years, at which point it substitutes for the GB200/GB300 supernodes, latency and all. Even at a multiple of the price he'd take it, because export controls mean the real choice is Huawei versus empty racks. In a normal market, he says, domestic substitution would be hard; with NVIDIA unbuyable, "everyone is forced into it." The transcript has Huawei allocating DeepSeek ~16,000 cards and DeepSeek porting the whole TileLang stack across, explicitly "to help Huawei build this ecosystem well," with his prediction that within a year the domestic-chips-don't-work perception gets reversed by facts, leaving only manufacturing capacity, which he expects to fade within five years.
+CUDA, the twenty-year fortress that makes NVIDIA, is in his view "being dismantled rapidly," because AI can write code now.
 
-If he's right, US export policy will have accomplished the most impressive own-goal in the history of industrial policy: it took the world's most efficient AI lab, which *wanted* to keep buying American, and conscripted it into building the American ecosystem's replacement.
+On Huawei he gives the most precise benchmark of domestic silicon I've seen anywhere: the gap is "four times plus two years", four Huawei 950s to match one top NVIDIA card, on hardware trailing by two years, at which point it substitutes for the GB200/GB300 supernodes, latency and all.
+
+Even at a multiple of the price he'd take it, because export controls mean the real choice is Huawei versus empty racks. In a normal market, he says, domestic substitution would be hard; with NVIDIA unbuyable, "everyone is forced into it." The transcript has Huawei allocating DeepSeek ~16,000 cards and DeepSeek porting the whole TileLang stack across, explicitly "to help Huawei build this ecosystem well," with his prediction that within a year the domestic-chips-don't-work perception gets reversed by facts, leaving only manufacturing capacity, which he expects to fade within five years.
 
 ---
 
-## This Is a Lab Wearing a Company as a Raincoat
+## How Does DeepSeek's Culture Run
 
-Everything about how DeepSeek runs internally is recognizable, just from somewhere other than tech: it's a research lab, specifically the kind universities pretend theirs are. No KPIs and no performance reviews ("there is no performance review, there is only the vision"), a vision that has never been written down anywhere, half of every researcher's time unassigned to explore whatever they want, authority that runs on consensus, and no overtime, in China, in the industry that invented 996, because research needs slack and extreme focus means there is very little to do.
+Everything about how DeepSeek runs internally is recognizable, just from somewhere other than tech: it's a research lab, specifically the kind universities pretend theirs are. No KPIs and no performance reviews, a vision that has never been written down anywhere, half of every researcher's time unassigned to explore whatever they want, authority that runs on consensus, and no overtime, because research needs slack and extreme focus means there is very little to do.
 
 One thing, and only one thing, is sacred:
 
 > "Our biggest core interest is maintaining the stability of the team; you could even say it is the only core interest. **As long as I can keep the team stable, I will surely achieve AGI. It is that simple.**"
 
-Money is "certainly not the problem." Compute costs at worst a six-month delay. The only unrecoverable loss is people, and reportedly it's even contractual: the funding round is said to have come with conditions on investors amounting to leaving the researchers alone and their would-be spinouts unfunded. It's how a PI talks about a research group, far more than how a CEO talks about a company. When someone asks if the model is Bell Labs, he pushes back only on the economics: Bell Labs had a monopoly parent paying the bills, "but we clearly do need to commercialize... the government will not give me a single cent", which is incidentally the driest possible rebuttal to the "state-controlled operation" narrative OpenAI was selling Washington.
+Money is "certainly not the problem." Compute costs at worst a six-month delay. The only unrecoverable loss is people, and reportedly it's even contractual: **the funding round is said to have come with 2 conditions - no poaching the researchers and no funding spinoffs**.
 
-And then the detail that rewired my sense of what frontier AI work actually is right now:
+and if you're curious about what half of the job entails-
 
 > "You could also say that right now **half the people in our company are labeling data.** Half of our core researchers, the most important people, half of them are labeling data."
 
-The most efficient lab on Earth, and the founder's honest description of the current stage of AI is: my geniuses are doing data curation, because high-end data work *is* the research now, and expert-labeled data costs the same everywhere. Who knew the one thing that stays expensive in Shenzhen is taste.
+The most efficient lab on Earth, and the founder's honest description of the current stage of AI is: my geniuses are doing data curation, because high-end data work *is* the research now - which sounds very similar to the complains some Meta's labs' researchers had a few months ago.
 
-What the four hours add up to is a research group that secretes products the way a gland secretes hormones, involuntarily, as a byproduct of its actual function. "Products are a by-product on the road to AGI" is an actual quote; the API runs without a sales team or customer support, and revenue keeps happening *to* them. Every Western lab claims some version of this, but when OpenAI says it there's a $500-billion-infrastructure-commitment-shaped asterisk attached, and when this guy says it, the supporting evidence is that he barely monetized the most viral app launch in history because the team was busy with V4.
-
-The moment that sums it all up: an investor delivers a full minute of poetry about DeepSeek as a banyan tree sheltering an ecosystem of little birds, "benefiting all things without contending." Liang's response, in its entirety, is to answer the technical question. The world keeps offering this company metaphors, and it keeps replying with engineering.
-
-A few loose gems worth saving: he thinks Anthropic being ahead is "a phase" and that OpenAI and Google will "rise in alternation," immediately followed by the confession that "maybe half the people in our company, at any given time, half feel OpenAI is better," which no American CEO would volunteer as a neutral weather report. And asked how he'll balance pure research against his new capital-market obligations, the reassurance he offers his brand-new investors is essentially: worst case, we're merely a very good business. "We hope to have a bigger dream, but we also have a fallback performance we can put out."
+A few loose gems worth saving: he thinks Anthropic being ahead is "a phase" and that OpenAI and Google will "rise in alternation," immediately followed by the confession that "maybe half the people in our company, at any given time, half feel OpenAI is better." And asked how he'll balance pure research against his new capital-market obligations, the reassurance he offers his brand-new investors is essentially: worst case, we're merely a very good business. "We hope to have a bigger dream, but we also have a fallback performance we can put out."
 
 ---
-
 # So Do I Buy It?
 
 Time for the elephant. This is a man talking to his own investors, in a meeting that leaked. Some skepticism is mandatory, so here's mine.
 
-**The "we don't care about money" gospel is also excellent fundraising.** Notice the trick: "restraint" reassures investors he'll skip the billion-dollar super-app war, "10% of GDP" promises the upside anyway, and "reasonable profit" reads as discipline. The renunciation of greed is, itself, a great pitch.
+**The "we don't care about money" gospel is also excellent fundraising.** "restraint" reassures investors he'll skip the billion-dollar super-app war, "10% of GDP" promises the upside anyway, and "reasonable profit" reads as discipline. It is a great pitch.
 
 **Restraint is cheap when constraint does it for you.** He applies exactly this acid to his own efficiency legend ("that is all the resources we have") and never once to his strategy. A lab whose capex was covered by a quant fund, whose GPU count is capped by export controls, and whose home market makes consumer monetization brutal anyway gives up much less than it appears to when it renounces profit. Some of the philosophy is surely scarcity metabolized into identity. The honest version is that DeepSeek made a virtue of necessity and then discovered the virtue compounds.
 
@@ -210,20 +218,14 @@ Time for the elephant. This is a man talking to his own investors, in a meeting 
 
 **And still, I mostly buy it.** Two things are very hard to fake. The first is coherence: pricing, open source, org design, roadmap, and chip strategy all reduce to one function, maximize P(AGI | team stays together), and every answer across four unscripted hours snaps to it, which is far beyond what anyone can improv. The second is the track record: almost everything he describes, they had already done before there were any outside investors to perform for.
 
-# The Actual Lessons
+---
 
-Three, if you skimmed everything else:
+# TLDR
 
-1. **Strategy is subtraction.** Every "no" on that four-hour list is focus reinvested into the single thing they believe matters, and the unwritten vision does the alignment work that KPIs and RSUs do everywhere else, apparently better.
+1. **Their Strategy is subtraction:** Anything that doesn't lead to better models or AGI is off their list and their company culture is alligned for this vision.
 
-2. **Taking less wins, but only in commodity markets.** Capped margins are an un-undercuttable moat and intention sorts the battlefield before revenue exists, yet the whole trick rests on tokens staying fungible.
+2. **Taking less wins, but only in commodity markets.** Capped margins are an un-undercuttable moat and intention sorts the battlefield before revenue exists, and the whole trick rests on tokens staying fungible.
 
 3. **The real bottleneck is learning.** The models have taste but they can't remember. Whoever cracks continual learning takes the next stair, and takes the commodity era with it.
 
-So, the question this whole piece has been circling: is the restraint a durable strategy, a temporary artifact of sanctions, or an ideology that collapses the day persistent agents arrive? My answer after four hours is that it's all three, in sequence. It was born as constraint, a lab that couldn't buy GPUs making a philosophy of needing fewer. It currently operates as a durable moat, because intelligence today really is close to fungible and nobody can undercut the capped player. And it carries its own expiry date, because the moment models remember you, taking less stops being the winning move.
-
-Which leaves one concrete thing to watch. There was never a hidden agenda here; the plan sits in public, in the weights, in the price list, and now in his own voice. So when continual learning ships, look at one number: the payback period. If it's still ten months, the philosophy was real all along.
-
----
-
-*Sourcing, once more: this post is based on the circulated transcript described in the note up top, which DeepSeek has not confirmed. The only English-language coverage I've come across is [a short video by Squintist](https://www.youtube.com/watch?v=BcKQk0NeBV0) (not affiliated, as always). Liang Wenfeng's two prior interviews, with the Chinese outlet 暗涌 Waves (2023 and 2024), remain the only other substantial public record of his thinking, and are worth reading alongside this.*
+Which leaves one concrete thing to watch. There was never a hidden agenda here - the plan sits. So when continual learning actually ships, the only think to look at would just be one thing: the payback period. If it's still ten months, the philosophy was real all along.
