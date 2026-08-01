@@ -40,13 +40,12 @@ DeepSeek has its own version of that internal law, and it might be the single mo
 <div class="gpu-payback" aria-label="Timeline of one GPU server over five years: months one to ten pay back the hardware, months eleven to sixty are margin">
   <div class="gpu-title">one server · five years · one rule</div>
   <div class="gpu-bar">
-    <div class="gpu-seg gpu-pay"><span>payback</span></div>
+    <div class="gpu-seg gpu-pay"><span>payback<br/><em>months 1 to 10</em></span></div>
     <div class="gpu-seg gpu-margin"><span>pure margin · the other ~5x · price stays put anyway</span></div>
   </div>
   <div class="gpu-axis">
-    <span class="gpu-t0">month 0<br/>buy the GPUs</span>
-    <span class="gpu-t10">month 10<br/>fully paid off</span>
-    <span class="gpu-t60">month 60<br/>server retires</span>
+    <span class="gpu-t10">month 10 · hardware fully paid off</span>
+    <span class="gpu-t60">month 60 · server retires</span>
   </div>
 </div>
 
@@ -55,14 +54,14 @@ DeepSeek has its own version of that internal law, and it might be the single mo
 .gpu-title{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);margin-bottom:.5rem}
 .gpu-bar{display:flex;height:3.1rem;border:1px solid var(--lightgray);border-radius:.45rem;overflow:hidden}
 .gpu-seg{display:flex;align-items:center;justify-content:center;font-size:.67rem;line-height:1.25;text-align:center;padding:0 .45rem}
-.gpu-pay{width:16.67%;min-width:66px;background:var(--secondary);color:var(--light);font-weight:700;letter-spacing:.04em}
+.gpu-pay{width:16.67%;min-width:70px;background:var(--secondary);color:var(--light);font-weight:700;letter-spacing:.04em;flex-direction:column;gap:.1rem}
+.gpu-pay em{font-style:normal;font-weight:400;font-size:.54rem;opacity:.9;letter-spacing:0}
 .gpu-margin{flex:1;color:var(--darkgray);background:repeating-linear-gradient(-45deg,color-mix(in srgb,var(--secondary) 15%,transparent) 0 10px,color-mix(in srgb,var(--secondary) 6%,transparent) 10px 20px);border-left:2px solid var(--secondary)}
-.gpu-axis{position:relative;height:2.5rem;margin-top:.4rem;font-size:.61rem;color:var(--gray);line-height:1.35}
-.gpu-axis span{position:absolute;top:0}
-.gpu-t0{left:0;text-align:left}
-.gpu-t10{left:16.67%;transform:translateX(-50%);text-align:center;color:var(--secondary);font-weight:700}
-.gpu-t60{right:0;text-align:right}
-@media (max-width:480px){.gpu-t0{display:none}.gpu-t10{transform:none;text-align:left;left:2px}}
+.gpu-axis{position:relative;height:1.35rem;margin-top:.4rem;font-size:.61rem;color:var(--gray)}
+.gpu-axis span{position:absolute;top:0;white-space:nowrap}
+.gpu-t10{left:16.67%;transform:translateX(-50%);color:var(--secondary);font-weight:700}
+.gpu-t60{right:0}
+@media (max-width:560px){.gpu-t10{left:0;transform:none}.gpu-t60{display:none}}
 </style>
 
 And the cap, in his telling, is itself the AGI strategy rather than just the business model that funds it. Cheap tokens and open weights pull the world onto DeepSeek's stack and standardize the ecosystem around them. The renounced profit buys what he actually needs: researchers who join for the mission and stay ("open source and low prices make employees feel a real sense of accomplishment... give the organization cohesion"), an industry with no reason to fight them, and a revenue floor that funds research without dragging the lab into product wars. He states the causality plainly: this kind of restraint, over the long horizon, "can increase the probability that we achieve AGI."
