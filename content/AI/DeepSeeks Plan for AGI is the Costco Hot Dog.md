@@ -230,7 +230,7 @@ Here he also mentions why they would never touch video generation, world models,
 
 ---
 
-## How does DeepSeek Price it's AI (and makes Profit)
+## How does DeepSeek Price its AI (and makes Profit)
 
 Liang mentions something interesting he calls the ten-month rule for the compute he acquires.
 
@@ -251,7 +251,7 @@ If your people joined to make intelligence cheap and abundant, a price cut IS th
 
 This is the part the host explicitly begged attendees to keep quiet, which of course means it's the part everyone shared first. In his framing: DeepSeek lags the US by one to two years while using 1/20th of the compute, and the goal is to shorten it further.
 
-Per the transcript (and remember the asterisk from the top), DeepSeek sits on roughly at 20,000 H-equivalent GPUs, most freshly arrived. He estimates the largest US frontier models at ~800B *active* parameters while DeepSeek operates at ~47 billions active, with the next generation targeted at 150-250B. Training at US scale would take fifty thousand GB300s he cannot buy at any price.
+Per the transcript (and remember the asterisk from the top), DeepSeek sits on roughly 20,000 H-equivalent GPUs, most freshly arrived. He estimates the largest US frontier models at ~800B *active* parameters while DeepSeek operates at ~47 billions active, with the next generation targeted at 150-250B. Training at US scale would take fifty thousand GB300s he cannot buy at any price.
 
 and he did admit the following:
 
@@ -327,4 +327,4 @@ Time for the elephant. This is a man talking to his own investors, in a meeting 
 
 3. **The real bottleneck is learning.** The models have taste but they can't remember. Whoever cracks continual learning takes the next stair, and takes the commodity era with it.
 
-Which leaves one concrete thing to watch. There was never a hidden agenda here - the plan sits. So when continual learning actually ships, the only think to look at would just be one thing: the payback period. If it's still ten months, the philosophy was real all along.
+Which leaves one concrete thing to watch. There was never a hidden agenda here - the plan sits. So when continual learning actually ships, the only thing to look at would just be one thing: the payback period. If it's still ten months, the philosophy was real all along.
