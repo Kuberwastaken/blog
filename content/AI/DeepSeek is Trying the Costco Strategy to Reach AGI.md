@@ -82,7 +82,15 @@ Liang seems to know this, and his answer is hiding in his own words. Asked where
 
 Which sets up the best irony in the whole transcript: the breakthrough Liang wants most is a model that learns continuously, absorbing your context the way a new employee does. To be precise, continual learning does not automatically mean private per-customer memory; a model can keep improving globally without embedding itself in anyone's business. But the version Liang describes, a model that joins your company and learns it for two months like a hire, is exactly the embedding kind. That model is the least fungible product imaginable. Memory is a switching cost. If DeepSeek gets exactly what it wants, intelligence stops being a commodity, and the Costco math stops binding.
 
-The strategy is perfectly tuned for an era its own roadmap is trying to end.
+Which is funny exactly because
+
+## AI Labs are Petitioning to Stop Continual Learning
+
+The week I'm writing this, over a thousand employees across the Western frontier labs (OpenAI, Anthropic, DeepMind, Meta, with Anthropic's CEO and several co-founders among the signatories) published a joint statement called "Pacing the Frontier," and both OpenAI's and Anthropic's official accounts endorsed it. The ask, in the statement's own words: that the US government support an international effort to build "the technical and governance tools needed to deliberately pace the frontier of automated AI development." Strip the policy language and the thing they want a brake pedal for is models improving models, the recursive loop that sits one stair above continual learning on Liang's own staircase. This came weeks after Anthropic published research on recursive self-improvement and OpenAI started openly measuring how much of its research loop its models now run. The people closest to the frontier looked at the next stair and asked the government to help build a railing first. [Theo has the best breakdown of the whole saga](https://youtu.be/yz0SZIng2Po) (not affiliated, as always).
+
+And here's the detail that connects it back to this post: Chinese labs were excluded from signing. The letter is addressed to the US government, and its organizers said plainly that they decided against accepting signatories from Chinese companies at this time. So the industry's brake pedal, if it ever gets built, is being designed without the lab whose entire published roadmap is the thing being braked. DeepSeek couldn't have signed the petition against its own next stair even if it wanted to, and everything in the transcript says it wouldn't have wanted to.
+
+The strategy is perfectly tuned for an era its own roadmap is trying to end, and half the industry just petitioned to stop that ending from arriving.
 
 ## Watermelons and Sesame Seeds
 
