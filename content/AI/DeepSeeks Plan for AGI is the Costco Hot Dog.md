@@ -13,11 +13,11 @@ tags:
 created: 2026-08-01
 modified:
 ---
-![hero-image](https://cdn.kuber.studio/assets/media/deepseek-meeting/hero.png)
-
 Liang Wenfeng might be the most consequential person in AI who has essentially never spoken in public.
 
 He founded DeepSeek - the lab that came out of nowhere in January 2025 with R1, matched OpenAI's O1 at a fraction of the cost, and cost NVIDIA half a trillion dollars of market cap in a day.
+
+![hero-image](https://cdn.kuber.studio/assets/media/deepseek-meeting/hero.png)
 
 In the years since, he has given exactly two long-form interviews, both in text to the same Chinese publication, and perhaps most interestingly - his lab was bankrolled entirely by High-Flyer, his own quant hedge fund, and took no outside money until this year.
 
@@ -40,7 +40,6 @@ The cap looks like generosity and works like a weapon - every competitor who nee
 DeepSeek has its own version of that internal law, and it might be the single most important number in this whole leak: buy a batch of GPUs, then price the API so the hardware pays for itself in **ten months**. That is the entire pricing policy. Over a server's three-to-five-year life it works out to roughly a sixfold margin on compute, he considers that "a reasonable profit", and everything else in this post hangs off that one self-imposed cap.
 
 <div class="gpu-payback" aria-label="Timeline of one GPU server over five years: months one to ten pay back the hardware, months eleven to sixty are margin">
-  <div class="gpu-title">one server · five years · one rule</div>
   <div class="gpu-bar">
     <div class="gpu-seg gpu-pay"><span>payback<br/><em>months 1 to 10</em></span></div>
     <div class="gpu-seg gpu-margin"><span>pure margin · the other ~5x · price stays put anyway</span></div>
@@ -53,7 +52,6 @@ DeepSeek has its own version of that internal law, and it might be the single mo
 
 <style>
 .gpu-payback{margin:1.9rem 0;font-family:var(--codeFont),monospace}
-.gpu-title{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);margin-bottom:.5rem}
 .gpu-bar{display:flex;height:3.1rem;border:1px solid var(--lightgray);border-radius:.45rem;overflow:hidden}
 .gpu-seg{display:flex;align-items:center;justify-content:center;font-size:.67rem;line-height:1.25;text-align:center;padding:0 .45rem}
 .gpu-pay{width:16.67%;min-width:70px;background:var(--secondary);color:var(--light);font-weight:700;letter-spacing:.04em;flex-direction:column;gap:.1rem}
@@ -144,6 +142,29 @@ The single best analogy in the meeting is Liang's own, explaining why they didn'
 
 > "The reason we don't fight for that is that **there are watermelons behind, and what's in front may all be sesame seeds.** Of course this sesame seed may be a fairly large one, but I don't think it counts as big."
 
+<div class="wm-viz" aria-label="Tiny sesame seeds labeled the chatbot war next to a huge watermelon labeled AGI">
+  <div class="wm-side">
+    <div class="wm-seeds"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="wm-label">sesame seeds · the chatbot war</div>
+  </div>
+  <div class="wm-side">
+    <div class="wm-melon"></div>
+    <div class="wm-label">watermelons · AGI</div>
+  </div>
+</div>
+
+<style>
+.wm-viz{display:flex;align-items:flex-end;justify-content:center;gap:4rem;margin:1.9rem 0;font-family:var(--codeFont),monospace}
+.wm-side{display:flex;flex-direction:column;align-items:center;gap:.65rem}
+.wm-seeds{display:flex;flex-wrap:wrap;justify-content:center;align-content:flex-end;gap:.3rem;width:3.2rem;min-height:1rem}
+.wm-seeds i{width:.42rem;height:.26rem;border-radius:50%;background:color-mix(in srgb,var(--secondary) 55%,var(--gray))}
+.wm-seeds i:nth-child(2n){transform:rotate(28deg)}
+.wm-seeds i:nth-child(3n){transform:rotate(-20deg)}
+.wm-melon{width:7.2rem;height:7.2rem;border-radius:50%;border:2px solid var(--secondary);background:repeating-linear-gradient(105deg,color-mix(in srgb,var(--secondary) 80%,var(--dark)) 0 13px,color-mix(in srgb,var(--secondary) 32%,var(--light)) 13px 24px);box-shadow:0 0 22px color-mix(in srgb,var(--secondary) 22%,transparent)}
+.wm-label{font-size:.62rem;color:var(--gray);white-space:nowrap}
+@media (max-width:480px){.wm-viz{gap:2rem}.wm-melon{width:5.5rem;height:5.5rem}}
+</style>
+
 DeepSeek accidentally became the fastest-growing consumer app on the planet, and every growth playbook says: monetize, retain, you will never get this chance again. Instead they kept the users at deliberately minimal cost, ran no retention push, built no super app.
 
 Going viral "was not in our script," and at one point they didn't even want to maintain the users anymore, but **"the users couldn't be driven away."**
@@ -183,10 +204,9 @@ Liang lays out the path to AGI as a staircase where each step stands on the prev
     <span class="stair-note">the endpoint</span>
   </div>
 </div>
-<div class="agi-stairs-cap">filled steps are climbed · dashed steps are ahead · not a single step wasted</div>
 
 <style>
-.agi-stairs{display:flex;align-items:flex-end;gap:.3rem;margin:1.9rem 0 .35rem;overflow-x:auto;border-bottom:2px solid var(--lightgray);scrollbar-width:thin}
+.agi-stairs{display:flex;align-items:flex-end;gap:.3rem;margin:1.9rem 0 1.7rem;overflow-x:auto;border-bottom:2px solid var(--lightgray);scrollbar-width:thin}
 .agi-stairs .stair{flex:1 1 0;min-width:98px;height:calc(2.7rem + var(--i)*2.05rem);box-sizing:border-box;padding:.55rem .6rem;border:1px solid var(--lightgray);border-bottom:none;border-radius:.45rem .45rem 0 0;display:flex;flex-direction:column;font-family:var(--codeFont),monospace;transition:transform .18s ease,box-shadow .18s ease}
 .agi-stairs .stair:hover{transform:translateY(-3px)}
 .agi-stairs .stair-name{font-size:.76rem;font-weight:700;color:var(--dark);line-height:1.25}
@@ -196,7 +216,6 @@ Liang lays out the path to AGI as a staircase where each step stands on the prev
 .agi-stairs .todo{border-style:dashed;background:transparent;opacity:.72}
 .agi-stairs .stair-tag{align-self:flex-start;font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;background:var(--secondary);color:var(--light);padding:.12rem .38rem;border-radius:.25rem;margin-bottom:.32rem;white-space:nowrap}
 .agi-stairs .now .stair-name::after{content:"▮";margin-left:.25rem;color:var(--secondary);animation:agiblink 1.1s steps(1) infinite}
-.agi-stairs-cap{font-family:var(--codeFont),monospace;font-size:.62rem;color:var(--gray);margin-bottom:1.6rem}
 @keyframes agiblink{50%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.agi-stairs .now .stair-name::after{animation:none}.agi-stairs .stair{transition:none}}
 </style>
@@ -262,7 +281,7 @@ Even at a multiple of the price he'd take it, because export controls mean the r
 
 ---
 
-## How Does DeepSeek's Culture Run
+## How Does DeepSeek's Culture Work
 
 Everything about how DeepSeek runs internally is recognizable, just from somewhere other than tech: it's a research lab, specifically the kind universities pretend theirs are. No KPIs and no performance reviews, a vision that has never been written down anywhere, half of every researcher's time unassigned to explore whatever they want, authority that runs on consensus, and no overtime, because research needs slack and extreme focus means there is very little to do.
 
@@ -270,7 +289,10 @@ One thing, and only one thing, is sacred:
 
 > "Our biggest core interest is maintaining the stability of the team; you could even say it is the only core interest. **As long as I can keep the team stable, I will surely achieve AGI. It is that simple.**"
 
-Money is "certainly not the problem." Compute costs at worst a six-month delay. The only unrecoverable loss is people, and reportedly it's even contractual: **the funding round is said to have come with 2 conditions - no poaching the researchers and no funding spinoffs**.
+Money is "certainly not the problem." Compute costs at worst a six-month delay. The only unrecoverable loss is people, and reportedly it's even contractual: **the funding round is said to have come with 2 conditions**
+
+- no poaching the researchers
+- no funding spinoffs
 
 and if you're curious about what half of the job entails-
 
