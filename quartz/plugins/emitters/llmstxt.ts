@@ -135,6 +135,7 @@ export const LlmsTxt: QuartzEmitterPlugin<Partial<Options>> = (userOpts) => {
       lines.push(`Blog home: ${base}/`)
       lines.push(`RSS: ${base}/index.xml`)
       lines.push(`Sitemap: ${base}/sitemap.xml`)
+      lines.push(`MCP server: https://minddump-mcp.kuberhob.workers.dev/mcp (streamable HTTP; tools: list_posts, search_posts, get_post, get_blog_info)`)
       lines.push(`Posts: ${posts.length}`)
       if (newest) lines.push(`Last-Updated: ${isoDay(newest)}`)
       lines.push("")
