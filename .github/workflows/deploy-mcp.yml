@@ -3,7 +3,7 @@ name: Deploy MCP server
 on:
   push:
     branches: [v4]
-    paths: ["mcp/**"]
+    paths: ["mcp/**", ".github/workflows/deploy-mcp.yml"]
   workflow_dispatch:
 
 jobs:
@@ -11,6 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: mcp/package-lock.json
+      # Install the pinned wrangler from the lockfile so the action uses it
+      # instead of resolving its own copy against our devDependencies.
+      - run: npm ci
+        working-directory: mcp
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
