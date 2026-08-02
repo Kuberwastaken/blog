@@ -1,0 +1,16 @@
+{
+  "name": "minddump-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stateless MCP server for the MindDump blog, running on the Cloudflare Workers free plan",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5",
+    "typescript": "^5.6.0",
+    "wrangler": "^4.0.0"
+  }
+}

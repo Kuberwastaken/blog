@@ -1,0 +1,11 @@
+# Free-plan-only configuration, deliberately:
+#   - no KV / Durable Objects / R2 / Queues / AI bindings (all the products that
+#     have paid dimensions) — this Worker is a stateless proxy over the blog's
+#     static files plus the free edge cache
+#   - served from the free *.workers.dev subdomain, no routes or custom domains
+# On the free plan, exceeding the 100k requests/day limit makes requests fail;
+# nothing can bill because there is nothing billable configured.
+name = "minddump-mcp"
+main = "src/index.ts"
+compatibility_date = "2026-08-01"
+workers_dev = true
