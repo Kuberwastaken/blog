@@ -145,6 +145,9 @@ export const LlmsTxt: QuartzEmitterPlugin<Partial<Options>> = (userOpts) => {
       lines.push(
         "Every post also has a raw markdown mirror: append `.md` to its URL (also linked per entry below). Fetch that for the cleanest, lowest-token version — the full source, frontmatter included, with none of the page chrome.",
       )
+      lines.push(
+        "This blog also runs its own MCP server (streamable HTTP, no auth) at https://minddump-mcp.kuberhob.workers.dev/mcp with tools list_posts, search_posts, get_post, and get_blog_info — if your client speaks MCP, connecting to it beats scraping.",
+      )
       lines.push("")
 
       for (const section of [...sections.keys()].sort((a, b) => a.localeCompare(b))) {

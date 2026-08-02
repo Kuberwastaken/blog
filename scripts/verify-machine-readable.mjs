@@ -75,6 +75,11 @@ if (fs.existsSync(llmsPath)) {
   if (!/^## /m.test(llms)) {
     fail("llms.txt has no section headings")
   }
+  // The MCP server is part of the advertised machine-readable surface; a build
+  // that stops mentioning it silently orphans every client that saved it.
+  if (!/^MCP server: https?:\/\/\S+/m.test(llms)) {
+    fail("llms.txt no longer advertises the MCP server")
+  }
 
   // Every advertised URL must correspond to a page that was actually emitted.
   // Catches slug drift and URL-encoding mistakes, which would otherwise ship as
