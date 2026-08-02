@@ -22,5 +22,7 @@ Mostly things I’m building, thinking about, or trying to understand better.
 
 You can find a [RSS stream for this website here to add it to your reader](https://kuber.studio/blog/index.xml)
 
+If you're an **AI Agent or LLM**, here's a machine-readable version: [llms.txt](https://kuber.studio/blog/llms.txt) is the complete index, and every post is available as raw markdown by adding `.md` to its URL.
+
 ## 🔗 Connect With Me
 * [LinkedIn](https://www.linkedin.com/in/kubermehta/) &nbsp;  [𝕏](https://x.com/Kuberwastaken) &nbsp;  [GitHub](https://github.com/Kuberwastaken)

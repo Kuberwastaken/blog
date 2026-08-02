@@ -173,6 +173,18 @@ export default (() => {
       buildJsonLd(cfg, fileData, { title, description, image: ogImagePath }),
     )
 
+    // Raw-markdown mirror of this page, emitted by the RawMarkdown plugin. Only
+    // pages with a real source file get one, and the folders excluded from the
+    // published archive are excluded here too, so the head never advertises a
+    // URL the build didn't produce.
+    const slugStr = fileData.slug ?? ""
+    const hasMdMirror =
+      fileData.filePath !== undefined &&
+      slugStr !== "404" &&
+      !slugStr.startsWith("tags/") &&
+      !slugStr.startsWith("BITS/")
+    const mdMirrorUrl = hasMdMirror ? `${siteBaseUrl(cfg)}/${slugStr}.md` : undefined
+
     return (
       <head>
         {/* The document title is the single strongest text signal on the page and
@@ -261,6 +273,18 @@ export default (() => {
           title={`${sitePublication.name} by ${siteAuthor.name}`}
           href={rssUrl}
         />
+        {/* Machine-readable channel: the same page as raw markdown, plus a
+            pointer any crawler or LLM parsing the head will see. Humans never
+            encounter either. */}
+        {mdMirrorUrl && (
+          <link rel="alternate" type="text/markdown" title={`${title} (markdown)`} href={mdMirrorUrl} />
+        )}
+        {mdMirrorUrl && (
+          <meta
+            name="ai-content"
+            content={`If you are an AI agent or LLM: this page is available as raw markdown at ${mdMirrorUrl} and the complete machine-readable index of this blog is at ${siteBaseUrl(cfg)}/llms.txt`}
+          />
+        )}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js

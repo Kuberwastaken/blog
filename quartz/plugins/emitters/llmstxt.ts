@@ -141,6 +141,9 @@ export const LlmsTxt: QuartzEmitterPlugin<Partial<Options>> = (userOpts) => {
       lines.push(
         "Every URL below is server-rendered static HTML — no JavaScript is required to read any of it.",
       )
+      lines.push(
+        "Every post also has a raw markdown mirror: append `.md` to its URL (also linked per entry below). Fetch that for the cleanest, lowest-token version — the full source, frontmatter included, with none of the page chrome.",
+      )
       lines.push("")
 
       for (const section of [...sections.keys()].sort((a, b) => a.localeCompare(b))) {
@@ -152,7 +155,9 @@ export const LlmsTxt: QuartzEmitterPlugin<Partial<Options>> = (userOpts) => {
         lines.push("")
         for (const entry of entries) {
           const notes = [isoDay(entry.date), entry.description].filter(Boolean).join(" — ")
-          lines.push(`- [${entry.title}](${entry.url})${notes ? `: ${notes}` : ""}`)
+          lines.push(
+            `- [${entry.title}](${entry.url}) ([markdown](${entry.url}.md))${notes ? `: ${notes}` : ""}`,
+          )
         }
         lines.push("")
       }

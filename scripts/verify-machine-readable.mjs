@@ -82,6 +82,7 @@ if (fs.existsSync(llmsPath)) {
   const base = llmsEntries.length ? new URL(llmsEntries[0].url) : null
   const basePath = base ? base.pathname.replace(/\/[^/]*$/, "") : ""
   let broken = 0
+  let brokenMd = 0
   for (const entry of llmsEntries) {
     const rel = decodeURI(new URL(entry.url).pathname)
       .replace(new RegExp(`^${basePath.split("/").slice(0, 2).join("/")}/?`), "")
@@ -94,8 +95,15 @@ if (fs.existsSync(llmsPath)) {
       broken++
       if (broken <= 3) fail(`llms.txt links a page that was not emitted: ${entry.url}`)
     }
+    // Every indexed post also advertises a raw-markdown mirror (llms.txt entry
+    // and page head both link it), so its absence is a broken promise too.
+    if (!fs.existsSync(path.join(outputDir, `${rel}.md`))) {
+      brokenMd++
+      if (brokenMd <= 3) fail(`llms.txt entry has no markdown mirror: ${entry.url}.md`)
+    }
   }
   if (broken > 3) fail(`...and ${broken - 3} further llms.txt links with no emitted page`)
+  if (brokenMd > 3) fail(`...and ${brokenMd - 3} further posts with no markdown mirror`)
 }
 
 // ------------------------------------------------------------------ robots.txt
