@@ -196,6 +196,10 @@ async function callTool(name: string, args: Record<string, unknown>): Promise<st
 
       const results: { score: number; slug: string; title: string; snippet: string }[] = []
       for (const [slug, doc] of Object.entries(corpus)) {
+        // The search corpus is the site's own index, so it also contains the
+        // homepage (slug "index") and folders hidden from the published
+        // archive. Only surface what llms.txt publishes: real posts.
+        if (!bySlug.has(slug)) continue
         const content = doc.content.toLowerCase()
         const title = doc.title.toLowerCase()
         let score = 0
