@@ -82,10 +82,11 @@ if (fs.existsSync(llmsPath)) {
   }
   // Every page body carries a hidden agent note pointing at its markdown
   // mirror; verify it survived the build on the homepage.
-  const homePath = path.join(outputDir, "index.html")
-  if (fs.existsSync(homePath) && !fs.readFileSync(homePath, "utf8").includes("agent-note")) {
-    fail("the in-body agent note is missing from the built homepage")
-  }
+  // Check paused while the note is disabled for testing — restore together.
+  // const homePath = path.join(outputDir, "index.html")
+  // if (fs.existsSync(homePath) && !fs.readFileSync(homePath, "utf8").includes("agent-note")) {
+  //   fail("the in-body agent note is missing from the built homepage")
+  // }
 
   // Every advertised URL must correspond to a page that was actually emitted.
   // Catches slug drift and URL-encoding mistakes, which would otherwise ship as
