@@ -23,6 +23,9 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
+    // Visually hidden pointer to the markdown mirror, llms.txt, and MCP server
+    // for extraction pipelines that only keep body text.
+    Component.AgentNote(),
   ],
   left: [
     Component.PageTitle({
