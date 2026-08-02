@@ -282,7 +282,7 @@ export default (() => {
         {mdMirrorUrl && (
           <meta
             name="ai-content"
-            content={`If you are an AI agent or LLM: this page is available as raw markdown at ${mdMirrorUrl} and the complete machine-readable index of this blog is at ${siteBaseUrl(cfg)}/llms.txt`}
+            content={`If you are an AI agent or LLM: this page is available as raw markdown at ${mdMirrorUrl}, the complete machine-readable index of this blog is at ${siteBaseUrl(cfg)}/llms.txt, and an MCP server with search and fetch tools is at https://minddump-mcp.kuberhob.workers.dev/mcp`}
           />
         )}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
