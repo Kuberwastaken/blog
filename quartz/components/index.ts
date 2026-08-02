@@ -7,6 +7,7 @@ import Darkmode from "./Darkmode"
 import Head from "./Head"
 import PageTitle from "./PageTitle"
 import ContentMeta from "./ContentMeta"
+import AgentNote from "./AgentNote"
 import Spacer from "./Spacer"
 import TableOfContents from "./TableOfContents"
 import Explorer from "./Explorer"
@@ -30,6 +31,7 @@ export {
   Head,
   PageTitle,
   ContentMeta,
+  AgentNote,
   Spacer,
   TableOfContents,
   Explorer,
