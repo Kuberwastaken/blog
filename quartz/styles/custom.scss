@@ -93,11 +93,12 @@
   }
 }
 
-// Ensure the right sidebar container can grow
+// Let both sidebars size to their content instead of the stock 100vh. The
+// fixed height made every grid row at least a viewport tall, which pushed the
+// footer far below the content on short pages. Sticky positioning is kept.
 #quartz-body {
-  .sidebar.right {
+  .sidebar {
     height: auto !important;
-    min-height: 100vh;
   }
 }
 

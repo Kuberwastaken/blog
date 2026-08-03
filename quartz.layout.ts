@@ -33,7 +33,6 @@ export const defaultContentPageLayout: PageLayout = {
       // Kept as the configured pageTitle so the sidebar renders exactly as before;
       // PageTitle used to ignore this option entirely.
       text: "ᨒ MindDump",
-      subtext: "by Kuber Mehta",
     }),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
@@ -95,7 +94,6 @@ export const defaultListPageLayout: PageLayout = {
   left: [
     Component.PageTitle({
       text: "ᨒ MindDump",
-      subtext: "by Kuber Mehta",
     }),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
