@@ -1,7 +1,14 @@
 footer {
   text-align: left;
-  margin-bottom: 4rem;
+  margin-bottom: 1.5rem;
   opacity: 0.7;
+
+  & p {
+    // Default paragraph margins floated the copyright a full rem below the
+    // divider and pushed the link row away; keep the block compact.
+    margin: 0 0 0.4rem;
+    padding: 0;
+  }
 
   & ul {
     list-style: none;
@@ -10,6 +17,5 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    margin-top: -1rem;
   }
 }
