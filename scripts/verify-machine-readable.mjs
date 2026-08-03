@@ -80,6 +80,13 @@ if (fs.existsSync(llmsPath)) {
   if (!/^MCP server: https?:\/\/\S+/m.test(llms)) {
     fail("llms.txt no longer advertises the MCP server")
   }
+  // Hidden folders must stay out of every discovery surface, not just llms.txt.
+  for (const surface of ["sitemap.xml", "index.xml", "static/contentIndex.json"]) {
+    const p = path.join(outputDir, surface)
+    if (fs.existsSync(p) && fs.readFileSync(p, "utf8").includes("BITS")) {
+      fail(`${surface} leaks the hidden BITS folder`)
+    }
+  }
   // Every page body carries a hidden agent note pointing at its markdown
   // mirror; verify it survived the build on the homepage.
   // Check paused while the note is disabled for testing — restore together.
