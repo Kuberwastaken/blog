@@ -26,6 +26,12 @@ interface Options {
   rssLimit?: number
   rssFullHtml: boolean
   includeEmptyFiles: boolean
+  /**
+   * Top-level folders left out of the sitemap, RSS feed, and search index.
+   * Mirrors the LlmsTxt/RawMarkdown default so every discovery surface hides
+   * the same folders; the pages themselves still build and resolve by URL.
+   */
+  excludeFolders: string[]
 }
 
 const defaultOptions: Options = {
@@ -34,6 +40,7 @@ const defaultOptions: Options = {
   rssLimit: 10,
   rssFullHtml: false,
   includeEmptyFiles: true,
+  excludeFolders: ["BITS"],
 }
 
 function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
@@ -157,8 +164,10 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
 
       for (const [tree, file] of content) {
         const slug = file.data.slug!
+        const topFolder = slug.includes("/") ? slug.split("/")[0] : ""
+        if (opts?.excludeFolders?.includes(topFolder)) continue
         const date = getDate(ctx.cfg.configuration, file.data) ?? new Date()
-        
+
         if (opts?.includeEmptyFiles || (file.data.text && file.data.text !== "")) {
           linkIndex.set(slug, {
             title: file.data.frontmatter?.title!,
