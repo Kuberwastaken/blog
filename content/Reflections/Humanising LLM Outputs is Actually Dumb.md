@@ -18,8 +18,6 @@ One of these tells I've been seeing a lot lately is skills like [I have ADHD](ht
 
 I understand the appeal, none of us really like the verboseness and specific quirks of LLM outputs, but I really think fixing that by humanising the model is the wrong abstraction.
 
-![intro](https://i.ytimg.com/vi/ExaNNAIysks/maxresdefault.jpg)
-
 The problem is that these instructions are not applied after the model has finished doing the work, it becomes part of the same work - If you tell an agent to use short sentences, avoid jargon, never overwhelm you and only include the most important details, you are asking it to continuously compress its output into a lower-bandwidth format.
 
 That compression is lossy.
@@ -58,6 +56,8 @@ But I'd rather find my agent is hallucinating or near its token window than be h
 Every other system we build works the opposite way - Databases don't store data in the format a dashboard displays it, compilers don't make their IR pleasant to read, APIs don't exchange friendly summaries.
 
 We keep the highest-fidelity representation as long as possible and transform it at the boundary where a human consumes it, but LLM tooling is increasingly doing this backwards.
+
+![We're evolving, just backwards](https://i.ytimg.com/vi/ExaNNAIysks/maxresdefault.jpg)
 
 To be clear, none of this is an argument against accessibility or personalisation.
 
