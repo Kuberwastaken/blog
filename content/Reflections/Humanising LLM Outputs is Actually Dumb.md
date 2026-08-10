@@ -12,7 +12,7 @@ tags:
 created: 2026-08-10
 modified:
 ---
-The largest tell for where culture and sentiment is shifting for AI tools is usually X, viral GitHub repositories and Hacker News.
+The largest tell for me to tell where culture and sentiment is shifting for AI tools is usually X, viral GitHub repositories and Hacker News.
 
 One of these tells I've been seeing a lot lately is skills like [I have ADHD](https://github.com/ayghri/i-have-adhd) and Agents.md instructions such as [giving outputs in only ASD-STE100 Simplified Technical English](https://x.com/levelsio/status/2086046112142545061).
 
