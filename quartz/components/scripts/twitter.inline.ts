@@ -51,14 +51,18 @@ function loadTwitterWidgets() {
 function rethemeTweets() {
   if (!twitterScriptLoaded || !window.twttr || !window.twttr.widgets) return
 
+  // widgets.js replaces the blockquote with a <div class="twitter-tweet
+  // twitter-tweet-rendered"> wrapper holding the iframe, so match both shapes
   const rendered = document.querySelectorAll<HTMLElement>(
-    ".twitter-tweet[data-twitter-rendered], iframe.twitter-tweet",
+    ".twitter-tweet[data-twitter-rendered], .twitter-tweet-rendered",
   )
   rendered.forEach((el) => {
-    // widgets.js replaces the blockquote with an iframe; recover the tweet URL either way
-    let url = el.querySelector?.("a[href]")?.getAttribute("href") ?? ""
-    if (!url && el.tagName === "IFRAME") {
-      const id = (el.getAttribute("src") ?? "").match(/[?&]id=(\d+)/)?.[1]
+    // recover the tweet URL: anchor href on an unrendered blockquote, or the
+    // tweet id in the embed iframe's src on a rendered widget
+    let url = el.querySelector("a[href]")?.getAttribute("href") ?? ""
+    if (!url) {
+      const iframe = el.tagName === "IFRAME" ? el : el.querySelector("iframe")
+      const id = (iframe?.getAttribute("src") ?? "").match(/[?&]id=(\d+)/)?.[1]
       if (id) url = `https://twitter.com/i/web/status/${id}`
     }
     if (!url) return
