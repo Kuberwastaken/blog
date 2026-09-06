@@ -43,9 +43,7 @@ Tests where the tested party doesn't know what's being tested: you can't teach t
 
 But if holdout evals are the answer, though, why does the pelican still win?
 
-The easy answer is partly because holdouts don't stay holdouts, every scored run touches an API and every disputed answer gives a question away - give a private set a few model releases and it's a public set with extra steps.
-
-But the real answer is because most of social media doesn't need to understand a research paper to notice that the bicycle finally has pedals or is animated.
+The answer is because most of social media doesn't need to understand a research paper to notice that the bicycle finally has pedals or is animated.
 A demo benchmark makes it obvious why it's a better capability in seconds.
 
 So no, there is no alternative to a good demo. But there are better alternatives to demo-benchmarks for seeing how good a model actually is. And if a model scores well but keeps failing at your work, that is actually a gap that deserves investigation.
