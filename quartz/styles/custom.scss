@@ -102,3 +102,23 @@
   }
 }
 
+
+// Tweet embeds: keep them centered and compact so a quote-tweet with media
+// doesn't tower over the article column. The widget iframe scales with width,
+// so a narrower cap keeps the height in check too.
+.twitter-tweet {
+  max-width: 450px !important;
+}
+
+// Pre-render fallback: before widgets.js replaces the blockquote, show it as
+// a small themed card instead of a bare link so there is no layout flash.
+blockquote.twitter-tweet {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  background: var(--light);
+
+  p {
+    margin: 0;
+  }
+}

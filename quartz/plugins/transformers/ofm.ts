@@ -418,7 +418,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
               if (parent && index != undefined && twitterLinkRegex.test(node.url)) {
                 const newNode: Html = {
                   type: "html",
-                  value: `<blockquote class="twitter-tweet" data-theme="dark"><a href="${node.url}">${node.alt || "View Tweet"}</a></blockquote>`,
+                  value: `<blockquote class="twitter-tweet"><a href="${node.url}">${node.alt || "View Tweet"}</a></blockquote>`,
                 }
 
                 parent.children.splice(index, 1, newNode)

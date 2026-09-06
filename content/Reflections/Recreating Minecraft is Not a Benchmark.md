@@ -24,11 +24,15 @@ A fixed, famous target and eight weeks of runway is a solved pelican. These test
 
 A test you can perfect on a schedule measures preparation instead of capability, and to me that's anti the very definition of a benchmark: it should be a hard test, something very hard to perfect.
 
-![Claude Fable 5 recreating Minecraft in one prompt](https://cdn.kuber.studio/assets/media/demo-benchmarks/minecraft-fable5.png)
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/demo-benchmarks/minecraft-fable5.png" alt="Claude Fable 5 recreating Minecraft in one prompt" />
+</p>
 
 The same dynamic runs through the open evals. Smaller models that feel dumber in practice still outscore better ones on sites like Artificial Analysis. This isn't hypothetical: [Thinking Machines' Inkling Small scored within a point of its flagship sibling on the Artificial Analysis Intelligence Index](https://artificialanalysis.ai/articles/inkling-small-lands-within-a-point-of-inkling-on-the-artificial-analysis-intelligence-index-with-less-than-a-third-of-the-parameters) with less than a third of the parameters, and beat it on Humanity's Last Exam, GPQA Diamond and SciCode. Public, static, famous test sets leak into training data and fine-tuning choices.
 
-![Inkling Small, a third of the size, matching its flagship on the Artificial Analysis Intelligence Index](https://cdn.kuber.studio/assets/media/demo-benchmarks/aa-inkling-index.png)
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/demo-benchmarks/aa-inkling-index.png" alt="Inkling Small, a third of the size, matching its flagship on the Artificial Analysis Intelligence Index" />
+</p>
 
 A launch is a first impression, and first impressions are marketing. That's why you're always bound to be shocked - the shock was scheduled.
 
