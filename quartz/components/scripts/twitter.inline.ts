@@ -3,6 +3,11 @@ declare global {
     twttr: {
       widgets: {
         load: (element?: HTMLElement) => void
+        createTweet: (
+          id: string,
+          el: HTMLElement,
+          options?: { theme?: string },
+        ) => Promise<HTMLElement | undefined>
       }
       ready: (callback: () => void) => void
     }
@@ -47,38 +52,29 @@ function loadTwitterWidgets() {
   }
 }
 
-// Re-render embeds when the site theme changes so they follow it
+// Re-render embeds when the site theme changes so they follow it.
+// widgets.js replaces the blockquote with a <div class="twitter-tweet
+// twitter-tweet-rendered"> wrapper holding the iframe, and rebuilding a
+// blockquote from a reconstructed URL does not reliably re-render - the
+// supported path is createTweet with the numeric id from the iframe src.
 function rethemeTweets() {
   if (!twitterScriptLoaded || !window.twttr || !window.twttr.widgets) return
 
-  // widgets.js replaces the blockquote with a <div class="twitter-tweet
-  // twitter-tweet-rendered"> wrapper holding the iframe, so match both shapes
-  const rendered = document.querySelectorAll<HTMLElement>(
-    ".twitter-tweet[data-twitter-rendered], .twitter-tweet-rendered",
-  )
+  const rendered = document.querySelectorAll<HTMLElement>(".twitter-tweet-rendered")
   rendered.forEach((el) => {
-    // recover the tweet URL: anchor href on an unrendered blockquote, or the
-    // tweet id in the embed iframe's src on a rendered widget
-    let url = el.querySelector("a[href]")?.getAttribute("href") ?? ""
-    if (!url) {
-      const iframe = el.tagName === "IFRAME" ? el : el.querySelector("iframe")
-      const id = (iframe?.getAttribute("src") ?? "").match(/[?&]id=(\d+)/)?.[1]
-      if (id) url = `https://twitter.com/i/web/status/${id}`
-    }
-    if (!url) return
+    const iframe = el.querySelector("iframe")
+    const id = (iframe?.getAttribute("src") ?? "").match(/[?&]id=(\d+)/)?.[1]
+    if (!id) return
 
-    const fresh = document.createElement("blockquote")
-    fresh.className = "twitter-tweet"
-    fresh.setAttribute("data-twitter-rendered", "true")
-    fresh.setAttribute("data-theme", currentTheme())
-    const a = document.createElement("a")
-    a.href = url
-    a.textContent = "View Tweet"
-    fresh.appendChild(a)
-    el.replaceWith(fresh)
+    const mount = document.createElement("div")
+    mount.className = "twitter-tweet"
+    el.replaceWith(mount)
+    window.twttr.widgets
+      .createTweet(id, mount, { theme: currentTheme() })
+      .then((widget) => {
+        if (widget) mount.classList.add("twitter-tweet-rendered")
+      })
   })
-
-  window.twttr.widgets.load()
 }
 
 document.addEventListener("themechange", () => {
