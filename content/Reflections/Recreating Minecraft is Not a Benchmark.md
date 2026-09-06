@@ -36,8 +36,12 @@ The same dynamic runs through the open evals. Smaller models that feel dumber in
 
 A launch is a first impression, and first impressions are marketing. That's why you're always bound to be shocked - the shock was scheduled.
 
-So what's the alternative? Honestly, I'm not sure.
+So what's the alternative? Honestly, I'm not sure - and if you think about it, the obvious fix somewhat already exists. LiveBench rotates its questions. ARC-AGI keeps a private set. Humanity's Last Exam holds part of itself back. Tests where the tested party doesn't know what's being tested: you can't teach to a test that hasn't been written yet.
 
-What I'd race for are tests where the tested party doesn't know what's being tested: rotating tasks, holdout sets nobody has seen, fresh problems generated per run. You can't teach to a test that hasn't been written yet. Whether the best version of that stays hard, fair and legible enough for people to care - nobody knows.
+If holdout evals are the answer, though, why does the pelican still win?
+
+Partly because holdouts don't stay holdouts. Every scored run touches an API, every disputed answer gives a question away - give a private set a few model releases and it's a public set with extra steps. And partly because nobody needs to understand a research paper to notice that the bicycle finally has pedals or is animated. A demo lands in seconds; a leaderboard asks for faith. The trouble starts when we stretch a good demo into a verdict on the entire model.
+
+There is no alternative to a good demo - nothing else sells a launch. But there are better alternatives to demo-benchmarks for seeing how good a model actually is. And if a model scores well but keeps failing at your work, that gap deserves investigation.
 
 Demo-benchmarks make great content. I just wish we'd stop grading with them.
