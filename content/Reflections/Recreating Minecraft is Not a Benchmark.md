@@ -18,7 +18,7 @@ And that's the problem. These tests can't tell you how good a model is anymore, 
 
 It's not really their fault, either. Honestly, I'd say it's dumb if they didn't - nothing sells a launch like a pelican or a 3D game controller the timeline can't stop quoting.
 
-![](https://x.com/kuberwastaken/status/2096007526995341459)
+![](https://x.com/MarsForTech/status/2095965250386284866)
 
 A fixed, famous target and eight weeks of runway is a solved pelican. These tests never change, and anything that never changes can be overfit. Every launch cycle proves it again.
 
