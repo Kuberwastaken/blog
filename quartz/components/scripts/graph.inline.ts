@@ -13,7 +13,7 @@ import {
   drag,
   zoom,
 } from "d3"
-import { Text, Graphics, Application, Container, Circle, Batcher } from "pixi.js"
+import { Text, Graphics, Application, Container, Circle } from "pixi.js"
 import { Group as TweenGroup, Tween as Tweened } from "@tweenjs/tween.js"
 import { registerEscapeHandler, removeAllChildren } from "./util"
 import { FullSlug, SimpleSlug, getFullSlug, resolveRelative, simplifySlug } from "../../util/path"
@@ -65,26 +65,6 @@ function addToVisited(slug: SimpleSlug) {
 type TweenNode = {
   update: (time: number) => void
   stop: () => void
-}
-
-// Pixi's WebGPU batcher derives its texture-bind count from a WebGL probe
-// (https://github.com/pixijs/pixijs/issues/11389), which can exceed the WebGPU
-// max-sampled-textures-per-shader-stage limit (16 on many devices, notably
-// Firefox + Linux). When the batch shader then fails to build, some browsers
-// (e.g. Firefox 153) wedge the whole tab's compositor and the page stops
-// responding to text selection and link clicks. Cap the batch size to what the
-// WebGPU adapter actually supports, before any renderer is created.
-async function capTextureBatchForWebGPU(): Promise<void> {
-  try {
-    const adapter = await navigator.gpu?.requestAdapter()
-    if (!adapter) return
-    const limit = (adapter.limits.maxSampledTexturesPerShaderStage as number | undefined) ?? 16
-    const cap = Math.max(4, Math.min(32, limit))
-    const current = Batcher.defaultOptions.maxTextures
-    Batcher.defaultOptions.maxTextures = current == null ? cap : Math.min(current, cap)
-  } catch {
-    Batcher.defaultOptions.maxTextures = 16
-  }
 }
 
 async function renderGraph(container: string, fullSlug: FullSlug) {
@@ -366,36 +346,18 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   tweens.forEach((tween) => tween.stop())
   tweens.clear()
 
-  await capTextureBatchForWebGPU()
-
   const app = new Application()
-  const initOptions = (preference: "webgpu" | "webgl") => ({
+  await app.init({
     width,
     height,
     antialias: true,
     autoStart: false,
     autoDensity: true,
     backgroundAlpha: 0,
-    preference,
+    preference: "webgpu",
     resolution: window.devicePixelRatio,
-    eventMode: "static" as const,
+    eventMode: "static",
   })
-  try {
-    await app.init(initOptions("webgpu"))
-  } catch (e) {
-    // WebGPU init can still fail on limited or driver-quirky devices - retry on WebGL
-    console.warn("Graph: WebGPU init failed, retrying with WebGL", e)
-    try {
-      await app.init(initOptions("webgl"))
-    } catch (e2) {
-      // No usable GPU renderer: drop the graph so the page stays fully usable
-      console.warn("Graph: no GPU renderer available, hiding graph", e2)
-      const outer = graph.parentElement
-      if (outer) outer.style.display = "none"
-      else graph.style.display = "none"
-      return
-    }
-  }
   graph.appendChild(app.canvas)
 
   const stage = app.stage
