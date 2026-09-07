@@ -13,7 +13,7 @@ import {
   drag,
   zoom,
 } from "d3"
-import { Text, Graphics, Application, Container, Circle } from "pixi.js"
+import { Text, Graphics, Application, Container, Circle, Batcher } from "pixi.js"
 import { Group as TweenGroup, Tween as Tweened } from "@tweenjs/tween.js"
 import { registerEscapeHandler, removeAllChildren } from "./util"
 import { FullSlug, SimpleSlug, getFullSlug, resolveRelative, simplifySlug } from "../../util/path"
@@ -345,6 +345,25 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
 
   tweens.forEach((tween) => tween.stop())
   tweens.clear()
+
+  // Pixi's WebGPU batcher derives its texture-bind count from a WebGL probe
+  // (https://github.com/pixijs/pixijs/issues/11389), which can exceed the
+  // WebGPU max-sampled-textures-per-shader-stage limit (16 on Firefox/Linux).
+  // The failed batch shader then wedges the whole tab's compositor in
+  // Firefox 153 (text selection and link clicks freeze page-wide). Only
+  // Firefox exhibits the tab-wide freeze, so the cap runs there only -
+  // Chrome/Safari/mobile keep completely stock Pixi behavior.
+  if (/Firefox/.test(navigator.userAgent) && navigator.gpu) {
+    try {
+      const adapter = await navigator.gpu.requestAdapter()
+      const limit = adapter?.limits.maxSampledTexturesPerShaderStage
+      if (adapter && limit && limit < 32) {
+        Batcher.defaultOptions.maxTextures = Math.max(4, limit)
+      }
+    } catch {
+      // leave Pixi's default untouched
+    }
+  }
 
   const app = new Application()
   await app.init({
