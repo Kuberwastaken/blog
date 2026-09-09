@@ -88,6 +88,7 @@ const config: QuartzConfig = {
         rssFullHtml: false,
         includeEmptyFiles: false,
       }),
+      Plugin.WordGraphIndex(),
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.NotFoundPage(),

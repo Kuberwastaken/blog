@@ -9,4 +9,5 @@ interface CustomEventMap {
   themechange: CustomEvent<{ theme: "light" | "dark" }>
 }
 
+declare const fetchWordGraph: Promise<Record<string, string[]>>
 declare const fetchData: Promise<ContentIndex>
