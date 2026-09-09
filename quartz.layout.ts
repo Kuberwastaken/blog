@@ -32,7 +32,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.PageTitle({
       // Kept as the configured pageTitle so the sidebar renders exactly as before;
       // PageTitle used to ignore this option entirely.
-      text: "ᨒ MindDump",
+      text: "ᨒ ai-chats wordmap",
     }),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
@@ -48,18 +48,18 @@ export const defaultContentPageLayout: PageLayout = {
         Component.Graph({
       localGraph: {
         depth: 2,
-        repelForce: 2,
-        centerForce: 0.4,
-        linkDistance: 50,
+        repelForce: 3.5,
+        centerForce: 0.2,
+        linkDistance: 90,
         fontSize: 0.8,
         focusOnHover: true,
       },
       globalGraph: {
         depth: -1,
         scale: 0.9,
-        repelForce: 1.5,
-        centerForce: 0.4,
-        linkDistance: 45,
+        repelForce: 7,
+        centerForce: 0.15,
+        linkDistance: 180,
         fontSize: 0.7,
         focusOnHover: true,
       },
@@ -93,7 +93,7 @@ export const defaultListPageLayout: PageLayout = {
   ],
   left: [
     Component.PageTitle({
-      text: "ᨒ MindDump",
+      text: "ᨒ ai-chats wordmap",
     }),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),

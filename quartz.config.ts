@@ -3,7 +3,7 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "ᨒ MindDump",
+    pageTitle: "ᨒ ai-chats wordmap",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
