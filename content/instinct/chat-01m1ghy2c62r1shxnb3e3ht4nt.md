@@ -1,0 +1,837 @@
+---
+title: "google deep scan (chat-01M1GHY2C)"
+---
+
+_1 transcript files aggregated._
+
+The user just connected Google. Discover which Google surfaces are accessible (Gmail, Calendar, Drive) and deep-scan them for concrete work opportunities per this pattern:
+- Gmail: outstanding commitments the user made and didn't follow through on, high-priority unanswered threads, ghosted threads, stalled deliverables, time-sensitive items (invoices, RSVPs, deadlines), key people by volume/response time.
+- Calendar: working-hours pattern, recurring meetings and with whom, protected time, conflicts/overlaps, significant events in the next 14 days.
+- Drive: active recently-edited documents, stalled projects untouched for weeks, shared docs/collaborators. Index titles and structure only - never read document content unless the user referenced it.
+Rank by usefulness: prefer cross-domain conflicts, forgotten outbound commitments to a named person, concrete deadlines approaching, stalled important threads. Skip spam, newsletters, anything the user is actively engaged in, and anything with no clear next action. This is a read-only scan - do not send, draft, or change anything.
+Return ranked work opportunities, the evidence for each, what task the agent could offer to do, and whether there is a natural opening to ask permission. Include at most one suggested text, and only if it would fit the current conversation.
+
+The following tool help pages have been injected below, so you don't need to run `tools help` for these tools before calling them: agent_message.send, wake_schedule.create, wake_schedule.delete, wake_schedule.list, wake_schedule.update, wake_subscription.list, wake_subscription.subscribe, wake_subscription.unsubscribe, todos.get, todos.list, todos.query, web_fetch, web_search, observations.fetch, observations.sql.
+
+===== tools help agent_message.send =====
+Report a material result, blocker, or update to the parent agent.
+
+DETAILS
+The recipient sees this message and transferred attachments, not this agent's tool trace or filesystem.
+
+USAGE
+  tools agent_message send [--attachments VALUE] --message VALUE --to VALUE [--json] [--timeout SECONDS]
+
+OPTIONS
+  --attachments          string[] Workspace file paths, usually under /downloads/, to transfer into the recipient's private filesystem. Citing a path in message text does not transfer it. At most 5 image attachments are shown to the recipient inline; over that, it must read each file itself.
+  --message              string   Self-contained message body. (required)
+  --to                   string   Reachable recipient agent ID. (required)
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {status:str,recipient_agent_id:str,agent_message_id?:str,attachments?:Attachment[],run_id?:str,wake_created_event_id?:str}
+  attachments[]:Attachment{blob_hash?:str,byte_size?:int,filename?:str,mime_type?:str,path?:str}
+
+===== tools help wake_schedule.create =====
+Create a future wake schedule.
+
+DETAILS
+Pick the wake style first: a cadence wake takes --interval; a clock wake takes --at or --cron with --threshold; --threshold 0 is an exact wake. A one-shot delay under 15 minutes takes --run-in-seconds. Set exactly one of --interval, --at, --cron, or --run-in-seconds. Before creating an ongoing schedule, list active schedules and update a match instead of stacking a duplicate.
+
+USAGE
+  tools wake_schedule create [--at VALUE] [--cron VALUE] [--interval VALUE] --prompt VALUE [--run-in-seconds VALUE] [--threshold VALUE] [--timezone VALUE] [--trigger VALUE] [--json] [--timeout SECONDS]
+
+OPTIONS
+  --at                   string   Local wall-clock time as `yyyy-mm-ddThh:mm:ss`, no offset, no Z. Requires --threshold.
+  --cron                 string   Cron fields without `cron(...)`: `minutes hours day-of-month month day-of-week` plus optional `*` year; day-of-week 0-7 or SUN-SAT. Requires --threshold.
+  --interval             integer  Cadence in minutes (5-10080); the first fire lands within one interval of creation. Prefer the longest interval that meets the need.
+  --prompt               string   Instruction delivered when the wake fires; keep it separate from --trigger. (required)
+  --run-in-seconds       integer  Exact delay in seconds, maximum 900.
+  --threshold            integer  Minutes of acceptable lateness after the scheduled time (0-1440). Required with --at or --cron; 0 = exact wake.
+  --timezone             string   IANA timezone for --at or --cron; omit to use the user's timezone.
+  --trigger              string   Condition checked before waking; unmet recurring cycles are skipped. Omit for an unconditional wake.
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {id:str,prompt:str,next_fire_at:str,queued_fire_count:int,schedule_summary:str,schedule_expression?:str,threshold_minutes?:int,timezone?:str,trigger?:str}
+
+EXAMPLES
+  "let me know around 6" — clock wake, generous threshold
+    tools wake_schedule create --prompt 'Tell the user the oven window is open' --at '2026-08-27T18:00:00' --threshold 45
+  "remind me 5 minutes before my 3:00 call" — exact wake
+    tools wake_schedule create --prompt 'Ping the user: lender call at 3:00' --at '2026-08-27T14:55:00' --threshold 0
+  inbox sweep — cadence wake
+    tools wake_schedule create --prompt 'Sweep the inbox for new invoices' --interval 30
+
+===== tools help wake_schedule.delete =====
+Delete a pending wake schedule.
+
+DETAILS
+Deletes future and queued-but-undelivered fires; it cannot retract a delivered wake.
+
+USAGE
+  tools wake_schedule delete --id VALUE [--json] [--timeout SECONDS]
+
+OPTIONS
+  --id                   string   Wake-schedule ID returned by create or list. (required)
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {id:str,deleted:bool}
+
+===== tools help wake_schedule.list =====
+List active future wakes.
+
+USAGE
+  tools wake_schedule list [--json] [--timeout SECONDS]
+
+OPTIONS
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+
+OUTPUT JSON
+  {count:int,wake_schedules:WakeSchedule[]}
+  wake_schedules[]:WakeSchedule{id:str,prompt:str,next_fire_at:str,queued_fire_count:int,schedule_summary:str,schedule_expression?:str,threshold_minutes?:int,timezone?:str,trigger?:str}
+
+===== tools help wake_schedule.update =====
+Change a pending wake's prompt, trigger, timing, timezone, or threshold.
+
+DETAILS
+Only future fires change. A fired schedule requires another create. A --run-in-seconds schedule can update its prompt, but retiming it requires --interval, --at, or --cron; retiming to --at/--cron requires --threshold, and retiming to --interval hands the fire times to the platform and drops any stored threshold.
+
+USAGE
+  tools wake_schedule update [--at VALUE] [--[no-]clear-trigger] [--cron VALUE] --id VALUE [--interval VALUE] [--prompt VALUE] [--threshold VALUE] [--timezone VALUE] [--trigger VALUE] [--json] [--timeout SECONDS]
+
+OPTIONS
+  --at                   string   Replacement local wall-clock time as `yyyy-mm-ddThh:mm:ss`; omit to keep timing.
+  --clear-trigger        boolean  Remove the trigger. Cannot be combined with --trigger.
+  --no-clear-trigger     boolean  Negate --clear-trigger.
+  --cron                 string   Replacement cron fields; omit to keep timing.
+  --id                   string   Wake-schedule ID returned by create or list. (required)
+  --interval             integer  Replacement cadence in minutes (5-10080); omit to keep timing. Not valid with --at, --cron, or --threshold.
+  --prompt               string   Replacement instruction; omit to keep the current prompt.
+  --threshold            integer  Replacement threshold: minutes of acceptable lateness (0-1440). Omit to keep the current threshold; 0 = exact wake.
+  --timezone             string   Replacement IANA timezone; omit to keep the current timezone.
+  --trigger              string   Replacement condition; omit to keep it, or use --clear-trigger to remove it.
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {id:str,prompt:str,next_fire_at:str,queued_fire_count:int,schedule_summary:str,schedule_expression?:str,threshold_minutes?:int,timezone?:str,trigger?:str}
+
+===== tools help wake_subscription.list =====
+List active wake subscriptions.
+
+USAGE
+  tools wake_subscription list [--group VALUE] [--json] [--timeout SECONDS]
+
+OPTIONS
+  --group                string   Filter by source group: gmail, google-calendar, google-docs
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {count:int,wake_subscriptions:WakeSubscription[]}
+  wake_subscriptions[]:WakeSubscription{wake_subscription_id:str,source:str,prompt:str,conversation_ids:str[],sender_ids:str[],include_own_messages:bool,source_event_fires:int,check_in_frequency_minutes:int,formatted_address?:str,latitude?:num,longitude?:num,place_label?:str,radius_meters?:num,trigger?:str,wake_on_departure?:bool}
+
+===== tools help wake_subscription.subscribe =====
+Create an event-driven wake subscription.
+
+DETAILS
+Each subscription also has a safety check-in; it audits a quiet subscription and is not evidence that the event arrived. The interval resets after any wake for the subscription. Subscriptions persist until unsubscribed.
+
+USAGE
+  tools wake_subscription subscribe [--check-in-frequency-minutes VALUE] [--conversation-ids VALUE] [--formatted-address VALUE] [--[no-]include-own-messages] [--latitude VALUE] [--longitude VALUE] [--place-label VALUE] --prompt VALUE [--radius-meters VALUE] [--sender-ids VALUE] --source VALUE [--trigger VALUE] [--[no-]wake-on-departure] [--json] [--timeout SECONDS]
+
+OPTIONS
+  --check-in-frequency-minutes integer  Safety check-in interval in minutes. A new subscription defaults to 6 hours (360 minutes); re-subscribing without this value preserves the current interval. Any subscription wake resets the timer.
+  --conversation-ids     string[] Only applicable to messaging sources; none are enabled for this user.
+  --formatted-address    string   For location: optional display address.
+  --include-own-messages boolean  For imessage or whatsapp, also match the user's own outbound messages. Agent-sent messages never match. Default: false.
+  --no-include-own-messages boolean  Negate --include-own-messages.
+  --latitude             number   For location: required latitude; resolve place names with maps geocode.
+  --longitude            number   For location: required longitude.
+  --place-label          string   For location: required short name for the watched place.
+  --prompt               string   Instruction delivered with a matching event; keep it separate from trigger. (required)
+  --radius-meters        number   For location: geofence radius, 50-50000 meters; default 150. Values below 100 meters may be unreliable.
+  --sender-ids           string[] Only applicable to messaging sources; none are enabled for this user.
+  --source               string   Wake subscription source: gmail, google-calendar, google-docs (required)
+  --trigger              string   Optional condition checked on matching events; omit to wake on every match.
+  --wake-on-departure    boolean  For location: also wake on departure. Default: false.
+  --no-wake-on-departure boolean  Negate --wake-on-departure.
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {wake_subscription_id:str,source:str,conversation_ids:str[],sender_ids:str[],include_own_messages:bool,status:str,check_in_frequency_minutes:int,check_in_schedule_id:str}
+
+===== tools help wake_subscription.unsubscribe =====
+Stop an active wake subscription.
+
+USAGE
+  tools wake_subscription unsubscribe --wake-subscription-id VALUE [--json] [--timeout SECONDS]
+
+OPTIONS
+  --wake-subscription-id string   ID of the wake subscription to unsubscribe (required)
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {wake_subscription_id:str,status:str}
+
+===== tools help todos.get =====
+Get the full representation of one todo by ID across active, completed, and deleted statuses.
+
+USAGE
+  tools todos get --todo-id VALUE [--include VALUE] [--json] [--timeout SECONDS]
+
+OPTIONS
+  --todo-id              string   Todo ID to fetch. (required)
+  --include              array    Widen the compact default result. Repeatable / comma-separated. See INCLUDES. Values: description, all.
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {todo:Todo}
+  todo:Todo{id:str,title:str,status:str,blocked?:bool,blocked_by?:str[],blocks?:str[],created_at?:str,description?:str,owner?:str,owner_state?:str,stored_blocked_by?:str[],updated_at?:str}
+
+INCLUDES
+  Default: .todo.id, .todo.title, .todo.status, .todo.blocked, .todo.blocked_by, .todo.blocks, .todo.stored_blocked_by, .todo.owner, .todo.owner_state, .todo.created_at, .todo.updated_at
+  Widen with --include (repeatable, comma-ok):
+    description    full todo description (up to 12KB)
+    all            every field in OUTPUT JSON
+
+===== tools help todos.list =====
+List all pending and in-progress todos as compact records. Use get for the full description of one todo.
+
+USAGE
+  tools todos list [--json] [--timeout SECONDS]
+
+OPTIONS
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+
+OUTPUT JSON
+  {todos:Todo[]}
+  todos[]:Todo{id:str,title:str,status:str,blocked?:bool,blocked_by?:str[],blocks?:str[],created_at?:str,owner?:str,owner_state?:str,updated_at?:str}
+
+===== tools help todos.query =====
+Query todos by status and filters as compact records. Defaults to active todos; use get for the full description of one todo.
+
+USAGE
+  tools todos query [--[no-]blocked] [--blocked-by-todo-id VALUE] [--blocks-todo-id VALUE] [--cursor VALUE] [--limit VALUE] [--[no-]needs-owner] [--owner VALUE] [--status VALUE] [--text VALUE] [--json] [--timeout SECONDS]
+
+OPTIONS
+  --blocked              boolean  Active, pending, and in-progress queries only. Filter by whether a todo is currently blocked by active blockers.
+  --no-blocked           boolean  Negate --blocked.
+  --blocked-by-todo-id   string   Return todos blocked by this todo ID. Exact for active, pending, and in-progress queries; archived queries are bounded recent/status scans.
+  --blocks-todo-id       string   Return todos that block this todo ID. Exact for active, pending, and in-progress queries; archived queries read the target's stored blockers.
+  --cursor               string   Cursor from a prior query response.
+  --limit                integer  Maximum results to return (default: 50, max: 100).
+  --needs-owner          boolean  Active, pending, and in-progress queries only. When true, return todos without a valid routing target; when false, return only todos with a valid routing target.
+  --no-needs-owner       boolean  Negate --needs-owner.
+  --owner                string   Filter by routing marker: "user" or a task-agent ID like "agent-...".
+  --status               string   Status set to query: "active", "pending", "in_progress", "completed", "deleted", or "all" (default: "active"). Values: active, pending, in_progress, completed, deleted, all.
+  --text                 string   Bounded substring search over title and description.
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {todos:Todo[],cursor?:str}
+  todos[]:Todo{id:str,title:str,status:str,blocked?:bool,blocked_by?:str[],blocks?:str[],created_at?:str,owner?:str,owner_state?:str,updated_at?:str}
+
+===== tools help web_fetch =====
+Fetch webpage content as readable Markdown.
+
+USAGE
+  tools web_fetch --url VALUE [--json] [--timeout SECONDS]
+
+OPTIONS
+  --url                  string[] Page URL(s) to fetch. Repeatable / comma-separated. (required)
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  Item[]{url:str,domain?:str,error?:str,published_date?:str|null,text?:str,title?:str}
+
+===== tools help web_search =====
+Search the public web; results include URLs and query-relevant excerpts.
+
+DETAILS
+Highlights are excerpts, not full-page content.
+
+USAGE
+  tools web_search [--after VALUE] [--before VALUE] [--exclude-domain VALUE] [--include-domain VALUE] [--limit VALUE] --query VALUE [--json] [--timeout SECONDS]
+
+OPTIONS
+  --after                string   Only results published on or after this date (YYYY-MM-DD). Publication dates are estimates, sometimes only month-accurate — avoid day-tight windows.
+  --before               string   Only results published on or before this date (YYYY-MM-DD). Publication dates are estimates, sometimes only month-accurate — avoid day-tight windows.
+  --exclude-domain       string[] Never return results from these domains. Repeatable / comma-separated.
+  --include-domain       string[] Only return results from these domains (e.g. zunicafe.com). Repeatable / comma-separated.
+  --limit                integer  Number of results (default 5 for the main agent, 10 otherwise; max 25)
+  --query                string   The search query (required)
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  Item[]{rank:int,title:str,url:str,domain:str,published_date:str|null,highlights:str[],image:str|null}
+
+===== tools help observations.fetch =====
+Save one observation file into your workspace /downloads by its /observations/... address and get the saved path back. This is how to get binary observation files (attachments, images), which have no text content to select — for text, `observations sql` returns the whole document from the type table's content column. Bytes come from blob storage, so this works even when no mount copy exists.
+
+USAGE
+  tools observations fetch --path VALUE [--json] [--timeout SECONDS]
+
+OPTIONS
+  --path                 string   Full observation path, e.g. /observations/email/<date>/<time>--<sender>--<subject>/report.pdf. Binary addresses come from attachments rows with stored bytes (blob_hash IS NOT NULL): /observations/ + the parent email's external_id minus its .md suffix + /<filename>. (required)
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {file_path:str,filename:str,mime_type:str,byte_size:int}
+
+===== tools help observations.sql =====
+Run read-only SQL (SELECT/WITH) over your normalized observations database — counts, group-bys, filters, and joins across senders, attendees, meetings, and locations. One statement, read-only, capped at 10000 rows and a 3s timeout. Cells are never truncated: selecting a content column (emails.body, meetings.transcript, drive_files.content, ...) returns whole documents, so project the columns you actually need. The table is partitioned by month on ts: include a ts range whenever the question has any time scope, and filter observations first, then join side tables via observation_id. If results truncate, aggregate or narrow (count/GROUP BY/tighter window) — never paginate with OFFSET. Renders an aligned table with newlines shown as ⏎; pass the global --json when you need bodies back with their real line breaks. The schema reference and worked examples (including the full-text-search recipe) are in your context under 'Searching observations'.
+
+USAGE
+  tools observations sql --query VALUE [--json] [--timeout SECONDS]
+
+OPTIONS
+  --query                string   A single read-only SQL statement (SELECT or WITH). Every table is already scoped to you; do not add a user_id filter. (required)
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {columns:str[],rows:str[][],truncated?:bool}
+
+End of injected tool help. You can now use the tools above without being read-gated. No need to reason about whether you need to call help on these tools. Turn your attention back to the conversation above and continue with whatever it needs. The pending messages and work in progress are what this turn is about.
+
+```thinking
+The user just connected Google. I need to scan Gmail, Calendar, Drive for work opportunities. Let me start by discovering available Google tools and checking connectivity.
+
+Let me fetch help for relevant tools and check accounts in one batch.
+```
+
+Tool: bash
+
+Arguments:
+```json
+{"command": "tools --help 2>&1 | head -60; echo ===; tools help google-workspace gmail google-calendar google-drive 2>&1 | head -80"}
+```
+
+Tool: bash
+
+Tools CLI
+
+You are a task agent. Your parent (the main agent) spawned you for a focused job. When the job is done, report back to your parent and hold. Your parent owns task-agent cleanup.
+
+Your direct-execute traits:
+  - work - integrations, files, web page fetching, device tools
+  - search - research over indexed personal data and the public web
+  - channel read actions - read channel context when a channel family exposes read tools
+  - task-agent read actions - inspect your sibling task agents, the ones your parent spawned
+  - resource lifecycle actions - acquire, release, and extend the browser or device session your task needs. The browser-use skill owns the model; when the write lease you need is held by another task, tell your parent and it coordinates.
+  - orchestration - message your parent and schedule wakes for yourself
+  - todos read actions - inspect durable todos
+
+Traits you see in the action list but cannot invoke:
+  - channel write actions - user-facing sends, replies, reactions, edits, deletes, thread-title changes, and live voice steering. Only the main agent writes to user-facing channels; report proposed writes to your parent instead.
+  - task-agent lifecycle actions - lifecycle control for task agents. The main agent owns task-agent lifecycle; report sibling routing or cleanup needs to your parent.
+  - todos write actions - the main agent mutates todos after your reports.
+  - early access invites - only the main agent invites people to Instinct early access; report the request to your parent.
+
+Ground every factual claim: personal facts in indexed or exact internal context, and general public information in external sources. Report the provenance and exact observed external source URLs to your parent.
+
+Run `tools --help` for the current surface.
+
+USAGE
+  tools <command-path> [options]
+  tools help [<path>...]
+
+Execution path segments are space-separated; help targets are dotted command paths.
+Namespace help lists a family's actions; action pages are appended in full
+to the bash result (stdout prints a stub per target).
+Appending .all to a namespace fetches every descendant action page; do this only for small namespaces (each family's action count is shown in the list below).
+Pass several targets to fetch them together, e.g. tools help gmail.search gmail.get-thread.
+
+Built-ins (no help read needed): help, async wait, async list.
+
+EXECUTABLE (you can call these directly)
+  agent_message        namespace (1 action)   Send messages to other agents.
+  browser_guidance     namespace (3 actions)  Search per-config website guidance and this user's past outcomes before browser navigation, and record how a config performed after an attempt. Missing guidance is normal and means unknown, not supported or blocked.
+  cloud_browser        namespace (27 actions) Drive a cloud-hosted Chrome lease with the user's saved logins. Use for agent-driven web tasks (order food, book rides, compare prices, fetch receipts) that need real authenticated capability on real sites. A task agent acquires its own `lease_id` with `tools cloud_browser_scheduler acquire` and drives it here.
+  cloud_browser_scheduler namespace (4 actions)  Schedule the user's cloud browser: acquire, list, release, and extend leases. A task agent acquires its own lease here and drives it through `tools cloud_browser <action>`; the main agent uses status to coordinate contention on the shared write lease.
+  email                namespace (2 actions)  Read and reply through Instinct's shared email address (instinct@agent.instinct.co).
+  flights              namespace (4 actions)  Search and read live flight offers, orders, changes, seats, payments, airline credits, and flight reference data through Instinct's native realtime flights index and tracker.
+  github               namespace (12 actions) Inspect and update GitHub repositories and issues.
+  gmail                namespace (37 actions) Search, read, draft, and send Gmail messages.
+  google-calendar      namespace (45 actions) Full Google Calendar control: events, Meet links, attendees and meeting rooms, focus/OOO/working-location status, recurrence, reminders, labels and attachments; multi-calendar availability and advanced search; calendar lifecycle, subscriptions, ACL sharing and ownership transfer; colors, settings, and renewable push watches.
+  google-docs          namespace (10 actions) Create and edit Google Docs through native structural reads, runtime schema discovery, complete batchUpdate bodies, revision-safe preservation, and HTML bootstrap. See the google-docs skill.
+  google-drive         namespace (38 actions) Full Google Drive control: search, read, upload, and manage files and folders. Share files with notification control and expiration, manage comments and replies, view revision history, check storage quota, and work across personal and shared drives.
+  google-sheets        namespace (31 actions) Read and edit Google Sheets spreadsheets.
+  google-slides        namespace (16 actions) Read and edit Google Slides presentations.
+  google-tasks         namespace (16 actions) Manage Google Tasks to-dos: list, create, update, complete, delete, and move tasks; manage task lists; clear completed tasks.
+  google-workspace     namespace (2 actions)  Gmail, Calendar, Tasks, Drive, Docs, Sheets, Slides, and Contacts.
+  granola              namespace (6 actions)  Read Granola meeting notes, summaries, and transcripts.
+  image                namespace (2 actions)  Create new images or edit reference images, saving outputs into /downloads/.
+  linear               namespace (27 actions) Search and update Linear issues and workspace metadata.
+  link_payments        namespace (8 actions)  Use the user's Stripe Link wallet for purchases they approve with Link.
+  links                namespace (4 actions)  Generate canonical links for common outbound actions, or resolve the best presentation for an arbitrary URL.
+  maps                 namespace (4 actions)  Get directions, travel times, search places, and geocode addresses.
+  notion               namespace (51 actions) Search, read, create, and manage Notion pages, databases, and blocks. Query databases with filters, add comments, and manage workspace content.
+  observations         namespace (2 actions)  SQL over the user's observation database. Use observations sql for structured questions (counts, group-bys, joins, ranked full-text) and to read a known record's full content from its type table, instead of shell searches over the /observations mount.
+  outlook              namespace (96 actions) Search, read, draft, send, and manage Outlook mail through Microsoft Graph.
+===
+===== tools help google-workspace =====
+Google Workspace (2 actions)
+Gmail, Calendar, Tasks, Drive, Docs, Sheets, Slides, and Contacts.
+
+USAGE
+  tools google-workspace <child> [options]
+
+CHILDREN
+  add-account          action     Generate a one-time link for the user to add or reconnect Google Workspace, the default first-time Google connection path that grants Gmail, Calendar, Tasks, Drive, Docs, Sheets, Slides, and Contacts in one flow; use granular Google add-account actions only when explicitly reconnecting or refreshing one specific service.
+  list-accounts        action     List connected Google Workspace accounts and identify which one is the current default for tool calls.
+
+===== tools help gmail =====
+Gmail (37 actions)
+Search, read, draft, and send Gmail messages.
+
+USAGE
+  tools gmail <child> [options]
+
+CHILDREN
+  add-account          action     Generate a one-time link for the user to add or reconnect a Gmail account.
+  archive              action     Archive one or more emails by removing them from the inbox.
+  create-draft         action     Create a draft email without sending it.
+  create-filter        action     Create a Gmail filter (server-side rule).
+  create-label         action     Create a new user label.
+  delete               action     Permanently delete an email.
+  delete-draft         action     Permanently delete one or more draft emails.
+  delete-filter        action     Delete a Gmail filter by ID.
+  delete-label         action     Delete a user label permanently.
+  disconnect-account   action     Disconnect a connected Gmail account by account ID.
+  download-attachment  action     Download an email attachment into /downloads/.
+  forward              action     Forward an existing Gmail message with its original context and attachments.
+  get-draft            action     Read a specific draft email by its draft ID.
+  get-label            action     Get details for a single label including message/thread counts and visibility settings.
+  get-thread           action     Read all messages in an email thread/conversation.
+  get-vacation         action     Get the user's vacation/out-of-office auto-reply settings.
+  list-accounts        action     List connected Gmail accounts and identify which one is the current default for tool calls.
+  list-drafts          action     List the user's draft emails.
+  list-filters         action     List all Gmail filters (server-side rules that automatically label, archive, delete, or forward incoming mail).
+  list-labels          action     List all labels in the user's Gmail account, including system labels (INBOX, SENT, TRASH, etc.) and custom user-created labels.
+  list-recent          action     List the user's recent emails, most recent first.
+  list-send-as         action     List the user's configured send-as identities, including primary and any aliases.
+  modify-labels        action     Add or remove labels on one or more emails.
+  read                 action     Read a specific email by its ID.
+  search               action     Search the user's emails using Gmail search syntax.
+  send                 action     Send an email on behalf of the user.
+  send-draft           action     Send one or more existing draft emails.
+  thread-archive       action     Archive an entire email thread (remove INBOX from every message in it).
+  thread-delete        action     Permanently delete an entire email thread.
+  thread-modify-labels action     Add or remove labels on every message in an email thread.
+  thread-trash         action     Move an entire email thread to trash.
+  thread-untrash       action     Restore a trashed email thread.
+  trash                action     Move one or more emails to the trash.
+  untrash              action     Restore one or more trashed email messages back to the inbox.
+  update-draft         action     Replace the content of an existing draft email.
+  update-label         action     Rename a label or change its visibility.
+  update-vacation      action     Update the user's vacation/out-of-office auto-reply settings.
+
+===== tools help google-calendar =====
+Google Calendar (45 actions)
+Full Google Calendar control: events, Meet links, attendees and meeting rooms, focus/OOO/working-location status, recurrence, reminders, labels and attachments; multi-calendar availability and advanced search; calendar lifecycle, subscriptions, ACL sharing and ownership transfer; colors, settings, and renewable push watches.
+
+USAGE
+  tools google-calendar <child> [options]
+
+CHILDREN
+  add-account          action     Generate a one-time link for the user to add or reconnect a Google Calendar account.
+  add-attendees        action     Add one or more attendees to an existing event without affecting the current attendee list.
+  add-rooms            action     Book meeting rooms on an existing event without disturbing attendees or existing room metadata.
+  clear-calendar       action     Delete every event from a primary calendar while preserving the calendar itself.
+  create-acl           action     Share a calendar by creating an ACL rule.
+  create-calendar      action     Create a new secondary calendar.
+  create-event         action     Create a new calendar event or meeting with a Google Meet link by default.
+  create-status-event  action     Create a Calendar status event: focusTime, outOfOffice, workingLocation, or birthday.
+  create-watch         action     Ensure a renewable Google push-notification channel exists for events, the user's calendar list, a calendar ACL, or Calendar settings.
+  day-view             action     Get all calendar events for a specific day.
+  delete-acl           action     Remove a calendar ACL rule.
+  delete-calendar      action     Delete an owned secondary calendar and all its events.
+  delete-event         action     Delete a calendar event.
+  delete-watch         action     Stop and delete a Calendar push channel.
+  disconnect-account   action     Disconnect a connected Google Calendar account by account ID.
+
+
+[exit code: 0]
+
+```thinking
+Let me check connected accounts and fetch help for the specific actions I'll need: gmail.list-accounts, gmail.search, gmail.list-recent, gmail.get-thread, google-calendar list-accounts, list-events/day-view, google-drive search/list-accounts.
+```
+
+Tool: bash
+
+Arguments:
+```json
+{"command": "tools help google-workspace.list-accounts gmail.list-accounts gmail.search gmail.list-recent gmail.get-thread google-calendar.list-accounts google-drive.list-accounts google-drive.search 2>&1 | tail -5"}
+```
+
+Tool: bash
+
+help gmail.list-recent: attached below
+help gmail.get-thread: attached below
+help google-calendar.list-accounts: attached below
+help google-drive.list-accounts: attached below
+help google-drive.search: attached below
+
+
+[exit code: 0]
+
+[attached: tools help]
+===== tools help google-workspace.list-accounts =====
+List connected Google Workspace accounts and identify which one is the current default for tool calls.
+
+USAGE
+  tools google-workspace list-accounts [--json] [--timeout SECONDS]
+
+OPTIONS
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+
+OUTPUT JSON
+  {count:int,accounts:Account[]}
+  accounts[]:Account{id:str,email:str,is_default:bool,handle?:str,revoked?:bool}
+
+===== tools help gmail.list-accounts =====
+List connected Gmail accounts and identify which one is the current default for tool calls.
+
+USAGE
+  tools gmail list-accounts [--json] [--timeout SECONDS]
+
+OPTIONS
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+
+OUTPUT JSON
+  {count:int,accounts:Account[]}
+  accounts[]:Account{id:str,email:str,is_default:bool,handle?:str,revoked?:bool}
+
+===== tools help gmail.search =====
+Search the user's emails using Gmail search syntax.
+
+DETAILS
+Returns matching emails with subjects and snippets. Queries can be only operators; no free-text term is required. Use after:/before: or newer_than:/older_than: for broad time-window searches. Gmail API search does not expand account aliases or perform thread-wide matching the same way the Gmail UI does.
+
+Operators (combine with AND, OR, -/NOT, and parentheses for grouping):
+- from:, to:, cc:, bcc:, deliveredto: — match addresses
+- subject: — match subject words
+- has:attachment, filename:<name|ext>
+- label:<id-or-name>, category:<primary|social|promotions|updates|forums>
+- is:unread, is:read, is:starred, is:important, is:snoozed
+- in:inbox, in:sent, in:drafts, in:trash, in:spam, in:anywhere, in:chats
+- after:<yyyy/mm/dd>, before:<yyyy/mm/dd>, newer_than:<N>d|m|y, older_than:<N>d|m|y
+- larger:<size>, smaller:<size>
+- rfc822msgid:<id> — find by RFC 2822 Message-ID (useful to locate threads by message_id)
+- list:<address> — mailing list header match
+
+USAGE
+  tools gmail search [--account-id VALUE] [--limit VALUE] [--query VALUE] [--include VALUE] [--json] [--timeout SECONDS]
+
+OPTIONS
+  --account-id           string   Gmail account: the account's email address or its connection ID. Required when the user has multiple Gmail accounts; use `list-accounts` to see them. Pass the account_id returned on Gmail emails, drafts, attachments, or actions when continuing from a prior Gmail result.
+  --limit                integer  Maximum number of emails to return (default 10, max 100)
+  --query                string   Optional Gmail search query. Use only operators for broad searches, e.g. 'after:YYYY/MM/DD before:YYYY/MM/DD' or 'in:sent newer_than:30d'. Empty defaults to 'in:inbox'.
+  --include              array    Widen the compact default result. Repeatable / comma-separated. See INCLUDES. Values: body, body-html, all.
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {count:int,emails:Email[],query?:str}
+  emails[]:Email{id:str,thread_id:str,from:str,subject:str,snippet:str,body_text:str,attachments:Attachment[],labels:str[],internal_date_ms:int,account_email?:str,account_id?:str,bcc?:str,body_html?:str,cc?:str,date?:str,from_name?:str,in_reply_to?:str,message_id?:str,references?:str,reply_to?:str,to?:str}
+  emails[].attachments[]:Attachment{filename:str,mime_type:str,size:int,message_id:str,account_email?:str,account_id?:str,part_id?:str}
+
+INCLUDES
+  Default: .count, .query, .emails[].id, .emails[].thread_id, .emails[].message_id, .emails[].from, .emails[].from_name, .emails[].to, .emails[].cc, .emails[].subject, .emails[].snippet, .emails[].date, .emails[].internal_date_ms, .emails[].labels, .emails[].attachments[].filename, .emails[].attachments[].mime_type, .emails[].attachments[].size, .emails[].attachments[].part_id, .emails[].attachments[].message_id
+  Widen with --include (repeatable, comma-ok):
+    body           full plaintext message body
+    body-html      full HTML message body
+    all            every field in OUTPUT JSON
+
+EXAMPLES
+    all mail in an absolute time window, no text term
+    tools gmail search --query "after:YYYY/MM/DD before:YYYY/MM/DD"
+    all recent mail from the last two days
+    tools gmail search --query "newer_than:2d"
+    tools gmail search --query "from:person@example.com subject:report"
+    tools gmail search --query "has:attachment filename:pdf"
+    tools gmail search --query "to:me after:YYYY/MM/DD before:YYYY/MM/DD"
+    tools gmail search --query "in:sent newer_than:30d"
+    tools gmail search --query "(from:person-a@example.com OR from:person-b@example.com) subject:topic"
+    tools gmail search --query "category:primary is:unread"
+    tools gmail search --query "rfc822msgid:<CA+abc@mail.gmail.com>"
+    tools gmail search --query "larger:5M -has:attachment"
+    plain text searches all fields
+    tools gmail search --query "project update meeting notes"
+
+===== tools help gmail.list-recent =====
+List the user's recent emails, most recent first.
+
+DETAILS
+Defaults to the inbox; pass query or label to scope to a different surface (e.g. sent mail, a custom label).
+
+USAGE
+  tools gmail list-recent [--account-id VALUE] [--label VALUE] [--limit VALUE] [--query VALUE] [--include VALUE] [--json] [--timeout SECONDS]
+
+OPTIONS
+  --account-id           string   Gmail account: the account's email address or its connection ID. Required when the user has multiple Gmail accounts; use `list-accounts` to see them. Pass the account_id returned on Gmail emails, drafts, attachments, or actions when continuing from a prior Gmail result.
+  --label                string   Optional Gmail label search token or system label (e.g. 'SENT', 'STARRED', or a label name usable in Gmail search) to scope the listing. Takes precedence over query if both are set.
+  --limit                integer  Maximum number of emails to return (default 10, max 100)
+  --query                string   Optional Gmail search query to scope the listing (e.g. 'in:sent', 'category:primary'). Defaults to 'in:inbox'. Mutually exclusive with label.
+  --include              array    Widen the compact default result. Repeatable / comma-separated. See INCLUDES. Values: body, body-html, all.
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {count:int,emails:Email[],query?:str}
+  emails[]:Email{id:str,thread_id:str,from:str,subject:str,snippet:str,body_text:str,attachments:Attachment[],labels:str[],internal_date_ms:int,account_email?:str,account_id?:str,bcc?:str,body_html?:str,cc?:str,date?:str,from_name?:str,in_reply_to?:str,message_id?:str,references?:str,reply_to?:str,to?:str}
+  emails[].attachments[]:Attachment{filename:str,mime_type:str,size:int,message_id:str,account_email?:str,account_id?:str,part_id?:str}
+
+INCLUDES
+  Default: .count, .query, .emails[].id, .emails[].thread_id, .emails[].message_id, .emails[].from, .emails[].from_name, .emails[].to, .emails[].cc, .emails[].subject, .emails[].snippet, .emails[].date, .emails[].internal_date_ms, .emails[].labels, .emails[].attachments[].filename, .emails[].attachments[].mime_type, .emails[].attachments[].size, .emails[].attachments[].part_id, .emails[].attachments[].message_id
+  Widen with --include (repeatable, comma-ok):
+    body           full plaintext message body
+    body-html      full HTML message body
+    all            every field in OUTPUT JSON
+
+===== tools help gmail.get-thread =====
+Read all messages in an email thread/conversation.
+
+DETAILS
+Use a thread_id from `search` or `read` results to expand the full conversation.
+
+USAGE
+  tools gmail get-thread [--account-id VALUE] --thread-id VALUE [--include VALUE] [--json] [--timeout SECONDS]
+
+OPTIONS
+  --account-id           string   Gmail account: the account's email address or its connection ID. Required when the user has multiple Gmail accounts; use `list-accounts` to see them. Pass the account_id returned on Gmail emails, drafts, attachments, or actions when continuing from a prior Gmail result.
+  --thread-id            string   The thread ID to expand (required)
+  --include              array    Widen the compact default result. Repeatable / comma-separated. See INCLUDES. Values: body-html, all.
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {count:int,emails:Email[],query?:str}
+  emails[]:Email{id:str,thread_id:str,from:str,subject:str,snippet:str,body_text:str,attachments:Attachment[],labels:str[],internal_date_ms:int,account_email?:str,account_id?:str,bcc?:str,body_html?:str,cc?:str,date?:str,from_name?:str,in_reply_to?:str,message_id?:str,references?:str,reply_to?:str,to?:str}
+  emails[].attachments[]:Attachment{filename:str,mime_type:str,size:int,message_id:str,account_email?:str,account_id?:str,part_id?:str}
+
+INCLUDES
+  Default: .count, .query, .emails[].id, .emails[].thread_id, .emails[].message_id, .emails[].from, .emails[].from_name, .emails[].to, .emails[].cc, .emails[].subject, .emails[].snippet, .emails[].date, .emails[].internal_date_ms, .emails[].labels, .emails[].attachments[].filename, .emails[].attachments[].mime_type, .emails[].attachments[].size, .emails[].attachments[].part_id, .emails[].attachments[].message_id, .emails[].body_text
+  Widen with --include (repeatable, comma-ok):
+    body-html      full HTML message body
+    all            every field in OUTPUT JSON
+
+===== tools help google-calendar.list-accounts =====
+List connected Google Calendar accounts and identify which one is the current default for tool calls.
+
+USAGE
+  tools google-calendar list-accounts [--json] [--timeout SECONDS]
+
+OPTIONS
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+
+OUTPUT JSON
+  {count:int,accounts:Account[]}
+  accounts[]:Account{id:str,email:str,is_default:bool,handle?:str,revoked?:bool}
+
+===== tools help google-drive.list-accounts =====
+List connected Google Drive accounts and identify which one is the current default for tool calls.
+
+USAGE
+  tools google-drive list-accounts [--json] [--timeout SECONDS]
+
+OPTIONS
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+
+OUTPUT JSON
+  {count:int,accounts:Account[]}
+  accounts[]:Account{id:str,email:str,is_default:bool,handle?:str,revoked?:bool}
+
+===== tools help google-drive.search =====
+Search for files in Google Drive using Drive query syntax.
+
+USAGE
+  tools google-drive search [--account-id VALUE] [--limit VALUE] --query VALUE [--json] [--timeout SECONDS]
+
+OPTIONS
+  --account-id           string   Optional Google Drive account: the account's email address or its connection ID. Omit to use the default account. Use `list-accounts` to see the connected accounts.
+  --limit                integer  Maximum number of results to return (default 20, max 100).
+  --query                string   Drive search query using Google Drive query syntax. (required)
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {query:str,count:int,files:File[]}
+  files[]:File{id:str,name:str,mime_type:str,size:int,modified_time:str,created_time:str,web_view_link:str,parents:str[],owners:str[],shared:bool,starred:bool,trashed:bool}
+
+EXAMPLES
+    files with "quarterly" in the name
+    tools google-drive search --query "name contains 'quarterly'"
+    all spreadsheets
+    tools google-drive search --query "mimeType = 'application/vnd.google-apps.spreadsheet'"
+    files modified after Jan 1 2024
+    tools google-drive search --query "modifiedTime > '2024-01-01'"
+    full-text search for "budget"
+    tools google-drive search --query "fullText contains 'budget'"
+    files in a specific folder
+    tools google-drive search --query "'FOLDER_ID' in parents"
+    files shared with you
+    tools google-drive search --query "sharedWithMe"
+    starred files
+    tools google-drive search --query "starred"
+    combine conditions with "and"
+    tools google-drive search --query "trashed = false and name contains 'report'"
+
+```thinking
+Now check connected accounts and fan out the scans. Also need calendar event listing help (list-events or day-view). Let me check accounts first, plus fetch google-calendar.list-events help and google-drive list help in same call.
+```
+
+Tool: bash
+
+Arguments:
+```json
+{"command": "tools google-workspace list-accounts --json; echo ===; tools gmail list-accounts --json; echo ===; tools help google-calendar.list-events google-calendar.day-view google-drive.list 2>&1 | head -4"}
+```
+
+Tool: bash
+
+{"accounts":[{"email":"kuberhob@gmail.com","id":"gmailacct-01M1GHQ9GZT4TK4EPKN0XJY0N5","is_default":true}],"count":1}
+===
+{"accounts":[{"email":"kuberhob@gmail.com","id":"gmailacct-01M1GHQ9GZT4TK4EPKN0XJY0N5","is_default":true}],"count":1}
+===
+help google-calendar.list-events: attached below
+help google-calendar.day-view: attached below
+Error: unknown help target: google-drive.list
+Hint: Did you mean tools help google-drive.trash?
+
+
+[exit code: 0]
+
+[attached: tools help]
+===== tools help google-calendar.list-events =====
+List one page of events with Google Calendar's advanced filters and a continuation token.
+
+USAGE
+  tools google-calendar list-events [--account-id VALUE] [--calendar-id VALUE] [--end-time VALUE] [--event-types VALUE] [--[no-]expand-recurring] [--ical-uid VALUE] [--max-attendees VALUE] [--max-results VALUE] [--page-token VALUE] [--private-extended-properties VALUE] [--query VALUE] [--shared-extended-properties VALUE] [--[no-]show-deleted] [--[no-]show-hidden-invitations] [--start-time VALUE] [--time-zone VALUE] [--updated-min VALUE] [--include VALUE] [--json] [--timeout SECONDS]
+
+OPTIONS
+  --account-id           string   Google Calendar account: the account's email address or its connection ID. Provide it when account/profile placement matters; use `list-accounts` to see the connected accounts. Omit only when the default account is grounded as the right target or placement does not matter.
+  --calendar-id          string   Calendar ID to use when target calendar placement matters. Use `tools google-calendar list-calendars` to discover available IDs. Omit only when the primary/default calendar is grounded as the right target or placement does not matter.
+  --end-time             string   
+  --event-types          string[] 
+  --expand-recurring     boolean  Expand recurring series into individual instances. Defaults to true; pass --no-expand-recurring to return series masters instead.
+  --no-expand-recurring  boolean  Negate --expand-recurring.
+  --ical-uid             string   
+  --max-attendees        integer  Maximum attendees returned per event.
+  --max-results          integer  
+  --page-token           string   
+  --private-extended-properties string[] key=value filters
+  --query                string   
+  --shared-extended-properties string[] key=value filters
+  --show-deleted         boolean  
+  --no-show-deleted      boolean  Negate --show-deleted.
+  --show-hidden-invitations boolean  
+  --no-show-hidden-invitations boolean  Negate --show-hidden-invitations.
+  --start-time           string   
+  --time-zone            string   IANA timezone for returned event times.
+  --updated-min          string   
+  --include              array    Widen the compact default result. Repeatable / comma-separated. See INCLUDES. Values: description, attendees, recurrence, all.
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {count:int,events:Event[],end_date?:str,next_page_token?:str,query?:str,start_date?:str}
+  Event{id:str,summary:str,description:str,location:str,all_day:bool,attendees:str[],organizer:str,status:str,html_link:str,attachments?:Attachment[],attendee_details?:Attendee[],birthday_properties?:BirthdayProperties,color_id?:str,created?:str,creator?:str,end_date?:str,end_time?:str,end_time_unspecified?:bool,event_label_id?:str,event_type?:str,extended_properties_private?:map[str],extended_properties_shared?:map[str],focus_time_properties?:FocusTimeProperties,guests_can_invite_others?:bool,guests_can_modify?:bool,guests_can_see_other_guests?:bool,ical_uid?:str,meet_link?:str,original_start_date?:str,original_start_time?:str,out_of_office_properties?:OutOfOfficeProperties,recurrence?:str[],recurring_event_id?:str,reminder_overrides?:Reminder[],reminders_use_default?:bool,source?:Source,start_date?:str,start_time?:str,transparency?:str,updated?:str,visibility?:str,working_location_properties?:WorkingLocationProperties}
+  Attachment{file_url:str,icon_link?:str,mime_type?:str,title?:str}
+  Attendee{email:str,additional_guests?:int,comment?:str,display_name?:str,is_organizer?:bool,optional?:bool,resource?:bool,response_status?:str,self?:bool}
+  BirthdayProperties{contact?:str,custom_type_name?:str,type?:str}
+  FocusTimeProperties{auto_decline_mode?:str,chat_status?:str,decline_message?:str}
+  OutOfOfficeProperties{auto_decline_mode?:str,decline_message?:str}
+  Reminder{method:str,minutes:int}
+  Source{title?:str,url?:str}
+  WorkingLocationProperties{type:str,building_id?:str,desk_id?:str,floor_id?:str,floor_section_id?:str,label?:str}
+
+INCLUDES
+  Default: .count, .start_date, .end_date, .query, .next_page_token, .events[].id, .events[].summary, .events[].location, .events[].all_day, .events[].status, .events[].organizer, .events[].html_link, .events[].meet_link, .events[].start_time, .events[].end_time, .events[].start_date, .events[].end_date
+  Widen with --include (repeatable, comma-ok):
+    description    full free-text event description/agenda
+    attendees      attendee emails + per-attendee response status
+    recurrence     RRULE strings + recurring parent id
+    all            every field in OUTPUT JSON
+
+===== tools help google-calendar.day-view =====
+Get all calendar events for a specific day.
+
+DETAILS
+Returns events sorted by start time.
+
+USAGE
+  tools google-calendar day-view [--account-id VALUE] [--calendar-id VALUE] [--date VALUE] [--page-token VALUE] [--include VALUE] [--json] [--timeout SECONDS]
+
+OPTIONS
+  --account-id           string   Google Calendar account: the account's email address or its connection ID. Provide it when account/profile placement matters; use `list-accounts` to see the connected accounts. Omit only when the default account is grounded as the right target or placement does not matter.
+  --calendar-id          string   Calendar ID to use when target calendar placement matters. Use `tools google-calendar list-calendars` to discover available IDs. Omit only when the primary/default calendar is grounded as the right target or placement does not matter.
+  --date                 string   The date to view in YYYY-MM-DD format. If not provided, defaults to today.
+  --page-token           string   Token from a previous page.
+  --include              array    Widen the compact default result. Repeatable / comma-separated. See INCLUDES. Values: description, attendees, recurrence, all.
+  --json                 json     Emit OUTPUT JSON directly when available; otherwise emit generic response JSON with .content
+  --timeout              integer  Override request timeout in seconds
+  Value options also accept --<option>-stdin, which reads the value from stdin; at most one per command.
+
+OUTPUT JSON
+  {count:int,events:Event[],end_date?:str,next_page_token?:str,query?:str,start_date?:str}
+  Event{id:str,summary:str,description:str,location:str,all_day:bool,attendees:str[],organizer:str,status:str,html_link:str,attachments?:Attachment[],attendee_details?:Attendee[],birthday_properties?:BirthdayProperties,color_id?:str,created?:str,creator?:str,end_date?:str,end_time?:str,end_time_unspecified?:bool,event_label_id?:str,event_type?:str,extended_properties_private?:map[str],extended_properties_shared?:map[str],focus_time_properties?:FocusTimeProperties,guests_can_invite_others?:bool,guests_can_modify?:bool,guests_can_see_other_guests?:bool,ical_uid?:str,meet_link?:str,original_start_date?:str,original_start_time?:str,out_of_office_properties?:OutOfOfficeProperties,recurrence?:str[],recurring_event_id?:str,reminder_overrides?:Reminder[],reminders_use_default?:bool,source?:Source,start_date?:str,start_time?:str,transparency?:str,updated?:str,visibility?:str,working_location_properties?:WorkingLocationProperties}
+  Attachment{file_url:str,icon_link?:str,mime_type?:str,title?:str}
+  Attendee{email:str,additional_guests?:int,comment?:str,display_name?:str,is_organizer?:bool,optional?:bool,resource?:bool,response_status?:str,self?:bool}
+  BirthdayProperties{contact?:str,custom_type_name?:str,type?:str}
+  FocusTimeProperties{auto_decline_mode?:str,chat_status?:str,decline_message?:str}
+  OutOfOfficeProperties{auto_decline_mode?:str,decline_message?:str}
+  Reminder{method:str,minutes:int}
+  Source{title?:str,url?:str}
+  WorkingLocationProperties{type:str,building_id?:str,desk_id?:str,floor_id?:str,floor_section_id?:str,label?:str}
+
+INCLUDES
+  Default: .count, .start_date, .end_date, .query, .next_page_token, .events[].id, .events[].summary, .events[].location, .events[].all_day, .events[].status, .events[].organizer, .events[].html_link, .events[].meet_link, .events[].start_time, .events[].end_time, .events[].start_date, .events[].end_date
+  Widen with --include (repeatable, comma-ok):
+    description    full free-text event description/agenda
+    attendees      attendee emails + per-attendee response status
+    recurrence     RRULE strings + recurring parent id
+    all            every field in OUTPUT JSON
+
+Structured:
+```json
+{"count":1,"accounts":[{"id":"gmailacct-01M1GHQ9GZT4TK4EPKN0XJY0N5","email":"kuberhob@gmail.com","is_default":true}]}
+```
