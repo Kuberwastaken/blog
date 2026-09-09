@@ -3,6 +3,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import script from "./scripts/graph.inline"
 import style from "./styles/graph.scss"
 import { i18n } from "../i18n"
+import { joinSegments, pathToRoot } from "../util/path"
 import { classNames } from "../util/lang"
 
 export interface D3Config {
@@ -57,11 +58,17 @@ const defaultOptions: GraphOptions = {
 }
 
 export default ((opts?: GraphOptions) => {
-  const Graph: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
+  const Graph: QuartzComponent = ({ displayClass, cfg, fileData }: QuartzComponentProps) => {
     const localGraph = { ...defaultOptions.localGraph, ...opts?.localGraph }
     const globalGraph = { ...defaultOptions.globalGraph, ...opts?.globalGraph }
+    const wordGraphPath = joinSegments(pathToRoot(fileData.slug!), "static/wordGraph.json")
     return (
       <div class={classNames(displayClass, "graph")}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `const fetchWordGraph = fetch("${wordGraphPath}").then(d => d.ok ? d.json() : {}).catch(() => ({}))`,
+          }}
+        />
         <h3>{i18n(cfg.locale).components.graph.title}</h3>
         <div class="graph-outer">
           <div id="graph-container" data-cfg={JSON.stringify(localGraph)}></div>

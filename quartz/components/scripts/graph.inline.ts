@@ -99,6 +99,14 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   const tags: SimpleSlug[] = []
   const validLinks = new Set(data.keys())
 
+  // word-graph variant: when the build emitted static/wordGraph.json, notes
+  // stick together by repeated words instead of #tags
+  const wordGraph: Record<string, SimpleSlug[]> = ((await fetchWordGraph) ?? {}) as Record<
+    string,
+    SimpleSlug[]
+  >
+  const useWords = Object.keys(wordGraph).length > 0
+
   const tweens = new Map<string, TweenNode>()
   for (const [source, details] of data.entries()) {
     const outgoing = details.links ?? []
@@ -109,7 +117,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
       }
     }
 
-    if (showTags) {
+    if (showTags && !useWords) {
       const localTags = details.tags
         .filter((tag) => !removeTags.includes(tag))
         .map((tag) => simplifySlug(("tags/" + tag) as FullSlug))
@@ -119,6 +127,21 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
       for (const tag of localTags) {
         links.push({ source: source, target: tag })
       }
+    }
+  }
+
+  if (useWords) {
+    for (const [word, sources] of Object.entries(wordGraph)) {
+      const wordId = ("words/" + word) as SimpleSlug
+      let attached = false
+      for (const src of sources) {
+        if (validLinks.has(src)) {
+          links.push({ source: src, target: wordId })
+          attached = true
+        }
+      }
+      // reuse the tag slot so word nodes join the neighbourhood when showTags
+      if (attached) tags.push(wordId)
     }
   }
 
@@ -144,7 +167,11 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   }
 
   const nodes = [...neighbourhood].map((url) => {
-    const text = url.startsWith("tags/") ? "#" + url.substring(5) : (data.get(url)?.title ?? url)
+    const text = url.startsWith("tags/")
+      ? "#" + url.substring(5)
+      : url.startsWith("words/")
+        ? url.substring(6)
+        : (data.get(url)?.title ?? url)
     return {
       id: url,
       text,
@@ -195,7 +222,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     const isCurrent = d.id === slug
     if (isCurrent) {
       return computedStyleMap["--secondary"]
-    } else if (visited.has(d.id) || d.id.startsWith("tags/")) {
+    } else if (visited.has(d.id) || d.id.startsWith("tags/") || d.id.startsWith("words/")) {
       return computedStyleMap["--tertiary"]
     } else {
       return computedStyleMap["--gray"]
@@ -407,6 +434,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
 
     let oldLabelOpacity = 0
     const isTagNode = nodeId.startsWith("tags/")
+    const isWordNode = nodeId.startsWith("words/")
     const gfx = new Graphics({
       interactive: true,
       label: nodeId,
@@ -415,7 +443,13 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
       cursor: "pointer",
     })
       .circle(0, 0, nodeRadius(n))
-      .fill({ color: isTagNode ? computedStyleMap["--light"] : color(n) })
+      .fill({
+        color: isTagNode
+          ? computedStyleMap["--light"]
+          : isWordNode
+            ? computedStyleMap["--tertiary"]
+            : color(n),
+      })
       .stroke({ width: isTagNode ? 2 : 0, color: color(n) })
       .on("pointerover", (e) => {
         updateHoverInfo(e.target.label)
@@ -495,6 +529,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
           // if the time between mousedown and mouseup is short, we consider it a click
           if (Date.now() - dragStartTime < 500) {
             const node = graphData.nodes.find((n) => n.id === event.subject.id) as NodeData
+            if (node.id.startsWith("words/")) return
             const targ = resolveRelative(fullSlug, node.id)
             window.spaNavigate(new URL(targ, window.location.toString()))
           }
@@ -503,6 +538,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   } else {
     for (const node of nodeRenderData) {
       node.gfx.on("click", () => {
+        if (node.simulationData.id.startsWith("words/")) return
         const targ = resolveRelative(fullSlug, node.simulationData.id)
         window.spaNavigate(new URL(targ, window.location.toString()))
       })
