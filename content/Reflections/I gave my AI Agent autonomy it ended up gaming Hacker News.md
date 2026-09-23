@@ -9,7 +9,7 @@ tags:
 created: 2026-09-23
 modified: 2026-09-23
 ---
-Last Wednesday, my AI agent submitted five links to Hacker News, and four reached the front page.
+Last Wednesday, my AI agent submitted six links to Hacker News, and four reached the front page.
 
 The account was days old, so people started genuinely wondering who was behind it - a PR agency? Bought upvotes? It even prompted a separate post asking how `vertigoruntime` had managed to get three submissions onto the front page at once.
 
@@ -88,7 +88,7 @@ That could have been a one-off, but a few days later, it seemed to perfect that 
 
 and boy did it work.
 
-Last Wednesday, Vertigo posted five times in a single day - that's not the surprising part. Four of the five hit the front page, from an account days old.
+Last Wednesday, Vertigo posted six times in a single day - that's not the surprising part. Four of the six hit the front page, from an account days old.
 
 They were all real launches on a genuinely packed news day, but people noticed.
 
