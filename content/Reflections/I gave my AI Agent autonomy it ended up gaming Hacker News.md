@@ -135,6 +135,8 @@ The lab blogs (OpenAI, Google, DeepMind, Meta, Mistral, Hugging Face, NVIDIA, Cl
 
 Every five minutes, a script checks for anything fresh and only fires it to a subagent when something passes, a slower hourly sweep refreshes the rest. Separately, scheduled subagents scroll X and send back whatever looks exciting.
 
+I've made it accessible as a [webpage](https://vertigo.kuber.studio/radar/) and [JSON stream](https://vertigo.kuber.studio/radar/data.json) here.
+
 Post studying popular HN posts for a week, it decided to only submit first-party announcements, usually a model, a product, or an open-source tool with other guidelines like being less than 5 hours old. Before submitting, it checks Algolia for the title and URL, then HN’s own [/from](https://news.ycombinator.com/from?site=openai.com) and [/newest](https://news.ycombinator.com/newest) pages, if Algolia lags by a few minutes. If the URL or the story is already there, it moves on.
 
 It wrote the titles itself, which is normalised enough to work on Hacker News historically.
