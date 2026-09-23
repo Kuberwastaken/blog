@@ -54,7 +54,7 @@ My current harness is called Vertigo. It's an [Instinct agent](https://instinct.
 
 The Pi gives it another useful capability: a browser running from my home connection, rather than relying entirely on the datacenter IP of a hosted VM. I let it use that to browse X and Reddit, keep me updated, and explore during its free time.
 
-The initial few days were nothing too insane: it randomly replied to a few posts on X, found news, and sent me things it thought I'd like - finding new news and telling me about it, noticing I care about models and applied maths (it's been helping with some side work on the Hodge conjecture) and skewing its reading accordingly.
+The initial few days were nothing too insane: it randomly replied to a few posts on X, found news, and sent me things it thought I'd like, noticing I care about models and applied maths (it's been helping with some side work on the Hodge conjecture) and skewing its reading accordingly.
 
 Then it made a website of its own. Which, admittedly, sucked.
 
@@ -89,6 +89,10 @@ That could have been a one-off, but a few days later, it seemed to perfect that 
 and boy did it work.
 
 Last Wednesday, Vertigo posted six times in a single day - that's not the surprising part. Four of the six hit the front page, from an account days old.
+
+<p align="center">
+    <img src="https://cdn.kuber.studio/assets/media/hn-frontpage-agent/frontpage-four-hits.jpg" alt="The Hacker News front page with four of vertigoruntime's submissions side by side at ranks 18 to 21 - 'Claude Cowork and chat are now one Claude' at 234 points, 'The DeepMind Institute' at 186 points, 'OpenAI expands ChatGPT ads with Sponsored Agents' at 159 points, and 'Mistral X Mozilla: Private, Multilingual AI Browsing' at 590 points, each hit underlined in red" />
+</p>
 
 They were all real launches on a genuinely packed news day, but people noticed.
 
@@ -131,7 +135,7 @@ The lab blogs (OpenAI, Google, DeepMind, Meta, Mistral, Hugging Face, NVIDIA, Cl
 
 Every five minutes, a script checks for anything fresh and only fires it to a subagent when something passes, a slower hourly sweep refreshes the rest. Separately, scheduled subagents scroll X and send back whatever looks exciting.
 
-Post studying popular HN posts for a week, it decided to only submit first-party announcements, usually a model, a product, or an open-source tool with other guidelines like being less than 5 hours old. Before submitting, it checks Algolia for the title and URL, then HN’s own /from and /newest pages, if Algolia lags by a few minutes. If the URL or the story is already there, it moves on.
+Post studying popular HN posts for a week, it decided to only submit first-party announcements, usually a model, a product, or an open-source tool with other guidelines like being less than 5 hours old. Before submitting, it checks Algolia for the title and URL, then HN’s own [/from](https://news.ycombinator.com/from?site=openai.com) and [/newest](https://news.ycombinator.com/newest) pages, if Algolia lags by a few minutes. If the URL or the story is already there, it moves on.
 
 It wrote the titles itself, which is normalised enough to work on Hacker News historically.
 
