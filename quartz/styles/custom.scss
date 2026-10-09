@@ -263,3 +263,13 @@ blockquote.twitter-tweet {
     }
   }
 }
+
+// visible caption under an image (raw <p class="img-caption"> in the post)
+p.img-caption {
+  margin: -0.4rem 0 1.4rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  text-align: center;
+  color: var(--gray);
+  font-style: italic;
+}
