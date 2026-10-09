@@ -23,6 +23,8 @@ they used unusual disk formats that ordinary copying tools couldn't reproduce, e
 
 ![The Secret of Monkey Island involves spinning a cardboard wheel lined with grotesque pirate faces to match one displayed on your screen, then inputting a date. The second game features a similar system in the form of the Mix 'n' Mojo wheel. This is probably the most well known example of physical copy protection in a PC game, and there's even a digital version. ref PC gamer](https://cdn.kuber.studio/assets/media/all-software-is-open-source/monkey-island-code-wheels.png)
 
+<p class="img-caption">The Secret of Monkey Island involves spinning a cardboard wheel lined with grotesque pirate faces to match one displayed on your screen, then inputting a date. The second game features a similar system in the form of the Mix 'n' Mojo wheel. This is probably the most well known example of physical copy protection in a PC game, and there's even a <a href="https://www.oldgames.sk/en/codewheel/secret-of-monkey-island-dial-a-pirate">digital version</a>. ref PC gamer</p>
+
 and of course, hobbyists and tinkerers weren’t behind either.
 
 In 1981, there was an actual magazine called [*Hardcore Computing*](https://computist.applearchives.com/) dedicated to defeating copy protection on Apple II software. People would disassemble commercial programs, reverse engineer how their protections worked, and publish instructions called "Softkeys" to remove them.
