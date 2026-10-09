@@ -47,7 +47,7 @@ If you've been on Twitter over the past week, you've probably seen some pretty a
 
 <!-- COMPONENT tweet-grid-2x2 :
   1. https://x.com/Hattozo/status/2106452267406590228 (Roblox in GTA V)
-  2. https://www.youtube.com/watch?v=O6Mkm_NGCX8 (Spider-Man swinging around Gotham)
+  2. https://x.com/rehan_shei/status/2105161487509852622
   3. https://x.com/chasmmmmmmmmmmm/status/2104349115521888748 (skateboarding in Modern Warfare 2)
   4. https://x.com/TobynJacobs/status/2104884843297599594 (Minecraft in Elden Ring)
 -->
