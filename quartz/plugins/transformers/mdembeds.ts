@@ -1,4 +1,6 @@
 import { QuartzTransformerPlugin } from "../types"
+import { visit } from "unist-util-visit"
+import { Root, Text } from "mdast"
 
 // Turns the author's `<!-- COMPONENT ... -->` / `<!-- YOUTUBE-EMBED ... -->`
 // directives into real markup at build time. The markdown source is never edited.
@@ -55,6 +57,27 @@ function blogRef(body: string): string {
   )
 }
 
+// remark-smartypants turns a literal "--" into an en or em dash. Prose "--" is
+// swapped for a private-use marker before parsing and restored after the
+// smartypants pass (this plugin must sit after GitHubFlavoredMarkdown), so the
+// author's double hyphen renders as typed. Opt-in per post via `literalDashes: true`. Code fences and comments are skipped.
+const DD_MARKER = "\uE000"
+
+function protectDoubleHyphen(src: string): string {
+  let inFence = false
+  return src
+    .split("\n")
+    .map((line) => {
+      if (/^\s*(```|~~~)/.test(line)) {
+        inFence = !inFence
+        return line
+      }
+      if (inFence || /^\s*(<!--|-->)/.test(line)) return line
+      return line.replace(/(?<=[ \t])--(?![->])/g, DD_MARKER)
+    })
+    .join("\n")
+}
+
 export const MarkdownEmbeds: QuartzTransformerPlugin = () => ({
   name: "MarkdownEmbeds",
   textTransform(_ctx, src) {
@@ -76,6 +99,18 @@ export const MarkdownEmbeds: QuartzTransformerPlugin = () => ({
         return `\n\n${youtubeIframe(id, label)}\n\n`
       },
     )
-    return s
+    // only posts that opt in with `literalDashes: true` in their frontmatter
+    return /^---\r?\n[\s\S]*?\r?\nliteralDashes:\s*true\s*\r?\n[\s\S]*?\r?\n---/.test(s)
+      ? protectDoubleHyphen(s)
+      : s
+  },
+  markdownPlugins() {
+    return [
+      () => (tree: Root) => {
+        visit(tree, "text", (node: Text) => {
+          if (node.value.includes(DD_MARKER)) node.value = node.value.split(DD_MARKER).join("--")
+        })
+      },
+    ]
   },
 })
