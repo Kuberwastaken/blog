@@ -49,3 +49,5 @@ export {
   Breadcrumbs,
   Comments,
 }
+
+export { default as PostRecommendations } from "./PostRecommendations"

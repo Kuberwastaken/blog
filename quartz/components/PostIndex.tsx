@@ -1,5 +1,6 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { resolveRelative } from "../util/path"
+import { Date as PostDate } from "./Date"
 import style from "./styles/postIndex.scss"
 
 export default (() => {
@@ -32,6 +33,7 @@ export default (() => {
               aria-current={post.slug === fileData.slug ? "page" : undefined}
             >
               <span>{post.frontmatter?.title}</span>
+              {post.dates?.created && <PostDate date={post.dates.created} />}
             </a>
           </li>
         ))}

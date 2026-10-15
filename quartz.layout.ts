@@ -60,21 +60,7 @@ export const defaultContentPageLayout: PageLayout = {
         focusOnHover: true,
       },
         }),
-        Component.RecentNotes({
-      title: "Trending Posts", 
-      limit: 3,
-      showTags: false,
-      filter: (file) => !file.slug?.startsWith("BITS/") && file.slug !== "index",
-      sort: (f1: QuartzPluginData, f2: QuartzPluginData) => {
-        const date1 = f1.dates?.created ? new Date(f1.dates.created) : new Date(0)
-        const date2 = f2.dates?.created ? new Date(f2.dates.created) : new Date(0)
-        
-        if (date2.getTime() === date1.getTime()) {
-          return f2.slug?.localeCompare(f1.slug ?? "") ?? 0
-        }
-        return date2.getTime() - date1.getTime()
-      }
-    }),
+        Component.PostRecommendations(),
     Component.Backlinks(),
   ],
 }

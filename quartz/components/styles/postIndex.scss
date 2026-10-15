@@ -1,6 +1,6 @@
 @use "../../styles/variables.scss" as *;
 
-// Use the existing Explorer typography, colors and rhythm, without its folders.
+// Chronological list with the selected-post treatment from the review reference.
 .post-index {
   min-width: 0;
   h2 {
@@ -16,30 +16,42 @@
     max-height: none;
     
     li {
-      margin: 0 0 0.6rem;
+      margin: 0 0 0.35rem;
     }
     a {
       display: block;
-      color: var(--secondary);
+      color: var(--darkgray);
       background: none;
+      border-left: 2px solid transparent;
+      border-radius: 8px;
+      padding: 0.55rem 0.7rem;
       font-family: var(--headerFont);
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 400;
       line-height: 1.5rem;
       overflow-wrap: anywhere;
       &:hover,
       &:active {
-        color: var(--tertiary);
+        color: var(--dark) !important;
       }
       &:focus-visible {
         outline: 2px solid var(--secondary);
         outline-offset: 3px;
       }
       &[aria-current="page"] {
-        text-decoration: underline;
-        text-underline-offset: 0.2em;
+        color: var(--dark);
+        background: color-mix(in srgb, var(--secondary) 13%, transparent);
+        border-left-color: var(--secondary);
+        text-decoration: none;
       }
     }
+  }
+  time {
+    display: block;
+    color: color-mix(in srgb, var(--darkgray) 65%, var(--light));
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
   .post-index-mobile {
     display: none;
@@ -90,7 +102,8 @@
         margin: 0;
       }
       a {
-        padding: 0.6rem 0;
+        font-size: 1rem;
+        padding: 0.7rem 0.85rem;
         min-height: 44px;
         box-sizing: border-box;
       }
