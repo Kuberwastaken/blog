@@ -29,6 +29,7 @@ export default (() => {
           <li>
             <a
               class="internal"
+              data-no-popover="true"
               href={resolveRelative(fileData.slug!, post.slug!)}
               aria-current={post.slug === fileData.slug ? "page" : undefined}
             >
