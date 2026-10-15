@@ -34,7 +34,7 @@ export default (() => {
               aria-current={post.slug === fileData.slug ? "page" : undefined}
             >
               <span>{post.frontmatter?.title}</span>
-              {post.dates?.created && <PostDate date={post.dates.created} />}
+              {post.slug === fileData.slug && post.dates?.created && <PostDate date={post.dates.created} />}
             </a>
           </li>
         ))}
