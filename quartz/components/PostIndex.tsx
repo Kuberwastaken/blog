@@ -1,6 +1,8 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { resolveRelative } from "../util/path"
 import { Date as PostDate } from "./Date"
+// @ts-ignore
+import script from "./scripts/postIndex.inline"
 import style from "./styles/postIndex.scss"
 
 export default (() => {
@@ -24,6 +26,7 @@ export default (() => {
         )
       })
     const list = () => (
+      <>
       <ol class="post-index-list">
         {posts.map((post) => (
           <li>
@@ -39,6 +42,8 @@ export default (() => {
           </li>
         ))}
       </ol>
+      <button class="post-index-more" type="button" hidden aria-expanded="false">Show more</button>
+      </>
     )
     return (
       <nav class="post-index" aria-label="All blog posts, newest first">
@@ -60,6 +65,7 @@ export default (() => {
       </nav>
     )
   }
+  PostIndex.afterDOMLoaded = script
   PostIndex.css = style
   return PostIndex
 }) satisfies QuartzComponentConstructor
