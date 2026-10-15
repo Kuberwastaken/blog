@@ -82,10 +82,26 @@ async function mouseEnterHandler(
       const contents = await response.text()
       const html = p.parseFromString(contents, "text/html")
       normalizeRelativeURLs(html, targetUrl)
-      const elts = [...html.getElementsByClassName("popover-hint")]
-      if (elts.length === 0) return
-
-      elts.forEach((elt) => popoverInner.appendChild(elt))
+      // Show only the path, title, date, and authored article content.
+      const article = html.querySelector("article.popover-hint")
+      if (article) {
+        const breadcrumbs = html.querySelector(".breadcrumb-container")
+        const title = html.querySelector("h1.article-title")
+        const date = html.querySelector(".content-meta time")
+        if (breadcrumbs) popoverInner.appendChild(breadcrumbs)
+        if (title) popoverInner.appendChild(title)
+        if (date) {
+          const dateLine = document.createElement("p")
+          dateLine.className = "popover-date"
+          dateLine.appendChild(date)
+          popoverInner.appendChild(dateLine)
+        }
+        popoverInner.appendChild(article)
+      } else {
+        const elts = [...html.getElementsByClassName("popover-hint")]
+        if (elts.length === 0) return
+        elts.forEach((elt) => popoverInner.appendChild(elt))
+      }
   }
 
   setPosition(popoverElement)

@@ -81,3 +81,14 @@ a:hover .popover,
   animation-fill-mode: forwards;
   animation-delay: 0.2s;
 }
+
+// Preview metadata must not inherit block-link styling from the source list.
+.popover > .popover-inner {
+  color: var(--darkgray);
+  .breadcrumb-container { margin: 1rem 0; }
+  .article-title { margin: 0.75rem 0 0.3rem; }
+  .popover-date { margin: 0 0 1rem; color: var(--gray); font: 400 0.95rem/1.5 var(--bodyFont); }
+  .popover-date time { display: inline; margin: 0; font: inherit; color: inherit; }
+  article { font: 400 1rem/1.6 var(--bodyFont); }
+  article > :first-child { margin-top: 0; }
+}
