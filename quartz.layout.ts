@@ -37,11 +37,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer({
-      filterFn: (node) => {
-        return node.name !== "BITS" && node.name !== "index"
-      },
-        })),
+    Component.PostIndex(),
       ],
       right: [
         Component.DesktopOnly(Component.TableOfContents()),
@@ -98,11 +94,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer({
-      filterFn: (node) => {
-        return node.name !== "BITS"
-      },
-    })),
+    Component.PostIndex(),
   ],
   right: [],
 }
