@@ -26,9 +26,9 @@
       border-left: none;
       border-radius: 8px;
       padding: 0.55rem 0;
-      font-family: var(--bodyFont);
+      font-family: var(--headerFont);
       font-size: 0.95rem;
-      font-weight: 400;
+      font-weight: 600;
       line-height: 1.5rem;
       overflow-wrap: anywhere;
       &:hover,
@@ -58,6 +58,7 @@
     }
   }
   time {
+    font-weight: 400;
     display: block;
     color: color-mix(in srgb, var(--darkgray) 65%, var(--light));
     margin-top: 0.25rem;
