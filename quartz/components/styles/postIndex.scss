@@ -1,0 +1,106 @@
+@use "../../styles/variables.scss" as *;
+
+// Use the existing Explorer typography, colors and rhythm, without its folders.
+.post-index {
+  min-width: 0;
+  h2 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--dark);
+  }
+  .post-index-list {
+    list-style: none;
+    padding: 0 0.3rem 0 0;
+    margin: 0.65rem 0 0;
+    overflow: visible;
+    max-height: none;
+    
+    li {
+      margin: 0 0 0.6rem;
+    }
+    a {
+      display: block;
+      color: var(--secondary);
+      background: none;
+      font-family: var(--headerFont);
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.5rem;
+      overflow-wrap: anywhere;
+      &:hover,
+      &:active {
+        color: var(--tertiary);
+      }
+      &:focus-visible {
+        outline: 2px solid var(--secondary);
+        outline-offset: 3px;
+      }
+      &[aria-current="page"] {
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+      }
+    }
+  }
+  .post-index-mobile {
+    display: none;
+  }
+  @media all and ($mobile) {
+    width: 100%;
+    flex-basis: 100%;
+    order: 10;
+    margin-top: 0.65rem;
+    .post-index-desktop {
+      display: none;
+    }
+    .post-index-mobile {
+      display: block;
+    }
+    summary {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 44px;
+      cursor: pointer;
+      list-style: none;
+      font-size: 1rem;
+      font-weight: 700;
+      &::-webkit-details-marker {
+        display: none;
+      }
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+      &:active {
+        color: var(--secondary);
+      }
+      &:focus-visible {
+        outline: 2px solid var(--secondary);
+        outline-offset: 2px;
+      }
+    }
+    details[open] summary svg {
+      transform: rotate(180deg);
+    }
+    .post-index-list {
+      max-height: none;
+      margin-top: 0.25rem;
+      padding-bottom: 0.5rem;
+      li {
+        margin: 0;
+      }
+      a {
+        padding: 0.6rem 0;
+        min-height: 44px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+@media all and ($mobile) {
+  #quartz-body .sidebar.left:has(.post-index) {
+    flex-wrap: wrap;
+  }
+}
+
+@media all and not ($mobile) { #quartz-body .sidebar.left:has(.post-index) { position: relative; } }

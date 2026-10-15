@@ -1,3 +1,4 @@
+import PostIndex from "./PostIndex"
 import Content from "./pages/Content"
 import TagContent from "./pages/TagContent"
 import FolderContent from "./pages/FolderContent"
@@ -43,6 +44,7 @@ export {
   DesktopOnly,
   MobileOnly,
   RecentNotes,
+  PostIndex,
   NotFound,
   Breadcrumbs,
   Comments,
