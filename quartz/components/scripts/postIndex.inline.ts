@@ -34,7 +34,7 @@ document.addEventListener("nav", () => {
   const schedule = () => { if (!pending) pending = requestAnimationFrame(update) }
   const cleanups: (() => void)[] = []
   nav.querySelectorAll<HTMLButtonElement>(".post-index-more").forEach(button => {
-    const toggle = () => { const expanded = button.getAttribute("aria-expanded") !== "true"; button.setAttribute("aria-expanded", String(expanded)); button.textContent = expanded ? "Show less" : "Show more"; update() }
+    const toggle = () => { const expanded = button.getAttribute("aria-expanded") !== "true"; button.setAttribute("aria-expanded", String(expanded)); button.setAttribute("aria-label", expanded ? "Collapse blog list" : "Show all blog posts"); button.title = button.getAttribute("aria-label")!; update() }
     button.addEventListener("click", toggle)
     cleanups.push(() => button.removeEventListener("click", toggle))
   })

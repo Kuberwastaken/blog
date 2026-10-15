@@ -26,7 +26,7 @@ export default (() => {
       <a class="internal" href={resolveRelative(fileData.slug!, p.slug!)}>{p.frontmatter?.title}</a>
       {p.dates?.created && <PostDate date={p.dates.created} />}
     </li>)}</ul>
-    return <section class="post-recommendations" aria-label={home ? "Pinned posts" : "Post recommendations"}>
+    return <section class={home ? "post-recommendations pinned-posts" : "post-recommendations"} aria-label={home ? "Pinned posts" : "Post recommendations"}>
       <h3>{home ? "Pinned posts" : "Related posts"}</h3>
       {list(home ? pinned : related)}
       {!home && <details class="you-may-like"><summary>You may like</summary>{list(randomPool, true)}</details>}

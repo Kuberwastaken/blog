@@ -20,3 +20,5 @@
   .page > #quartz-body .sidebar.right:has(.post-recommendations) { flex-wrap: wrap; }
   .page > #quartz-body .sidebar.right > .post-recommendations { flex: 1 1 100%; }
 }
+
+.post-recommendations.pinned-posts .recommendation-list a { font-family: var(--headerFont); font-weight: 600; font-size: 0.95rem; line-height: 1.5rem; }
