@@ -19,6 +19,8 @@ export default (() => {
         )
       })
       .sort((a, b) => {
+        const hello = "Social-Media/Hello-World"
+        if (a.slug === hello || b.slug === hello) return Number(a.slug === hello) - Number(b.slug === hello)
         const time = (page: typeof a) => page.dates?.created?.getTime() ?? 0
         return (
           time(b) - time(a) ||
@@ -42,7 +44,7 @@ export default (() => {
           </li>
         ))}
       </ol>
-      <button class="post-index-more" type="button" hidden aria-expanded="false">Show more</button>
+      <button class="post-index-more" type="button" hidden aria-expanded="false" aria-label="Show all blog posts" title="Show all blog posts"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" /></svg></button>
       </>
     )
     return (

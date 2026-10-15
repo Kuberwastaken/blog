@@ -26,9 +26,9 @@
       border-left: none;
       border-radius: 8px;
       padding: 0.55rem 0;
-      font-family: var(--headerFont);
+      font-family: var(--bodyFont);
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 400;
       line-height: 1.5rem;
       overflow-wrap: anywhere;
       &:hover,
@@ -142,3 +142,20 @@
 }
 .post-index-more[hidden] { display: none; }
 .post-index-more:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
+
+// Search and theme share a row on desktop, as in the compact phone header.
+@media all and not ($mobile) {
+  .page > #quartz-body .sidebar.left:has(.post-index) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 32px;
+    grid-template-rows: max-content max-content max-content;
+    column-gap: 8px;
+    align-content: start;
+    > .page-title, > .post-index { grid-column: 1 / -1; }
+    > .search { grid-column: 1; grid-row: 2; min-width: 0; }
+    > .darkmode { grid-column: 2; grid-row: 2; align-self: center; margin: 0; }
+  }
+}
+.post-index-more { width: 44px; display: flex; align-items: center; justify-content: flex-start; }
+.post-index-more svg { width: 20px; height: 20px; }
+.post-index-more[aria-expanded="true"] svg { transform: rotate(180deg); }
