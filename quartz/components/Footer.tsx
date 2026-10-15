@@ -9,7 +9,8 @@ interface Options {
 }
 
 export default ((opts?: Options) => {
-  const Footer: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
+  const Footer: QuartzComponent = ({ displayClass, cfg, fileData }: QuartzComponentProps) => {
+    if (fileData.slug === "index") return null
     const year = new Date().getFullYear()
     const links = opts?.links ?? []
     return (
