@@ -1,0 +1,22 @@
+.post-recommendations {
+  min-width: 0;
+  > h3, summary { font-size: 1rem; margin: 0.5rem 0 0; }
+  .recommendation-list { list-style: none; padding: 0; margin: 1rem 0; }
+  li { margin: 0 0 1rem; }
+  li[hidden] { display: none; }
+  a { background: none; padding: 0; overflow-wrap: anywhere; }
+  time { display: block; font-size: 0.9rem; color: color-mix(in srgb, var(--darkgray) 65%, var(--light)); margin-top: 0.25rem; }
+  summary { cursor: pointer; font-weight: 600; min-height: 44px; }
+  summary:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
+}
+.post-recommendations .recommendation-list a {
+  display: block;
+  background: none;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@media (max-width: 800px) {
+  .page > #quartz-body .sidebar.right:has(.post-recommendations) { flex-wrap: wrap; }
+  .page > #quartz-body .sidebar.right > .post-recommendations { flex: 1 1 100%; }
+}
