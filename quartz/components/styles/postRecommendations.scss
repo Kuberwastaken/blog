@@ -9,7 +9,7 @@
   summary { cursor: pointer; font-weight: 600; min-height: 44px; }
   summary:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
 }
-.post-recommendations .recommendation-list a {
+.post-recommendations .recommendation-list > li > a {
   display: block;
   background: none;
   padding: 0;
@@ -21,4 +21,4 @@
   .page > #quartz-body .sidebar.right > .post-recommendations { flex: 1 1 100%; }
 }
 
-.post-recommendations.pinned-posts .recommendation-list a { font-family: var(--headerFont); font-weight: 600; font-size: 0.95rem; line-height: 1.5rem; }
+.post-recommendations.pinned-posts .recommendation-list > li > a { font-family: var(--headerFont); font-weight: 600; font-size: 0.95rem; line-height: 1.5rem; }
