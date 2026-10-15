@@ -151,9 +151,3 @@
   .page > #quartz-body .sidebar.right > .post-index { flex: 1 1 100%; margin-top: 0; }
   .post-index .post-index-mobile h2 { margin-bottom: 1rem; }
 }
-
-@media all and not ($mobile) {
-  .post-index .post-index-list { display: flex; flex-direction: column; gap: 0.3rem; }
-  .post-index .post-index-list li { margin: 0; }
-  .post-index .post-index-list a { padding: 0.25rem 0; line-height: 1.35rem; }
-}
