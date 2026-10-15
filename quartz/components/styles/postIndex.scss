@@ -143,19 +143,6 @@
 .post-index-more[hidden] { display: none; }
 .post-index-more:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
 
-// Search and theme share a row on desktop, as in the compact phone header.
-@media all and not ($mobile) {
-  .page > #quartz-body .sidebar.left:has(.post-index) {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 32px;
-    grid-template-rows: max-content max-content max-content;
-    column-gap: 8px;
-    align-content: start;
-    > .page-title, > .post-index { grid-column: 1 / -1; }
-    > .search { grid-column: 1; grid-row: 2; min-width: 0; }
-    > .darkmode { grid-column: 2; grid-row: 2; align-self: center; margin: 0; }
-  }
-}
 .post-index-more { width: 44px; display: flex; align-items: center; justify-content: flex-start; }
 .post-index-more svg { width: 20px; height: 20px; }
 .post-index-more[aria-expanded="true"] svg { transform: rotate(180deg); }
@@ -164,13 +151,9 @@
   .page > #quartz-body .sidebar.right > .post-index { flex: 1 1 100%; margin-top: 0; }
   .post-index .post-index-mobile h2 { margin-bottom: 1rem; }
 }
-@media all and ($mobile) {
-  .sidebar.left:has(.post-index) > .search {
-    flex: 0 0 36px;
-    min-width: 36px;
-    width: 36px;
-    margin-left: 8px;
-    > .search-button { width: 36px; background: transparent; justify-content: center; }
-    > .search-button > p { display: none; }
-  }
+
+@media all and not ($mobile) {
+  .post-index .post-index-list { display: flex; flex-direction: column; gap: 0.3rem; }
+  .post-index .post-index-list li { margin: 0; }
+  .post-index .post-index-list a { padding: 0.25rem 0; line-height: 1.35rem; }
 }

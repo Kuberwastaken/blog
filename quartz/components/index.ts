@@ -51,3 +51,5 @@ export {
 }
 
 export { default as PostRecommendations } from "./PostRecommendations"
+
+export { default as SearchControls } from "./SearchControls"
