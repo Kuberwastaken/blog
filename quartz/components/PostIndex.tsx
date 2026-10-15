@@ -6,7 +6,7 @@ import script from "./scripts/postIndex.inline"
 import style from "./styles/postIndex.scss"
 
 export default (() => {
-  const PostIndex: QuartzComponent = ({ allFiles, fileData }: QuartzComponentProps) => {
+  const PostIndex: QuartzComponent = ({ allFiles, fileData, displayClass }: QuartzComponentProps) => {
     const posts = allFiles
       .filter((page) => {
         const slug = page.slug ?? ""
@@ -48,22 +48,16 @@ export default (() => {
       </>
     )
     return (
-      <nav class="post-index" aria-label="All blog posts, newest first">
+      <nav class={["post-index", displayClass].filter(Boolean).join(" ")} aria-label="All blog posts, newest first">
         <div class="post-index-desktop">
           <h2>Blogs</h2>
 
           {list()}
         </div>
-        <details class="post-index-mobile">
-          <summary>
-            Blogs
-            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
-              <path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
-            </svg>
-          </summary>
-
+        <div class="post-index-mobile">
+          <h2>Blogs</h2>
           {list()}
-        </details>
+        </div>
       </nav>
     )
   }

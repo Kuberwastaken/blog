@@ -37,7 +37,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.PostIndex(),
+    Component.DesktopOnly(Component.PostIndex()),
       ],
       right: [
         Component.DesktopOnly(Component.TableOfContents()),
@@ -61,6 +61,7 @@ export const defaultContentPageLayout: PageLayout = {
       },
         }),
         Component.PostRecommendations(),
+        Component.MobileOnly(Component.PostIndex()),
     Component.Backlinks(),
   ],
 }
@@ -80,7 +81,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.PostIndex(),
+    Component.DesktopOnly(Component.PostIndex()),
   ],
-  right: [],
+  right: [Component.MobileOnly(Component.PostIndex())],
 }

@@ -159,3 +159,18 @@
 .post-index-more { width: 44px; display: flex; align-items: center; justify-content: flex-start; }
 .post-index-more svg { width: 20px; height: 20px; }
 .post-index-more[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+@media all and ($mobile) {
+  .page > #quartz-body .sidebar.right > .post-index { flex: 1 1 100%; margin-top: 0; }
+  .post-index .post-index-mobile h2 { margin-bottom: 1rem; }
+}
+@media all and ($mobile) {
+  .sidebar.left:has(.post-index) > .search {
+    flex: 0 0 36px;
+    min-width: 36px;
+    width: 36px;
+    margin-left: 8px;
+    > .search-button { width: 36px; background: transparent; justify-content: center; }
+    > .search-button > p { display: none; }
+  }
+}
