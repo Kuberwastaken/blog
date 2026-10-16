@@ -151,3 +151,24 @@
   .page > #quartz-body .sidebar.right > .post-index { flex: 1 1 100%; margin-top: 0; }
   .post-index .post-index-mobile h2 { margin-bottom: 1rem; }
 }
+
+// Keep desktop navigation quieter than the article, without changing its spacing.
+@media all and not ($mobile) {
+  .sidebar.left .post-index {
+    --nav-item-color: #666666;
+    --nav-active-color: #222222;
+    .post-index-list a {
+      font-size: 14px;
+      color: var(--nav-item-color);
+      &:hover,
+      &:active,
+      &[aria-current="page"] {
+        color: var(--nav-active-color) !important;
+      }
+    }
+  }
+  :root[saved-theme="dark"] .sidebar.left .post-index {
+    --nav-item-color: #9a9a9a;
+    --nav-active-color: #ffffff;
+  }
+}
