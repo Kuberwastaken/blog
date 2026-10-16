@@ -20,9 +20,9 @@ document.addEventListener("nav", () => {
       range.selectNodeContents(title)
       const lines = range.getClientRects()
       const last = lines[lines.length - 1]
-      const room = last ? link.getBoundingClientRect().right - last.right : 0
+      const room = last ? link.getBoundingClientRect().right - 10 - last.right : 0
       date.style.display = ""
-      // Keep at least a 24px rule and two 8px breathing gaps beside the date.
+      // Reserve a 10px right inset, a 24px rule, and two 8px date gaps.
       if (room >= dateWidth + 42) {
         date.classList.add("inline-date")
         date.style.width = `${Math.floor(room - 9)}px`
