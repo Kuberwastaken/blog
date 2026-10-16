@@ -38,8 +38,8 @@ export default (() => {
               href={resolveRelative(fileData.slug!, post.slug!)}
               aria-current={post.slug === fileData.slug ? "page" : undefined}
             >
-              <span>{post.frontmatter?.title}</span>
-              {post.slug === fileData.slug && post.dates?.created && <PostDate date={post.dates.created} />}
+              <span class="post-index-title">{post.frontmatter?.title}</span>
+              {post.slug === fileData.slug && post.dates?.created && <span class="post-index-date"><span class="post-index-date-rule" aria-hidden="true" /><PostDate date={post.dates.created} /></span>}
             </a>
           </li>
         ))}
