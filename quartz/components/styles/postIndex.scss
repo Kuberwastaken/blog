@@ -172,3 +172,28 @@
     --nav-active-color: #ffffff;
   }
 }
+
+.post-index .post-index-date {
+  display: block;
+  margin-top: 0.25rem;
+  line-height: 1.5;
+  time { display: inline-block; margin-top: 0; white-space: nowrap; }
+  .post-index-date-rule { display: none; }
+  &.inline-date {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0 0 0 8px;
+    vertical-align: baseline;
+    .post-index-date-rule {
+      display: block;
+      flex: 1;
+      min-width: 24px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.4;
+      align-self: center;
+    }
+    time { flex: none; }
+  }
+}

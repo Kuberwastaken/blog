@@ -6,6 +6,28 @@ document.addEventListener("nav", () => {
     const rows = Array.from(panel.querySelectorAll<HTMLLIElement>(".post-index-list > li"))
     const button = panel.querySelector<HTMLButtonElement>(".post-index-more")!
     const current = rows.findIndex(row => row.querySelector('[aria-current="page"]'))
+    const fitSelectedDate = () => {
+      const link = panel.querySelector<HTMLElement>('[aria-current="page"]')
+      const title = link?.querySelector<HTMLElement>(".post-index-title")
+      const date = link?.querySelector<HTMLElement>(".post-index-date")
+      const time = date?.querySelector<HTMLElement>("time")
+      if (!link || !title || !date || !time || !link.getBoundingClientRect().width) return
+      date.classList.remove("inline-date")
+      date.style.width = ""
+      const dateWidth = time.getBoundingClientRect().width
+      date.style.display = "none"
+      const range = document.createRange()
+      range.selectNodeContents(title)
+      const lines = range.getClientRects()
+      const last = lines[lines.length - 1]
+      const room = last ? link.getBoundingClientRect().right - last.right : 0
+      date.style.display = ""
+      // Keep at least a 24px rule and two 8px breathing gaps beside the date.
+      if (room >= dateWidth + 42) {
+        date.classList.add("inline-date")
+        date.style.width = `${Math.floor(room - 9)}px`
+      }
+    }
     const update = () => {
       const expanded = button.getAttribute("aria-expanded") === "true"
       // Ten posts regardless of article length. Retain the current post within that cap.
@@ -15,6 +37,7 @@ document.addEventListener("nav", () => {
       button.hidden = rows.length <= (innerWidth < 800 ? 3 : 10)
       button.setAttribute("aria-label", expanded ? "Collapse blog list" : "Show all blog posts")
       button.title = button.getAttribute("aria-label")!
+      fitSelectedDate()
     }
     const toggle = () => { button.setAttribute("aria-expanded", String(button.getAttribute("aria-expanded") !== "true")); update() }
     button.addEventListener("click", toggle)
@@ -22,6 +45,10 @@ document.addEventListener("nav", () => {
     window.addEventListener("resize", update)
     cleanups.push(() => window.removeEventListener("resize", update))
     update()
+    const observer = new ResizeObserver(fitSelectedDate)
+    observer.observe(panel)
+    cleanups.push(() => observer.disconnect())
+    document.fonts.ready.then(() => { if (panel.isConnected) fitSelectedDate() })
   }
   window.addCleanup(() => cleanups.forEach(fn => fn()))
 })
