@@ -187,11 +187,11 @@
     vertical-align: baseline;
     .post-index-date-rule {
       display: block;
-      flex: 1;
-      min-width: 24px;
+      flex: 0 0 12px;
+      width: 12px;
       height: 1px;
       background: currentColor;
-      opacity: 0.4;
+      opacity: 0.3;
       align-self: center;
     }
     time { flex: none; }

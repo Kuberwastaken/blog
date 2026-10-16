@@ -22,10 +22,10 @@ document.addEventListener("nav", () => {
       const last = lines[lines.length - 1]
       const room = last ? link.getBoundingClientRect().right - 10 - last.right : 0
       date.style.display = ""
-      // Reserve a 10px right inset, a 24px rule, and two 8px date gaps.
-      if (room >= dateWidth + 42) {
+      // Reserve a 10px right inset, a short 12px separator, and two 8px gaps.
+      if (room >= dateWidth + 30) {
         date.classList.add("inline-date")
-        date.style.width = `${Math.floor(room - 9)}px`
+        date.style.width = `${Math.ceil(dateWidth + 20)}px`
       }
     }
     const update = () => {
