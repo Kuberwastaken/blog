@@ -50,12 +50,12 @@ export default (() => {
     return (
       <nav class={["post-index", displayClass].filter(Boolean).join(" ")} aria-label="All blog posts, newest first">
         <div class="post-index-desktop">
-          <h2>Blogs</h2>
+          <h2>Recent blogs</h2>
 
           {list()}
         </div>
         <div class="post-index-mobile">
-          <h2>Blogs</h2>
+          <h2>Recent blogs</h2>
           {list()}
         </div>
       </nav>
