@@ -272,3 +272,21 @@ p.img-caption {
   text-align: left;
   color: var(--gray);
 }
+
+// One visible heading-to-content gap across the sidebar sections.
+#quartz-body {
+  --sidebar-heading-gap: 1rem;
+  .sidebar {
+    .toc button#toc h3 { line-height: 24px; }
+    .toc #toc-content > ul { margin-top: var(--sidebar-heading-gap); }
+    .graph > .graph-outer { margin-top: var(--sidebar-heading-gap); }
+    .post-recommendations > .recommendation-list { margin-top: var(--sidebar-heading-gap); }
+    .post-index .post-index-list { margin-top: calc(var(--sidebar-heading-gap) - 0.55rem); }
+  }
+}
+@media (max-width: 800px) {
+  #quartz-body .sidebar .post-index {
+    .post-index-mobile h2 { margin-bottom: 0; }
+    .post-index-list { margin-top: calc(var(--sidebar-heading-gap) - 0.7rem); }
+  }
+}
