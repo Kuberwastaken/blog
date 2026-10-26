@@ -51,6 +51,7 @@ type NodeRenderData = GraphicsInfo & {
   label: Text
 }
 
+const renderCleanups = new WeakMap<HTMLElement, () => void>()
 const localStorageKey = "graph-visited"
 function getVisited(): Set<SimpleSlug> {
   return new Set(JSON.parse(localStorage.getItem(localStorageKey) ?? "[]"))
@@ -72,6 +73,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   const visited = getVisited()
   const graph = document.getElementById(container)
   if (!graph) return
+  renderCleanups.get(graph)?.()
   removeAllChildren(graph)
 
   let {
@@ -90,7 +92,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   } = JSON.parse(graph.dataset["cfg"]!) as D3Config
 
   const data: Map<SimpleSlug, ContentDetails> = new Map(
-    Object.entries<ContentDetails>(await fetchData).map(([k, v]) => [
+    Object.entries<ContentDetails>(await fetchData()).map(([k, v]) => [
       simplifySlug(k as FullSlug),
       v,
     ]),
@@ -341,6 +343,8 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     renderNodes()
     renderLinks()
     renderLabels()
+    tweensActiveUntil = performance.now() + 250
+    startAnimation()
   }
 
   tweens.forEach((tween) => tween.stop())
@@ -470,6 +474,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
         .subject(() => graphData.nodes.find((n) => n.id === hoveredNodeId))
         .on("start", function dragstarted(event) {
           if (!event.active) simulation.alphaTarget(1).restart()
+          startAnimation()
           event.subject.fx = event.subject.x
           event.subject.fy = event.subject.y
           event.subject.__initialDragPos = {
@@ -532,9 +537,14 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
               label.alpha = scaleOpacity
             }
           }
+          app.renderer.render(stage)
         }),
     )
   }
+
+  let graphAnimationFrameHandle: number | undefined
+  let animationRunning = false
+  let tweensActiveUntil = 0
 
   function animate(time: number) {
     for (const n of nodeRenderData) {
@@ -557,21 +567,65 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
 
     tweens.forEach((t) => t.update(time))
     app.renderer.render(stage)
-    requestAnimationFrame(animate)
+
+    if (simulation.alpha() >= simulation.alphaMin() || time < tweensActiveUntil) {
+      graphAnimationFrameHandle = requestAnimationFrame(animate)
+    } else {
+      animationRunning = false
+      graphAnimationFrameHandle = undefined
+    }
   }
 
-  const graphAnimationFrameHandle = requestAnimationFrame(animate)
-  window.addCleanup(() => cancelAnimationFrame(graphAnimationFrameHandle))
+  function startAnimation() {
+    if (!animationRunning) {
+      animationRunning = true
+      graphAnimationFrameHandle = requestAnimationFrame(animate)
+    }
+  }
+
+  const stopAnimation = () => {
+    if (graphAnimationFrameHandle !== undefined) cancelAnimationFrame(graphAnimationFrameHandle)
+    animationRunning = false
+  }
+
+  startAnimation()
+  renderCleanups.set(graph, stopAnimation)
+  window.addCleanup(stopAnimation)
+}
+
+function renderGraphWhenVisible(container: string, fullSlug: FullSlug) {
+  const graph = document.getElementById(container)
+  if (!graph) return
+
+  if (!("IntersectionObserver" in window)) {
+    void renderGraph(container, fullSlug)
+    return
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        observer.disconnect()
+        void renderGraph(container, fullSlug)
+      }
+    },
+    { rootMargin: "200px" },
+  )
+  observer.observe(graph)
+  window.addCleanup(() => observer.disconnect())
 }
 
 document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   const slug = e.detail.url
   addToVisited(simplifySlug(slug))
-  await renderGraph("graph-container", slug)
+  renderGraphWhenVisible("graph-container", slug)
 
   // Function to re-render the graph when the theme changes
   const handleThemeChange = () => {
-    renderGraph("graph-container", slug)
+    const graph = document.getElementById("graph-container")
+    if (graph?.hasChildNodes()) {
+      void renderGraph("graph-container", slug)
+    }
   }
 
   // event listener for theme change

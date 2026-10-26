@@ -9,4 +9,4 @@ interface CustomEventMap {
   themechange: CustomEvent<{ theme: "light" | "dark" }>
 }
 
-declare const fetchData: Promise<ContentIndex>
+declare const fetchData: () => Promise<ContentIndex>
