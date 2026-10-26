@@ -13,6 +13,7 @@ interface Item {
 
 // Can be expanded with things like "term" in the future
 type SearchType = "basic" | "tags"
+type SearchResults = { field: string; result: number[] }[]
 let searchType: SearchType = "basic"
 let currentSearchTerm: string = ""
 const encoder = (str: string) => str.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/)
@@ -41,6 +42,9 @@ let index = new FlexSearch.Document<Item>({
 
 const p = new DOMParser()
 const fetchContentCache: Map<FullSlug, Element[]> = new Map()
+let idDataMap: FullSlug[] = []
+let searchData: Record<FullSlug, ContentDetails> | undefined
+let searchIndexPromise: Promise<unknown> | undefined
 const contextWindowWords = 30
 const numSearchResults = 8
 const numTagResults = 5
@@ -143,16 +147,24 @@ function highlightHTML(searchTerm: string, el: HTMLElement) {
   return html.body
 }
 
+function ensureSearchIndex() {
+  if (!searchIndexPromise) {
+    searchIndexPromise = fetchData().then(async (data) => {
+      searchData = data as unknown as Record<FullSlug, ContentDetails>
+      idDataMap = Object.keys(searchData) as FullSlug[]
+      await fillDocument(searchData)
+    })
+  }
+  return searchIndexPromise
+}
+
 document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   const currentSlug = e.detail.url
-  const data = await fetchData
   const container = document.getElementById("search-container")
   const sidebar = container?.closest(".sidebar") as HTMLElement
   const searchButton = document.getElementById("search-button")
   const searchBar = document.getElementById("search-bar") as HTMLInputElement | null
   const searchLayout = document.getElementById("search-layout")
-  const idDataMap = Object.keys(data) as FullSlug[]
-
   const appendLayout = (el: HTMLElement) => {
     if (searchLayout?.querySelector(`#${el.id}`) === null) {
       searchLayout?.appendChild(el)
@@ -197,6 +209,7 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
 
   function showSearch(searchTypeNew: SearchType) {
     searchType = searchTypeNew
+    void ensureSearchIndex()
     if (sidebar) {
       sidebar.style.zIndex = "1"
     }
@@ -277,9 +290,12 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     return {
       id,
       slug,
-      title: searchType === "tags" ? data[slug].title : highlight(term, data[slug].title ?? ""),
-      content: highlight(term, data[slug].content ?? "", true),
-      tags: highlightTags(term.substring(1), data[slug].tags),
+      title:
+        searchType === "tags"
+          ? searchData![slug].title
+          : highlight(term, searchData![slug].title ?? ""),
+      content: highlight(term, searchData![slug].content ?? "", true),
+      tags: highlightTags(term.substring(1), searchData![slug].tags),
     }
   }
 
@@ -402,11 +418,12 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
 
   async function onType(e: HTMLElementEventMap["input"]) {
     if (!searchLayout || !index) return
+    await ensureSearchIndex()
     currentSearchTerm = (e.target as HTMLInputElement).value
     searchLayout.classList.toggle("display-results", currentSearchTerm !== "")
     searchType = currentSearchTerm.startsWith("#") ? "tags" : "basic"
 
-    let searchResults: FlexSearch.SimpleDocumentSearchResultSetUnit[]
+    let searchResults: SearchResults
     if (searchType === "tags") {
       currentSearchTerm = currentSearchTerm.substring(1).trim()
       const separatorIndex = currentSearchTerm.indexOf(" ")
@@ -414,13 +431,13 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
         // search by title and content index and then filter by tag (implemented in flexsearch)
         const tag = currentSearchTerm.substring(0, separatorIndex)
         const query = currentSearchTerm.substring(separatorIndex + 1).trim()
-        searchResults = await index.searchAsync({
+        searchResults = (await index.searchAsync({
           query: query,
           // return at least 10000 documents, so it is enough to filter them by tag (implemented in flexsearch)
           limit: Math.max(numSearchResults, 10000),
           index: ["title", "content"],
           tag: tag,
-        })
+        })) as SearchResults
         for (let searchResult of searchResults) {
           searchResult.result = searchResult.result.slice(0, numSearchResults)
         }
@@ -429,18 +446,18 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
         currentSearchTerm = query
       } else {
         // default search by tags index
-        searchResults = await index.searchAsync({
+        searchResults = (await index.searchAsync({
           query: currentSearchTerm,
           limit: numSearchResults,
           index: ["tags"],
-        })
+        })) as SearchResults
       }
     } else if (searchType === "basic") {
-      searchResults = await index.searchAsync({
+      searchResults = (await index.searchAsync({
         query: currentSearchTerm,
         limit: numSearchResults,
         index: ["title", "content"],
-      })
+      })) as SearchResults
     }
 
     const getByField = (field: string): number[] => {
@@ -466,7 +483,6 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   window.addCleanup(() => searchBar?.removeEventListener("input", onType))
 
   registerEscapeHandler(container, hideSearch)
-  await fillDocument(data)
 })
 
 /**
