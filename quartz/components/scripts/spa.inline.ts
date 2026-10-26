@@ -1,6 +1,7 @@
 import micromorph from "micromorph"
 import { FullSlug, RelativeURL, getFullSlug, normalizeRelativeURLs } from "../../util/path"
 import { fetchCanonical } from "./util"
+import { katexCopyScriptUrl, katexStylesheetUrl } from "../../util/externalAssets"
 
 // adapted from `micromorph`
 // https://github.com/natemoo-re/micromorph
@@ -33,6 +34,24 @@ const getOpts = ({ target }: Event): { url: URL; scroll?: boolean } | undefined 
   const { href } = a
   if (!isLocalUrl(href)) return
   return { url: new URL(href), scroll: "routerNoscroll" in a.dataset ? false : undefined }
+}
+
+function loadKatexResources() {
+  if (!document.querySelector(".katex")) return
+
+  if (!document.head.querySelector(`link[href="${katexStylesheetUrl}"]`)) {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = katexStylesheetUrl
+    document.head.appendChild(link)
+  }
+
+  if (!document.querySelector(`script[src="${katexCopyScriptUrl}"]`)) {
+    const script = document.createElement("script")
+    script.src = katexCopyScriptUrl
+    script.defer = true
+    document.documentElement.appendChild(script)
+  }
 }
 
 function notifyNav(url: FullSlug) {
@@ -120,6 +139,7 @@ async function navigate(url: URL, isBack: boolean = false) {
     history.pushState({}, "", url)
   }
 
+  loadKatexResources()
   notifyNav(getFullSlug(window))
   delete announcer.dataset.persist
 }

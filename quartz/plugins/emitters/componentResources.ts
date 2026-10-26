@@ -10,6 +10,7 @@ import popoverStyle from "../../components/styles/popover.scss"
 import { BuildCtx } from "../../util/ctx"
 import { QuartzComponent } from "../../components/types"
 import { googleFontHref, joinStyles } from "../../util/theme"
+import { setCriticalFontFiles } from "../../util/fontManifest"
 import { Features, transform } from "lightningcss"
 import { build, transform as transpile } from "esbuild"
 import { write } from "./helpers"
@@ -224,24 +225,61 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
         // let the user do it themselves in css
       } else if (cfg.theme.fontOrigin === "googleFonts" && !cfg.theme.cdnCaching) {
         // when cdnCaching is true, we link to google fonts in Head.tsx
-        let match
-
         const fontSourceRegex = /url\((https:\/\/fonts.gstatic.com\/s\/[^)]+\.(woff2|ttf))\)/g
 
-        googleFontsStyleSheet = await (
-          await fetch(googleFontHref(ctx.cfg.configuration.theme))
-        ).text()
+        const fontCssResponse = await fetch(googleFontHref(ctx.cfg.configuration.theme), {
+          headers: {
+            // Ask Google Fonts for the same subsetted woff2 CSS a modern browser
+            // receives, not the larger legacy TTF fallback returned otherwise.
+            "User-Agent":
+              "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+          },
+        })
+        if (!fontCssResponse.ok) {
+          throw new Error(`Failed to fetch Google Fonts stylesheet: ${fontCssResponse.status}`)
+        }
+        googleFontsStyleSheet = await fontCssResponse.text()
 
-        while ((match = fontSourceRegex.exec(googleFontsStyleSheet)) !== null) {
-          // match[0] is the `url(path)`, match[1] is the `path`
-          const url = match[1]
-          // the static name of this file.
+        const fontUrls = [
+          ...new Set(
+            [...googleFontsStyleSheet.matchAll(fontSourceRegex)].map((fontMatch) => fontMatch[1]),
+          ),
+        ]
+        const fontFaces = [...googleFontsStyleSheet.matchAll(/@font-face\s*{([^}]+)}/g)].map(
+          (fontMatch) => fontMatch[1],
+        )
+        const criticalFontFiles = [
+          ...new Set(
+            fontFaces
+              .filter((face) => {
+                const family = face.match(/font-family:\s*'([^']+)'/)?.[1]
+                const style = face.match(/font-style:\s*([^;]+)/)?.[1]?.trim()
+                const weight = face.match(/font-weight:\s*([^;]+)/)?.[1]?.trim()
+                const isLatin = /unicode-range:[^;]*U\+0000-00FF/i.test(face)
+                if (!isLatin || style !== "normal") return false
+                return (
+                  (family === cfg.theme.typography.code && weight === "400") ||
+                  (family === cfg.theme.typography.header && ["400", "700"].includes(weight!)) ||
+                  (family === cfg.theme.typography.body && ["400", "600"].includes(weight!))
+                )
+              })
+              .map(
+                (face) =>
+                  face
+                    .match(/url\((https:\/\/fonts.gstatic.com\/s\/[^)]+\.(?:woff2|ttf))\)/)?.[1]
+                    ?.split("/")
+                    .pop()!,
+              )
+              .filter(Boolean),
+          ),
+        ]
+        setCriticalFontFiles(criticalFontFiles)
+        for (const url of fontUrls) {
+          // The final path segment is Google's stable, content-versioned font
+          // filename. Keep its real extension so woff2 URLs stay valid.
           const [filename, ext] = url.split("/").pop()!.split(".")
-
-          googleFontsStyleSheet = googleFontsStyleSheet.replace(
-            url,
-            `https://${cfg.baseUrl}/static/fonts/${filename}.ttf`,
-          )
+          const localUrl = `static/fonts/${filename}.${ext}`
+          googleFontsStyleSheet = googleFontsStyleSheet.split(url).join(localUrl)
 
           promises.push(
             fetch(url)

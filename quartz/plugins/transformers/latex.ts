@@ -4,7 +4,11 @@ import rehypeMathjax from "rehype-mathjax/svg"
 //@ts-ignore
 import rehypeTypst from "@myriaddreamin/rehype-typst"
 import { QuartzTransformerPlugin } from "../types"
+import { katexCopyScriptUrl, katexStylesheetUrl } from "../../util/externalAssets"
 import { KatexOptions } from "katex"
+import { Element, Root } from "hast"
+import { visit } from "unist-util-visit"
+import { VFile } from "vfile"
 import { Options as MathjaxOptions } from "rehype-mathjax/svg"
 //@ts-ignore
 import { Options as TypstOptions } from "@myriaddreamin/rehype-typst"
@@ -21,6 +25,19 @@ interface MacroType {
   [key: string]: string
 }
 
+const rehypeMarkLatex = () => (tree: Root, file: VFile) => {
+  file.data.hasLatex = false
+  visit(tree, "element", (node: Element) => {
+    const classNames = node.properties?.className
+    if (
+      Array.isArray(classNames) &&
+      classNames.some((className) => String(className) === "katex")
+    ) {
+      file.data.hasLatex = true
+    }
+  })
+}
+
 export const Latex: QuartzTransformerPlugin<Partial<Options>> = (opts) => {
   const engine = opts?.renderEngine ?? "katex"
   const macros = opts?.customMacros ?? {}
@@ -32,7 +49,10 @@ export const Latex: QuartzTransformerPlugin<Partial<Options>> = (opts) => {
     htmlPlugins() {
       switch (engine) {
         case "katex": {
-          return [[rehypeKatex, { output: "html", macros, ...(opts?.katexOptions ?? {}) }]]
+          return [
+            [rehypeKatex, { output: "html", macros, ...(opts?.katexOptions ?? {}) }],
+            [rehypeMarkLatex],
+          ]
         }
         case "typst": {
           return [[rehypeTypst, opts?.typstOptions ?? {}]]
@@ -49,13 +69,14 @@ export const Latex: QuartzTransformerPlugin<Partial<Options>> = (opts) => {
       switch (engine) {
         case "katex":
           return {
-            css: [{ content: "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" }],
+            css: [{ content: katexStylesheetUrl }],
             js: [
               {
                 // fix copy behaviour: https://github.com/KaTeX/KaTeX/blob/main/contrib/copy-tex/README.md
-                src: "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js",
+                src: katexCopyScriptUrl,
                 loadTime: "afterDOMReady",
                 contentType: "external",
+                defer: true,
               },
             ],
           }
@@ -63,5 +84,11 @@ export const Latex: QuartzTransformerPlugin<Partial<Options>> = (opts) => {
           return { css: [], js: [] }
       }
     },
+  }
+}
+
+declare module "vfile" {
+  interface DataMap {
+    hasLatex: boolean | undefined
   }
 }

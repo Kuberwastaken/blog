@@ -2,6 +2,7 @@ import { i18n } from "../i18n"
 import { FullSlug, joinSegments, pathToRoot } from "../util/path"
 import { CSSResourceToStyleElement, JSResourceToScriptElement } from "../util/resources"
 import { googleFontHref } from "../util/theme"
+import { getCriticalFontFiles } from "../util/fontManifest"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import satori, { SatoriOptions } from "satori"
 import fs from "fs"
@@ -201,7 +202,21 @@ export default (() => {
             <link rel="stylesheet" href={googleFontHref(cfg.theme)} />
           </>
         )}
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin={"anonymous"} />
+        {!cfg.theme.cdnCaching &&
+          cfg.theme.fontOrigin === "googleFonts" &&
+          getCriticalFontFiles().map((filename) => (
+            <link
+              key={filename}
+              rel="preload"
+              href={joinSegments(pathToRoot(fileData.slug!), "static", "fonts", filename)}
+              as="font"
+              type="font/woff2"
+              crossOrigin="anonymous"
+            />
+          ))}
+        {fileData.hasMermaidDiagram && (
+          <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin={"anonymous"} />
+        )}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* OG/Twitter meta tags */}
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
