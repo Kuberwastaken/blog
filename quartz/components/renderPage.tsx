@@ -11,8 +11,6 @@ import { GlobalConfiguration } from "../cfg"
 import { i18n } from "../i18n"
 // @ts-ignore
 import mermaidScript from "./scripts/mermaid.inline"
-// @ts-ignore
-import darkmodeScript from "./scripts/darkmode.inline"
 import mermaidStyle from "./styles/mermaid.inline.scss"
 import { QuartzPluginData } from "../plugins/vfile"
 
@@ -60,10 +58,9 @@ const fetchData = () => {
     ],
     js: [
       {
-        script: darkmodeScript,
+        src: joinSegments(baseDir, "prescript.js"),
         loadTime: "beforeDOMReady",
-        contentType: "inline",
-        spaPreserve: true,
+        contentType: "external",
       },
       {
         loadTime: "beforeDOMReady",
