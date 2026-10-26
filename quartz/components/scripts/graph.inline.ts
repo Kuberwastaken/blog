@@ -615,8 +615,7 @@ function renderGraphWhenVisible(container: string, fullSlug: FullSlug) {
   window.addCleanup(() => observer.disconnect())
 }
 
-document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
-  const slug = e.detail.url
+export function initGraph(slug: FullSlug) {
   addToVisited(simplifySlug(slug))
   renderGraphWhenVisible("graph-container", slug)
 
@@ -671,4 +670,6 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
 
   document.addEventListener("keydown", shortcutHandler)
   window.addCleanup(() => document.removeEventListener("keydown", shortcutHandler))
-})
+
+  return { renderGlobalGraph }
+}

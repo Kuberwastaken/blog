@@ -1,7 +1,7 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import style from "./styles/search.scss"
 // @ts-ignore
-import script from "./scripts/search.inline"
+import script from "./scripts/search-loader.inline"
 import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
 
