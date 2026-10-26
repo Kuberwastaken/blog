@@ -3,6 +3,7 @@ import { QuartzComponent, QuartzComponentProps } from "./types"
 import HeaderConstructor from "./Header"
 import BodyConstructor from "./Body"
 import { JSResourceToScriptElement, StaticResources } from "../util/resources"
+import { katexCopyScriptUrl, katexStylesheetUrl } from "../util/externalAssets"
 import { clone, FullSlug, RelativeURL, joinSegments, normalizeHastElement } from "../util/path"
 import { visit } from "unist-util-visit"
 import { Root, Element, ElementContent } from "hast"
@@ -10,6 +11,8 @@ import { GlobalConfiguration } from "../cfg"
 import { i18n } from "../i18n"
 // @ts-ignore
 import mermaidScript from "./scripts/mermaid.inline"
+// @ts-ignore
+import darkmodeScript from "./scripts/darkmode.inline"
 import mermaidStyle from "./styles/mermaid.inline.scss"
 import { QuartzPluginData } from "../plugins/vfile"
 
@@ -39,18 +42,28 @@ const fetchData = () => {
   return fetchDataPromise
 }`
 
+  const pageStaticResources: StaticResources = fileData.hasLatex
+    ? staticResources
+    : {
+        css: staticResources.css.filter((resource) => resource.content !== katexStylesheetUrl),
+        js: staticResources.js.filter(
+          (resource) => resource.contentType !== "external" || resource.src !== katexCopyScriptUrl,
+        ),
+      }
+
   const resources: StaticResources = {
     css: [
       {
         content: joinSegments(baseDir, "index.css"),
       },
-      ...staticResources.css,
+      ...pageStaticResources.css,
     ],
     js: [
       {
-        src: joinSegments(baseDir, "prescript.js"),
+        script: darkmodeScript,
         loadTime: "beforeDOMReady",
-        contentType: "external",
+        contentType: "inline",
+        spaPreserve: true,
       },
       {
         loadTime: "beforeDOMReady",
@@ -58,7 +71,7 @@ const fetchData = () => {
         spaPreserve: true,
         script: contentIndexScript,
       },
-      ...staticResources.js,
+      ...pageStaticResources.js,
     ],
   }
 
