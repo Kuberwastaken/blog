@@ -11,7 +11,7 @@ import { BuildCtx } from "../../util/ctx"
 import { QuartzComponent } from "../../components/types"
 import { googleFontHref, joinStyles } from "../../util/theme"
 import { Features, transform } from "lightningcss"
-import { transform as transpile } from "esbuild"
+import { build, transform as transpile } from "esbuild"
 import { write } from "./helpers"
 import DepGraph from "../../depgraph"
 
@@ -191,6 +191,34 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
       const cfg = ctx.cfg.configuration
       // component specific scripts and styles
       const componentResources = getComponentResources(ctx)
+
+      // Keep expensive interactive features out of the initial postscript. The
+      // small loaders bundled below import these chunks on first use.
+      const lazyScripts = await build({
+        entryPoints: {
+          search: "quartz/components/scripts/search.inline.ts",
+          graph: "quartz/components/scripts/graph.inline.ts",
+        },
+        bundle: true,
+        splitting: true,
+        format: "esm",
+        minify: true,
+        outdir: "static",
+        write: false,
+        logLevel: "silent",
+      })
+      for (const output of lazyScripts.outputFiles) {
+        const filename = output.path.split(/[\/]/).pop()!
+        promises.push(
+          write({
+            ctx,
+            slug: joinSegments("static", filename.replace(/\.js$/, "")) as FullSlug,
+            ext: ".js",
+            content: Buffer.from(output.contents),
+          }),
+        )
+      }
+
       let googleFontsStyleSheet = ""
       if (cfg.theme.fontOrigin === "local") {
         // let the user do it themselves in css

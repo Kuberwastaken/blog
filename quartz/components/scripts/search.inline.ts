@@ -158,8 +158,7 @@ function ensureSearchIndex() {
   return searchIndexPromise
 }
 
-document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
-  const currentSlug = e.detail.url
+export function initSearch(currentSlug: FullSlug) {
   const container = document.getElementById("search-container")
   const sidebar = container?.closest(".sidebar") as HTMLElement
   const searchButton = document.getElementById("search-button")
@@ -483,7 +482,9 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   window.addCleanup(() => searchBar?.removeEventListener("input", onType))
 
   registerEscapeHandler(container, hideSearch)
-})
+
+  return { showSearch }
+}
 
 /**
  * Fills flexsearch document with data
