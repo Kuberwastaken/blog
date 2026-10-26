@@ -46,12 +46,22 @@ function loadKatexResources() {
     document.head.appendChild(link)
   }
 
-  if (!document.querySelector(`script[src="${katexCopyScriptUrl}"]`)) {
-    const script = document.createElement("script")
-    script.src = katexCopyScriptUrl
-    script.defer = true
-    document.documentElement.appendChild(script)
-  }
+  const copyScripts = document.querySelectorAll<HTMLScriptElement>(
+    `script[src="${katexCopyScriptUrl}"]`,
+  )
+  if ([...copyScripts].some((script) => script.dataset.spaLoaded === "true")) return
+
+  // Micromorph preserves the static script tag from the fetched page, but tags inserted
+  // through innerHTML do not execute. Replace it with an executable SPA-owned script.
+  copyScripts.forEach((script) => script.remove())
+  const script = document.createElement("script")
+  script.src = katexCopyScriptUrl
+  script.setAttribute("spa-preserve", "")
+  script.dataset.spaCopyTex = "true"
+  script.addEventListener("load", () => {
+    script.dataset.spaLoaded = "true"
+  })
+  document.head.appendChild(script)
 }
 
 function notifyNav(url: FullSlug) {
