@@ -29,7 +29,7 @@ I went looking for a good writeup explaining how this all works and couldn’t f
 
 But of course, if you want to _be_ a Root CA, you’ll first need to know…
 
-## Why do we need a Root CA anyway?
+# Why do we need a Root CA anyway?
 
 When you opened `kuber.studio` to read this, just encryption can't guarentee you're actually directly talking to my server.
 
@@ -44,7 +44,7 @@ That proof is a **digital certificate**. which is issued by a certificate author
 
 now that we know this, the obvious question remains.
 
-## Who decided these companies should be trusted?
+# Who decided these companies should be trusted?
 
 Funnily enough, we never got a new arrangement for the internet, we inherited how it worked in the SSL era. The major browsers just started shipping trusted certificates with their software.
 
@@ -144,7 +144,7 @@ The catch is that you need an established CA willing to vouch for you. The other
 
 Let’s Encrypt looked into buying one too. Its founders [reported quotes of $1–8 million](https://www.isrg.org/documents/letsencryptCCS2019.pdf) depending on the root’s remaining lifetime, compatibility and baggage, and never went through with it.
 
-## What's the business model here?
+# What's the business model here?
 
 For commercial CAs, it’s selling certificates and managing them. TrustAsia, for example [charges for issuance, renewal and related services](https://repository.trustasia.com/en/repo/cps/adoc/v2.2.0) and sells certificate-management products on top.
 
@@ -158,13 +158,13 @@ By now you’ve seen why the number is so small. It takes capital, specialist st
 
 Browsers also rightfully have a good reason to be picky. Any trusted CA can issue a certificate for _any_ domain.
 
-## Congratulations, You've Done it
+# Congratulations, You've Done it
 
 Now the real job starts. You get audited every year, update your systems every time the rules change, and answer in public for any issue. Under the [CCADB incident rules](https://www.ccadb.org/cas/incident-report), you generally owe an initial report within 72 hours of finding out and a full report within 14 days of that.
 
 Even leaving takes a lot of work, eMudhra’s [exit announcement](https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business) committed to keeping certificate-status services running until every certificate it issued had expired or been replaced, which would take years.
 
-### And this made me question the entire process
+# And this made me question the entire process
 
 If it really was that easy to track all the applications, objections, audit statements and failures, even though they were scattered, I'm genuinely shocked we don't have better ways to keep it all in check.
 
