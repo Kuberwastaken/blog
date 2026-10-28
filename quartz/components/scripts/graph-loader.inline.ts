@@ -3,32 +3,37 @@ import type { FullSlug } from "../../util/path"
 type GraphApi = { renderGlobalGraph: () => void }
 type GraphModule = { initGraph: (slug: FullSlug) => GraphApi }
 
-let graphModule: GraphModule | undefined
-let graphModulePromise: Promise<GraphApi> | undefined
-let graphApi: GraphApi | undefined
-let graphOpening = false
+let graphModulePromise: Promise<GraphModule> | undefined
 
-async function loadGraph(slug: FullSlug): Promise<GraphApi> {
-  if (!graphModule) {
-    graphModulePromise ??= (
-      import(new URL("static/graph.js", import.meta.url).href) as Promise<GraphModule>
-    ).then((module) => {
-      graphModule = module
-      // Use the current page in case an SPA navigation happened while loading.
-      graphApi = module.initGraph(document.body.dataset.slug as FullSlug)
-      return graphApi
-    })
-    return graphModulePromise
-  }
-  graphApi = graphModule.initGraph(slug)
-  return graphApi
+function loadGraphModule(): Promise<GraphModule> {
+  graphModulePromise ??= (
+    import(new URL("static/graph.js", import.meta.url).href) as Promise<GraphModule>
+  ).catch((error) => {
+    graphModulePromise = undefined
+    throw error
+  })
+  return graphModulePromise
 }
 
 document.addEventListener("nav", (e: CustomEventMap["nav"]) => {
   const slug = e.detail.url
-  if (graphModule) {
-    graphApi = graphModule.initGraph(slug)
-    return
+  let disposed = false
+  let graphOpening = false
+  let apiPromise: Promise<GraphApi | undefined> | undefined
+
+  const loadGraph = () => {
+    apiPromise ??= loadGraphModule()
+      .then((module) => {
+        if (disposed) return
+        removeLoaderListeners()
+        return module.initGraph(slug)
+      })
+      .catch((error) => {
+        apiPromise = undefined
+        console.error("Unable to load mindmap", error)
+        return undefined
+      })
+    return apiPromise
   }
 
   const graph = document.getElementById("graph-container")
@@ -38,11 +43,8 @@ document.addEventListener("nav", (e: CustomEventMap["nav"]) => {
     if (graphOpening) return
     graphOpening = true
     try {
-      const api = await loadGraph(slug)
-      observer?.disconnect()
-      containerIcon?.removeEventListener("click", openGlobalGraph)
-      document.removeEventListener("keydown", graphShortcutHandler)
-      api.renderGlobalGraph()
+      const api = await loadGraph()
+      if (!disposed) api?.renderGlobalGraph()
     } finally {
       graphOpening = false
     }
@@ -57,7 +59,7 @@ document.addEventListener("nav", (e: CustomEventMap["nav"]) => {
 
   const loadLocalGraph = () => {
     observer?.disconnect()
-    void loadGraph(slug)
+    void loadGraph()
   }
 
   let observer: IntersectionObserver | undefined
@@ -77,9 +79,13 @@ document.addEventListener("nav", (e: CustomEventMap["nav"]) => {
 
   containerIcon?.addEventListener("click", openGlobalGraph)
   document.addEventListener("keydown", graphShortcutHandler)
-  window.addCleanup(() => {
+  function removeLoaderListeners() {
     observer?.disconnect()
     containerIcon?.removeEventListener("click", openGlobalGraph)
     document.removeEventListener("keydown", graphShortcutHandler)
+  }
+  window.addCleanup(() => {
+    disposed = true
+    removeLoaderListeners()
   })
 })

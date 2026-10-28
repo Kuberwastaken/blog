@@ -76,6 +76,18 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   renderCleanups.get(graph)?.()
   removeAllChildren(graph)
 
+  // Claim the container before any await, so a newer render cancels this one.
+  let disposed = false
+  let releaseResources = () => {}
+  const cleanup = () => {
+    if (disposed) return
+    disposed = true
+    releaseResources()
+    if (renderCleanups.get(graph) === cleanup) renderCleanups.delete(graph)
+  }
+  renderCleanups.set(graph, cleanup)
+  window.addCleanup(cleanup)
+
   let {
     drag: enableDrag,
     zoom: enableZoom,
@@ -97,6 +109,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
       v,
     ]),
   )
+  if (disposed || !graph.isConnected) return
   const links: SimpleLinkData[] = []
   const tags: SimpleSlug[] = []
   const validLinks = new Set(data.keys())
@@ -153,14 +166,21 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
       tags: data.get(url)?.tags ?? [],
     }
   })
+  const nodesById = new Map(nodes.map((node) => [node.id, node]))
   const graphData: { nodes: NodeData[]; links: LinkData[] } = {
     nodes,
     links: links
       .filter((l) => neighbourhood.has(l.source) && neighbourhood.has(l.target))
       .map((l) => ({
-        source: nodes.find((n) => n.id === l.source)!,
-        target: nodes.find((n) => n.id === l.target)!,
+        source: nodesById.get(l.source)!,
+        target: nodesById.get(l.target)!,
       })),
+  }
+
+  const degrees = new Map<SimpleSlug, number>()
+  for (const { source, target } of graphData.links) {
+    degrees.set(source.id, (degrees.get(source.id) ?? 0) + 1)
+    if (source.id !== target.id) degrees.set(target.id, (degrees.get(target.id) ?? 0) + 1)
   }
 
   // we virtualize the simulation and use pixi to actually render it
@@ -170,6 +190,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     .force("link", forceLink(graphData.links).distance(linkDistance))
     .force("collide", forceCollide<NodeData>((n) => nodeRadius(n)).iterations(3))
 
+  releaseResources = () => simulation.stop()
   const width = graph.offsetWidth
   const height = Math.max(graph.offsetHeight, 250)
 
@@ -205,10 +226,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   }
 
   function nodeRadius(d: NodeData) {
-    const numLinks = graphData.links.filter(
-      (l) => l.source.id === d.id || l.target.id === d.id,
-    ).length
-    return 2 + Math.sqrt(numLinks)
+    return 2 + Math.sqrt(degrees.get(d.id) ?? 0)
   }
 
   let hoveredNodeId: string | null = null
@@ -369,18 +387,39 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     }
   }
 
+  if (disposed || !graph.isConnected) {
+    cleanup()
+    return
+  }
   const app = new Application()
-  await app.init({
-    width,
-    height,
-    antialias: true,
-    autoStart: false,
-    autoDensity: true,
-    backgroundAlpha: 0,
-    preference: "webgpu",
-    resolution: window.devicePixelRatio,
-    eventMode: "static",
-  })
+  try {
+    await app.init({
+      width,
+      height,
+      antialias: true,
+      autoStart: false,
+      autoDensity: true,
+      backgroundAlpha: 0,
+      preference: "webgpu",
+      resolution: window.devicePixelRatio,
+      eventMode: "static",
+    })
+  } catch (error) {
+    cleanup()
+    console.error("Unable to render mindmap", error)
+    return
+  }
+  const destroyApp = () => {
+    simulation.stop()
+    tweens.forEach((tween) => tween.stop())
+    tweens.clear()
+    app.destroy(true, { children: true, texture: true, textureSource: true })
+  }
+  if (disposed || !graph.isConnected) {
+    destroyApp()
+    return
+  }
+  releaseResources = destroyApp
   graph.appendChild(app.canvas)
 
   const stage = app.stage
@@ -589,8 +628,10 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   }
 
   startAnimation()
-  renderCleanups.set(graph, stopAnimation)
-  window.addCleanup(stopAnimation)
+  releaseResources = () => {
+    stopAnimation()
+    destroyApp()
+  }
 }
 
 function renderGraphWhenVisible(container: string, fullSlug: FullSlug) {
@@ -639,6 +680,7 @@ export function initGraph(slug: FullSlug) {
   const sidebar = container?.closest(".sidebar") as HTMLElement
 
   function renderGlobalGraph() {
+    if (!container || container.classList.contains("active")) return
     const slug = getFullSlug(window)
     container?.classList.add("active")
     if (sidebar) {
@@ -646,15 +688,18 @@ export function initGraph(slug: FullSlug) {
     }
 
     renderGraph("global-graph-container", slug)
-    registerEscapeHandler(container, hideGlobalGraph)
   }
 
   function hideGlobalGraph() {
     container?.classList.remove("active")
+    const graph = document.getElementById("global-graph-container")
+    if (graph) renderCleanups.get(graph)?.()
     if (sidebar) {
       sidebar.style.zIndex = ""
     }
   }
+
+  registerEscapeHandler(container, hideGlobalGraph)
 
   async function shortcutHandler(e: HTMLElementEventMap["keydown"]) {
     if (e.key === "g" && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
