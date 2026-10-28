@@ -170,7 +170,7 @@ If it really was that easy to track all the applications, objections, audit stat
 
 I'm even more shocked about the eMudhra incident passing all the independent audits, checks and reports even after being in the game for so long with those security casualties.
 
-If you've seen me online or read my blogs, I'm very optimistic about the progress AI brings to society, especially in technology -- but seeing the infrastructure issues with such a "load bearing" (pun unintended) part of the internet, which is largely considered very hard to break into does make me think.
+If you've seen me online or read my blogs, I'm very optimistic about the progress AI brings to society, especially in technology -<span></span>- but seeing the infrastructure issues with such a "load bearing" (pun unintended) part of the internet, which is largely considered very hard to break into does make me think.
 
 What Hecker admitted in 2005 is still true more than a decade later, an audit proves a CA follows _its own_ policies, not that those policies are good enough. Perchance.
 
