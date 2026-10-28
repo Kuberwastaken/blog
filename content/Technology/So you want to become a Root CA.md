@@ -66,7 +66,7 @@ But you want **public browser trust**. You'd like strangers' computers to accept
 
 Ambitious. Let's see your finances.
 
-### Get funding, then maybe a licence
+## Get funding, then maybe a licence
 
 Before anything else, you’ll want serious, long-term money. Major examples I cover here include Google’s [own CA operation](https://security.googleblog.com/2017/01/the-foundation-of-more-secure-web.html), Fastly’s [Certainly](https://www.fastly.com/blog/announcing-certainly-fastlys-own-tls-certification-authority), and Let’s Encrypt (a nonprofit whose founders [raised corporate funding](https://www.isrg.org/documents/letsencryptCCS2019.pdf) to pay for hardware and staff.) You don’t personally need to be a millionaire (it usually does help though,) but you’ll want to arrive with people willing to fund this for years.
 
@@ -164,7 +164,7 @@ Now the real job starts. You get audited every year, update your systems every t
 
 Even leaving takes a lot of work, eMudhra’s [exit announcement](https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business) committed to keeping certificate-status services running until every certificate it issued had expired or been replaced, which would take years.
 
-# And this made me question the entire process
+## And this made me question the entire process
 
 If it really was that easy to track all the applications, objections, audit statements and failures, even though they were scattered, I'm genuinely shocked we don't have better ways to keep it all in check.
 
