@@ -111,8 +111,9 @@
 }
 
 // Opt-in left alignment for one embed via `![left](tweet-url)` in markdown.
-// Overrides the centered margin from base.scss for that tweet only.
-.twitter-tweet.tweet-left {
+// The marker sits on a wrapper div because widgets.js replaces the blockquote
+// without copying custom classes; overrides base.scss centering for that tweet.
+.tweet-left .twitter-tweet {
   margin-left: 0 !important;
   margin-right: auto !important;
 }
