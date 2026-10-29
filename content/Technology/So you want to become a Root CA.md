@@ -10,7 +10,7 @@ modified:
 ---
 Chances are you followed the whole eMudhra story, thought “if they managed it with security like _that_, surely I can too,” and clicked on this post.
 
-![](https://x.com/Scott_Helme/status/2112952215878939052)
+![left](https://x.com/Scott_Helme/status/2112952215878939052)
 
 Great! Congratulations on taking the first step. The road ahead involves a lot of reading (certificate policies, audit criteria, root program requirements, and legislation) before you can even begin.
 

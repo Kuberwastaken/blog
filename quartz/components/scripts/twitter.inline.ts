@@ -67,7 +67,11 @@ function rethemeTweets() {
     if (!id) return
 
     const mount = document.createElement("div")
-    mount.className = "twitter-tweet"
+    // Carry opt-in classes (e.g. tweet-left) across the theme re-render.
+    const extraClasses = el.className
+      .split(/\s+/)
+      .filter((c) => c && c !== "twitter-tweet" && c !== "twitter-tweet-rendered")
+    mount.className = ["twitter-tweet", ...extraClasses].join(" ")
     el.replaceWith(mount)
     window.twttr.widgets
       .createTweet(id, mount, { theme: currentTheme() })

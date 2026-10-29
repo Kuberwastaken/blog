@@ -110,6 +110,13 @@
   max-width: 450px !important;
 }
 
+// Opt-in left alignment for one embed via `![left](tweet-url)` in markdown.
+// Overrides the centered margin from base.scss for that tweet only.
+.twitter-tweet.tweet-left {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
 // Pre-render fallback: before widgets.js replaces the blockquote, show it as
 // a small themed card instead of a bare link so there is no layout flash.
 blockquote.twitter-tweet {
