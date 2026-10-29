@@ -118,6 +118,15 @@
   margin-right: auto !important;
 }
 
+// AMOLED X embeds in dark mode: the native dark card is blue-grey (#15202b),
+// which sits visibly against the pure-black page. contrast(1.6) maps that
+// background to exactly #000 while leaving white text white. Tradeoff Kuber
+// accepted: it is a global pixel transform, so dark photo detail clips to
+// black and accent colours shift slightly. Light theme is untouched.
+:root[saved-theme="dark"] .twitter-tweet {
+  filter: contrast(1.6);
+}
+
 // Pre-render fallback: before widgets.js replaces the blockquote, show it as
 // a small themed card instead of a bare link so there is no layout flash.
 blockquote.twitter-tweet {
