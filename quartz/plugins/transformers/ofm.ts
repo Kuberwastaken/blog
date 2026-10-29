@@ -417,11 +417,14 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
             visit(tree, "image", (node, index, parent) => {
               if (parent && index != undefined && twitterLinkRegex.test(node.url)) {
                 // `![left](tweet-url)` opts a single embed out of the site-wide
-                // centered margin; any other alt text keeps its meaning.
+                // centered margin; any other alt text keeps its meaning. The
+                // marker sits on a wrapper div because widgets.js replaces the
+                // blockquote without copying custom classes onto the widget.
                 const leftAligned = node.alt === "left"
+                const inner = `<blockquote class="twitter-tweet"><a href="${node.url}">${leftAligned ? "View Tweet" : node.alt || "View Tweet"}</a></blockquote>`
                 const newNode: Html = {
                   type: "html",
-                  value: `<blockquote class="twitter-tweet${leftAligned ? " tweet-left" : ""}"><a href="${node.url}">${leftAligned ? "View Tweet" : node.alt || "View Tweet"}</a></blockquote>`,
+                  value: leftAligned ? `<div class="tweet-left">${inner}</div>` : inner,
                 }
 
                 parent.children.splice(index, 1, newNode)
