@@ -102,6 +102,36 @@
   }
 }
 
+// Wide screens: the stock 1500px page cap left the whole layout floating in
+// the middle with dead gutters once the viewport passed it (any zoom below
+// 100% on a laptop, or a 1080p+ monitor). Let the page track the viewport up
+// to an ultrawide ceiling, and let the sidebars grow with it so the article
+// column picks up the rest instead of hitting a hard wall.
+@media all and (min-width: 1200px) {
+  .page {
+    max-width: 2200px;
+
+    & > #quartz-body {
+      grid-template-columns:
+        clamp(300px, 20vw, 400px)
+        minmax(0, 1fr)
+        clamp(300px, 20vw, 400px);
+      column-gap: clamp(5px, 1.5vw, 2.5rem);
+
+      // A wider column at the same type size just means longer lines, so
+      // the article text scales with it: 16px at 1536px (unchanged at 100%
+      // on a laptop) up to 18px from ~2000px.
+      .center article {
+        font-size: clamp(1rem, 0.586rem + 0.431vw, 1.125rem);
+      }
+    }
+  }
+
+  .page .twitter-tweet {
+    max-width: clamp(450px, 28vw, 550px) !important;
+  }
+}
+
 
 // Tweet embeds: keep them centered and compact so a quote-tweet with media
 // doesn't tower over the article column. The widget iframe scales with width,
