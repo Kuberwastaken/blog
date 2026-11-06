@@ -109,6 +109,8 @@ describe("transforms", () => {
         ["test/special chars?.md", "test/special-chars"],
         ["test/special chars #3.md", "test/special-chars-3"],
         ["cool/what about r&d?.md", "cool/what-about-r-and-d"],
+        ["content/let's talk.md", "content/lets-talk"],
+        ["content/it\u2019s curly.md", "content/its-curly"],
       ],
       path.slugifyFilePath,
       path.isFilePath,
