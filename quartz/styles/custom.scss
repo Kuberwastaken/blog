@@ -337,3 +337,18 @@ p.img-caption {
     .post-index-list { margin-top: calc(var(--sidebar-heading-gap) - 0.7rem); }
   }
 }
+
+// Side-by-side chart groups (raw <div class="chart-row"> wrappers in posts).
+// Same rule the Vertigo preview inlines: auto-fit grid, stacks on narrow screens.
+.chart-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.7rem;
+  align-items: start;
+  margin: 0.4rem 0 0.8rem;
+
+  & img {
+    width: 100%;
+    margin: 0 !important;
+  }
+}
