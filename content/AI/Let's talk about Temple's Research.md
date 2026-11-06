@@ -13,7 +13,7 @@ I've been seeing a lot of discourse about Temple on my twitter feed for the past
 
 So I decided to spend this Diwali weekend doing that, and broke it down in a more digestible and opinionated way so most curious people can follow along.
 
-![The gold, oval Temple device held up between two fingers.](./temple-research/temple-device.jpg)
+![The gold, oval Temple device held up between two fingers.](https://raw.githubusercontent.com/Kuberwastaken/temple-research/main/img/temple-device.jpg)
 
 Fair warning before we get into this - I'm far from a medical professional, I just happen to have experiences with wearables and BLE tech I can hack, am decent at exploring topics I have no business exploring with AI agents and have watched one too many videos by the quantified scientist.
 
@@ -91,7 +91,7 @@ I saw a lot of speculation about this on twitter, especially the not having a mi
 
 [Throat microphones](https://www.sensear.com/blog/throat-microphones-then-and-now) already pick speech up from vibration at the neck rather than from sound in the air and even the [original AirPods technical spec](https://web.archive.org/web/20180831054835/support.apple.com/kb/SP750?locale=en_US) lists a speech-detecting accelerometer, used alongside the mics to tell when you're speaking.
 
-![Apple's original AirPods technical specifications page; its sensor list includes a speech-detecting accelerometer.](./temple-research/airpods-spec.jpg)
+![Apple's original AirPods technical specifications page; its sensor list includes a speech-detecting accelerometer.](https://raw.githubusercontent.com/Kuberwastaken/temple-research/main/img/airpods-spec.jpg)
 
 There's also been research on the temple, a [2007 Microsoft Research paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/Multisensory-Processing-for-Speech-Enhancement-and-Magnitude-Normalized-Spectra-for-Speech-Modeling.pdf) captured speech from it which was noise-resistant but distorted, so they paired it with a regular mic (worth remembering when people say no mic is needed) - and a [2013 study](https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=5685&context=jur) confirmed speech vibration is measurable at thirteen head and neck spots, temple included.
 
