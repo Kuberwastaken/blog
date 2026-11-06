@@ -3,7 +3,7 @@ import remarkFrontmatter from "remark-frontmatter"
 import { QuartzTransformerPlugin } from "../types"
 import yaml from "js-yaml"
 import toml from "toml"
-import { slugTag } from "../../util/path"
+import { slugTag, legacySlugifyFilePath } from "../../util/path"
 import { QuartzPluginData } from "../vfile"
 import { i18n } from "../../i18n"
 
@@ -68,6 +68,15 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
 
             const aliases = coerceToArray(coalesceAliases(data, ["aliases", "alias"]))
             if (aliases) data.aliases = aliases
+
+            // MindDump URL filter: page slugs strip apostrophes (see sluggify in
+            // util/path). Keep every pre-filter URL alive by adding its legacy slug
+            // as a redirect alias (AliasRedirects joins it with the file's folder).
+            const legacySlug = legacySlugifyFilePath(file.data.relativePath!)
+            if (file.data.slug != null && legacySlug !== file.data.slug) {
+              const legacyAlias = legacySlug.split("/").pop()!
+              data.aliases = [...new Set([...(data.aliases ?? []), legacyAlias])]
+            }
             const cssclasses = coerceToArray(coalesceAliases(data, ["cssclasses", "cssclass"]))
             if (cssclasses) data.cssclasses = cssclasses
 

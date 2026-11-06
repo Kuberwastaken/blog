@@ -47,17 +47,21 @@ export function getFullSlug(window: Window): FullSlug {
   return res
 }
 
-function sluggify(s: string): string {
+// MindDump URL filter: apostrophes (straight and curly) are dropped from URL
+// slugs ("Let's-talk" -> "Lets-talk"); keepApostrophes reproduces the pre-filter
+// behaviour for legacy redirect aliases
+function sluggify(s: string, keepApostrophes = false): string {
   return s
     .split("/")
-    .map((segment) =>
-      segment
+    .map((segment) => {
+      const cleaned = segment
         .replace(/\s/g, "-")
         .replace(/&/g, "-and-")
         .replace(/%/g, "-percent")
         .replace(/\?/g, "")
-        .replace(/#/g, ""),
-    )
+        .replace(/#/g, "")
+      return keepApostrophes ? cleaned : cleaned.replace(/['\u2019\u02bc]/g, "")
+    })
     .join("/") // always use / as sep
     .replace(/\/$/, "")
 }
@@ -71,6 +75,29 @@ export function slugifyFilePath(fp: FilePath, excludeExt?: boolean): FullSlug {
   }
 
   let slug = sluggify(withoutFileExt)
+
+  // treat _index as index
+  if (endsWith(slug, "_index")) {
+    slug = slug.replace(/_index$/, "index")
+  }
+
+  return (slug + ext) as FullSlug
+}
+
+/**
+ * Slug a file path the way MindDump URLs worked before the apostrophe filter
+ * (apostrophes kept). Used to emit redirect aliases so already-published URLs
+ * keep working.
+ */
+export function legacySlugifyFilePath(fp: FilePath, excludeExt?: boolean): FullSlug {
+  fp = stripSlashes(fp) as FilePath
+  let ext = _getFileExtension(fp)
+  const withoutFileExt = fp.replace(new RegExp(ext + "$"), "")
+  if (excludeExt || [".md", ".html", undefined].includes(ext)) {
+    ext = ""
+  }
+
+  let slug = sluggify(withoutFileExt, true)
 
   // treat _index as index
   if (endsWith(slug, "_index")) {
