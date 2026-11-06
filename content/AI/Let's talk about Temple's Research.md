@@ -87,7 +87,7 @@ The only catch I saw from the paper included that the two sides used different p
 
 ## The dictation / speech-to-text part
 
-I saw a lot of speculation about this on twitter, especially the not having a mic part. Honestly I'm pretty convinced it can work - it's one of the most well-precedented parts of the entire device - but can is doing some work there, and nobody outside Temple has the device's data yet.
+I saw a lot of speculation about this on twitter, especially the not having a mic part. But funnily enough it's probably the most heavily precedented researched part of the entire device, so I'm quite positive it can work out
 
 [Throat microphones](https://www.sensear.com/blog/throat-microphones-then-and-now) already pick speech up from vibration at the neck rather than from sound in the air and even the [original AirPods technical spec](https://web.archive.org/web/20180831054835/support.apple.com/kb/SP750?locale=en_US) lists a speech-detecting accelerometer, used alongside the mics to tell when you're speaking.
 
@@ -103,17 +103,23 @@ BrainFlow is their proprietary score built from pulse shape, heart rate, tempera
 
 This is the part I was most skeptical of going in, and also where Temple is doing something I couldn't find any other consumer wearable even attempting: tracking blood-flow changes in your brain from a sensor sitting outside your skull.
 
-Both the Doppler and NIRS papers are pretty cool, I initially planned to write them all out here, but it doesn't do them justice, you should read them if you're interested.
-
-But as a small TLDR, the Doppler paper checks if BrainFlow is seeing anything like actual brain blood flow, or is it just like a pulse reader? It held up well - correlations of 0.795 and 0.799 against the ultrasound - but the number isn't the cool part. When people lay down, their heart rate went down while their brain blood flow went up, and BrainFlow went up with it. If this thing was secretly just reading your pulse, it would have gone the wrong way at exactly that moment. It didn't, and that's a concrete reason to take the signal seriously.
-
-The NIRS paper checked if it's observing the brain or just the scalp skin on top of it. Two of the three challenges show a clear brain-over-scalp advantage; the third (standing to lying down) doesn't reach significance, at p = 0.082. And the headline 0.91 correlation in the first challenge drops to 0.65 once they adjust for the superficial signal. Still decent - but the gap between moves-with-the-brain and measures-the-brain is real.
-
 <div class="chart-row">
 <img src="https://raw.githubusercontent.com/Kuberwastaken/temple-research/main/img/nirs-tilt.svg" alt="Head-down tilt challenge: BrainFlow correlation with the modelled brain layer 0.912 with lag optimisation, 0.494 against scalp, 0.826 at zero lag, 0.832 after heart-rate adjustment and 0.649 after superficial-signal adjustment; p < 0.001.">
 <img src="https://raw.githubusercontent.com/Kuberwastaken/temple-research/main/img/nirs-squat.svg" alt="Stand-to-squat challenge: BrainFlow correlation with the modelled brain layer 0.843 with lag optimisation, 0.700 against scalp, 0.701 at zero lag, 0.850 after heart-rate adjustment and 0.570 after superficial-signal adjustment; p < 0.001.">
 <img src="https://raw.githubusercontent.com/Kuberwastaken/temple-research/main/img/nirs-supine.svg" alt="Stand-to-supine challenge: BrainFlow correlation with the modelled brain layer 0.839 with lag optimisation, 0.767 against scalp, 0.796 at zero lag, 0.654 after heart-rate adjustment and 0.438 after superficial-signal adjustment; p = 0.082.">
 </div>
+
+Both the Doppler and NIRS papers are pretty cool, I initially planned to write them all out here, but it doesn't do them justice, you should read them if you're interested.
+
+But as a small TLDR, the Doppler paper checks if BrainFlow is seeing anything like actual brain blood flow, or is it just like a pulse reader?
+
+It held up in the paper - correlations of 0.795 and 0.799 against the ultrasound but the better part was when people lay down, their heart rate went down while their brain blood flow went up, and BrainFlow went up with it. If this thing was just reading your pulse, it would have gone the wrong way but it didn't
+
+The NIRS paper checked if it's observing the brain or just the scalp skin on top of it. Two of the three challenges show a clear brain-over-scalp advantage; the third (standing to lying down) doesn't reach significance, at p = 0.082. And the headline 0.91 correlation in the first challenge drops to 0.65 once they adjust for the superficial signal. Still decent
+
+To reiterate, what we largely see here is the metric *can* work, it may or may not be useful to most people -- WHOOP did something very similar with their ECG which is still relative and not approved everywhere but is still a cool upgrade
+
+
 
 A lot of their experimentation and methods to try to disprove the results was cool and is worth a read.
 
