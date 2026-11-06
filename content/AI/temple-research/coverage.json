@@ -1,0 +1,221 @@
+{
+  "coverage": {
+    "temple": {
+      "n": 43,
+      "median_percent_reference_seconds": 99.49,
+      "min_percent": 91.16,
+      "max_percent": 99.95
+    },
+    "apple_watch_s12": {
+      "n": 43,
+      "median_percent_reference_seconds": 19.7,
+      "min_percent": 3.87,
+      "max_percent": 20.03
+    },
+    "fitbit_air": {
+      "n": 42,
+      "median_percent_reference_seconds": 98.52,
+      "min_percent": 67.26,
+      "max_percent": 98.99
+    },
+    "whoop_mg": {
+      "n": 43,
+      "median_percent_reference_seconds": 99.89,
+      "min_percent": 40.83,
+      "max_percent": 100.0
+    },
+    "garmin_forerunner_970": {
+      "n": 43,
+      "median_percent_reference_seconds": 99.77,
+      "min_percent": 72.96,
+      "max_percent": 100.0
+    },
+    "oura_ring_5": {
+      "n": 43,
+      "median_percent_reference_seconds": 19.85,
+      "min_percent": 14.75,
+      "max_percent": 20.69
+    },
+    "polar_h10_untaped": {
+      "n": 43,
+      "median_percent_reference_seconds": 99.95,
+      "min_percent": 50.3,
+      "max_percent": 100.0
+    }
+  },
+  "matched_seconds": {
+    "apple_watch_s12": {
+      "n": 43,
+      "device_mae": 1.974,
+      "temple_mae_same_seconds": 1.103,
+      "difference": 0.871,
+      "temple_better_for": 40,
+      "bootstrap95": [
+        0.56,
+        1.23
+      ]
+    },
+    "fitbit_air": {
+      "n": 42,
+      "device_mae": 3.329,
+      "temple_mae_same_seconds": 1.181,
+      "difference": 2.149,
+      "temple_better_for": 42,
+      "bootstrap95": [
+        1.62,
+        2.82
+      ]
+    },
+    "whoop_mg": {
+      "n": 43,
+      "device_mae": 3.923,
+      "temple_mae_same_seconds": 1.182,
+      "difference": 2.741,
+      "temple_better_for": 40,
+      "bootstrap95": [
+        1.82,
+        3.76
+      ]
+    },
+    "garmin_forerunner_970": {
+      "n": 43,
+      "device_mae": 5.188,
+      "temple_mae_same_seconds": 1.185,
+      "difference": 4.002,
+      "temple_better_for": 43,
+      "bootstrap95": [
+        2.55,
+        5.78
+      ]
+    },
+    "oura_ring_5": {
+      "n": 43,
+      "device_mae": 7.298,
+      "temple_mae_same_seconds": 1.179,
+      "difference": 6.119,
+      "temple_better_for": 43,
+      "bootstrap95": [
+        4.54,
+        8.0
+      ]
+    },
+    "polar_h10_untaped": {
+      "n": 43,
+      "device_mae": 2.116,
+      "temple_mae_same_seconds": 1.187,
+      "difference": 0.929,
+      "temple_better_for": 7,
+      "bootstrap95": [
+        -0.34,
+        2.66
+      ]
+    }
+  },
+  "lag_shift_mae": {
+    "temple": {
+      "-4": 1.614,
+      "-3": 1.366,
+      "-2": 1.174,
+      "-1": 1.097,
+      "0": 1.184,
+      "1": 1.434,
+      "2": 1.753,
+      "3": 2.063,
+      "4": 2.337,
+      "5": 2.57,
+      "6": 2.77,
+      "7": 2.945,
+      "8": 3.106
+    },
+    "apple_watch_s12": {
+      "-4": 1.723,
+      "-3": 1.545,
+      "-2": 1.508,
+      "-1": 1.675,
+      "0": 1.972,
+      "1": 2.288,
+      "2": 2.604,
+      "3": 2.868,
+      "4": 3.072,
+      "5": 3.252,
+      "6": 3.402,
+      "7": 3.542,
+      "8": 3.671
+    },
+    "fitbit_air": {
+      "-4": 2.85,
+      "-3": 2.862,
+      "-2": 2.958,
+      "-1": 3.126,
+      "0": 3.329,
+      "1": 3.54,
+      "2": 3.737,
+      "3": 3.912,
+      "4": 4.071,
+      "5": 4.219,
+      "6": 4.355,
+      "7": 4.488,
+      "8": 4.619
+    },
+    "whoop_mg": {
+      "-4": 4.15,
+      "-3": 4.05,
+      "-2": 3.967,
+      "-1": 3.911,
+      "0": 3.919,
+      "1": 4.028,
+      "2": 4.21,
+      "3": 4.402,
+      "4": 4.589,
+      "5": 4.752,
+      "6": 4.901,
+      "7": 5.037,
+      "8": 5.164
+    },
+    "garmin_forerunner_970": {
+      "-4": 4.505,
+      "-3": 4.648,
+      "-2": 4.825,
+      "-1": 5.015,
+      "0": 5.2,
+      "1": 5.373,
+      "2": 5.528,
+      "3": 5.672,
+      "4": 5.805,
+      "5": 5.934,
+      "6": 6.06,
+      "7": 6.183,
+      "8": 6.302
+    },
+    "oura_ring_5": {
+      "-4": 7.409,
+      "-3": 7.367,
+      "-2": 7.353,
+      "-1": 7.313,
+      "0": 7.31,
+      "1": 7.301,
+      "2": 7.315,
+      "3": 7.329,
+      "4": 7.353,
+      "5": 7.381,
+      "6": 7.432,
+      "7": 7.456,
+      "8": 7.51
+    },
+    "polar_h10_untaped": {
+      "-4": 3.64,
+      "-3": 3.313,
+      "-2": 2.913,
+      "-1": 2.449,
+      "0": 2.117,
+      "1": 2.374,
+      "2": 2.865,
+      "3": 3.291,
+      "4": 3.643,
+      "5": 3.926,
+      "6": 4.151,
+      "7": 4.341,
+      "8": 4.508
+    }
+  }
+}

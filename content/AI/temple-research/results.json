@@ -1,0 +1,160 @@
+{
+ "devices": {
+  "temple": {
+   "clean": {
+    "mean_of_participant_scores": 1.18,
+    "median_of_participant_scores": 1.12,
+    "worst_participant": 2.03,
+    "n": 43
+   },
+   "raw": {
+    "mean_of_participant_scores": 1.18,
+    "median_of_participant_scores": 1.12,
+    "worst_participant": 2.25,
+    "n": 43
+   }
+  },
+  "apple_watch_s12": {
+   "clean": {
+    "mean_of_participant_scores": 1.94,
+    "median_of_participant_scores": 1.56,
+    "worst_participant": 6.06,
+    "n": 43
+   },
+   "raw": {
+    "mean_of_participant_scores": 1.97,
+    "median_of_participant_scores": 1.56,
+    "worst_participant": 6.06,
+    "n": 43
+   }
+  },
+  "fitbit_air": {
+   "clean": {
+    "mean_of_participant_scores": 2.96,
+    "median_of_participant_scores": 2.73,
+    "worst_participant": 7.02,
+    "n": 42
+   },
+   "raw": {
+    "mean_of_participant_scores": 3.33,
+    "median_of_participant_scores": 2.83,
+    "worst_participant": 13.17,
+    "n": 42
+   }
+  },
+  "whoop_mg": {
+   "clean": {
+    "mean_of_participant_scores": 3.14,
+    "median_of_participant_scores": 2.66,
+    "worst_participant": 7.85,
+    "n": 43
+   },
+   "raw": {
+    "mean_of_participant_scores": 3.92,
+    "median_of_participant_scores": 2.66,
+    "worst_participant": 16.25,
+    "n": 43
+   }
+  },
+  "garmin_forerunner_970": {
+   "clean": {
+    "mean_of_participant_scores": 3.18,
+    "median_of_participant_scores": 2.85,
+    "worst_participant": 6.57,
+    "n": 43
+   },
+   "raw": {
+    "mean_of_participant_scores": 5.2,
+    "median_of_participant_scores": 3.05,
+    "worst_participant": 27.05,
+    "n": 43
+   }
+  },
+  "oura_ring_5": {
+   "clean": {
+    "mean_of_participant_scores": 5.21,
+    "median_of_participant_scores": 4.28,
+    "worst_participant": 17.15,
+    "n": 43
+   },
+   "raw": {
+    "mean_of_participant_scores": 7.31,
+    "median_of_participant_scores": 5.44,
+    "worst_participant": 32.63,
+    "n": 43
+   }
+  },
+  "polar_h10_untaped": {
+   "clean": {
+    "mean_of_participant_scores": 0.59,
+    "median_of_participant_scores": 0.38,
+    "worst_participant": 5.55,
+    "n": 43
+   },
+   "raw": {
+    "mean_of_participant_scores": 2.12,
+    "median_of_participant_scores": 0.38,
+    "worst_participant": 27.36,
+    "n": 43
+   }
+  }
+ },
+ "paired_participant_score": {
+  "apple_watch_s12|clean": {
+   "n": 43,
+   "temple_better_for": 37,
+   "mean_diff_other_minus_temple": 0.76,
+   "bootstrap95": [
+    0.47,
+    1.11
+   ]
+  },
+  "apple_watch_s12|raw": {
+   "n": 43,
+   "temple_better_for": 37,
+   "mean_diff_other_minus_temple": 0.79,
+   "bootstrap95": [
+    0.48,
+    1.14
+   ]
+  },
+  "polar_h10_untaped|clean": {
+   "n": 43,
+   "temple_better_for": 3,
+   "mean_diff_other_minus_temple": -0.58,
+   "bootstrap95": [
+    -0.81,
+    -0.26
+   ]
+  },
+  "polar_h10_untaped|raw": {
+   "n": 43,
+   "temple_better_for": 7,
+   "mean_diff_other_minus_temple": 0.93,
+   "bootstrap95": [
+    -0.34,
+    2.66
+   ]
+  }
+ },
+ "paired_matched_seconds": {
+  "apple_watch_s12": {
+   "n": 43,
+   "temple_better_for": 40,
+   "mean_diff_other_minus_temple": 0.87,
+   "bootstrap95": [
+    0.56,
+    1.23
+   ]
+  },
+  "polar_h10_untaped": {
+   "n": 43,
+   "temple_better_for": 7,
+   "mean_diff_other_minus_temple": 0.93,
+   "bootstrap95": [
+    -0.34,
+    2.66
+   ]
+  }
+ }
+}
