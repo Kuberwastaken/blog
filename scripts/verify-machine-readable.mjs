@@ -163,6 +163,10 @@ for (const file of htmlFiles) {
   const head = html.split("</head>")[0]
   const rel = path.relative(outputDir, file)
 
+  // AliasRedirects stubs are noindex meta-refresh hops to the canonical page,
+  // not content: they intentionally carry no authorship or JSON-LD.
+  if (head.includes('<meta http-equiv="refresh"')) continue
+
   const author = head.match(/<meta name="author" content="([^"]*)"/)
   if (!author || author[1].trim() === "") missingAuthor++
   else authorValues.add(author[1])
