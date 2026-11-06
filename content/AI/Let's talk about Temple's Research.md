@@ -17,7 +17,7 @@ So I decided to spend this Diwali weekend doing that, and broke it down in a mor
 
 Fair warning before we get into this - I'm far from a medical professional, I just happen to have experiences with wearables and BLE tech I can hack, am decent at exploring topics I have no business exploring with AI agents and have watched one too many videos by the quantified scientist.
 
-For the record: I have zero relationship with Temple - no device, no payment, no contact with the team. Fully independent, I was just bored.
+and no, I don't have any involvement with Temple, I was just bored
 
 ## The papers
 
@@ -47,7 +47,7 @@ For heart rate on the treadmill, we get these stats:
 
 ![Mean absolute heart-rate error with failure episodes removed and retained: Temple 1.18/1.18, Apple S12 1.94/1.97, Fitbit Air 2.96/3.33, WHOOP MG 3.14/3.92, Garmin 970 3.18/5.20, Oura Ring 5 5.21/7.31 and untaped Polar 0.59/2.12 bpm.](https://raw.githubusercontent.com/Kuberwastaken/temple-research/main/img/hr-clean-vs-raw.svg)
 
-On the surface it's actually great. Of course, treadmill walking and running is one of the simpler tasks for optical sensors to track, so we still need data across outdoor running, lifting, cycling and daily life for more context - but this serves as a pretty good starting point.
+Of course, treadmill walking and running is one of the simpler tasks for optical sensors to track, so we still need data across outdoor running, lifting, cycling and daily life for more context - but this serves as a pretty good starting point.
 
 Funnily enough, it did well where some other devices got stuck in the sustained failures, Temple's score was 1.18 either way, whereas Garmin moves from 3.18 to 5.20, Oura from 5.21 to 7.31. So the actual result is consistency. In these recordings, Temple is the least vulnerable to prolonged large errors.
 
