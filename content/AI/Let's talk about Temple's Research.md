@@ -15,7 +15,7 @@ So that's exactly what I decided to do this Diwali weekend, and in the process b
 
 ![The gold, oval Temple device held up between two fingers.](https://raw.githubusercontent.com/Kuberwastaken/temple-research/main/img/temple-device.jpg)
 
-Fair warning before we get into this - I'm far from a medical professional, I just happen to have experiences with wearables and BLE tech I can hack, am decent at exploring topics I have no business exploring with AI agents and have watched one too many videos by the quantified scientist.
+Fair warning before we get into this - I'm far from a medical professional, I just happen to have experiences with [wearables and BLE tech I can hack](https://x.com/kuberwastaken/status/2059306990774714715), am decent at [exploring topics](https://kuber.studio/planethunt/) I have no business exploring with AI agents and have watched one too many videos by the quantified scientist.
 
 and no, I don't have any involvement with Temple, I was just bored
 
