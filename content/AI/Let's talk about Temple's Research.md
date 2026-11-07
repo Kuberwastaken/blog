@@ -9,9 +9,9 @@ tags:
 created: 2026-11-06
 modified: 2026-11-07
 ---
-I've been seeing a lot of discourse about Temple on my twitter feed for the past few days, which, in my opinion, has largely been misguided. Like Deepinder said, the best way to like (or hate) a pre-release product is to read the damn research.
+I've been seeing a lot of discourse about Temple on my twitter feed lately, which in my opinion has largely been misguided. Like Deepinder said, the best way to like (or hate) a pre-release product is to read the damn research.
 
-So I decided to spend this Diwali weekend doing that, and broke it down in a more digestible and opinionated way so most curious people can follow along.
+So that's exactly what I decided to do this Diwali weekend, and in the process breaking it down in a more digestible and opinionated way so most curious people can follow along.
 
 ![The gold, oval Temple device held up between two fingers.](https://raw.githubusercontent.com/Kuberwastaken/temple-research/main/img/temple-device.jpg)
 
